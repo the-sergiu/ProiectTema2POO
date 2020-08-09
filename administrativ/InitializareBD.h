@@ -1,0 +1,6 @@
+#include<iosream>
+
+class InitializareBd{
+
+  
+}

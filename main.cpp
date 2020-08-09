@@ -1,0 +1,109 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+
+#include "produs/produsResigilat.h"
+#include "produs/produsAlimentar.h"
+#include "server/server.h"
+#include "user/userPremium.h"
+#include "user/userNonPremium.h"
+
+using namespace std;
+
+
+string returnClassType(string s);
+
+// Instanta Singleton
+Server *Server::instanta = 0;
+
+int main() 
+{
+  Produs** lista;
+  lista = new Produs* [5];
+  string str = "test";
+  lista[0] = new ProdusAlimentar(str, str, 2, 110, 5.55, str, str);
+  lista[1] = new ProdusNealimentar(str, str, 210, 5, 2, 2131.32143);
+  lista[2] = new ProdusRedus(str, str, 432, 5, 10, 4324234234, 10);
+  lista[3] = new ProdusReturnat(str, str, str, 432, 5, 2, 432423);
+  lista[4] = new ProdusResigilat(str, str, str, 789, 3, 5, 4234, 10, 22.5);
+
+  // for (int i = 0 ; i < 5; i++)
+  // {
+  //   cout << "Element " << i+1 << ":" << endl;
+  //   lista[i] -> afisare();
+  //   cout << endl;
+  // }
+
+
+  // cout << endl;
+  // ProdusReturnat p(str, str, str, 432, 5, 2, 432423);
+  // cout << returnClassType(typeid(*(lista[1])).name()) << endl;
+  // ProdusResigilat* pa = dynamic_cast<ProdusResigilat*>(lista[4]);
+  // cout<<pa->getProcentUzura() << endl;
+
+  // auto it = lista2.begin();
+  // (*it)->afisare();
+  Server *serv;
+  serv = Server::InitializareServer();
+  list<Produs*> lst = serv->getListaProduse();
+
+  serv->requestAddProdus(324, 2, 10);
+
+ 
+  // for (auto it = lst.begin(); it != lst.end(); it++){
+  //   (*it)->afisare();
+  //   cout<<endl;
+  // }
+
+  //unordered_map<int, Produs*> mp;
+ // mp[0] = new ProdusAlimentar(str, 110, 5.55, str, str);
+ // mp[0]->afisare();
+
+  // for (int i = 0 ; i < 5; i++)
+  // {
+  //   cout << "Element " << i+1 << ":" << endl;
+  //   lista[i] -> afisare();
+  //   cout << endl;
+  // }
+
+
+  Adresa adr(str, 2, str, 9);
+  
+  
+
+  list<User*> userList;
+  unordered_map<int, int> reduceri;
+  unordered_map<int, int> cosCumparaturi;
+  
+  reduceri[0] = 5;
+  cosCumparaturi[0] = 0;
+
+  
+  userList.push_back(new UserPremium(reduceri, str, str, str, 1, str, adr, adr, 69));
+
+  userList.push_back(new UserNonPremium(str, str, str, 1, str, adr, adr, 15));
+  
+  // for (auto it = userList.begin(); it != userList.end(); it++){
+  //   (*it)->vizualizareUser();
+  //   cout<<endl;
+  // }
+
+  cout << endl << "END" << endl;  
+  return 0;
+} 
+
+  
+string returnClassType(string s)
+{
+  s = s.substr(2, s.length());
+  return s;
+}
+
+
+
+// date enunturi clare, date deintrare clare, date de iesire fixe
+// modificam functia de getPret si pentru Alimentar/ProdusNealimentar, plus
+// calcul reducere Resigilat, Redus 
+// static? stoc 
+// operatii in functie de id - de cautare; eliminam string categorie
