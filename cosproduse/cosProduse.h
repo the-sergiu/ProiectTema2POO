@@ -18,5 +18,6 @@ class CosProduse
     int getCantitate(int);
     void deleteProdus(int);
     unordered_map<int,int>& getCos();
+    void afisare();
 
 };

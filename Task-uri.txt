@@ -22,4 +22,4 @@ a datelor dorite
 
 
 Changelog:
-09.09 12:30: Modificat unordered_map<int cosProduse*> si implementat functiile necesare pentru a adauga, modifica si sterge produse din cos.
+09.09 12:30: Modificat unordered_map<int cosProduse*> si implementat functiile necesare pentru a adauga, modifica si sterge produse din cos. Modificat constrcutor default server pentru a testa si lista de useri. Initializare test map-uri. Adaugarea unui produs in cos a fost incheata cu succes :)). 

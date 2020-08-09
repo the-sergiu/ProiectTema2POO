@@ -11,7 +11,7 @@ class Produs
 {
 protected:
     string nume;
-    int cantitate = 0;
+    int cantitate;
     string categorie;
     int id;  
 public:

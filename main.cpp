@@ -8,6 +8,7 @@
 #include "server/server.h"
 #include "user/userPremium.h"
 #include "user/userNonPremium.h"
+#include "lrucache/lrucache.h"
 
 using namespace std;
 
@@ -44,18 +45,21 @@ int main()
 
   // auto it = lista2.begin();
   // (*it)->afisare();
+/* TEST INITIALIZARE SERVER */
   Server *serv;
   serv = Server::InitializareServer();
-  list<Produs*> lst = serv->getListaProduse();
+  
+/*TESTARE ADAUGARE PRODUS IN COS PENTRU USER SI PRODUS DE TEST*/
+  // serv->requestAddProdus(251, 2, 10);
 
-  serv->requestAddProdus(324, 2, 10);
 
- 
+  // list<Produs*> lst = serv->getListaProduse();
   // for (auto it = lst.begin(); it != lst.end(); it++){
   //   (*it)->afisare();
   //   cout<<endl;
   // }
 
+/* TEST MAP PRODUSE  */
   //unordered_map<int, Produs*> mp;
  // mp[0] = new ProdusAlimentar(str, 110, 5.55, str, str);
  // mp[0]->afisare();
@@ -67,27 +71,48 @@ int main()
   //   cout << endl;
   // }
 
+/* Test USER LIST */
+  // Adresa adr(str, 2, str, 9);
+  // list<User*> userList;
+  // unordered_map<int, int> reduceri;
+  // reduceri[0] = 5;
 
-  Adresa adr(str, 2, str, 9);
-  
-  
+  // userList.push_back(new UserPremium(reduceri, str, str, str, 1, str, adr, adr, 69));
 
-  list<User*> userList;
-  unordered_map<int, int> reduceri;
-  unordered_map<int, int> cosCumparaturi;
-  
-  reduceri[0] = 5;
-  cosCumparaturi[0] = 0;
-
-  
-  userList.push_back(new UserPremium(reduceri, str, str, str, 1, str, adr, adr, 69));
-
-  userList.push_back(new UserNonPremium(str, str, str, 1, str, adr, adr, 15));
+  // userList.push_back(new UserNonPremium(str, str, str, 1, str, adr, adr, 15));
   
   // for (auto it = userList.begin(); it != userList.end(); it++){
   //   (*it)->vizualizareUser();
   //   cout<<endl;
   // }
+
+/* TEST LRU CACHE */
+  // cout << "LRU CACHE TEST: " << endl; 
+  // vector<int> lruTest = {1, 2, 3, 2, 5, 3, 4, 5, 8, 9};
+  // LRUCache obj(4);
+  // // check processing
+  // vector<int> ans = obj.processRequests(lruTest);
+  // for (int i = 0; i < ans.size(); i++)
+  // {
+  //   cout << ans[i] << " ";
+  // }
+  // // check set-get LRU
+  // cout << endl << "setLRU-getLRU TEST: " << endl;
+  // obj.setLRU(ans);
+  // vector<int> aux = obj.getLRU();
+  // for (auto it = aux.begin(); it != aux.end(); it++)
+  // {
+  //   cout << *it << " ";
+  // }
+  // cout << endl << endl;
+  // // check get-set cap
+  // obj.setCapacity(20);
+  // int a = obj.getSize(); int b = obj.getCapacity();
+  // cout << a << " " << b;
+  // cout << endl;
+
+
+
 
   cout << endl << "END" << endl;  
   return 0;

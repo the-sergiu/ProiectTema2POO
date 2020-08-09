@@ -33,9 +33,13 @@ list<Produs*>& Server::getListaProduse()
 
 void Server::setListaUseri()
 {
-  string test = "test";
+  string str = "test";
+  Adresa adr(str, 2, str, 9);
+  unordered_map<int, int> reduceri;
+  reduceri[0] = 5;
+  
   usr.push_back(new UserPremium(reduceri, str, str, str, 251, str, adr, adr, 69));
-  usr.push_back(new UserNonPremium(str, str, str, 101, str, adr, adr, 15))
+  usr.push_back(new UserNonPremium(str, str, str, 101, str, adr, adr, 15));
 
    //Set map User - cosProduse
   user_CosProduse[251] = new CosProduse;
@@ -77,6 +81,10 @@ void Server::requestAddProdus(int userID, int produsID, int cantitate)
   }
   //Altfel nu aveam cantitatea necesara
   else cout<<endl<<"Produsul " << produsID << " nu are cantitatea necesara"<<endl;
+
+  //Afisare cos de produse pentru user
+  cout<<"Lista de produse pentru user "<<userID<<" este: "<<endl;
+  user_CosProduse[userID]->afisare();
   
 }
 

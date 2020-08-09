@@ -15,3 +15,10 @@ void CosProduse::deleteProdus(int produsID)
 {
   this->produse.erase(produsID);
 }
+
+void CosProduse::afisare()
+{
+  cout<<"ProdusID:    ///   Cantitate:"<<endl;
+  for(auto const& x : this->produse)
+    cout<<x.first<<" "<<x.second<<endl;
+}
