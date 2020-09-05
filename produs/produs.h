@@ -4,8 +4,6 @@
 using namespace std;
 
 #define placeHolder "?"
-//id - 1 - alim/ProdusNealimentar; 2 - categ; 3 - indexul produsului
-
 
 class Produs
 {
@@ -18,10 +16,23 @@ public:
     virtual void afisare() = 0;
     virtual ~Produs() = 0;
 
-    // TODO
+    Produs();
+    Produs(const string&, int, const string&, int);
     bool checkCantitate(int);
     void scadeCantitate(int);
     void cresteCantitate(int);
+
+    //SET-ERI
+    void setCategorie(const string&);
+    void setId(int);
+    void setCantitate(int);
+    void setNume(const string&);
+
+    //GET-ERI
+    string& getCategorie();
+    int getCantitate();
+    int getId();
+    string& getNume();
     
 };
 

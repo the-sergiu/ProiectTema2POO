@@ -11,29 +11,22 @@ using namespace std;
 class User
 {
   protected:
+    Adresa dateFacturare;
+    Adresa dateLivrare;
     string nume;
     string prenume;
     string email;
-    int idUser;
-    string dataNasterii;
-    Adresa dateFacturare;
-    Adresa dateLivrare;
+    int UserId;
   
   public:
 
-    // vizualizeazaProduse - la un moment de timp
-    // adaugareProdus - in cos, in vector, verifici ca e in stoc
-    // stergereProdus - il readauga in stoc
-    // cumparaProduse - prin cos de produse
     virtual void vizualizareUser() = 0;
-    
+    User(const string&, const string&, const string&, int, const string&, int, const string&, int, const string&, int, int, const string&, const string&, const string&);
     void setNume(const string&);
     void setPrenume(const string&);
     void setEmail(const string&);
     void setIdUser(int);
-    void setDataNasterii(const string&);
     
-    // Trebuie sa implementam si ceilalti user, ca sa vedem daca merge Adresa
     void setDateFacturare(const Adresa&);
     void setDateLivrare(const Adresa&);
 
@@ -41,11 +34,10 @@ class User
     string& getPrenume();
     string& getEmail();
     int getIdUser();
-    string& getDataNasterii();
     Adresa& getDateFacturare();
     Adresa& getDateLivrare(); 
    
     virtual ~User() = 0;
 };
 
-    
+ 

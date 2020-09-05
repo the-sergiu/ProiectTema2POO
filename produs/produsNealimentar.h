@@ -4,28 +4,23 @@
 class ProdusNealimentar : public Produs
 {
 protected:
+  string producator;
 	int garantieAni;
 	float pret;
 public:
 	
     ProdusNealimentar();
-    ProdusNealimentar(const string&, const string&, int, int, int, float);
+    ProdusNealimentar(const string&, int, const string&, const string&, float, int, int);
 
     void afisare();
 
-    void setNume(const string&);
-    void setCategorie(const string&);
-    void setId(int);
-    void setCantitate(int);
     void setGarantieAni(int);
     void setPret(float);
+    void setProducator(const string&);
     
-    string& getNume();
-    string& getCategorie();
-    int getId();
-    int getCantitate();
     int getGarantieAni();
     float getPret();
+    string& getProducator();
 
     bool operator == (const ProdusNealimentar&) const;
 

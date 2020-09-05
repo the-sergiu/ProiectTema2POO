@@ -40,7 +40,9 @@ LRUCache::LRUCache(int capacity)
         }
       }
     }
+    setLRU(ans);
     return ans;
+
  }
 
  // get-eri

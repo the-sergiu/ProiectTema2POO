@@ -7,7 +7,7 @@ class UserNonPremium : public User
     float costTransport;
 
   public:
-  UserNonPremium(const string&, const string&, const string&, int, const string&, const Adresa&, const Adresa&, float);
+  UserNonPremium(const string&, const string&, const string&, int, const string&, int, const string&, int, const string&, int, int, const string&, const string&, const string&, float);
   void setCostTransport(int);
   int getCostTransport();
   void vizualizareUser();

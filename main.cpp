@@ -20,14 +20,14 @@ Server *Server::instanta = 0;
 
 int main() 
 {
-  Produs** lista;
-  lista = new Produs* [5];
-  string str = "test";
-  lista[0] = new ProdusAlimentar(str, str, 2, 110, 5.55, str, str);
-  lista[1] = new ProdusNealimentar(str, str, 210, 5, 2, 2131.32143);
-  lista[2] = new ProdusRedus(str, str, 432, 5, 10, 4324234234, 10);
-  lista[3] = new ProdusReturnat(str, str, str, 432, 5, 2, 432423);
-  lista[4] = new ProdusResigilat(str, str, str, 789, 3, 5, 4234, 10, 22.5);
+  // Produs** lista;
+  // lista = new Produs* [5];
+  // string str = "test";
+  // lista[0] = new ProdusAlimentar(str, str, 2, 5.55, 110, str);
+  // lista[1] = new ProdusNealimentar(str, str, str, 210, 5, 2, 2131.32143);
+  // lista[2] = new ProdusRedus(str, str, str, 432, 5, 10, 4324234234, 10);
+  // lista[3] = new ProdusReturnat(str, str, str, str, 432, 5, 2, 432423);
+  // lista[4] = new ProdusResigilat(str, str, str, str, 789, 3, 5, 4234, 10, 22);
 
   // for (int i = 0 ; i < 5; i++)
   // {
@@ -48,6 +48,10 @@ int main()
 /* TEST INITIALIZARE SERVER */
   Server *serv;
   serv = Server::InitializareServer();
+  serv->populareProduse("server/produse.txt");
+  serv->setMapProdusId_Produs();
+  serv->populareUseri("server/users.txt");
+  serv->setMapuser_CosProduse();
   
 /*TESTARE ADAUGARE PRODUS IN COS PENTRU USER SI PRODUS DE TEST*/
   // serv->requestAddProdus(251, 2, 10);
@@ -98,8 +102,9 @@ int main()
   // }
   // // check set-get LRU
   // cout << endl << "setLRU-getLRU TEST: " << endl;
-  // obj.setLRU(ans);
   // vector<int> aux = obj.getLRU();
+  // // obj.setLRU(ans);
+  
   // for (auto it = aux.begin(); it != aux.end(); it++)
   // {
   //   cout << *it << " ";
@@ -119,11 +124,6 @@ int main()
 } 
 
   
-string returnClassType(string s)
-{
-  s = s.substr(2, s.length());
-  return s;
-}
 
 
 

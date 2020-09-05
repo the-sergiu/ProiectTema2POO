@@ -2,16 +2,9 @@
 
 using namespace std;
 
-  UserNonPremium::UserNonPremium(const string& n, const string& p, const string& e, int id, const string& data, const Adresa& df, const Adresa& dl, float cost)
+  UserNonPremium::UserNonPremium(const string& judet, const string& localitate, const string& stradaf, int nr_stradaf, const string& blocf, int apartamentf, const string& stradal, int nr_stradal, const string& blocl, int apartamentl, int id, const string& nume, const string& prenume, const string& email, float costTransport) : User(judet, localitate, stradaf, nr_stradaf, blocf, apartamentf, stradal, nr_stradal, blocl, apartamentl, id, nume, prenume, email)
   {
-    nume = n;
-    prenume = p;
-    email = e;
-    idUser = id;
-    dataNasterii = data;
-    dateFacturare = df;
-    dateLivrare = dl;
-    costTransport = cost;
+    this->costTransport = costTransport;
   }
   
   void UserNonPremium::setCostTransport(int cost)
@@ -24,18 +17,16 @@ using namespace std;
     return this->costTransport;
   }
 
-  
+
 
   void UserNonPremium::vizualizareUser()
   {
-    cout << "----------" << "USER NON-PREMIUM: " << this->nume << "----------" << endl;
-    cout << "PROFILUL MEU:" << endl<< endl;
+    cout << "----------" << "USER NON-PREMIUM: " << this->UserId << "----------" << endl;
     cout<<"Nume: "<<this->nume<<endl;
     cout<<"Prenume: "<<this->prenume<<endl;
     cout<<"Email: "<<this->email<<endl;
-    cout<<"Data Nasterii: "<<this->dataNasterii<<endl;
     cout<<"Date Facturare: "<<this->dateFacturare;
     cout<<"Date Livrare: "<<this->dateLivrare;
-    cout<<"Cost transport standard: "<<this->costTransport;
+    cout<<"Cost transport standard: "<<this->costTransport << endl;
 
   }

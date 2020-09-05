@@ -2,28 +2,20 @@
 
 using namespace std;
 
-// eventual parametru fisier
-// trebuie modificat in map
-void Server::setListaProduse()
-{
-  string str="test";
-  prod.push_back(new ProdusAlimentar(str, str, 2, 110, 5.55, str, str));
-  prod.push_back(new ProdusNealimentar(str, str, 210, 5, 2, 2131.32143));
-  prod.push_back(new ProdusRedus(str, str, 432, 5, 10, 4324234234, 10));
-  prod.push_back(new ProdusReturnat(str, str, str, 435, 5, 2, 432423));
-  prod.push_back(new ProdusResigilat(str, str, str, 789, 3, 5, 4234, 10, 22.5));
 
-  //Set map ProdusID - Produs
-  auto it = prod.begin();
-  produsId_Produs[2] = *it;
-  advance(it,1);
-  produsId_Produs[210] = *it;
-  advance(it,1);
-  produsId_Produs[432] = *it;
-  advance(it,1);
-  produsId_Produs[435] = *it;
-  advance(it,1);
-  produsId_Produs[789] = *it;
+void Server::setMapProdusId_Produs()
+{
+  for (auto it = prod.begin(); it != prod.end(); ++it)
+  {
+    produsId_Produs[(*it)->getId()] = *it;
+  }
+
+  //Testare initializare corecta map
+  // for(auto const& x : this->produsId_Produs){
+  // cout<<x.first<<" - ";
+  // x.second->afisare();
+  // cout<<endl;
+  // }
 }
 
 list<Produs*>& Server::getListaProduse()
@@ -31,19 +23,19 @@ list<Produs*>& Server::getListaProduse()
   return this->prod;
 }
 
-void Server::setListaUseri()
+void Server::setMapuser_CosProduse()
 {
-  string str = "test";
-  Adresa adr(str, 2, str, 9);
-  unordered_map<int, int> reduceri;
-  reduceri[0] = 5;
-  
-  usr.push_back(new UserPremium(reduceri, str, str, str, 251, str, adr, adr, 69));
-  usr.push_back(new UserNonPremium(str, str, str, 101, str, adr, adr, 15));
-
-   //Set map User - cosProduse
-  user_CosProduse[251] = new CosProduse;
-  user_CosProduse[101] = new CosProduse;
+  for (auto it = usr.begin(); it != usr.end(); ++it)
+  {
+    user_CosProduse[(*it)->getIdUser()] = new CosProduse;
+  }
+  int nr = 0;
+  //Testare initializare corecta map
+  //for(auto const& x : this->user_CosProduse){
+  // cout<<x.first<<" - ";
+  // x.second->afisare();
+  // cout<<endl;
+  //}
 }
 
 list<User*>& Server::getListaUseri()
@@ -53,10 +45,16 @@ list<User*>& Server::getListaUseri()
 
 
 Server::Server()
+{}
+
+Server::~Server()
 {
-  //TESTARE SET LISTE USERI SI PRODUSE. FINAL VA FI DIN FISIERE
- setListaProduse();
- setListaUseri();
+  if (instanta != NULL)
+    instanta = NULL;
+  if (!produsId_Produs.empty())
+    produsId_Produs.clear();
+  if (!user_CosProduse.empty())
+    user_CosProduse.clear();
 
 }
 
@@ -67,6 +65,164 @@ Server* Server::InitializareServer()
     instanta = new Server;
   }
   return instanta;
+}
+
+void Server::populareProduse(const string & fisier)
+{
+  ifstream date(fisier);
+  if (!date)
+  {
+    cout<<"Eroare deschidere fisier produse"<<endl;
+    return;
+  }
+
+  int nr_produse, id, cantitate, garantieAni, procentUzura, procentReducere;
+  float leiPerKg, pret;
+  string tip_produs, categorie, nume, producator, motiv, taraOrigine;
+
+  date >> nr_produse;
+  cout << "Lista de produse are " << nr_produse << " elemente" << endl;
+
+  for (int i = 0 ; i < nr_produse; i++)
+  {
+    date >> tip_produs;
+
+    if (tip_produs == "Produs_alimentar")
+    {
+      date >> categorie;
+      date >> id;
+      date >> nume;
+      date >> leiPerKg;
+      date >> taraOrigine;
+      date >> cantitate;
+      prod.push_back(new ProdusAlimentar(categorie, id, nume, leiPerKg, taraOrigine, cantitate));
+    }
+
+    else if (tip_produs == "Produs_nealimentar")
+    {
+      date >> categorie;
+      date >> id;
+      date >> producator;
+      date >> nume;
+      date >> pret;
+      date >> garantieAni;
+      date >> cantitate;
+      prod.push_back(new ProdusNealimentar(categorie, id, producator, nume, pret, garantieAni, cantitate));
+    }
+
+    else if (tip_produs == "Produs_redus")
+    {
+      date >> categorie;
+      date >> id;
+      date >> producator;
+      date >> nume;
+      date >> pret;
+      date >> garantieAni;
+      date >> procentReducere;
+      date >> cantitate;
+      prod.push_back(new ProdusRedus(categorie, id, producator, nume, pret, garantieAni, procentReducere, cantitate));
+    }
+
+    else if (tip_produs == "Produs_returnat")
+    {
+      date >> categorie;
+      date >> id;
+      date >> producator;
+      date >> nume;
+      date >> pret;
+      date >> garantieAni;
+      date >> motiv;
+      date >> cantitate;
+      prod.push_back(new ProdusReturnat(categorie, id, producator, nume, pret, garantieAni, motiv, cantitate));
+    }
+
+    else if (tip_produs == "Produs_resigilat")
+    {
+      date >> categorie;
+      date >> id;
+      date >> producator;
+      date >> nume;
+      date >> pret;
+      date >> garantieAni;
+      date >> procentReducere;
+      date >> motiv;
+      date >> procentUzura;
+      date >> cantitate;
+      prod.push_back(new ProdusResigilat(categorie, id, producator, nume, pret, garantieAni, procentReducere, motiv, procentUzura, cantitate));
+    }
+  }
+}
+
+void Server::populareUseri(const string& fisier)
+{
+  ifstream date(fisier);
+  if (!date)
+  {
+    cout<<"Eroare deschidere fisier useri"<<endl;
+    return;
+  }
+
+  int nr_useri, id, nr_stradaf, apartamentf, nr_stradal, apartamentl, nr_reduceri, idprodus, reducere;
+  float costTransport;
+  unordered_map<int, int> reduceri;
+  string judet, localitate, nume, prenume, email, stradaf, blocf, stradal, blocl, tip_user;
+
+  date >> nr_useri;
+  cout << "Lista de useri are " << nr_useri << " elemente" << endl;
+
+  for (int i = 0 ; i < nr_useri; i++)
+  {
+    date >> tip_user;
+
+    if (tip_user == "User_nonpremium")
+    {
+      date >> id;
+      date >> nume;
+      date >> prenume;
+      date >> email;
+      date >> judet;
+      date >> localitate;
+      date >> stradaf;
+      date >> nr_stradaf;
+      date >> blocf;
+      date >> apartamentf;
+      date >> stradal;
+      date >> nr_stradal;
+      date >> blocl;
+      date >> apartamentl;
+      date >> costTransport;
+      usr.push_back(new UserNonPremium(judet, localitate, stradaf, nr_stradaf, blocf, apartamentf, stradal, nr_stradal, blocl, apartamentl, id, nume, prenume, email,  costTransport));
+    }
+
+    else if (tip_user == "User_premium")
+    {
+      date >> id;
+      date >> nume;
+      date >> prenume;
+      date >> email;
+      date >> judet;
+      date >> localitate;
+      date >> stradaf;
+      date >> nr_stradaf;
+      date >> blocf;
+      date >> apartamentf;
+      date >> stradal;
+      date >> nr_stradal;
+      date >> blocl;
+      date >> apartamentl;
+      date >> nr_reduceri;
+
+      for (int j = 0 ; j < nr_reduceri ; j++)
+      {
+        date >> idprodus;
+        date >> reducere;
+        reduceri[idprodus] = reducere;
+      }
+
+      usr.push_back(new UserPremium(judet, localitate, stradaf, nr_stradaf, blocf, apartamentf, stradal, nr_stradal, blocl, apartamentl, id, nume, prenume, email,  reduceri));
+      reduceri.clear(); //Curatare map
+    }
+  }
 }
 
 void Server::requestAddProdus(int userID, int produsID, int cantitate)

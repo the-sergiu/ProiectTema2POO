@@ -4,6 +4,8 @@
 #include <unordered_map>
 #include <iterator>
 #include <algorithm>
+#include <iostream>
+#include <fstream>
 
 #include "../produs/produsResigilat.h"
 #include "../produs/produsAlimentar.h"
@@ -40,12 +42,16 @@ class Server
     Server();
   public:
     static Server* InitializareServer();
-    ~Server(){};
+    ~Server();
 
-    void setListaProduse();
+    void populareProduse(const string&);
+    void populareUseri(const string&);
+
+    void setMapProdusId_Produs();
+    void setMapuser_CosProduse();
+
+
     list<Produs*>& getListaProduse();
-
-    void setListaUseri();
     list<User*>& getListaUseri();
 
     void requestAddProdus(int, int, int);

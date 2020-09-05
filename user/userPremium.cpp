@@ -15,31 +15,21 @@ Adresa dateFacturare;
 Adresa dateLivrare;
 
 */
-UserPremium::UserPremium(unordered_map<int, int> &reduceri, const string& nume, const string& prenume, const string& email, int idUser, const string& dataNasterii, const Adresa& dateFacturare, const Adresa& dateLivrare, int costAbonamentPremium)
+UserPremium::UserPremium(const string& judet, const string& localitate, const string& stradaf, int nr_stradaf, const string& blocf, int apartamentf, const string& stradal, int nr_stradal, const string& blocl, int apartamentl, int id, const string& nume, const string& prenume, const string& email, const unordered_map<int, int>& reduceri) : User(judet, localitate, stradaf, nr_stradaf, blocf, apartamentf, stradal, nr_stradal, blocl, apartamentl, id, nume, prenume, email)
 {
-  this->nume = nume;
-  this->prenume = prenume;
-  this->email = email;
-  this->idUser = idUser;
-  this->dataNasterii = dataNasterii;
-  this->dateFacturare = dateFacturare;
-  this->dateLivrare = dateLivrare;
   this->reduceri = reduceri;
-  // Lipseste map reduceri
-  this->costAbonamentPremium = costAbonamentPremium;
 }
 
 void UserPremium::vizualizareUser()
 {
-  cout << endl << "-----------" << "USER PREMIUM: " << this->nume << "----------" << endl;
-  cout << "PROFILUL MEU:" << endl<< endl;
+  cout << endl << "-----------" << "USER PREMIUM: " << this->UserId << "----------" << endl;
   cout<<"Nume: "<<this->nume<<endl;
   cout<<"Prenume: "<<this->prenume<<endl;
   cout<<"Email: "<<this->email<<endl;
-  cout<<"Data Nasterii: "<<this->dataNasterii<<endl;
   cout<<"Date Facturare: "<<this->dateFacturare;
   cout<<"Date Livrare: "<<this->dateLivrare;
   cout << endl << "------------- LISTA REDUCERI -------------" << endl << endl;
-  // apel functie afisare REDUCERI
+  for(auto const& x : this->reduceri)
+    cout << x.first << " - " << x.second << endl;
   
 }

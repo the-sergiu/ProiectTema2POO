@@ -5,10 +5,10 @@ class ProdusResigilat : public ProdusRedus, public ProdusReturnat
 {
 private:
 private:
-    float procentUzura;
+    int procentUzura;
 public:
     ProdusResigilat();
-    ProdusResigilat(const string&, const string&, const string&, int, int, int, float, float, float);
+    ProdusResigilat(const string&, int, const string&, const string&, float, int, int, const string&, int, int);
     
     void afisare();
 

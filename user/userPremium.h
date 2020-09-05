@@ -12,9 +12,7 @@ class UserPremium : public User
     int costAbonamentPremium;
   
   public:
-
-    // UserPremium();
-    UserPremium(unordered_map<int, int>&, const string&, const string&, const string&, int, const string&, const Adresa&, const Adresa&, int);
+    UserPremium(const string&, const string&, const string&, int, const string&, int, const string&, int, const string&, int, int, const string&, const string&, const string&, const unordered_map<int,int>&);
 
     void vizualizareUser();
 };

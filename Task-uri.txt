@@ -1,12 +1,7 @@
   CONCRET!!!!
 
--- CERINTE
-2. 2 tipuri de cautari/interogari/cerinte pentur manipularea datelor de pe server (folosind map-uri si listele de obiecte)
-    a. 
-    b. 
-3. LRU Cache + exemplu (implementare)
-4. Cerinta Misu (construit peste LRU Cache)
-5. Nu mai hardcodam datele de intrare si ne gandim + implementam citirea din fisier
+
+1. Nu mai hardcodam datele de intrare si ne gandim + implementam citirea din fisier
 a datelor dorite
   a. Direct fisier newline (abordare C raw)
   b. JSON + biblioteca C++ (Misu) ***varianta preferata
@@ -22,4 +17,17 @@ a datelor dorite
 
 
 Changelog:
-09.09 12:30: Modificat unordered_map<int cosProduse*> si implementat functiile necesare pentru a adauga, modifica si sterge produse din cos. Modificat constrcutor default server pentru a testa si lista de useri. Initializare test map-uri. Adaugarea unui produs in cos a fost incheata cu succes :)). 
+08.08 12:30 A: Modificat unordered_map<int cosProduse*> si implementat functiile necesare pentru a adauga, modifica si sterge produse din cos. Modificat constructor default server pentru a testa si lista de useri. Initializare test map-uri. Adaugarea unui produs in cos a fost incheata cu succes :)). 
+
+08.08 S: Completat cap-coada clasa LRU Cache, unde accentul se pune pe metoda 'processRequests' ce reprezinta una din cerintele principale legate de LRU Cache. Primul pas este initializarea un obiect de tip LRUCache cu o capcitate data (in constructor). Metoda processRequests primeste un vector de int-uri (care abstractizeaza PID-uri de un anume tip), pe care il va procesa. Dupa ce se termina parcurgerea intregului vector, returneaza LRUCache in stadiul final procesarii.
+
+13.08 A: Adaugat camp "producator" produse nealimentare si eliminat camp "Data Expirare" produse alimentare
+
+14.08 A: Creat script Matlab pentru generare random de produse. Creat functie pe server ce primeste ca parametru calea unui fisier si populeaza lista cu produse a serverului. Creat functie de populeaza map-ul produsId-Produs.
+
+15.08 A: Eliminat camp "data nasterii" din user si camp "costAbonamentPremium" din user premium. Adaugat campuri "judet" si "oras" in adresa.
+Interfata nu are atribute, deci din start User si Produs erau clase abstracte. Implementat constructori pentru User, ca sa pot initializa cele 2 obiecte agregate Adresa. 
+
+16.08 A: Creat script Matlab pentru Useri. Implementat citire useri din fisier si creare map UserCosProduse. Functionare testata. Implementat constructori pentru Produs si modificat constructori Produs alimentar si nealimentar pentru a utiliza constructorii din Produs.
+
+Parser JSON : https://github.com/nlohmann/json

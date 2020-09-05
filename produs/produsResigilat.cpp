@@ -6,15 +6,16 @@ ProdusResigilat::ProdusResigilat():ProdusReturnat(),ProdusRedus(), ProdusNealime
   this->procentUzura = -1;
 }
 
-ProdusResigilat::ProdusResigilat(const string& nume, const string& categorie, const string& motiv, int id, int cantitate, int garantieAni, float pret, float procentReducere, float procentUzura)
-	:ProdusReturnat(nume, categorie, motiv, id, cantitate, garantieAni, pret), ProdusRedus(nume, categorie, id, cantitate, garantieAni, pret, procentReducere), ProdusNealimentar(nume, categorie, id, cantitate, garantieAni, pret){
+ProdusResigilat::ProdusResigilat(const string& categorie, int id, const string& producator, const string& nume, float pret, int garantieAni, int procentReducere, const string& motiv, int procentUzura, int cantitate)
+	:ProdusReturnat(categorie, id, producator, nume, pret, garantieAni, motiv, cantitate), ProdusRedus(categorie, id, producator, nume, pret, garantieAni, procentReducere, cantitate), ProdusNealimentar(categorie, id, producator, nume, pret, garantieAni, cantitate){
 	this->procentUzura = procentUzura;
 }
 
 void ProdusResigilat::afisare() {
 	ProdusReturnat::afisare();
-	cout << "Procent reducere : " << this->procentReducere << endl;
-	cout << "Procent Uzura : " << this->procentUzura << endl;
+  cout << "Produs Resigilat" << endl;
+	cout << "Procent Reducere : " << this->procentReducere << endl;
+	cout << "Procent Uzura : " << this->procentUzura << endl << endl;
 }
 
 void ProdusResigilat::setProcentUzura(int procentUzura) {

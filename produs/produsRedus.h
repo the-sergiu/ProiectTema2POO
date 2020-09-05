@@ -5,10 +5,10 @@
 class ProdusRedus : virtual public ProdusNealimentar
 {
 protected:
-	float procentReducere;
+	int procentReducere;
 public:
     ProdusRedus();
-    ProdusRedus(const string&, const string&, int, int, int, float, float);
+    ProdusRedus(const string&, int, const string&, const string&, float, int, int, int);
     void afisare();
 
     float pretDupaReducere()const;
@@ -18,4 +18,3 @@ public:
     // GET-eri
     float getProcentReducere();
 };
-

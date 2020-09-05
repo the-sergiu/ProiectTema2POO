@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 #include "produsNealimentar.h"
 class ProdusReturnat : virtual public ProdusNealimentar
 {
@@ -6,7 +6,7 @@ protected:
     string motiv;
 public:
     ProdusReturnat();
-    ProdusReturnat(const string&, const string&, const string&, int, int, int, float);
+    ProdusReturnat(const string&, int, const string&, const string&, float, int, const string&, int);
     void afisare();
 
 

@@ -5,14 +5,15 @@ ProdusReturnat::ProdusReturnat() : ProdusNealimentar(){
 }
 
 
-ProdusReturnat::ProdusReturnat(const string& nume, const string& categorie, const string& motiv, int id, int cantitate, int garantieAni, float pret)
-	:ProdusNealimentar(nume, categorie, id, cantitate, garantieAni, pret) {
+ProdusReturnat::ProdusReturnat(const string& categorie, int id, const string& producator, const string& nume, float pret, int garantieAni, const string& motiv, int cantitate)
+	:ProdusNealimentar(categorie, id, producator, nume, pret, garantieAni, cantitate) {
 	this->motiv = motiv;
 }
 
 
 void ProdusReturnat::afisare() {
 	ProdusNealimentar::afisare();
+  cout << "Produs Returnat" << endl;
 	cout << "Motiv : " << this->motiv << endl;
 }
 

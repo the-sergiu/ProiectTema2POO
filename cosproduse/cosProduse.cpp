@@ -18,7 +18,12 @@ void CosProduse::deleteProdus(int produsID)
 
 void CosProduse::afisare()
 {
-  cout<<"ProdusID:    ///   Cantitate:"<<endl;
-  for(auto const& x : this->produse)
-    cout<<x.first<<" "<<x.second<<endl;
+  if (this->produse.empty())
+    cout << "Cosul de produse este gol";
+  else
+  {
+    cout<<"ProdusID:    ///   Cantitate:"<<endl;
+    for(auto const& x : this->produse)
+      cout<<x.first<<" "<<x.second<<endl;
+  }
 }

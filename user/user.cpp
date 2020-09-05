@@ -6,6 +6,15 @@ using namespace std;
 
 User::~User(){}
 
+User::User(const string& judet, const string& localitate, const string& stradaf, int nr_stradaf, const string& blocf, int apartamentf, const string& stradal, int nr_stradal, const string& blocl, int apartamentl, int UserId, const string& nume, const string& prenume, const string& email) : dateFacturare(judet, localitate, stradaf, nr_stradaf, blocf, apartamentf), dateLivrare(judet, localitate, stradal, nr_stradal, blocl, apartamentl)
+{
+  this->UserId = UserId;
+  this->nume = nume;
+  this->prenume = prenume;
+  this->email = email;
+}
+
+
 // Set-eri
 void User::setNume(const string& nume)
 {
@@ -21,11 +30,7 @@ void User::setEmail(const string& email)
 }
 void User::setIdUser(int idUser)
 {
-  this->idUser = idUser;
-}
-void User::setDataNasterii(const string& dataN)
-{
-  this->dataNasterii = dataN;
+  this->UserId = idUser;
 }
 void User::setDateFacturare(const Adresa& dateFacturare)
 {
@@ -50,12 +55,8 @@ string& User::getEmail()
 }
 int User::getIdUser()
 {
-  return this->idUser;
+  return this->UserId;
 }
-string& User::getDataNasterii()
-{
-  return this->dataNasterii;
-} 
 
 Adresa& User::getDateFacturare()
 {
