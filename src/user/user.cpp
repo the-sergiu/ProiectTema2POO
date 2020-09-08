@@ -6,6 +6,8 @@ using namespace std;
 
 User::~User(){}
 
+User::User(){}
+
 User::User(const string& judet, const string& localitate, const string& stradaf, int nr_stradaf, const string& blocf, int apartamentf, const string& stradal, int nr_stradal, const string& blocl, int apartamentl, int UserId, const string& nume, const string& prenume, const string& email) : dateFacturare(judet, localitate, stradaf, nr_stradaf, blocf, apartamentf), dateLivrare(judet, localitate, stradal, nr_stradal, blocl, apartamentl)
 {
   this->UserId = UserId;
@@ -67,7 +69,9 @@ Adresa& User::getDateLivrare()
   return this->dateLivrare;
 }
 
-
+json User::toJSON(){
+  return json(*this);
+}
 
 
 

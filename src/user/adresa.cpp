@@ -86,3 +86,7 @@ ostream& operator << (ostream& os, const Adresa& a)
   os <<"Judet: " << a.judet << ", Oras: " << a.oras <<", Strada: "<<a.strada<<", nr. "<<a.numar<<", bl. "<<a.bloc<<", ap. "<<a.apartament<<endl;
   return os;
 }
+
+json Adresa::toJSON(){
+  return json(*this);
+}

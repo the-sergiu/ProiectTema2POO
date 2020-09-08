@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../json.hpp"
 
+using json = nlohmann::json;
 using namespace std;
 
 class Adresa
@@ -34,6 +35,8 @@ class Adresa
   int getApartament();
 
   friend ostream& operator << (ostream&, const Adresa&);
+
+  json toJSON();
 
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(Adresa, judet, oras, strada, numar, bloc)
 };
