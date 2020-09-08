@@ -6,6 +6,7 @@
 #include "../produs/produsResigilat.h"
 #include "../user/userNonPremium.h"
 #include "../user/userPremium.h"
+#include <fstream>
 
 using namespace std;
 using json = nlohmann::json;
@@ -18,13 +19,13 @@ public:
 
     static Produs* createProdus(string, json::iterator);
 
-    static vector<Produs*> getProdusVector(istream);
+    static vector<Produs*> getProdusVector(json j);
      
     static json getJsonProdus(vector<Produs*>&);
 
     static User* createUser(string, json::iterator);
 
-    static vector<User*> getUsersVector(istream);
+    static vector<User*> getUsersVector(json j);
 
     static json getJsonUser(vector<User*>&);
 };

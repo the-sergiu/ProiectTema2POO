@@ -41,13 +41,10 @@ Produs* ObjectFactory::createProdus(string type, json::iterator it) {
     }
 }  
 
-vector<Produs*> ObjectFactory::getProdusVector(istream i){
+vector<Produs*> ObjectFactory::getProdusVector(json j){
     
-    json j;
     vector<Produs*> vec;
-
-    i >> j;
-
+    
     for (json::iterator it = j.begin(); it != j.end(); ++it) {
 
         Produs *p = createProdus((*it)[TYPE_KEY], it);
@@ -85,12 +82,9 @@ User* ObjectFactory::createUser(string type, json::iterator it){
     }
 }
 
-vector<User*> ObjectFactory::getUsersVector(istream i){
-    json j;
+vector<User*> ObjectFactory::getUsersVector(json j){
+
     vector<User*> vec;
-
-    i >> j;
-
     for (json::iterator it = j.begin(); it != j.end(); ++it) {
 
         User *p = createUser((*it)[TYPE_KEY], it);
