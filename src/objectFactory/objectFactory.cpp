@@ -1,5 +1,8 @@
 #include "objectFactory.h"
 
+///Pt serj fa si tu in pula mea asta cu definuri:: Pls :)))) :*
+//Ceva de genul
+#define ALIMENTAR "alimentar"
 const char* produsTypes[] = {"alimentar", "nealimentar", "redus", "returnat", "resigilat"};
 const char* userTypes[] = {"premium", "nonPremium"};
 

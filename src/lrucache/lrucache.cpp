@@ -2,6 +2,7 @@
 #include <algorithm>
 
 using namespace std;
+/*
 
 LRUCache::LRUCache(int capacity)
 {
@@ -68,3 +69,4 @@ LRUCache::LRUCache(int capacity)
     
    lru = aux;
   }
+*/
