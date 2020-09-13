@@ -31,10 +31,10 @@ int main()
 
   json jtest = ObjectFactory::getJsonProdus(vec);
   
-  ofstream os("out.json");
+  ofstream os("../files/otput/out.json");
   os << jtest; 
 
-  ifstream i("input.json");
+  ifstream i("../files/input/input.json");
   json jin;
 
   i >> jin;
