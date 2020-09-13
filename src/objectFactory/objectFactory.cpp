@@ -1,42 +1,47 @@
 #include "objectFactory.h"
 
-///Pt serj fa si tu in pula mea asta cu definuri:: Pls :)))) :*
-//Ceva de genul
-#define ALIMENTAR "alimentar"
+#define ALIMENTAR   "alimentar"
+#define NEALIMENTAR "nealimentar"
+#define REDUS       "redus"
+#define RETURNAT    "returnat"
+#define RESIGILAT   "resigilat"
+#define PREMIUM     "premium"
+#define NONPREMIUM  "nonPremium"
+
 const char* produsTypes[] = {"alimentar", "nealimentar", "redus", "returnat", "resigilat"};
 const char* userTypes[] = {"premium", "nonPremium"};
 
 Produs* ObjectFactory::createProdus(string type, json::iterator it) {
 
-    if (type == produsTypes[0]) {
+    if (type == ALIMENTAR) {
 
         ProdusAlimentar *newProdus = new ProdusAlimentar();   
         *newProdus = it->get<ProdusAlimentar>();
         return newProdus;
     }
 
-    if (type == produsTypes[1]) {
+    if (type == NEALIMENTAR) {
 
         ProdusNealimentar *newProdus = new ProdusNealimentar();
         *newProdus = it->get<ProdusNealimentar>();
         return newProdus;
     }
 
-    if (type == produsTypes[2]) {
+    if (type == REDUS) {
 
         ProdusRedus *newProdus = new ProdusRedus();
         *newProdus = it->get<ProdusRedus>();
         return newProdus;
     }
 
-    if (type == produsTypes[3]) {
+    if (type == RETURNAT) {
 
         ProdusReturnat *newProdus = new ProdusReturnat();
         *newProdus = it->get<ProdusReturnat>();
         return newProdus;
     }
 
-    if (type == produsTypes[4]) {
+    if (type == RESIGILAT) {
             
         ProdusResigilat *newProdus = new ProdusResigilat();
         *newProdus = it->get<ProdusResigilat>();
@@ -70,14 +75,14 @@ json ObjectFactory::getJsonProdus(vector<Produs*>& vec){
 
 User* ObjectFactory::createUser(string type, json::iterator it){
 
-    if (type == userTypes[0]) {
+    if (type == PREMIUM) {
 
         UserPremium *newUser = new UserPremium();   
         *newUser = it->get<UserPremium>();
         return newUser;
     }
 
-    if (type == userTypes[1]) {
+    if (type == NONPREMIUM) {
 
         UserNonPremium *newUser = new UserNonPremium();
         *newUser = it->get<UserNonPremium>();
