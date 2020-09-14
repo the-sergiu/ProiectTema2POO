@@ -1,4 +1,4 @@
- #pragma once
+#pragma once
 #include "produsNealimentar.h"
 class ProdusReturnat : virtual public ProdusNealimentar
 {
@@ -15,6 +15,8 @@ public:
     
     //GET-ERI
     void setMotiv(string&);
+
+    const ProdusReturnat& operator = (const ProdusReturnat&);
 
     json toJSON();
 

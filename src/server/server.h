@@ -12,6 +12,7 @@
 #include "../user/userPremium.h"
 #include "../user/userNonPremium.h"
 #include "../cosproduse/cosProduse.h"
+#include "../objectFactory/objectFactory.h"
 
 using namespace std;
 

@@ -9,7 +9,6 @@
 #include "user/userPremium.h"
 #include "user/userNonPremium.h"
 #include "lrucache/lrucache.h"
-#include "json.hpp"
 #include "objectFactory/objectFactory.h"
 
 using namespace std;
@@ -23,31 +22,9 @@ Server *Server::instanta = 0;
 int main() 
 {
  
-  string str = "test";
-  vector<Produs*> vec;
-  
-  vec.push_back(new ProdusAlimentar(str, 1, str, 2.22f, str, 9));
-
-
-  json jtest = ObjectFactory::getJsonProdus(vec);
-  
-  ofstream os("../files/otput/out.json");
-  os << jtest; 
-
-  ifstream i("../files/input/input.json");
-  json jin;
-
-  i >> jin;
-
-  cout << jin <<endl<<endl;
-
-  vector<Produs*> res = ObjectFactory::getProdusVector(jin);
-
-  int size = res.size();
-
-  for(int i = 0; i < size; i++){
-   vec[i]->afisare();
-  }
+  Server *s = Server::InitializareServer();
+  s->populareProduse("src/files/input/input.json");
+  s->setMapProdusId_Produs();
 
   return 0;
 } 

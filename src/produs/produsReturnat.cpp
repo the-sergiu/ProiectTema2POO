@@ -12,9 +12,28 @@ ProdusReturnat::ProdusReturnat(const string& categorie, int id, const string& pr
 
 
 void ProdusReturnat::afisare() {
-	ProdusNealimentar::afisare();
-  cout << "Produs Returnat" << endl;
-	cout << "Motiv : " << this->motiv << endl;
+	cout << "Produs Returnat" << endl;
+  cout << "Nume Produs: " << this->nume << endl;
+  cout << "Producator: " << this->producator << endl;
+	cout << "Categorie: " << this->categorie << endl;
+	cout << "ID: " << this->id << endl; 
+  cout << "Cantitate: " << this->cantitate << endl;
+	cout << "Garantie: " << this->garantieAni << " ani" << endl;
+	cout << "Pret: " << this->pret << endl;
+	cout << "Motiv : " << this->motiv << endl << endl;
+}
+
+const ProdusReturnat& ProdusReturnat::operator = (const ProdusReturnat& a){
+  this->nume = a.nume;
+  this->producator = a.producator;
+  this->categorie = a.categorie;
+  this->id = a.id;
+  this->cantitate = a.cantitate;
+  this->garantieAni = a.garantieAni;
+  this->pret = a.pret;
+  this->motiv = a.motiv;
+  
+  return *this;
 }
 
 string& ProdusReturnat::getMotiv() {

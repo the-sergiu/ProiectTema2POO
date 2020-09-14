@@ -18,6 +18,8 @@ public:
     // GET-eri
     float getProcentReducere();
 
+    const ProdusRedus& operator = (const ProdusRedus&);
+
     json toJSON();
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusRedus, nume, cantitate, categorie, id, producator, garantieAni, pret, procentReducere)

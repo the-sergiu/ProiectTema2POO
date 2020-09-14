@@ -6,16 +6,22 @@ ProdusResigilat::ProdusResigilat():ProdusReturnat(),ProdusRedus(), ProdusNealime
   this->procentUzura = -1;
 }
 
-ProdusResigilat::ProdusResigilat(const string& categorie, int id, const string& producator, const string& nume, float pret, int garantieAni, int procentReducere, const string& motiv, int procentUzura, int cantitate)
-	:ProdusReturnat(categorie, id, producator, nume, pret, garantieAni, motiv, cantitate), ProdusRedus(categorie, id, producator, nume, pret, garantieAni, procentReducere, cantitate), ProdusNealimentar(categorie, id, producator, nume, pret, garantieAni, cantitate){
+ProdusResigilat::ProdusResigilat(const string& categorie, int id, const string& producator, const string& nume, float pret, int garantieAni, int procentReducere, const string& motiv, int cantitate, int procentUzura):ProdusReturnat(categorie, id, producator, nume, pret, garantieAni, motiv, cantitate), ProdusRedus(categorie, id, producator, nume, pret, garantieAni, procentReducere, cantitate), ProdusNealimentar(categorie, id, producator, nume, pret, garantieAni, cantitate){
 	this->procentUzura = procentUzura;
 }
 
 void ProdusResigilat::afisare() {
-	ProdusReturnat::afisare();
-  cout << "Produs Resigilat" << endl;
-	cout << "Procent Reducere : " << this->procentReducere << endl;
-	cout << "Procent Uzura : " << this->procentUzura << endl << endl;
+	cout << "Produs Resigilat" << endl;
+  cout << "Nume Produs: " << this->nume << endl;
+  cout << "Producator: " << this->producator << endl;
+	cout << "Categorie: " << this->categorie << endl;
+	cout << "ID: " << this->id << endl; 
+  cout << "Cantitate: " << this->cantitate << endl;
+	cout << "Garantie: " << this->garantieAni << " ani" << endl;
+	cout << "Pret: " << this->pret << endl;
+	cout << "Procent Reducere: " << this->procentReducere << endl;
+	cout << "Procent Uzura: " << this->procentUzura << endl;
+  cout << "Motiv retur: " << this->motiv << endl << endl;
 }
 
 void ProdusResigilat::setProcentUzura(int procentUzura) {
@@ -26,6 +32,23 @@ void ProdusResigilat::setProcentUzura(int procentUzura) {
 float ProdusResigilat::getProcentUzura() {
 	return this->procentUzura;
 }
+
+const ProdusResigilat& ProdusResigilat::operator = (const ProdusResigilat&  a){
+  this->nume = a.nume;
+  this->producator = a.producator;
+  this->categorie = a.categorie;
+  this->id = a.id;
+  this->cantitate = a.cantitate;
+  this->garantieAni = a.garantieAni;
+  this->pret = a.pret;
+  this->procentReducere = a.procentReducere;
+  this->motiv = a.motiv;
+  this->procentUzura = a.procentUzura;
+  
+  return *this;
+}
+
+
 
 json ProdusResigilat::toJSON(){
 	return json(*this);

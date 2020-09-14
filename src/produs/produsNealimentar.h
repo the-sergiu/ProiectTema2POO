@@ -24,6 +24,8 @@ public:
 
     bool operator == (const ProdusNealimentar&) const;
 
+    const ProdusNealimentar& operator = (const ProdusNealimentar&);
+
     json toJSON();
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusNealimentar, nume, cantitate, categorie, id, producator, garantieAni, pret)

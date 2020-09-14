@@ -24,6 +24,8 @@ public:
     bool operator < (const ProdusAlimentar&)const;
     bool operator > (const ProdusAlimentar&)const;
 
+    const ProdusAlimentar& operator = (const ProdusAlimentar&);
+
     json toJSON();
 
    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusAlimentar, nume, cantitate, categorie, id, leiPerKg, taraOrigine)

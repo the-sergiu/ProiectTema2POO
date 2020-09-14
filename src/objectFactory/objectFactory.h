@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <vector>
+#include <list>
 #include "../json.hpp"
 #include "../produs/produsAlimentar.h"
 #include "../produs/produsResigilat.h"
@@ -19,13 +19,13 @@ public:
 
     static Produs* createProdus(string, json::iterator);
 
-    static vector<Produs*> getProdusVector(json j);
+    static list<Produs*> getProdusList(json j);
      
-    static json getJsonProdus(vector<Produs*>&);
+    static json getJsonProdus(list<Produs*>&);
 
     static User* createUser(string, json::iterator);
 
-    static vector<User*> getUsersVector(json j);
+    static list<User*> getUsersList(json j);
 
-    static json getJsonUser(vector<User*>&);
+    static json getJsonUser(list<User*>&);
 };

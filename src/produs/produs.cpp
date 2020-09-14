@@ -78,6 +78,15 @@ string& Produs::getNume()
   return this->nume;
 }
 
+const Produs& Produs::operator=(const Produs& a){
+  this->nume = a.nume;
+  this->categorie = a.categorie;
+  this->id = a.id;
+  this->cantitate = a.cantitate;
+
+  return *this;
+}
+
 json Produs::toJSON(){
   return json(*this);
 }

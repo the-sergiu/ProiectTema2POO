@@ -20,7 +20,7 @@ void ProdusNealimentar::afisare(){
 	cout << "ID: " << this->id << endl; 
   cout << "Cantitate: " << this->cantitate << endl;
 	cout << "Garantie: " << this->garantieAni << " ani" << endl;
-	cout << "Pret: " << this->pret << endl;
+	cout << "Pret: " << this->pret << endl << endl;
 }
 
 // SET-eri
@@ -51,6 +51,17 @@ string& ProdusNealimentar::getProducator(){
 
 bool ProdusNealimentar::operator == (const ProdusNealimentar& obj)const {
 	return (this->pret == obj.pret) ? true : false;
+}
+
+const ProdusNealimentar& ProdusNealimentar::operator = (const ProdusNealimentar& a){
+  this->nume = a.nume;
+  this->producator = a.producator;
+  this->categorie = a.categorie;
+  this->id = a.id;
+  this->cantitate = a.cantitate;
+  this->garantieAni = a.garantieAni;
+  this->pret = a.pret; 
+  return *this;
 }
 
 json ProdusNealimentar::toJSON(){

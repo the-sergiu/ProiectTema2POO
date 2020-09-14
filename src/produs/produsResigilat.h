@@ -4,7 +4,6 @@
 class ProdusResigilat : public ProdusRedus, public ProdusReturnat
 {
 private:
-private:
     int procentUzura;
 public:
     ProdusResigilat();
@@ -20,6 +19,8 @@ public:
 
     json toJSON();
 
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusResigilat, nume, cantitate, categorie, id, producator, garantieAni, pret, motiv, procentReducere)
+    const ProdusResigilat& operator = (const ProdusResigilat&);
+
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusResigilat, nume, cantitate, categorie, id, producator, garantieAni, pret, motiv, procentReducere, procentUzura)
 };
 

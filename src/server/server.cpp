@@ -11,11 +11,11 @@ void Server::setMapProdusId_Produs()
   }
 
   //Testare initializare corecta map
-  // for(auto const& x : this->produsId_Produs){
-  // cout<<x.first<<" - ";
-  // x.second->afisare();
-  // cout<<endl;
-  // }
+  for(auto const& x : this->produsId_Produs){
+  cout<<x.first<<" - ";
+  x.second->afisare();
+  cout<<endl;
+  }
 }
 
 list<Produs*>& Server::getListaProduse()
@@ -29,7 +29,6 @@ void Server::setMapuser_CosProduse()
   {
     user_CosProduse[(*it)->getIdUser()] = new CosProduse;
   }
-  int nr = 0;
   //Testare initializare corecta map
   //for(auto const& x : this->user_CosProduse){
   // cout<<x.first<<" - ";
@@ -67,7 +66,7 @@ Server* Server::InitializareServer()
   return instanta;
 }
 
-void Server::populareProduse(const string & fisier)
+void Server::populareProduse(const string& fisier)
 {
   ifstream date(fisier);
   if (!date)
@@ -76,81 +75,10 @@ void Server::populareProduse(const string & fisier)
     return;
   }
 
-  int nr_produse, id, cantitate, garantieAni, procentUzura, procentReducere;
-  float leiPerKg, pret;
-  string tip_produs, categorie, nume, producator, motiv, taraOrigine;
-
-  date >> nr_produse;
-  cout << "Lista de produse are " << nr_produse << " elemente" << endl;
-
-  for (int i = 0 ; i < nr_produse; i++)
-  {
-    date >> tip_produs;
-
-    if (tip_produs == "Produs_alimentar")
-    {
-      date >> categorie;
-      date >> id;
-      date >> nume;
-      date >> leiPerKg;
-      date >> taraOrigine;
-      date >> cantitate;
-      prod.push_back(new ProdusAlimentar(categorie, id, nume, leiPerKg, taraOrigine, cantitate));
-    }
-
-    else if (tip_produs == "Produs_nealimentar")
-    {
-      date >> categorie;
-      date >> id;
-      date >> producator;
-      date >> nume;
-      date >> pret;
-      date >> garantieAni;
-      date >> cantitate;
-      prod.push_back(new ProdusNealimentar(categorie, id, producator, nume, pret, garantieAni, cantitate));
-    }
-
-    else if (tip_produs == "Produs_redus")
-    {
-      date >> categorie;
-      date >> id;
-      date >> producator;
-      date >> nume;
-      date >> pret;
-      date >> garantieAni;
-      date >> procentReducere;
-      date >> cantitate;
-      prod.push_back(new ProdusRedus(categorie, id, producator, nume, pret, garantieAni, procentReducere, cantitate));
-    }
-
-    else if (tip_produs == "Produs_returnat")
-    {
-      date >> categorie;
-      date >> id;
-      date >> producator;
-      date >> nume;
-      date >> pret;
-      date >> garantieAni;
-      date >> motiv;
-      date >> cantitate;
-      prod.push_back(new ProdusReturnat(categorie, id, producator, nume, pret, garantieAni, motiv, cantitate));
-    }
-
-    else if (tip_produs == "Produs_resigilat")
-    {
-      date >> categorie;
-      date >> id;
-      date >> producator;
-      date >> nume;
-      date >> pret;
-      date >> garantieAni;
-      date >> procentReducere;
-      date >> motiv;
-      date >> procentUzura;
-      date >> cantitate;
-      prod.push_back(new ProdusResigilat(categorie, id, producator, nume, pret, garantieAni, procentReducere, motiv, procentUzura, cantitate));
-    }
-  }
+  json jin;
+  date >> jin;
+  prod = ObjectFactory::getProdusList(jin);
+  
 }
 
 void Server::populareUseri(const string& fisier)

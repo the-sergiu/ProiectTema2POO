@@ -37,6 +37,8 @@ public:
     int getId();
     string& getNume();
 
+    const Produs& operator = (const Produs&);
+
     virtual json toJSON();
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(Produs, nume, cantitate, categorie, id)

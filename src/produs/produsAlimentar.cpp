@@ -51,6 +51,16 @@ bool ProdusAlimentar::operator > (const ProdusAlimentar& obj)const{
 	return (this->leiPerKg > obj.leiPerKg) ? true : false;
 }
 
+const ProdusAlimentar& ProdusAlimentar::operator = (const ProdusAlimentar& a){
+  this->nume = a.nume;
+  this->categorie = a.categorie;
+  this->id = a.id;
+  this->cantitate = a.cantitate;
+  this->leiPerKg = a.leiPerKg; 
+  this->taraOrigine = a.taraOrigine;
+  return *this;
+}
+
 json ProdusAlimentar::toJSON(){
 	return json(*this);
 }
