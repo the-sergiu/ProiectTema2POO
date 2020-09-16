@@ -11,10 +11,10 @@ Adresa::Adresa()
   apartament = 0;
 }
 
-Adresa::Adresa(const string& jud, const string& Oras, const string& str, int nr, const string& bl, int ap)
+Adresa::Adresa(const string& jud, const string& loc, const string& str, int nr, const string& bl, int ap)
 {
   judet = jud;
-  oras = Oras;
+  localitate = loc;
   strada = str;
   numar = nr;
   bloc = bl;
@@ -46,9 +46,9 @@ void Adresa::setJudet(const string& jud)
   judet = jud;
 }
 
-void Adresa::setOras(const string& Oras)
+void Adresa::setLocalitate(const string& loc)
 {
-  oras = Oras;
+  localitate = loc;
 }
 
 string& Adresa::getStrada()
@@ -75,15 +75,15 @@ string& Adresa::getJudet()
   return judet;
 }
 
-string& Adresa::getOras()
+string& Adresa::getLocalitate()
 {
-  return oras;
+  return localitate;
 }
 
 
 ostream& operator << (ostream& os, const Adresa& a)
 {
-  os <<"Judet: " << a.judet << ", Oras: " << a.oras <<", Strada: "<<a.strada<<", nr. "<<a.numar<<", bl. "<<a.bloc<<", ap. "<<a.apartament<<endl;
+  os <<"Judet: " << a.judet << ", Localitate: " << a.localitate <<", Strada: "<<a.strada<<", nr. "<<a.numar<<", bl. "<<a.bloc<<", ap. "<<a.apartament<<endl;
   return os;
 }
 

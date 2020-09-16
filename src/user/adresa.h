@@ -10,7 +10,7 @@ class Adresa
 {
   private:
   string judet;
-  string oras;
+  string localitate;
   string strada;
   int numar;
   string bloc;
@@ -21,14 +21,14 @@ class Adresa
   Adresa(const string&, const string&, const string&, int, const string&, int);
 
   void setJudet(const string&);
-  void setOras(const string&);
+  void setLocalitate(const string&);
   void setStrada(const string&);
   void setNumar(int);
   void setBloc(const string&);
   void setApartament(int);
 
   string& getJudet();
-  string& getOras();
+  string& getLocalitate();
   string& getStrada();
   int getNumar();
   string& getBloc();
@@ -38,5 +38,5 @@ class Adresa
 
   json toJSON();
 
-  NLOHMANN_DEFINE_TYPE_INTRUSIVE(Adresa, judet, oras, strada, numar, bloc)
+  NLOHMANN_DEFINE_TYPE_INTRUSIVE(Adresa, judet, localitate, strada, numar, bloc, apartament)
 };

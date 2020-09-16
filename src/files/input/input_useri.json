@@ -1,0 +1,450 @@
+[
+  {
+    "type": "premium",
+    "UserId": 21,
+    "prenume": "Lia",
+    "nume": "Kovacs",
+    "email": "liakovacs@gmail.com",
+    "dateFacturare": {
+      "judet": "Iasi",
+      "localitate": "Targu_Frumos",
+      "strada": "Parcului",
+      "numar": 10,
+      "bloc": "DC13",
+      "apartament": 9
+    },
+    "dateLivrare": {
+      "judet": "Iasi",
+      "localitate": "Targu_Frumos",
+      "strada": "Parcului",
+      "numar": 10,
+      "bloc": "DC13",
+      "apartament": 9
+    },
+    "costAbonamentPremium": 96.30,
+    "reduceri": [
+      [
+        5714,
+        24
+      ],
+      [
+        2178,
+        25
+      ],
+      [
+        1479,
+        21
+      ],
+      [
+        5184,
+        25
+      ],
+      [
+        719,
+        19
+      ],
+      [
+        4240,
+        15
+      ],
+      [
+        2991,
+        8
+      ],
+      [
+        3450,
+        6
+      ],
+      [
+        291,
+        19
+      ],
+      [
+        3237,
+        13
+      ],
+      [
+        4208,
+        14
+      ],
+      [
+        2076,
+        20
+      ],
+      [
+        1315,
+        10
+      ],
+      [
+        3151,
+        8
+      ],
+      [
+        4489,
+        20
+      ],
+      [
+        4709,
+        25
+      ],
+      [
+        5045,
+        16
+      ],
+      [
+        2824,
+        13
+      ],
+      [
+        2370,
+        7
+      ],
+      [
+        5977,
+        18
+      ],
+      [
+        1964,
+        25
+      ],
+      [
+        1027,
+        5
+      ],
+      [
+        350,
+        6
+      ],
+      [
+        3726,
+        22
+      ],
+      [
+        3067,
+        9
+      ],
+      [
+        812,
+        15
+      ],
+      [
+        2132,
+        13
+      ],
+      [
+        3454,
+        21
+      ],
+      [
+        123,
+        22
+      ],
+      [
+        5061,
+        11
+      ],
+      [
+        961,
+        19
+      ],
+      [
+        2308,
+        23
+      ],
+      [
+        5271,
+        5
+      ],
+      [
+        1609,
+        22
+      ],
+      [
+        4936,
+        12
+      ],
+      [
+        1100,
+        19
+      ],
+      [
+        3372,
+        9
+      ],
+      [
+        5587,
+        24
+      ],
+      [
+        4507,
+        21
+      ],
+      [
+        3683,
+        22
+      ],
+      [
+        4786,
+        21
+      ],
+      [
+        1465,
+        12
+      ],
+      [
+        5608,
+        13
+      ],
+      [
+        693,
+        18
+      ],
+      [
+        3487,
+        13
+      ]
+    ]
+  },
+  {
+    "type": "nonPremium",
+    "UserId": 11,
+    "prenume": "Ilinca",
+    "nume": "Ivan",
+    "email": "ilincaivan@gmail.com",
+    "dateFacturare": {
+      "judet": "Dambovita",
+      "localitate": "Gaesti",
+      "strada": "Viorelelor",
+      "numar": 210,
+      "bloc": "-",
+      "apartament": 0
+    },
+    "dateLivrare": {
+      "judet": "Dambovita",
+      "localitate": "Gaesti",
+      "strada": "Viorelelor",
+      "numar": 210,
+      "bloc": "-",
+      "apartament": 0
+    },
+    "costTransport": 13.63
+  },
+  {
+    "type": "premium",
+    "UserId": 22,
+    "prenume": "Ovidiu",
+    "nume": "Constantin",
+    "email": "ovidiuconstantin@gmail.com",
+    "dateFacturare": {
+      "judet": "Giurgiu",
+      "localitate": "Mihailesti",
+      "strada": "Toamnei",
+      "numar": 278,
+      "bloc": "C14",
+      "apartament": 13
+    },
+    "dateLivrare": {
+      "judet": "Giurgiu",
+      "localitate": "Mihailesti",
+      "strada": "Toamnei",
+      "numar": 278,
+      "bloc": "C14",
+      "apartament": 13
+    },
+    "costAbonamentPremium": 95.13,
+    "reduceri": [
+      [
+        184,
+        15
+      ],
+      [
+        5679,
+        16
+      ],
+      [
+        2560,
+        24
+      ],
+      [
+        2910,
+        25
+      ],
+      [
+        1990,
+        21
+      ],
+      [
+        4006,
+        5
+      ],
+      [
+        2577,
+        15
+      ],
+      [
+        2929,
+        13
+      ],
+      [
+        1967,
+        10
+      ],
+      [
+        2042,
+        5
+      ],
+      [
+        4046,
+        11
+      ],
+      [
+        4860,
+        25
+      ],
+      [
+        4874,
+        6
+      ],
+      [
+        5213,
+        20
+      ],
+      [
+        348,
+        19
+      ],
+      [
+        2422,
+        10
+      ],
+      [
+        2991,
+        20
+      ],
+      [
+        2129,
+        18
+      ],
+      [
+        1966,
+        14
+      ],
+      [
+        3758,
+        14
+      ],
+      [
+        5830,
+        23
+      ],
+      [
+        3068,
+        25
+      ],
+      [
+        940,
+        5
+      ],
+      [
+        5354,
+        16
+      ],
+      [
+        5125,
+        24
+      ],
+      [
+        1684,
+        7
+      ],
+      [
+        5148,
+        9
+      ],
+      [
+        184,
+        12
+      ],
+      [
+        2816,
+        25
+      ],
+      [
+        2024,
+        18
+      ],
+      [
+        4278,
+        22
+      ],
+      [
+        2673,
+        21
+      ],
+      [
+        1861,
+        8
+      ],
+      [
+        5328,
+        21
+      ],
+      [
+        5436,
+        18
+      ],
+      [
+        3945,
+        16
+      ]
+    ]
+  },
+  {
+    "type": "nonPremium",
+    "UserId": 12,
+    "prenume": "Adrian",
+    "nume": "Ilie",
+    "email": "adrianilie@gmail.com",
+    "dateFacturare": {
+      "judet": "Arges",
+      "localitate": "Sefanesti",
+      "strada": "Crizantemelor",
+      "numar": 58,
+      "bloc": "C14",
+      "apartament": 23
+    },
+    "dateLivrare": {
+      "judet": "Arges",
+      "localitate": "Sefanesti",
+      "strada": "Crizantemelor",
+      "numar": 58,
+      "bloc": "C14",
+      "apartament": 23
+    },
+    "costTransport": 11.23
+  },
+  {
+    "type": "nonPremium",
+    "UserId": 13,
+    "prenume": "Radu",
+    "nume": "Pop",
+    "email": "radupop@gmail.com",
+    "dateFacturare": {
+      "judet": "Iasi",
+      "localitate": "Pascani",
+      "strada": "George_Cosbuc",
+      "numar": 114,
+      "bloc": "C14",
+      "apartament": 2
+    },
+    "dateLivrare": {
+      "judet": "Iasi",
+      "localitate": "Pascani",
+      "strada": "George_Cosbuc",
+      "numar": 114,
+      "bloc": "C14",
+      "apartament": 2
+    },
+    "costTransport": 11.43
+  }
+]

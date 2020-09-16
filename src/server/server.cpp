@@ -11,11 +11,11 @@ void Server::setMapProdusId_Produs()
   }
 
   //Testare initializare corecta map
-  for(auto const& x : this->produsId_Produs){
-  cout<<x.first<<" - ";
-  x.second->afisare();
-  cout<<endl;
-  }
+  // for(auto const& x : this->produsId_Produs){
+  // cout<<x.first<<" - ";
+  // x.second->afisare();
+  // cout<<endl;
+  // }
 }
 
 list<Produs*>& Server::getListaProduse()
@@ -23,18 +23,18 @@ list<Produs*>& Server::getListaProduse()
   return this->prod;
 }
 
-void Server::setMapuser_CosProduse()
+void Server::setMapUser_CosProduse()
 {
   for (auto it = usr.begin(); it != usr.end(); ++it)
   {
     user_CosProduse[(*it)->getIdUser()] = new CosProduse;
   }
   //Testare initializare corecta map
-  //for(auto const& x : this->user_CosProduse){
+  // for(auto const& x : this->user_CosProduse){
   // cout<<x.first<<" - ";
   // x.second->afisare();
   // cout<<endl;
-  //}
+  // }
 }
 
 list<User*>& Server::getListaUseri()
@@ -78,7 +78,6 @@ void Server::populareProduse(const string& fisier)
   json jin;
   date >> jin;
   prod = ObjectFactory::getProdusList(jin);
-  
 }
 
 void Server::populareUseri(const string& fisier)
@@ -90,67 +89,9 @@ void Server::populareUseri(const string& fisier)
     return;
   }
 
-  int nr_useri, id, nr_stradaf, apartamentf, nr_stradal, apartamentl, nr_reduceri, idprodus, reducere;
-  float costTransport;
-  unordered_map<int, int> reduceri;
-  string judet, localitate, nume, prenume, email, stradaf, blocf, stradal, blocl, tip_user;
-
-  date >> nr_useri;
-  cout << "Lista de useri are " << nr_useri << " elemente" << endl;
-
-  for (int i = 0 ; i < nr_useri; i++)
-  {
-    date >> tip_user;
-
-    if (tip_user == "User_nonpremium")
-    {
-      date >> id;
-      date >> nume;
-      date >> prenume;
-      date >> email;
-      date >> judet;
-      date >> localitate;
-      date >> stradaf;
-      date >> nr_stradaf;
-      date >> blocf;
-      date >> apartamentf;
-      date >> stradal;
-      date >> nr_stradal;
-      date >> blocl;
-      date >> apartamentl;
-      date >> costTransport;
-      usr.push_back(new UserNonPremium(judet, localitate, stradaf, nr_stradaf, blocf, apartamentf, stradal, nr_stradal, blocl, apartamentl, id, nume, prenume, email,  costTransport));
-    }
-
-    else if (tip_user == "User_premium")
-    {
-      date >> id;
-      date >> nume;
-      date >> prenume;
-      date >> email;
-      date >> judet;
-      date >> localitate;
-      date >> stradaf;
-      date >> nr_stradaf;
-      date >> blocf;
-      date >> apartamentf;
-      date >> stradal;
-      date >> nr_stradal;
-      date >> blocl;
-      date >> apartamentl;
-      date >> nr_reduceri;
-
-      for (int j = 0 ; j < nr_reduceri ; j++)
-      {
-        date >> idprodus;
-        date >> reducere;
-        reduceri[idprodus] = reducere;
-      }
-
-      usr.push_back(new UserPremium(judet, localitate, stradaf, nr_stradaf, blocf, apartamentf, stradal, nr_stradal, blocl, apartamentl, id, nume, prenume, email,  reduceri));
-      reduceri.clear(); //Curatare map
-    }
-  }
+  json jin;
+  date >> jin;
+  usr = ObjectFactory::getUserList(jin);
 }
 
 void Server::requestAddProdus(int userID, int produsID, int cantitate)

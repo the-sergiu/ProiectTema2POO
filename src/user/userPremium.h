@@ -7,18 +7,17 @@ using namespace std;
 class UserPremium : public User
 {
   protected:
-    // idProdus-procentReducere
-    unordered_map<int, int> reduceri;
+    unordered_map<int, int> reduceri;// idProdus-procentReducere
     int costAbonamentPremium;
   
   public:
     UserPremium();
 
-    UserPremium(const string&, const string&, const string&, int, const string&, int, const string&, int, const string&, int, int, const string&, const string&, const string&, const unordered_map<int,int>&);
+    UserPremium(const string&, const string&, const string&, int, const string&, int, const string&, const string&, const string&, int, const string&, int, int, const string&, const string&, const string&, int, const unordered_map<int,int>&);
 
     void vizualizareUser();
     
     json toJSON();
 
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(UserPremium, dateFacturare, dateLivrare, nume, prenume, email, UserId, reduceri, costAbonamentPremium)
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(UserPremium, dateFacturare, dateLivrare, nume, prenume, email, UserId, costAbonamentPremium, reduceri)
 };

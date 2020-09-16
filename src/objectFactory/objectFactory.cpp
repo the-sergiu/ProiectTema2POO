@@ -92,7 +92,7 @@ User* ObjectFactory::createUser(string type, json::iterator it){
     else return NULL;
 }
 
-list<User*> ObjectFactory::getUsersList(json j){
+list<User*> ObjectFactory::getUserList(json j){
 
     list<User*> lst;
     for (json::iterator it = j.begin(); it != j.end(); ++it) {

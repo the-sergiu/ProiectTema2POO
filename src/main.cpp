@@ -21,10 +21,25 @@ Server *Server::instanta = 0;
 
 int main() 
 {
- 
   Server *s = Server::InitializareServer();
-  s->populareProduse("src/files/input/input.json");
+
+  //Testare citire produse din json
+  s->populareProduse("src/files/input/input_produse.json");
   s->setMapProdusId_Produs();
+
+  //Testare citire useri din json
+  s->populareUseri("src/files/input/input_useri.json");
+  s->setMapUser_CosProduse();
+
+  json jtest1 = ObjectFactory::getJsonUser(s->getListaUseri());
+  
+  ofstream os1("src/files/output/output_useri.json");
+  os1 << jtest1; 
+
+  json jtest2 = ObjectFactory::getJsonProdus(s->getListaProduse());
+  
+  ofstream os2("src/files/output/output_produse.json");
+  os2 << jtest2; 
 
   return 0;
 } 

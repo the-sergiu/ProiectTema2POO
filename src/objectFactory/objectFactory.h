@@ -25,7 +25,7 @@ public:
 
     static User* createUser(string, json::iterator);
 
-    static list<User*> getUsersList(json j);
+    static list<User*> getUserList(json j);
 
     static json getJsonUser(list<User*>&);
 };
