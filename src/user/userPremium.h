@@ -17,6 +17,12 @@ class UserPremium : public User
     UserPremium(const string&, const string&, const string&, int, const string&, int, const string&, int, const string&, int, int, const string&, const string&, const string&, const unordered_map<int,int>&);
 
     void vizualizareUser();
+
+    void setReduceri(unordered_map<int,int>);
+    void setCostAbonamentPremium(int cap);
+
+    unordered_map<int, int> getReduceri();
+    int getCostAbonamentPremium();
     
     json toJSON();
 
