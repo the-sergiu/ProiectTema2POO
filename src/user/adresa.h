@@ -18,7 +18,10 @@ class Adresa
 
   public:
   Adresa();
+  Adresa(const Adresa&);
   Adresa(const string&, const string&, const string&, int, const string&, int);
+  
+
 
   void setJudet(const string&);
   void setOras(const string&);
@@ -33,6 +36,9 @@ class Adresa
   int getNumar();
   string& getBloc();
   int getApartament();
+
+  bool operator==(const Adresa &);
+  bool operator!=(const Adresa &);
 
   friend ostream& operator << (ostream&, const Adresa&);
 
