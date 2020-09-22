@@ -19,7 +19,8 @@ using namespace std;
 
 string returnClassType(string s);
 
-// Instanta Singleton
+// Instanta Singleton (Design Pattern)
+// Pentru mai multe detalii, inspectati 'Resurse Utile'
 Server *Server::instanta = 0;
 
 int main(int argc, char** argv) 
@@ -52,8 +53,25 @@ int main(int argc, char** argv)
   // }
 
   TestHelper p;
+  json result;
 
-  p.Test1(argv[1], argv[2]);
+  ifstream inStream(argv[1]);
+  ofstream oStream(argv[2]);
+  int testIndex = atoi(argv[3]);
+
+  switch (testIndex) 
+  {
+    case 1:
+      result = p.TestIerarhieClasaProdus();
+      break;
+
+    case 2:
+      result = p.TestIerarhieClasaUser();
+      break;
+      
+    default:
+      break;
+  }
 
   return 0;
 } 
