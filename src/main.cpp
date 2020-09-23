@@ -3,6 +3,7 @@
 #include <vector>
 #include <list>
 
+#include "rezolvari/rezolvareCerinte.h"
 #include "produs/produsResigilat.h"
 #include "produs/produsAlimentar.h"
 #include "server/server.h"
@@ -14,32 +15,17 @@
 using namespace std;
 
 
-string returnClassType(string s);
-
 // Instanta Singleton
 Server *Server::instanta = 0;
 
 int main() 
 {
-  Server *s = Server::InitializareServer();
 
-  //Testare citire produse din json
-  s->populareProduse("src/files/input/input_produse.json");
-  s->setMapProdusId_Produs();
+  rezolvareCerinte rez;
 
-  //Testare citire useri din json
-  s->populareUseri("src/files/input/input_useri.json");
-  s->setMapUser_CosProduse();
-
-  json jtest1 = ObjectFactory::getJsonUser(s->getListaUseri());
-  
-  ofstream os1("src/files/output/output_useri.json");
-  os1 << jtest1; 
-
-  json jtest2 = ObjectFactory::getJsonProdus(s->getListaProduse());
-  
-  ofstream os2("src/files/output/output_produse.json");
-  os2 << jtest2; 
+  rez.Cerinta1();
+  rez.Cerinta2a();
+  rez.Cerinta2b();
 
   return 0;
 } 

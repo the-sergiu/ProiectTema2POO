@@ -14,7 +14,7 @@ class UserNonPremium : public User
   string getUserType();
   
   void setCostTransport(int);
-  int getCostTransport();
+  float getCostTransport();
   void vizualizareUser();
 
   json toJSON();

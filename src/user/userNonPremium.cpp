@@ -14,7 +14,7 @@ UserNonPremium::UserNonPremium(){}
     costTransport = cost;
   }
 
-  int UserNonPremium::getCostTransport()
+  float UserNonPremium::getCostTransport()
   {
     return this->costTransport;
   }

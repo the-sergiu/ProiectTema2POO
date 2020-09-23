@@ -43,6 +43,10 @@ string UserPremium::getUserType(){
   return "premium";
 }
 
+float UserPremium::getCostTransport(){
+  return 0;
+}
+
 json UserPremium::toJSON(){
   return json(*this); 
 }

@@ -16,11 +16,14 @@ Initializati serverul. Listele de useri si produse sunt initializate folosind fu
 
 -- CERINTE
 2. 2 tipuri de cautari/interogari/cerinte pentru manipularea datelor de pe server (folosind map-uri si listele de obiecte)
-    a. George are nevoie de un aspirator nou. Fiind inainte de salariu, George se gandeste ca cea mai buna solutie ar fi sa achizitioneze un produs resigilat. Astfel, cautati in lista de produse aspiratoarele resigilate (**se va folosi dynamic cast, pentru a gasi produsele resigilate) si salvati in fisierul de output id-urile acestor produse.
+    
+    a. George are nevoie de un espressor nou. Fiind inainte de salariu, George cauta un produs redus. Astfel, cautati in lista de produse espressoarele reduse si salvati in fisierul de output aceste produse
 
-    b. Utilizatorul Daniel Sima, avand ID-ul 342, vrea sa isi cumpere un telefon, avand un buget de 1500-2000 de lei. Fiind utilizator premium, el are vouchere personalizate. Va alege telefonul pe baza pretului (calculat pe baza reducerii de pret, daca este un produs redus, dar si prin aplicarea unei eventuale reduceri personale). Folosind map-ul de reduceri al lui Daniel, salvati in fisierul de output id-ul telefonului cu pretul cel mai mic (pret final, dupa aplicarea reducerilor). Atentie! Daniel nu vrea produse resigilate!
+    b. Salvati in fisierul de output utilizatorii nonpremium care au un cost de transport < 11.5 lei. 
 
-    c. Salvati in fisierul de output id-urile utilizatorilor nonpremium care au un cost de transport < 10 lei. 
+    c. Utilizatorul Daniel Sima, avand ID-ul 342, vrea sa isi cumpere un telefon, avand un buget de 1500-2000 de lei. Fiind utilizator premium, el are vouchere personalizate. Va alege telefonul pe baza pretului (calculat pe baza reducerii de pret, daca este un produs redus, dar si prin aplicarea unei eventuale reduceri personale). Folosind map-ul de reduceri al lui Daniel, salvati in fisierul de output id-ul telefonului cu pretul cel mai mic (pret final, dupa aplicarea reducerilor). Atentie! Daniel nu vrea produse resigilate!
+
+
 
     
 3. LRU Cache + exemplu (implementare)

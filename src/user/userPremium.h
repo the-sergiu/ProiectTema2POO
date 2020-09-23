@@ -17,6 +17,7 @@ class UserPremium : public User
 
     string getUserType();
     void vizualizareUser();
+    float getCostTransport();
     
     json toJSON();
 
