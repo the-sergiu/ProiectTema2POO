@@ -10,6 +10,8 @@ public:
     ProdusResigilat(const string&, int, const string&, const string&, float, int, int, const string&, int, int);
     
     void afisare();
+    string getProdusType();
+
 
     //SET-ERI
     void setProcentUzura(int);

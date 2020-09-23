@@ -8,6 +8,7 @@ public:
     ProdusReturnat();
     ProdusReturnat(const string&, int, const string&, const string&, float, int, const string&, int);
     void afisare();
+    string getProdusType();
 
 
     //SET-ERI

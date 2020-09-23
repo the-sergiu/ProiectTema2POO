@@ -44,6 +44,10 @@ void ProdusReturnat::setMotiv(string &motiv){
 	this->motiv = motiv;
 }
 
+string ProdusReturnat::getProdusType(){
+  return "returnat";
+}
+
 json ProdusReturnat::toJSON(){
 	return json(*this);
 }

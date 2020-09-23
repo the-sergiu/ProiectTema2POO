@@ -48,7 +48,9 @@ const ProdusResigilat& ProdusResigilat::operator = (const ProdusResigilat&  a){
   return *this;
 }
 
-
+string ProdusResigilat::getProdusType(){
+  return "resigilat";
+}
 
 json ProdusResigilat::toJSON(){
 	return json(*this);

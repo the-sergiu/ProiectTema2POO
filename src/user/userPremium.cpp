@@ -39,6 +39,10 @@ void UserPremium::vizualizareUser()
   cout << endl;
 }
 
+string UserPremium::getUserType(){
+  return "premium";
+}
+
 json UserPremium::toJSON(){
   return json(*this); 
 }

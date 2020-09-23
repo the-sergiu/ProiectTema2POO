@@ -48,6 +48,10 @@ void ProdusRedus::setProcentReducere(int procentReducere) {
 	this->procentReducere = procentReducere;
 }
 
+string ProdusRedus::getProdusType(){
+  return "redus";
+}
+
 json ProdusRedus::toJSON(){
 	return json(*this);
 }

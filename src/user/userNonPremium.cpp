@@ -33,6 +33,10 @@ UserNonPremium::UserNonPremium(){}
 
   }
 
+  string UserNonPremium::getUserType(){
+  return "nonpremium";
+}
+
   json UserNonPremium::toJSON(){
     return json(*this);
   }

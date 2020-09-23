@@ -18,6 +18,7 @@ protected:
 public:
     virtual void afisare() = 0;
     virtual ~Produs() = 0;
+    virtual string getProdusType() = 0;
 
     Produs();
     Produs(const string&, int, const string&, int);

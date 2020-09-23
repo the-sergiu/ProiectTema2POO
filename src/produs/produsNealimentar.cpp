@@ -64,6 +64,10 @@ const ProdusNealimentar& ProdusNealimentar::operator = (const ProdusNealimentar&
   return *this;
 }
 
+string ProdusNealimentar::getProdusType(){
+  return "nealimentar";
+}
+
 json ProdusNealimentar::toJSON(){
 	return json(*this);
 }

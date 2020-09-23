@@ -12,6 +12,7 @@ public:
     void afisare();
 
     float pretDupaReducere()const;
+    string getProdusType();
     
     // SET-eri
     void setProcentReducere(int);

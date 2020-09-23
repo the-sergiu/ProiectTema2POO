@@ -13,6 +13,7 @@ public:
     ProdusNealimentar(const string&, int, const string&, const string&, float, int, int);
 
     void afisare();
+    string getProdusType();
 
     void setGarantieAni(int);
     void setPret(float);

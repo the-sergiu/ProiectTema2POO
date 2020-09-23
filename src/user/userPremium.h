@@ -15,6 +15,7 @@ class UserPremium : public User
 
     UserPremium(const string&, const string&, const string&, int, const string&, int, const string&, const string&, const string&, int, const string&, int, int, const string&, const string&, const string&, int, const unordered_map<int,int>&);
 
+    string getUserType();
     void vizualizareUser();
     
     json toJSON();

@@ -11,6 +11,7 @@ public:
     ProdusAlimentar();
     ProdusAlimentar(const string&, int, const string&, float, const string&, int);
     void afisare();
+    string getProdusType();
 
     void setLeiPerKg(float);
     void setTaraDeOrigine(const string&);

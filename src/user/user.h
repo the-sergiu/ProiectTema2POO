@@ -40,6 +40,7 @@ class User
     virtual json toJSON();
     virtual void vizualizareUser() = 0;
     virtual ~User() = 0;
+    virtual string getUserType() = 0;
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(User, dateFacturare, dateLivrare, nume, prenume, email, UserId)
 };
