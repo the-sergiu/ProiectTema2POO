@@ -22,4 +22,8 @@ class rezolvareCerinte{
     void Cerinta1();
     void Cerinta2a();
     void Cerinta2b();
+    void Cerinta2c();
+    void Cerinta2d();
+    void Cerinta2e();
+    void Cerinta2f();
 };

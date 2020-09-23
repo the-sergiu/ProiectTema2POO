@@ -47,6 +47,8 @@ void rezolvareCerinte::Cerinta2a(){
   json jrezolvare = ObjectFactory::getJsonProdus(rezolvare);
   
   os << jrezolvare; 
+
+  rezolvare.clear();
 }
 
 void rezolvareCerinte::Cerinta2b(){
@@ -63,4 +65,11 @@ void rezolvareCerinte::Cerinta2b(){
   
   os << jrezolvare; 
 
+  rezolvare.clear();
+
 }
+
+void rezolvareCerinte::Cerinta2c(){}
+void rezolvareCerinte::Cerinta2d(){}
+void rezolvareCerinte::Cerinta2e(){}
+void rezolvareCerinte::Cerinta2f(){}
