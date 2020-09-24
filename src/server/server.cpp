@@ -29,7 +29,7 @@ void Server::setMapuser_CosProduse()
   {
     user_CosProduse[(*it)->getIdUser()] = new CosProduse;
   }
-  int nr = 0;
+  
   //Testare initializare corecta map
   //for(auto const& x : this->user_CosProduse){
   // cout<<x.first<<" - ";
