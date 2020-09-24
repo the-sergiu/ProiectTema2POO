@@ -2,7 +2,7 @@
 #include <algorithm>
 
 using namespace std;
-/*
+
 
 LRUCache::LRUCache(int capacity)
 {
@@ -56,7 +56,9 @@ LRUCache::LRUCache(int capacity)
   vector<int> LRUCache::getLRU() {
     return this->lru;
   }
-
+  int LRUCache::getLRUCapacity() {
+    return this->lru.capacity();
+  }
 
 //set-eri
   void LRUCache::setCapacity(int capacity) {
@@ -69,4 +71,3 @@ LRUCache::LRUCache(int capacity)
     
    lru = aux;
   }
-*/
