@@ -1,5 +1,6 @@
- #pragma once
+#pragma once
 #include "produsNealimentar.h"
+
 class ProdusReturnat : virtual public ProdusNealimentar
 {
 protected:

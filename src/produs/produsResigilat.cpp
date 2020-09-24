@@ -2,18 +2,20 @@
 
 using namespace std;
 
-ProdusResigilat::ProdusResigilat():ProdusReturnat(),ProdusRedus(), ProdusNealimentar(){
+ProdusResigilat::ProdusResigilat() {
   this->procentUzura = -1;
 }
 
 ProdusResigilat::ProdusResigilat(const string& categorie, int id, const string& producator, const string& nume, float pret, int garantieAni, int procentReducere, const string& motiv, int procentUzura, int cantitate)
-	:ProdusReturnat(categorie, id, producator, nume, pret, garantieAni, motiv, cantitate), ProdusRedus(categorie, id, producator, nume, pret, garantieAni, procentReducere, cantitate), ProdusNealimentar(categorie, id, producator, nume, pret, garantieAni, cantitate){
+	:	ProdusNealimentar(categorie, id, producator, nume, pret, garantieAni, cantitate) {
+		ProdusRedus(categorie, id, producator, nume, pret, garantieAni, procentReducere, cantitate),
+	 	ProdusReturnat(categorie, id, producator, nume, pret, garantieAni, motiv, cantitate), 
 	this->procentUzura = procentUzura;
 }
 
 void ProdusResigilat::afisare() {
 	ProdusReturnat::afisare();
-  cout << "Produs Resigilat" << endl;
+  	cout << "Produs Resigilat" << endl;
 	cout << "Procent Reducere : " << this->procentReducere << endl;
 	cout << "Procent Uzura : " << this->procentUzura << endl << endl;
 }

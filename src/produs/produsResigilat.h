@@ -1,9 +1,9 @@
 #pragma once
 #include "produsRedus.h"
 #include "produsReturnat.h"
+
 class ProdusResigilat : public ProdusRedus, public ProdusReturnat
 {
-private:
 private:
     int procentUzura;
 public:

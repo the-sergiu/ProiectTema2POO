@@ -11,6 +11,7 @@ public:
 	
     ProdusNealimentar();
     ProdusNealimentar(const string&, int, const string&, const string&, float, int, int);
+    ProdusNealimentar(const ProdusNealimentar& pn);
 
     void afisare();
 
