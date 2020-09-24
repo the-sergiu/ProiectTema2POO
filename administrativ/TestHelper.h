@@ -12,4 +12,5 @@ class TestHelper {
   public:
     json TestIerarhieClasaProdus();
     json TestIerarhieClasaUser();
+    json TestClasaCosProduse();
 };

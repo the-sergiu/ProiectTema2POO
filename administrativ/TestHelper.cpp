@@ -220,4 +220,48 @@ json TestHelper::TestIerarhieClasaUser() {
   return successJson;
 }
 
+json TestHelper::TestClasaCosProduse()
+{
+    // Test Constructori Cos Produse
+    string check = "check";
+    CosProduse *cp = new CosProduse();
+    CosProduse *cp2 = new CosProduse(check);
+
+    if (cp2 == NULL)
+    {
+      return failJson;
     }
+
+    // Test Set + Metode CosProduse
+    string metodaPlata = "Card";
+    
+    cp->setMetodaPlata(metodaPlata);
+    cp->addProdus(5, 3);
+
+    // Test Get + Metode CosProduse
+    if (cp->getCantitate(5) != 3) 
+    {
+      return failJson;
+    }
+
+    // Map ajutator pentru verificarea operatiilor
+    unordered_map<int, int> TestCos;
+    TestCos[5] = 3;
+    
+    if (cp->getCos() != TestCos) 
+    {
+      return failJson;
+    }
+
+    cp->deleteProdus(5);
+    TestCos.clear();
+
+    if (cp->getCos() != TestCos) 
+    {
+      return failJson;
+    }
+
+    return successJson; 
+}
+
+  }
