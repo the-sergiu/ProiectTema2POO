@@ -59,6 +59,11 @@ int main(int argc, char** argv)
   ofstream oStream(argv[2]);
   int testIndex = atoi(argv[3]);
 
+  if (argc != 3)
+  {
+    return failJson;
+  }
+
   switch (testIndex) 
   {
     case 1:
@@ -68,10 +73,14 @@ int main(int argc, char** argv)
     case 2:
       result = p.TestIerarhieClasaUser();
       break;
-      
+    case 3:
+      result = p.TestClasaCosProduse();
+      break;
     default:
       break;
   }
+
+  oStream<<result;
 
   return 0;
 } 

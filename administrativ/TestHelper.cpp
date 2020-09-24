@@ -219,3 +219,5 @@ json TestHelper::TestIerarhieClasaUser() {
 
   return successJson;
 }
+
+    }
