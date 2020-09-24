@@ -9,6 +9,11 @@ json TestHelper::TestIerarhieClasaProdus() {
       // Test Constructori ProdusAlimentar
       ProdusAlimentar *pa = new ProdusAlimentar();
       ProdusAlimentar *pa2 = new ProdusAlimentar(str, 78, str, 7.89, str, 200);
+
+      if (pa2 == NULL)
+      {
+        return failJson;
+      }
       
       // Test Set ProdusAlimentar
       float val = 9.27;
@@ -30,7 +35,12 @@ json TestHelper::TestIerarhieClasaProdus() {
       // Test Construcori ProdusNealimentar
       ProdusNealimentar *pn = new ProdusNealimentar();
       ProdusNealimentar *pn2 = new ProdusNealimentar(str, 20, str, str, 4.78, 30, 40);
-      
+
+      if (pn2 == NULL)
+      {
+        return failJson;
+      }
+
       // Test Set ProdusNealimentar
       int garantie = 5;
       float pret = 5.79;
@@ -56,7 +66,12 @@ json TestHelper::TestIerarhieClasaProdus() {
       // Test Constructori ProdusRedus
       ProdusRedus *pr = new ProdusRedus();
       ProdusRedus *pr_ref = new ProdusRedus(str, 69, str, str, 4.20, 2, 60, 100);
-      
+
+      if (pr_ref == NULL)
+      {
+        return NULL;
+      }
+
       int procentReducere = 60;
       
       // Test Set ProdusRedus
@@ -80,6 +95,11 @@ json TestHelper::TestIerarhieClasaProdus() {
       ProdusReturnat *prt = new ProdusReturnat();
       ProdusReturnat *prt_ref = new ProdusReturnat(str, 69, str, str, 4.20, 5, str, 51);
 
+      if (prt_ref == NULL)
+      {
+        return NULL;
+      }
+
       string motiv = "aiurea";
       // Test Set ProdusReturnat
       prt->setMotiv(motiv);
@@ -92,6 +112,11 @@ json TestHelper::TestIerarhieClasaProdus() {
       // Test Constructori ProdusResigilat
       ProdusResigilat *pr_res = new ProdusResigilat();
       ProdusResigilat *pr_res2 = new ProdusResigilat(str, 5, str, str, 6.89, 25, 28, str, 29, 30);
+
+      if (pr_res2 == NULL)
+      {
+        return failJson;
+      }
 
       // Test Set ProdusResigilat
       int procent = 6;
@@ -154,6 +179,11 @@ json TestHelper::TestIerarhieClasaUser() {
     UserPremium *up = new UserPremium();
     UserPremium *up2 = new UserPremium(check, check, check, 20, check, 200, check, 20, check, 30, 200, check, check, check, reduceri_test);
 
+    if (up2 == NULL)
+    {
+      return failJson;
+    }
+
     // Variabile ajutatoare User
     string nume = "Salam";
     string prenume = "Florin";
@@ -208,6 +238,11 @@ json TestHelper::TestIerarhieClasaUser() {
     // Test Constructor UserNonPremium
     UserNonPremium *unp = new UserNonPremium();
     UserNonPremium *unp2 = new UserNonPremium(check, check, check, 40, check, 60, check, 20, check, 50, 200, check, check, check, 3.40);
+
+    if (unp2 == NULL)
+    {
+      return failJson;
+    }
 
     // Test Set UserNonpremium
     unp->setCostTransport(costTransport);

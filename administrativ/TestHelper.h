@@ -1,6 +1,7 @@
 #pragma once
 #include "../src/produs/produsResigilat.h"
 #include "../src/produs/produsAlimentar.h"
+#include "../src/lrucache/lrucache.h"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -13,4 +14,5 @@ class TestHelper {
     json TestIerarhieClasaProdus();
     json TestIerarhieClasaUser();
     json TestClasaCosProduse();
+    json TestLRUCacheSimple();
 };

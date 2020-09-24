@@ -47,6 +47,8 @@ Produs* ObjectFactory::createProdus(string type, json::iterator it) {
         *newProdus = it->get<ProdusResigilat>();
         return newProdus;
     }
+
+    return NULL;
 }  
 
 vector<Produs*> ObjectFactory::getProdusVector(json j){
@@ -66,7 +68,7 @@ json ObjectFactory::getJsonProdus(vector<Produs*>& vec){
 
     json outj;
 
-    for (int i = 0; i < vec.size(); i++) {
+    for (unsigned int i = 0; i < vec.size(); i++) {
         outj.push_back(vec[i]->toJSON());
     }
 
@@ -88,6 +90,8 @@ User* ObjectFactory::createUser(string type, json::iterator it){
         *newUser = it->get<UserNonPremium>();
         return newUser;
     }
+
+    return NULL;
 }
 
 vector<User*> ObjectFactory::getUsersVector(json j){
@@ -104,7 +108,7 @@ vector<User*> ObjectFactory::getUsersVector(json j){
 json ObjectFactory::getJsonUser(vector<User*>& vec){
     json outj;
 
-    for (int i = 0; i < vec.size(); i++) {
+    for (unsigned int i = 0; i < vec.size(); i++) {
         outj.push_back(vec[i]->toJSON());
     }
 
