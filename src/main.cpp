@@ -24,12 +24,12 @@ int main()
   rezolvareCerinte rez;
 
   rez.Cerinta1();
-  rez.Cerinta2a();
-  rez.Cerinta2b();
-  rez.Cerinta2c();
-  rez.Cerinta2d();
+  //rez.Cerinta2a();
+  //rez.Cerinta2b();
+  //rez.Cerinta2c();
+  //rez.Cerinta2d();
   rez.Cerinta2e();
-  rez.Cerinta2f();
+  //rez.Cerinta2f();
 
   return 0;
 } 

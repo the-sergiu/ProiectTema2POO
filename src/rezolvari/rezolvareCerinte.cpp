@@ -71,5 +71,58 @@ void rezolvareCerinte::Cerinta2b(){
 
 void rezolvareCerinte::Cerinta2c(){}
 void rezolvareCerinte::Cerinta2d(){}
-void rezolvareCerinte::Cerinta2e(){}
+
+void rezolvareCerinte::Cerinta2e(){
+  list<User*> rezolvare;
+  map<string,int> useri_per_judet;
+
+  for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
+  {
+    Adresa dateLivrare = (*it)->getDateLivrare();
+    useri_per_judet[dateLivrare.getJudet()] = 0;
+  }
+
+  for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
+  {
+    Adresa dateLivrare = (*it)->getDateLivrare();
+    useri_per_judet[dateLivrare.getJudet()] += 1;
+  }
+
+  //Afisare date din map
+  //int total = 0;
+  // for(auto const& x : useri_per_judet){
+  // cout<<x.first<<" - "<<x.second;
+  // total += x.second;
+  // cout<<endl;
+  // }
+  // cout<<total;
+
+  //Cautare judet cu nr maxim de useri
+  auto it = useri_per_judet.begin();
+  string jud_max = it->first;
+  int nr_max = it->second;
+
+  for(auto const& x : useri_per_judet){
+    if (x.second > nr_max)
+    {
+      jud_max = x.first;
+      nr_max = x.second;
+    }
+  }
+
+  for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
+  {
+    Adresa dateLivrare = (*it)->getDateLivrare();
+    Adresa dateFacturare = (*it)->getDateFacturare();
+
+    if(dateLivrare.getJudet() == jud_max && dateLivrare.getApartament() == 0 && dateFacturare.getApartament() == 0)
+      rezolvare.push_back((*it));
+  }
+
+  json jrezolvare = ObjectFactory::getJsonUser(rezolvare);
+  os << jrezolvare; 
+  rezolvare.clear();
+
+}
+
 void rezolvareCerinte::Cerinta2f(){}

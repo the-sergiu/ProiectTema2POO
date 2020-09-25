@@ -1,561 +1,734 @@
 [
   {
-    "cantitate": 5,
-    "categorie": "espressor",
-    "garantieAni": 1,
-    "id": 591,
-    "nume": "Inissia",
-    "pret": 385.2900085449219,
-    "procentReducere": 10,
-    "producator": "Nespresso"
-  },
-  {
-    "cantitate": 4,
-    "categorie": "espressor",
-    "garantieAni": 3,
-    "id": 5916,
-    "nume": "Lumnio",
-    "pret": 305.3500061035156,
-    "procentReducere": 11,
-    "producator": "Bosch_Tassimo"
-  },
-  {
-    "cantitate": 9,
-    "categorie": "espressor",
-    "garantieAni": 5,
-    "id": 5921,
-    "nume": "Opio",
-    "pret": 458.8699951171875,
-    "procentReducere": 17,
-    "producator": "Bosch_Tassimo"
-  },
-  {
-    "cantitate": 4,
-    "categorie": "espressor",
-    "garantieAni": 4,
-    "id": 5931,
-    "nume": "Essenza",
-    "pret": 369.2200012207031,
-    "procentReducere": 23,
-    "producator": "Nespresso"
-  },
-  {
-    "cantitate": 4,
-    "categorie": "espressor",
-    "garantieAni": 3,
-    "id": 5933,
-    "nume": "Inissia",
-    "pret": 383.3599853515625,
-    "procentReducere": 15,
-    "producator": "Nespresso"
-  },
-  {
-    "cantitate": 2,
-    "categorie": "espressor",
-    "garantieAni": 1,
-    "id": 5951,
-    "nume": "Pixie",
-    "pret": 511.6400146484375,
-    "procentReducere": 13,
-    "producator": "Nespresso"
-  },
-  {
-    "cantitate": 6,
-    "categorie": "espressor",
-    "garantieAni": 1,
-    "id": 5953,
-    "nume": "Inissia",
-    "pret": 396.3800048828125,
-    "procentReducere": 15,
-    "producator": "Nespresso"
-  },
-  {
-    "cantitate": 2,
-    "categorie": "espressor",
-    "garantieAni": 3,
-    "id": 5958,
-    "nume": "Pump",
-    "pret": 368.1600036621094,
-    "procentReducere": 8,
-    "producator": "Bosch_Tassimo"
-  },
-  {
-    "cantitate": 4,
-    "categorie": "espressor",
-    "garantieAni": 3,
-    "id": 5959,
-    "nume": "Opio",
-    "pret": 490.57000732421875,
-    "procentReducere": 19,
-    "producator": "Krups"
-  },
-  {
-    "cantitate": 6,
-    "categorie": "espressor",
-    "garantieAni": 3,
-    "id": 5965,
-    "nume": "Espresseria",
-    "pret": 1704.8499755859375,
-    "procentReducere": 21,
-    "producator": "Bosch_Tassimo"
-  },
-  {
-    "cantitate": 8,
-    "categorie": "espressor",
-    "garantieAni": 1,
-    "id": 5970,
-    "nume": "Pump",
-    "pret": 410.2900085449219,
-    "procentReducere": 13,
-    "producator": "Bosch_Tassimo"
-  }
-][
-  {
-    "UserId": 13,
-    "costTransport": 10.399999618530273,
+    "UserId": 29,
+    "costAbonamentPremium": 99,
     "dateFacturare": {
-      "apartament": 10,
-      "bloc": "VX3",
-      "judet": "Dambovita",
-      "localitate": "Moreni",
-      "numar": 44,
-      "strada": "Closca"
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Tecuci",
+      "numar": 163,
+      "strada": "Stejarului"
     },
     "dateLivrare": {
-      "apartament": 10,
-      "bloc": "VX3",
-      "judet": "Dambovita",
-      "localitate": "Moreni",
-      "numar": 44,
-      "strada": "Closca"
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Tecuci",
+      "numar": 163,
+      "strada": "Stejarului"
     },
-    "email": "paulnastase@yahoo.com",
-    "nume": "Nastase",
-    "prenume": "Paul"
+    "email": "stefanbogdan@gmail.com",
+    "nume": "Bogdan",
+    "prenume": "Stefan",
+    "reduceri": [
+      [
+        810,
+        11
+      ],
+      [
+        3290,
+        24
+      ],
+      [
+        964,
+        14
+      ],
+      [
+        724,
+        21
+      ],
+      [
+        3977,
+        14
+      ],
+      [
+        3593,
+        11
+      ],
+      [
+        5004,
+        10
+      ],
+      [
+        1000,
+        21
+      ],
+      [
+        1228,
+        9
+      ],
+      [
+        5121,
+        19
+      ],
+      [
+        579,
+        16
+      ],
+      [
+        3471,
+        17
+      ],
+      [
+        4644,
+        25
+      ]
+    ]
   },
   {
-    "UserId": 114,
-    "costTransport": 11.09000015258789,
+    "UserId": 119,
+    "costTransport": 11.930000305175781,
     "dateFacturare": {
-      "apartament": 37,
-      "bloc": "VX3",
-      "judet": "Dambovita",
-      "localitate": "Pucioasa",
-      "numar": 45,
-      "strada": "Bujorului"
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Tecuci",
+      "numar": 236,
+      "strada": "Independentei"
     },
     "dateLivrare": {
-      "apartament": 37,
-      "bloc": "VX3",
-      "judet": "Dambovita",
-      "localitate": "Pucioasa",
-      "numar": 45,
-      "strada": "Bujorului"
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Tecuci",
+      "numar": 236,
+      "strada": "Independentei"
     },
-    "email": "barbuturcu@yahoo.com",
-    "nume": "Turcu",
+    "email": "barbumicu@yahoo.com",
+    "nume": "Micu",
     "prenume": "Barbu"
   },
   {
-    "UserId": 118,
-    "costTransport": 10.130000114440918,
-    "dateFacturare": {
-      "apartament": 7,
-      "bloc": "X13",
-      "judet": "Galati",
-      "localitate": "Tecuci",
-      "numar": 250,
-      "strada": "Ana_Ipatescu"
-    },
-    "dateLivrare": {
-      "apartament": 7,
-      "bloc": "X13",
-      "judet": "Galati",
-      "localitate": "Tecuci",
-      "numar": 250,
-      "strada": "Ana_Ipatescu"
-    },
-    "email": "eugenungureanu@yahoo.com",
-    "nume": "Ungureanu",
-    "prenume": "Eugen"
-  },
-  {
-    "UserId": 121,
-    "costTransport": 10.350000381469727,
-    "dateFacturare": {
-      "apartament": 13,
-      "bloc": "VX3",
-      "judet": "Maramures",
-      "localitate": "Ulmeni",
-      "numar": 263,
-      "strada": "Crizantemelor"
-    },
-    "dateLivrare": {
-      "apartament": 13,
-      "bloc": "VX3",
-      "judet": "Maramures",
-      "localitate": "Ulmeni",
-      "numar": 263,
-      "strada": "Crizantemelor"
-    },
-    "email": "ilieursu@yahoo.com",
-    "nume": "Ursu",
-    "prenume": "Ilie"
-  },
-  {
-    "UserId": 129,
-    "costTransport": 11.329999923706055,
-    "dateFacturare": {
-      "apartament": 37,
-      "bloc": "X13",
-      "judet": "Vrancea",
-      "localitate": "Odobesti",
-      "numar": 7,
-      "strada": "Rozelor"
-    },
-    "dateLivrare": {
-      "apartament": 37,
-      "bloc": "X13",
-      "judet": "Vrancea",
-      "localitate": "Odobesti",
-      "numar": 7,
-      "strada": "Rozelor"
-    },
-    "email": "marcelnecula@yahoo.com",
-    "nume": "Necula",
-    "prenume": "Marcel"
-  },
-  {
-    "UserId": 136,
-    "costTransport": 11.350000381469727,
+    "UserId": 217,
+    "costAbonamentPremium": 98,
     "dateFacturare": {
       "apartament": 0,
       "bloc": "-",
-      "judet": "Olt",
-      "localitate": "Corabia",
-      "numar": 225,
+      "judet": "Galati",
+      "localitate": "Galati",
+      "numar": 183,
+      "strada": "Salcamilor"
+    },
+    "dateLivrare": {
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Galati",
+      "numar": 183,
+      "strada": "Salcamilor"
+    },
+    "email": "ceciliaanghel@gmail.com",
+    "nume": "Anghel",
+    "prenume": "Cecilia",
+    "reduceri": [
+      [
+        2497,
+        19
+      ],
+      [
+        5102,
+        23
+      ],
+      [
+        4150,
+        10
+      ],
+      [
+        3946,
+        21
+      ],
+      [
+        1260,
+        19
+      ],
+      [
+        1343,
+        22
+      ],
+      [
+        2659,
+        25
+      ],
+      [
+        3106,
+        19
+      ],
+      [
+        499,
+        8
+      ],
+      [
+        3286,
+        22
+      ],
+      [
+        2472,
+        19
+      ],
+      [
+        4988,
+        7
+      ],
+      [
+        5429,
+        6
+      ],
+      [
+        4876,
+        11
+      ],
+      [
+        1879,
+        13
+      ],
+      [
+        2672,
+        7
+      ],
+      [
+        4491,
+        9
+      ],
+      [
+        3702,
+        18
+      ],
+      [
+        2740,
+        15
+      ],
+      [
+        709,
+        11
+      ],
+      [
+        2550,
+        14
+      ],
+      [
+        4050,
+        25
+      ],
+      [
+        4523,
+        21
+      ],
+      [
+        715,
+        20
+      ],
+      [
+        3795,
+        12
+      ],
+      [
+        928,
+        10
+      ],
+      [
+        533,
+        22
+      ],
+      [
+        2914,
+        16
+      ],
+      [
+        2581,
+        23
+      ],
+      [
+        5904,
+        11
+      ],
+      [
+        2349,
+        6
+      ],
+      [
+        2507,
+        11
+      ],
+      [
+        1846,
+        24
+      ],
+      [
+        3384,
+        14
+      ],
+      [
+        4806,
+        21
+      ],
+      [
+        1063,
+        15
+      ],
+      [
+        1124,
+        18
+      ],
+      [
+        1835,
+        14
+      ],
+      [
+        2355,
+        21
+      ],
+      [
+        1802,
+        13
+      ],
+      [
+        5642,
+        7
+      ],
+      [
+        5879,
+        19
+      ],
+      [
+        2008,
+        18
+      ],
+      [
+        5021,
+        12
+      ],
+      [
+        3678,
+        23
+      ],
+      [
+        4626,
+        6
+      ],
+      [
+        3093,
+        5
+      ],
+      [
+        486,
+        5
+      ],
+      [
+        5051,
+        12
+      ],
+      [
+        5920,
+        7
+      ]
+    ]
+  },
+  {
+    "UserId": 1103,
+    "costTransport": 17.739999771118164,
+    "dateFacturare": {
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Tecuci",
+      "numar": 291,
       "strada": "Marasesti"
     },
     "dateLivrare": {
       "apartament": 0,
       "bloc": "-",
-      "judet": "Olt",
-      "localitate": "Corabia",
-      "numar": 225,
-      "strada": "Marasesti"
+      "judet": "Galati",
+      "localitate": "Tecuci",
+      "numar": 221,
+      "strada": "Nicolae_Iorga"
     },
-    "email": "sorinchirita@gmail.com",
-    "nume": "Chirita",
-    "prenume": "Sorin"
+    "email": "valentinpirvu@gmail.com",
+    "nume": "Pirvu",
+    "prenume": "Valentin"
   },
   {
-    "UserId": 145,
-    "costTransport": 10.300000190734863,
-    "dateFacturare": {
-      "apartament": 14,
-      "bloc": "VX3",
-      "judet": "Tulcea",
-      "localitate": "Babadag",
-      "numar": 137,
-      "strada": "Pacii"
-    },
-    "dateLivrare": {
-      "apartament": 14,
-      "bloc": "VX3",
-      "judet": "Tulcea",
-      "localitate": "Babadag",
-      "numar": 137,
-      "strada": "Pacii"
-    },
-    "email": "teodorapop@gmail.com",
-    "nume": "Pop",
-    "prenume": "Teodora"
-  },
-  {
-    "UserId": 147,
-    "costTransport": 10.3100004196167,
+    "UserId": 292,
+    "costAbonamentPremium": 95,
     "dateFacturare": {
       "apartament": 0,
       "bloc": "-",
-      "judet": "Bucuresti",
-      "localitate": "Sectorul_2",
-      "numar": 198,
+      "judet": "Galati",
+      "localitate": "Beresti",
+      "numar": 281,
+      "strada": "Stefan_cel_Mare"
+    },
+    "dateLivrare": {
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Beresti",
+      "numar": 281,
+      "strada": "Stefan_cel_Mare"
+    },
+    "email": "floreavasilescu@gmail.com",
+    "nume": "Vasilescu",
+    "prenume": "Florea",
+    "reduceri": [
+      [
+        1737,
+        12
+      ],
+      [
+        5453,
+        10
+      ],
+      [
+        1911,
+        13
+      ],
+      [
+        5410,
+        17
+      ],
+      [
+        2639,
+        20
+      ],
+      [
+        3115,
+        13
+      ],
+      [
+        2856,
+        16
+      ],
+      [
+        4454,
+        12
+      ],
+      [
+        5163,
+        5
+      ],
+      [
+        5340,
+        24
+      ]
+    ]
+  },
+  {
+    "UserId": 2110,
+    "costAbonamentPremium": 92,
+    "dateFacturare": {
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Beresti",
+      "numar": 290,
+      "strada": "Grivitei"
+    },
+    "dateLivrare": {
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Beresti",
+      "numar": 290,
+      "strada": "Grivitei"
+    },
+    "email": "bogdanoprea@gmail.com",
+    "nume": "Oprea",
+    "prenume": "Bogdan",
+    "reduceri": [
+      [
+        248,
+        20
+      ],
+      [
+        4906,
+        8
+      ],
+      [
+        5693,
+        18
+      ],
+      [
+        2306,
+        9
+      ],
+      [
+        3976,
+        10
+      ],
+      [
+        3554,
+        8
+      ],
+      [
+        1394,
+        13
+      ],
+      [
+        1135,
+        20
+      ],
+      [
+        2018,
+        25
+      ],
+      [
+        4127,
+        12
+      ],
+      [
+        5385,
+        24
+      ],
+      [
+        2180,
+        21
+      ],
+      [
+        1789,
+        12
+      ],
+      [
+        5790,
+        21
+      ],
+      [
+        1470,
+        13
+      ],
+      [
+        1589,
+        7
+      ],
+      [
+        3664,
+        13
+      ],
+      [
+        5751,
+        12
+      ],
+      [
+        5447,
+        14
+      ],
+      [
+        3042,
+        18
+      ]
+    ]
+  },
+  {
+    "UserId": 1318,
+    "costTransport": 13.829999923706055,
+    "dateFacturare": {
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Galati",
+      "numar": 1,
       "strada": "Eroilor"
     },
     "dateLivrare": {
       "apartament": 0,
       "bloc": "-",
-      "judet": "Bucuresti",
-      "localitate": "Sectorul_2",
-      "numar": 198,
+      "judet": "Galati",
+      "localitate": "Galati",
+      "numar": 1,
       "strada": "Eroilor"
     },
-    "email": "augustinpopa@yahoo.com",
-    "nume": "Popa",
-    "prenume": "Augustin"
+    "email": "ecaterinamarian@gmail.com",
+    "nume": "Marian",
+    "prenume": "Ecaterina"
   },
   {
-    "UserId": 153,
-    "costTransport": 11.010000228881836,
+    "UserId": 1393,
+    "costTransport": 13.34000015258789,
     "dateFacturare": {
-      "apartament": 38,
-      "bloc": "VX3",
+      "apartament": 0,
+      "bloc": "-",
       "judet": "Galati",
       "localitate": "Beresti",
-      "numar": 15,
-      "strada": "Viorelelor"
+      "numar": 92,
+      "strada": "Plevnei"
     },
     "dateLivrare": {
-      "apartament": 38,
-      "bloc": "VX3",
+      "apartament": 0,
+      "bloc": "-",
       "judet": "Galati",
       "localitate": "Beresti",
-      "numar": 15,
-      "strada": "Viorelelor"
+      "numar": 92,
+      "strada": "Plevnei"
     },
-    "email": "lazarpetrescu@gmail.com",
-    "nume": "Petrescu",
-    "prenume": "Lazar"
-  },
-  {
-    "UserId": 154,
-    "costTransport": 10.010000228881836,
-    "dateFacturare": {
-      "apartament": 27,
-      "bloc": "VX3",
-      "judet": "Iasi",
-      "localitate": "Targu_Frumos",
-      "numar": 86,
-      "strada": "Nucului"
-    },
-    "dateLivrare": {
-      "apartament": 27,
-      "bloc": "VX3",
-      "judet": "Iasi",
-      "localitate": "Targu_Frumos",
-      "numar": 86,
-      "strada": "Nucului"
-    },
-    "email": "ianisbogdan@yahoo.com",
-    "nume": "Bogdan",
-    "prenume": "Ianis"
-  },
-  {
-    "UserId": 159,
-    "costTransport": 11.239999771118164,
-    "dateFacturare": {
-      "apartament": 38,
-      "bloc": "VX3",
-      "judet": "Calarasi",
-      "localitate": "Fundulea",
-      "numar": 47,
-      "strada": "Mioritei"
-    },
-    "dateLivrare": {
-      "apartament": 25,
-      "bloc": "VX3",
-      "judet": "Calarasi",
-      "localitate": "Fundulea",
-      "numar": 51,
-      "strada": "Aurel_Vlaicu"
-    },
-    "email": "arianaghita@gmail.com",
-    "nume": "Ghita",
-    "prenume": "Ariana"
-  },
-  {
-    "UserId": 163,
-    "costTransport": 10.930000305175781,
-    "dateFacturare": {
-      "apartament": 35,
-      "bloc": "VX3",
-      "judet": "Galati",
-      "localitate": "Beresti",
-      "numar": 331,
-      "strada": "Transilvaniei"
-    },
-    "dateLivrare": {
-      "apartament": 35,
-      "bloc": "VX3",
-      "judet": "Galati",
-      "localitate": "Beresti",
-      "numar": 331,
-      "strada": "Transilvaniei"
-    },
-    "email": "eugenalbu@yahoo.com",
-    "nume": "Albu",
-    "prenume": "Eugen"
-  },
-  {
-    "UserId": 169,
-    "costTransport": 10.130000114440918,
-    "dateFacturare": {
-      "apartament": 39,
-      "bloc": "X13",
-      "judet": "Harghita",
-      "localitate": "Gherogheni",
-      "numar": 200,
-      "strada": "Stejarului"
-    },
-    "dateLivrare": {
-      "apartament": 39,
-      "bloc": "X13",
-      "judet": "Harghita",
-      "localitate": "Gherogheni",
-      "numar": 200,
-      "strada": "Stejarului"
-    },
-    "email": "sofiastanciu@yahoo.com",
-    "nume": "Stanciu",
-    "prenume": "Sofia"
-  },
-  {
-    "UserId": 171,
-    "costTransport": 10.229999542236328,
-    "dateFacturare": {
-      "apartament": 14,
-      "bloc": "VX3",
-      "judet": "Valcea",
-      "localitate": "Horezu",
-      "numar": 175,
-      "strada": "Parcului"
-    },
-    "dateLivrare": {
-      "apartament": 26,
-      "bloc": "X13",
-      "judet": "Valcea",
-      "localitate": "Horezu",
-      "numar": 132,
-      "strada": "Mihai_Eminescu"
-    },
-    "email": "catalinsimon@yahoo.com",
-    "nume": "Simon",
-    "prenume": "Catalin"
-  },
-  {
-    "UserId": 173,
-    "costTransport": 10.890000343322754,
-    "dateFacturare": {
-      "apartament": 5,
-      "bloc": "VX3",
-      "judet": "Alba",
-      "localitate": "Zlatna",
-      "numar": 147,
-      "strada": "I.L.Caragiale"
-    },
-    "dateLivrare": {
-      "apartament": 5,
-      "bloc": "VX3",
-      "judet": "Alba",
-      "localitate": "Zlatna",
-      "numar": 147,
-      "strada": "I.L.Caragiale"
-    },
-    "email": "petrugheorghiu@gmail.com",
-    "nume": "Gheorghiu",
-    "prenume": "Petru"
-  },
-  {
-    "UserId": 185,
-    "costTransport": 11.489999771118164,
-    "dateFacturare": {
-      "apartament": 26,
-      "bloc": "VX3",
-      "judet": "Braila",
-      "localitate": "Insuratei",
-      "numar": 162,
-      "strada": "1_Mai"
-    },
-    "dateLivrare": {
-      "apartament": 26,
-      "bloc": "VX3",
-      "judet": "Braila",
-      "localitate": "Insuratei",
-      "numar": 162,
-      "strada": "1_Mai"
-    },
-    "email": "otilianistor@yahoo.com",
-    "nume": "Nistor",
-    "prenume": "Otilia"
-  },
-  {
-    "UserId": 197,
-    "costTransport": 11.119999885559082,
-    "dateFacturare": {
-      "apartament": 17,
-      "bloc": "VX3",
-      "judet": "Braila",
-      "localitate": "Ianca",
-      "numar": 208,
-      "strada": "Lacului"
-    },
-    "dateLivrare": {
-      "apartament": 17,
-      "bloc": "VX3",
-      "judet": "Braila",
-      "localitate": "Ianca",
-      "numar": 208,
-      "strada": "Lacului"
-    },
-    "email": "gabrielacalin@yahoo.com",
-    "nume": "Calin",
-    "prenume": "Gabriela"
-  },
-  {
-    "UserId": 199,
-    "costTransport": 11.220000267028809,
-    "dateFacturare": {
-      "apartament": 22,
-      "bloc": "VX3",
-      "judet": "Iasi",
-      "localitate": "Pascani",
-      "numar": 194,
-      "strada": "Libertatii"
-    },
-    "dateLivrare": {
-      "apartament": 22,
-      "bloc": "VX3",
-      "judet": "Iasi",
-      "localitate": "Pascani",
-      "numar": 194,
-      "strada": "Libertatii"
-    },
-    "email": "eduardstoian@yahoo.com",
-    "nume": "Stoian",
+    "email": "eduardrosca@yahoo.com",
+    "nume": "Rosca",
     "prenume": "Eduard"
   },
   {
-    "UserId": 1100,
-    "costTransport": 10.630000114440918,
+    "UserId": 2255,
+    "costAbonamentPremium": 93,
     "dateFacturare": {
-      "apartament": 3,
-      "bloc": "X13",
-      "judet": "Salaj",
-      "localitate": "Jibou",
-      "numar": 278,
-      "strada": "Cetatii"
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Tecuci",
+      "numar": 228,
+      "strada": "Crangului"
     },
     "dateLivrare": {
-      "apartament": 3,
-      "bloc": "X13",
-      "judet": "Salaj",
-      "localitate": "Jibou",
-      "numar": 278,
-      "strada": "Cetatii"
+      "apartament": 0,
+      "bloc": "-",
+      "judet": "Galati",
+      "localitate": "Tecuci",
+      "numar": 228,
+      "strada": "Crangului"
     },
-    "email": "vladnedelcu@yahoo.com",
-    "nume": "Nedelcu",
-    "prenume": "Vlad"
+    "email": "paulchirila@yahoo.com",
+    "nume": "Chirila",
+    "prenume": "Paul",
+    "reduceri": [
+      [
+        5330,
+        8
+      ],
+      [
+        1586,
+        7
+      ],
+      [
+        5797,
+        22
+      ],
+      [
+        3182,
+        21
+      ],
+      [
+        4464,
+        9
+      ],
+      [
+        3019,
+        16
+      ],
+      [
+        689,
+        5
+      ],
+      [
+        4870,
+        18
+      ],
+      [
+        2741,
+        8
+      ],
+      [
+        5072,
+        5
+      ],
+      [
+        3297,
+        7
+      ],
+      [
+        2628,
+        15
+      ],
+      [
+        1000,
+        10
+      ],
+      [
+        4552,
+        11
+      ],
+      [
+        963,
+        21
+      ],
+      [
+        1067,
+        13
+      ],
+      [
+        4550,
+        19
+      ],
+      [
+        4143,
+        9
+      ],
+      [
+        1341,
+        22
+      ],
+      [
+        3746,
+        17
+      ],
+      [
+        2808,
+        10
+      ],
+      [
+        1920,
+        7
+      ],
+      [
+        844,
+        18
+      ],
+      [
+        1510,
+        22
+      ],
+      [
+        5784,
+        25
+      ],
+      [
+        3638,
+        6
+      ],
+      [
+        974,
+        5
+      ],
+      [
+        2348,
+        18
+      ],
+      [
+        1127,
+        7
+      ],
+      [
+        4956,
+        7
+      ],
+      [
+        5245,
+        22
+      ],
+      [
+        1709,
+        22
+      ],
+      [
+        603,
+        15
+      ]
+    ]
   },
   {
-    "UserId": 1104,
-    "costTransport": 10.600000381469727,
+    "UserId": 2324,
+    "costAbonamentPremium": 95,
     "dateFacturare": {
       "apartament": 0,
       "bloc": "-",
       "judet": "Galati",
       "localitate": "Galati",
-      "numar": 72,
+      "numar": 82,
       "strada": "Nucului"
     },
     "dateLivrare": {
@@ -563,57 +736,81 @@
       "bloc": "-",
       "judet": "Galati",
       "localitate": "Galati",
-      "numar": 72,
+      "numar": 82,
       "strada": "Nucului"
     },
-    "email": "maximilianparaschiv@gmail.com",
-    "nume": "Paraschiv",
-    "prenume": "Maximilian"
-  },
-  {
-    "UserId": 1106,
-    "costTransport": 11.369999885559082,
-    "dateFacturare": {
-      "apartament": 27,
-      "bloc": "VX3",
-      "judet": "Salaj",
-      "localitate": "Zalau",
-      "numar": 166,
-      "strada": "Tineretului"
-    },
-    "dateLivrare": {
-      "apartament": 27,
-      "bloc": "VX3",
-      "judet": "Salaj",
-      "localitate": "Zalau",
-      "numar": 166,
-      "strada": "Tineretului"
-    },
-    "email": "lilianazamfir@yahoo.com",
-    "nume": "Zamfir",
-    "prenume": "Liliana"
-  },
-  {
-    "UserId": 1111,
-    "costTransport": 10.949999809265137,
-    "dateFacturare": {
-      "apartament": 0,
-      "bloc": "-",
-      "judet": "Arad",
-      "localitate": "Arad",
-      "numar": 114,
-      "strada": "A.I.Cuza"
-    },
-    "dateLivrare": {
-      "apartament": 0,
-      "bloc": "-",
-      "judet": "Arad",
-      "localitate": "Arad",
-      "numar": 94,
-      "strada": "Muncii"
-    },
-    "email": "teodorchiriac@gmail.com",
-    "nume": "Chiriac",
-    "prenume": "Teodor"
+    "email": "voicuiancu@yahoo.com",
+    "nume": "Iancu",
+    "prenume": "Voicu",
+    "reduceri": [
+      [
+        1287,
+        10
+      ],
+      [
+        4321,
+        19
+      ],
+      [
+        3624,
+        15
+      ],
+      [
+        3593,
+        17
+      ],
+      [
+        5130,
+        18
+      ],
+      [
+        4416,
+        15
+      ],
+      [
+        3582,
+        5
+      ],
+      [
+        5902,
+        11
+      ],
+      [
+        3904,
+        19
+      ],
+      [
+        5037,
+        11
+      ],
+      [
+        2215,
+        17
+      ],
+      [
+        4639,
+        24
+      ],
+      [
+        5467,
+        23
+      ],
+      [
+        1767,
+        25
+      ],
+      [
+        2687,
+        22
+      ],
+      [
+        5227,
+        5
+      ],
+      [
+        2415,
+        6
+      ]
+    ]
   }
-][{"cantitate":5,"categorie":"espressor","garantieAni":1,"id":591,"nume":"Inissia","pret":385.2900085449219,"procentReducere":10,"producator":"Nespresso"},{"cantitate":4,"categorie":"espressor","garantieAni":3,"id":5916,"nume":"Lumnio","pret":305.3500061035156,"procentReducere":11,"producator":"Bosch_Tassimo"},{"cantitate":9,"categorie":"espressor","garantieAni":5,"id":5921,"nume":"Opio","pret":458.8699951171875,"procentReducere":17,"producator":"Bosch_Tassimo"},{"cantitate":4,"categorie":"espressor","garantieAni":4,"id":5931,"nume":"Essenza","pret":369.2200012207031,"procentReducere":23,"producator":"Nespresso"},{"cantitate":4,"categorie":"espressor","garantieAni":3,"id":5933,"nume":"Inissia","pret":383.3599853515625,"procentReducere":15,"producator":"Nespresso"},{"cantitate":2,"categorie":"espressor","garantieAni":1,"id":5951,"nume":"Pixie","pret":511.6400146484375,"procentReducere":13,"producator":"Nespresso"},{"cantitate":6,"categorie":"espressor","garantieAni":1,"id":5953,"nume":"Inissia","pret":396.3800048828125,"procentReducere":15,"producator":"Nespresso"},{"cantitate":2,"categorie":"espressor","garantieAni":3,"id":5958,"nume":"Pump","pret":368.1600036621094,"procentReducere":8,"producator":"Bosch_Tassimo"},{"cantitate":4,"categorie":"espressor","garantieAni":3,"id":5959,"nume":"Opio","pret":490.57000732421875,"procentReducere":19,"producator":"Krups"},{"cantitate":6,"categorie":"espressor","garantieAni":3,"id":5965,"nume":"Espresseria","pret":1704.8499755859375,"procentReducere":21,"producator":"Bosch_Tassimo"},{"cantitate":8,"categorie":"espressor","garantieAni":1,"id":5970,"nume":"Pump","pret":410.2900085449219,"procentReducere":13,"producator":"Bosch_Tassimo"}][{"UserId":13,"costTransport":10.399999618530273,"dateFacturare":{"apartament":10,"bloc":"VX3","judet":"Dambovita","localitate":"Moreni","numar":44,"strada":"Closca"},"dateLivrare":{"apartament":10,"bloc":"VX3","judet":"Dambovita","localitate":"Moreni","numar":44,"strada":"Closca"},"email":"paulnastase@yahoo.com","nume":"Nastase","prenume":"Paul"},{"UserId":114,"costTransport":11.09000015258789,"dateFacturare":{"apartament":37,"bloc":"VX3","judet":"Dambovita","localitate":"Pucioasa","numar":45,"strada":"Bujorului"},"dateLivrare":{"apartament":37,"bloc":"VX3","judet":"Dambovita","localitate":"Pucioasa","numar":45,"strada":"Bujorului"},"email":"barbuturcu@yahoo.com","nume":"Turcu","prenume":"Barbu"},{"UserId":118,"costTransport":10.130000114440918,"dateFacturare":{"apartament":7,"bloc":"X13","judet":"Galati","localitate":"Tecuci","numar":250,"strada":"Ana_Ipatescu"},"dateLivrare":{"apartament":7,"bloc":"X13","judet":"Galati","localitate":"Tecuci","numar":250,"strada":"Ana_Ipatescu"},"email":"eugenungureanu@yahoo.com","nume":"Ungureanu","prenume":"Eugen"},{"UserId":121,"costTransport":10.350000381469727,"dateFacturare":{"apartament":13,"bloc":"VX3","judet":"Maramures","localitate":"Ulmeni","numar":263,"strada":"Crizantemelor"},"dateLivrare":{"apartament":13,"bloc":"VX3","judet":"Maramures","localitate":"Ulmeni","numar":263,"strada":"Crizantemelor"},"email":"ilieursu@yahoo.com","nume":"Ursu","prenume":"Ilie"},{"UserId":129,"costTransport":11.329999923706055,"dateFacturare":{"apartament":37,"bloc":"X13","judet":"Vrancea","localitate":"Odobesti","numar":7,"strada":"Rozelor"},"dateLivrare":{"apartament":37,"bloc":"X13","judet":"Vrancea","localitate":"Odobesti","numar":7,"strada":"Rozelor"},"email":"marcelnecula@yahoo.com","nume":"Necula","prenume":"Marcel"},{"UserId":136,"costTransport":11.350000381469727,"dateFacturare":{"apartament":0,"bloc":"-","judet":"Olt","localitate":"Corabia","numar":225,"strada":"Marasesti"},"dateLivrare":{"apartament":0,"bloc":"-","judet":"Olt","localitate":"Corabia","numar":225,"strada":"Marasesti"},"email":"sorinchirita@gmail.com","nume":"Chirita","prenume":"Sorin"},{"UserId":145,"costTransport":10.300000190734863,"dateFacturare":{"apartament":14,"bloc":"VX3","judet":"Tulcea","localitate":"Babadag","numar":137,"strada":"Pacii"},"dateLivrare":{"apartament":14,"bloc":"VX3","judet":"Tulcea","localitate":"Babadag","numar":137,"strada":"Pacii"},"email":"teodorapop@gmail.com","nume":"Pop","prenume":"Teodora"},{"UserId":147,"costTransport":10.3100004196167,"dateFacturare":{"apartament":0,"bloc":"-","judet":"Bucuresti","localitate":"Sectorul_2","numar":198,"strada":"Eroilor"},"dateLivrare":{"apartament":0,"bloc":"-","judet":"Bucuresti","localitate":"Sectorul_2","numar":198,"strada":"Eroilor"},"email":"augustinpopa@yahoo.com","nume":"Popa","prenume":"Augustin"},{"UserId":153,"costTransport":11.010000228881836,"dateFacturare":{"apartament":38,"bloc":"VX3","judet":"Galati","localitate":"Beresti","numar":15,"strada":"Viorelelor"},"dateLivrare":{"apartament":38,"bloc":"VX3","judet":"Galati","localitate":"Beresti","numar":15,"strada":"Viorelelor"},"email":"lazarpetrescu@gmail.com","nume":"Petrescu","prenume":"Lazar"},{"UserId":154,"costTransport":10.010000228881836,"dateFacturare":{"apartament":27,"bloc":"VX3","judet":"Iasi","localitate":"Targu_Frumos","numar":86,"strada":"Nucului"},"dateLivrare":{"apartament":27,"bloc":"VX3","judet":"Iasi","localitate":"Targu_Frumos","numar":86,"strada":"Nucului"},"email":"ianisbogdan@yahoo.com","nume":"Bogdan","prenume":"Ianis"},{"UserId":159,"costTransport":11.239999771118164,"dateFacturare":{"apartament":38,"bloc":"VX3","judet":"Calarasi","localitate":"Fundulea","numar":47,"strada":"Mioritei"},"dateLivrare":{"apartament":25,"bloc":"VX3","judet":"Calarasi","localitate":"Fundulea","numar":51,"strada":"Aurel_Vlaicu"},"email":"arianaghita@gmail.com","nume":"Ghita","prenume":"Ariana"},{"UserId":163,"costTransport":10.930000305175781,"dateFacturare":{"apartament":35,"bloc":"VX3","judet":"Galati","localitate":"Beresti","numar":331,"strada":"Transilvaniei"},"dateLivrare":{"apartament":35,"bloc":"VX3","judet":"Galati","localitate":"Beresti","numar":331,"strada":"Transilvaniei"},"email":"eugenalbu@yahoo.com","nume":"Albu","prenume":"Eugen"},{"UserId":169,"costTransport":10.130000114440918,"dateFacturare":{"apartament":39,"bloc":"X13","judet":"Harghita","localitate":"Gherogheni","numar":200,"strada":"Stejarului"},"dateLivrare":{"apartament":39,"bloc":"X13","judet":"Harghita","localitate":"Gherogheni","numar":200,"strada":"Stejarului"},"email":"sofiastanciu@yahoo.com","nume":"Stanciu","prenume":"Sofia"},{"UserId":171,"costTransport":10.229999542236328,"dateFacturare":{"apartament":14,"bloc":"VX3","judet":"Valcea","localitate":"Horezu","numar":175,"strada":"Parcului"},"dateLivrare":{"apartament":26,"bloc":"X13","judet":"Valcea","localitate":"Horezu","numar":132,"strada":"Mihai_Eminescu"},"email":"catalinsimon@yahoo.com","nume":"Simon","prenume":"Catalin"},{"UserId":173,"costTransport":10.890000343322754,"dateFacturare":{"apartament":5,"bloc":"VX3","judet":"Alba","localitate":"Zlatna","numar":147,"strada":"I.L.Caragiale"},"dateLivrare":{"apartament":5,"bloc":"VX3","judet":"Alba","localitate":"Zlatna","numar":147,"strada":"I.L.Caragiale"},"email":"petrugheorghiu@gmail.com","nume":"Gheorghiu","prenume":"Petru"},{"UserId":185,"costTransport":11.489999771118164,"dateFacturare":{"apartament":26,"bloc":"VX3","judet":"Braila","localitate":"Insuratei","numar":162,"strada":"1_Mai"},"dateLivrare":{"apartament":26,"bloc":"VX3","judet":"Braila","localitate":"Insuratei","numar":162,"strada":"1_Mai"},"email":"otilianistor@yahoo.com","nume":"Nistor","prenume":"Otilia"},{"UserId":197,"costTransport":11.119999885559082,"dateFacturare":{"apartament":17,"bloc":"VX3","judet":"Braila","localitate":"Ianca","numar":208,"strada":"Lacului"},"dateLivrare":{"apartament":17,"bloc":"VX3","judet":"Braila","localitate":"Ianca","numar":208,"strada":"Lacului"},"email":"gabrielacalin@yahoo.com","nume":"Calin","prenume":"Gabriela"},{"UserId":199,"costTransport":11.220000267028809,"dateFacturare":{"apartament":22,"bloc":"VX3","judet":"Iasi","localitate":"Pascani","numar":194,"strada":"Libertatii"},"dateLivrare":{"apartament":22,"bloc":"VX3","judet":"Iasi","localitate":"Pascani","numar":194,"strada":"Libertatii"},"email":"eduardstoian@yahoo.com","nume":"Stoian","prenume":"Eduard"},{"UserId":1100,"costTransport":10.630000114440918,"dateFacturare":{"apartament":3,"bloc":"X13","judet":"Salaj","localitate":"Jibou","numar":278,"strada":"Cetatii"},"dateLivrare":{"apartament":3,"bloc":"X13","judet":"Salaj","localitate":"Jibou","numar":278,"strada":"Cetatii"},"email":"vladnedelcu@yahoo.com","nume":"Nedelcu","prenume":"Vlad"},{"UserId":1104,"costTransport":10.600000381469727,"dateFacturare":{"apartament":0,"bloc":"-","judet":"Galati","localitate":"Galati","numar":72,"strada":"Nucului"},"dateLivrare":{"apartament":0,"bloc":"-","judet":"Galati","localitate":"Galati","numar":72,"strada":"Nucului"},"email":"maximilianparaschiv@gmail.com","nume":"Paraschiv","prenume":"Maximilian"},{"UserId":1106,"costTransport":11.369999885559082,"dateFacturare":{"apartament":27,"bloc":"VX3","judet":"Salaj","localitate":"Zalau","numar":166,"strada":"Tineretului"},"dateLivrare":{"apartament":27,"bloc":"VX3","judet":"Salaj","localitate":"Zalau","numar":166,"strada":"Tineretului"},"email":"lilianazamfir@yahoo.com","nume":"Zamfir","prenume":"Liliana"},{"UserId":1111,"costTransport":10.949999809265137,"dateFacturare":{"apartament":0,"bloc":"-","judet":"Arad","localitate":"Arad","numar":114,"strada":"A.I.Cuza"},"dateLivrare":{"apartament":0,"bloc":"-","judet":"Arad","localitate":"Arad","numar":94,"strada":"Muncii"},"email":"teodorchiriac@gmail.com","nume":"Chiriac","prenume":"Teodor"}]
+]
