@@ -12,7 +12,6 @@ class UserNonPremium : public User
 
 
   string getUserType();
-  unordered_map<int,int>& getMapReduceri();
   
   void setCostTransport(int);
   float getCostTransport();

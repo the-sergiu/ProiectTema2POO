@@ -36,7 +36,6 @@ class User
     int getIdUser();
     Adresa& getDateFacturare();
     Adresa& getDateLivrare(); 
-    virtual unordered_map<int,int>& getMapReduceri() = 0;
    
     virtual json toJSON();
     virtual void vizualizareUser() = 0;
@@ -46,5 +45,6 @@ class User
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(User, dateFacturare, dateLivrare, nume, prenume, email, UserId)
 };
+
 
  

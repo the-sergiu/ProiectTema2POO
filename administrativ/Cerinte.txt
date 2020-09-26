@@ -27,7 +27,7 @@ Initializati serverul. Listele de useri si produse sunt initializate folosind fu
 
     e. Scrieti in fisierul de output userii care au atat adresa de livrare, cat si cea de facturare la casa si locuiesc in judetul cu cei mai multi utilizatori. Sortati dupa UserID 
 
-    f. Salvati in fisierul de output toti utilizatorii premium care au cupoane de reducere pentru telefoane si imprimante.
+    f. Salvati in fisierul de output toti utilizatorii premium care au cupoane de reducere pentru telefoane sau imprimante.
 
 
 

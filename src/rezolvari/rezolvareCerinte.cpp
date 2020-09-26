@@ -4,7 +4,8 @@ using namespace std;
 
 rezolvareCerinte::rezolvareCerinte(){
   s = NULL;
-  os.open("src/files/output/output.json", std::ios_base::app);
+  //os.open("src/files/output/output.json", std::ios_base::app);
+  os.open("src/files/output/output.json");
 }
 
 rezolvareCerinte::~rezolvareCerinte(){
@@ -141,18 +142,17 @@ void rezolvareCerinte::Cerinta2f(){
 
   for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
   {
-    if((*it)->getUserType() == "premium")
+    auto up = dynamic_cast<UserPremium*>((*it));
+    if(up != nullptr)
     {
-      for(auto const& x : (*it)->getMapReduceri()){
+      for(auto const& x : up->getMapReduceri()){
         auto p = find(id_uri.begin(),id_uri.end(),x.first);
         if (p != id_uri.end()) 
         { 
             rezolvare.push_back((*it));
         } 
-        else
-            continue; 
       }
-    }     
+    }
   }
 
   json jrezolvare = ObjectFactory::getJsonUser(rezolvare);
