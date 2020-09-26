@@ -23,20 +23,21 @@ Server *Server::instanta = 0;
 int main(int argc, char** argv) 
 {
 
-  rezolvareCerinte rez;
+  // rezolvareCerinte rez;
 
-  rez.Cerinta1();
+  // rez.Cerinta1();
   //rez.Cerinta2a();
   //rez.Cerinta2b();
   //rez.Cerinta2d();
   //rez.Cerinta2e();
-  rez.Cerinta2f();
+  // rez.Cerinta2f();
  
   // string str = "test";
   // vector<Produs*> vec;
   
   // vec.push_back(new ProdusAlimentar(str, 1, str, 2.22f, str, 9));
 
+    if (argc != 4)
     {
       throw "Error: Executable requires precisely 4 arguments!";
     }
