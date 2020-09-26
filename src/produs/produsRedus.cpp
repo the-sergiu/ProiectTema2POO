@@ -10,6 +10,11 @@ ProdusRedus::ProdusRedus(const string& categorie, int id, const string& producat
 	this->procentReducere = procentReducere;
 }
 
+ProdusRedus::ProdusRedus(const ProdusRedus& produsRedus) : ProdusNealimentar(produsRedus)
+{
+	this->procentReducere = produsRedus.procentReducere;
+}
+
 void ProdusRedus::afisare()  {
 	cout << "Produs Redus" << endl;
   cout << "Nume Produs: " << this->nume << endl;

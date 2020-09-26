@@ -1,6 +1,6 @@
 #include "produsReturnat.h"
 
-ProdusReturnat::ProdusReturnat() : ProdusNealimentar(){
+ProdusReturnat::ProdusReturnat() {
 	this->motiv = placeHolder;
 }
 

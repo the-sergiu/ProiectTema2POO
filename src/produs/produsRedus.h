@@ -1,7 +1,6 @@
 #pragma once
 #include "produsNealimentar.h"
 
-
 class ProdusRedus : virtual public ProdusNealimentar
 {
 protected:
@@ -9,6 +8,7 @@ protected:
 public:
     ProdusRedus();
     ProdusRedus(const string&, int, const string&, const string&, float, int, int, int);
+    ProdusRedus(const ProdusRedus&);
     void afisare();
 
     float pretDupaReducere()const;

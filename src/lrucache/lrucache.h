@@ -8,8 +8,8 @@ class LRUCache
 {
 
 private:
-  int capacity;
-  int size;
+  unsigned int capacity;
+  unsigned int size;
   vector<int> lru;
 
 public:
@@ -20,6 +20,7 @@ public:
   int getCapacity();
   int getSize();
   vector<int> getLRU();
+  int getLRUCapacity();
 
   //set-eri
   void setCapacity(int);

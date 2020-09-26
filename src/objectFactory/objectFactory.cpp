@@ -46,7 +46,7 @@ Produs* ObjectFactory::createProdus(string type, json::iterator it) {
         return newProdus;
     }
 
-    else return NULL;
+    return NULL;
 }  
 
 list<Produs*> ObjectFactory::getProdusList(json j){
@@ -89,7 +89,7 @@ User* ObjectFactory::createUser(string type, json::iterator it){
         return newUser;
     }
 
-    else return NULL;
+    return NULL;
 }
 
 list<User*> ObjectFactory::getUserList(json j){

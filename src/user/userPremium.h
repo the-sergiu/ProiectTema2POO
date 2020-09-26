@@ -19,6 +19,9 @@ class UserPremium : public User
     void vizualizareUser();
     float getCostTransport();
     unordered_map<int,int>& getMapReduceri();
+    void setReduceri(unordered_map<int,int>);
+    void setCostAbonamentPremium(int cap);
+    int getCostAbonamentPremium();
     
     json toJSON();
 

@@ -22,6 +22,8 @@ public:
 
     Produs();
     Produs(const string&, int, const string&, int);
+    Produs(const Produs&p);
+
     bool checkCantitate(int);
     void scadeCantitate(int);
     void cresteCantitate(int);
