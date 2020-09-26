@@ -7,30 +7,35 @@ class ProdusAlimentar : public Produs
 protected:
     float leiPerKg;
     string taraOrigine;
+
 public:
+    // Constructori
     ProdusAlimentar();
-    ProdusAlimentar(const string&, int, const string&, float, const string&, int);
-    ProdusAlimentar(const ProdusAlimentar&);
-    
-    const ProdusAlimentar& operator = (const ProdusAlimentar&);
-    
-    void afisare();
-    string getProdusType();
+    ProdusAlimentar(const string &, int, const string &, float, const string &, int);
+    ProdusAlimentar(const ProdusAlimentar &);
 
+    // Operator =
+    const ProdusAlimentar &operator=(const ProdusAlimentar &);
+
+    // Set
     void setLeiPerKg(float);
-    void setTaraDeOrigine(const string&);
+    void setTaraDeOrigine(const string &);
 
+    // Get
     float getLeiPerKg();
-    string& getTaraDeOrigine();
+    string &getTaraDeOrigine();
 
-  // FUNCTII FRIEND
-  // In interafata, care sa verifice in clasa derivata
-    bool operator == (const ProdusAlimentar&)const;
-    bool operator < (const ProdusAlimentar&)const;
-    bool operator > (const ProdusAlimentar&)const;
+    // Metode Auxiliare
+    void afisare();
 
+    // Operatori
+    bool operator==(const ProdusAlimentar &) const;
+    bool operator<(const ProdusAlimentar &) const;
+    bool operator>(const ProdusAlimentar &) const;
 
+    // Administrative - NU MODIFICATI
+    string getProdusType();
     json toJSON();
 
-   NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusAlimentar, nume, cantitate, categorie, id, leiPerKg, taraOrigine)
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusAlimentar, nume, cantitate, categorie, id, leiPerKg, taraOrigine)
 };

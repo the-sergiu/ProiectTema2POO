@@ -4,26 +4,29 @@
 class ProdusRedus : virtual public ProdusNealimentar
 {
 protected:
-	int procentReducere;
-public:
-    ProdusRedus();
-    ProdusRedus(const string&, int, const string&, const string&, float, int, int, int);
-    ProdusRedus(const ProdusRedus&);
-    
-    void afisare();
+    int procentReducere;
 
-    float pretDupaReducere()const;
-    string getProdusType();
-    
-    // SET-eri
+public:
+    // Constructori
+    ProdusRedus();
+    ProdusRedus(const string &, int, const string &, const string &, float, int, int, int);
+    ProdusRedus(const ProdusRedus &);
+
+    // Operator =
+    const ProdusRedus &operator=(const ProdusRedus &);
+
+    // Set
     void setProcentReducere(int);
-    // GET-eri
+    // Get
     float getProcentReducere();
 
-    const ProdusRedus& operator = (const ProdusRedus&);
+    // Metode Auxiliare
+    void afisare();
+    float pretDupaReducere() const;
 
+    // Administrative - NU MODIFICATI
+    string getProdusType();
     json toJSON();
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusRedus, nume, cantitate, categorie, id, producator, garantieAni, pret, procentReducere)
 };
-

@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 Adresa::Adresa()
 {
   strada = "";
@@ -11,8 +10,8 @@ Adresa::Adresa()
   apartament = 0;
 }
 
-
-Adresa::Adresa(const Adresa& adresa) {
+Adresa::Adresa(const Adresa &adresa)
+{
   this->apartament = adresa.apartament;
   this->bloc = adresa.bloc;
   this->judet = adresa.judet;
@@ -21,7 +20,7 @@ Adresa::Adresa(const Adresa& adresa) {
   this->localitate = adresa.localitate;
 }
 
-Adresa::Adresa(const string& jud, const string& loc, const string& str, int nr, const string& bl, int ap)
+Adresa::Adresa(const string &jud, const string &loc, const string &str, int nr, const string &bl, int ap)
 {
   judet = jud;
   localitate = loc;
@@ -31,7 +30,7 @@ Adresa::Adresa(const string& jud, const string& loc, const string& str, int nr, 
   apartament = ap;
 }
 
-Adresa& Adresa::operator=(const Adresa& adr)
+const Adresa &Adresa::operator=(const Adresa &adr)
 {
   this->judet = adr.judet;
   this->localitate = adr.localitate;
@@ -43,7 +42,7 @@ Adresa& Adresa::operator=(const Adresa& adr)
   return *this;
 }
 
-void Adresa::setStrada(const string& str)
+void Adresa::setStrada(const string &str)
 {
   strada = str;
 }
@@ -53,7 +52,7 @@ void Adresa::setNumar(int nr)
   numar = nr;
 }
 
-void Adresa::setBloc(const string& bl)
+void Adresa::setBloc(const string &bl)
 {
   bloc = bl;
 }
@@ -63,17 +62,17 @@ void Adresa::setApartament(int ap)
   apartament = ap;
 }
 
-void Adresa::setJudet(const string& jud)
+void Adresa::setJudet(const string &jud)
 {
   judet = jud;
 }
 
-void Adresa::setLocalitate(const string& loc)
+void Adresa::setLocalitate(const string &loc)
 {
   localitate = loc;
 }
 
-string& Adresa::getStrada()
+string &Adresa::getStrada()
 {
   return this->strada;
 }
@@ -82,7 +81,7 @@ int Adresa::getNumar()
 {
   return this->numar;
 }
-string& Adresa::getBloc()
+string &Adresa::getBloc()
 {
   return this->bloc;
 }
@@ -92,38 +91,46 @@ int Adresa::getApartament()
   return this->apartament;
 }
 
-string& Adresa::getJudet()
+string &Adresa::getJudet()
 {
   return judet;
 }
 
-string& Adresa::getLocalitate()
+string &Adresa::getLocalitate()
 {
   return localitate;
 }
 
-
-bool Adresa::operator==(const Adresa& adresa) {
-  if (this->judet != adresa.judet) return false;
-  if (this->localitate != adresa.localitate) return false;
-  if (this->strada != adresa.strada) return false;
-  if (this->numar != adresa.numar) return false;
-  if (this->bloc != adresa.bloc) return false;
-  if (this->apartament != adresa.apartament) return false;
+bool Adresa::operator==(const Adresa &adresa)
+{
+  if (this->judet != adresa.judet)
+    return false;
+  if (this->localitate != adresa.localitate)
+    return false;
+  if (this->strada != adresa.strada)
+    return false;
+  if (this->numar != adresa.numar)
+    return false;
+  if (this->bloc != adresa.bloc)
+    return false;
+  if (this->apartament != adresa.apartament)
+    return false;
 
   return true;
 }
 
-bool Adresa::operator!=(const Adresa &adresa) {
+bool Adresa::operator!=(const Adresa &adresa)
+{
   return !(*this == adresa);
 }
 
-ostream& operator << (ostream& os, const Adresa& a)
+ostream &operator<<(ostream &os, const Adresa &a)
 {
-  os <<"Judet: " << a.judet << ", Localitate: " << a.localitate <<", Strada: "<<a.strada<<", nr. "<<a.numar<<", bl. "<<a.bloc<<", ap. "<<a.apartament<<endl;
+  os << "Judet: " << a.judet << ", Localitate: " << a.localitate << ", Strada: " << a.strada << ", nr. " << a.numar << ", bl. " << a.bloc << ", ap. " << a.apartament << endl;
   return os;
 }
 
-json Adresa::toJSON(){
+json Adresa::toJSON()
+{
   return json(*this);
 }
