@@ -37,6 +37,12 @@ UserNonPremium::UserNonPremium(){}
   return "nonpremium";
 }
 
-  json UserNonPremium::toJSON(){
-    return json(*this);
-  }
+unordered_map<int,int>& UserNonPremium::getMapReduceri()
+{
+  unordered_map<int,int> *x = new unordered_map<int,int>({{0,0}});
+  return *x;
+}
+
+json UserNonPremium::toJSON(){
+  return json(*this);
+}

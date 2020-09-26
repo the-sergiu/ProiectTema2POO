@@ -47,6 +47,11 @@ float UserPremium::getCostTransport(){
   return 0;
 }
 
+unordered_map<int,int>& UserPremium::getMapReduceri()
+{
+  return reduceri;
+}
+
 json UserPremium::toJSON(){
   return json(*this); 
 }

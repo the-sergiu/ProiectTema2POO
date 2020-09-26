@@ -18,6 +18,7 @@ class UserPremium : public User
     string getUserType();
     void vizualizareUser();
     float getCostTransport();
+    unordered_map<int,int>& getMapReduceri();
     
     json toJSON();
 

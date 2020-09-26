@@ -73,6 +73,8 @@ void rezolvareCerinte::Cerinta2c(){}
 void rezolvareCerinte::Cerinta2d(){}
 
 void rezolvareCerinte::Cerinta2e(){
+  cout<<"Se rezolva cerinta 2e"<<endl;
+
   list<User*> rezolvare;
   map<string,int> useri_per_judet;
 
@@ -125,4 +127,36 @@ void rezolvareCerinte::Cerinta2e(){
 
 }
 
-void rezolvareCerinte::Cerinta2f(){}
+void rezolvareCerinte::Cerinta2f(){
+  cout<<"Se rezolva cerinta 2f"<<endl;
+
+  vector<int> id_uri;
+  list<User*> rezolvare;
+
+  for (auto it = s->getListaProduse().begin(); it != s->getListaProduse().end(); ++it)
+  {
+    if((*it)->getCategorie() == "telefon" || (*it)->getCategorie() == "imprimanta")
+      id_uri.push_back((*it)->getId());
+  }
+
+  for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
+  {
+    if((*it)->getUserType() == "premium")
+    {
+      for(auto const& x : (*it)->getMapReduceri()){
+        auto p = find(id_uri.begin(),id_uri.end(),x.first);
+        if (p != id_uri.end()) 
+        { 
+            rezolvare.push_back((*it));
+        } 
+        else
+            continue; 
+      }
+    }     
+  }
+
+  json jrezolvare = ObjectFactory::getJsonUser(rezolvare);
+  os << jrezolvare; 
+  rezolvare.clear();
+
+}

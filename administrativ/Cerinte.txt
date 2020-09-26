@@ -27,7 +27,7 @@ Initializati serverul. Listele de useri si produse sunt initializate folosind fu
 
     e. Scrieti in fisierul de output userii care au atat adresa de livrare, cat si cea de facturare la casa si locuiesc in judetul cu cei mai multi utilizatori. Sortati dupa UserID 
 
-    f. Utilizatorul Daniel Sima, avand ID-ul 342, vrea sa isi cumpere un telefon, avand un buget de 1500-2000 de lei. Fiind utilizator premium, el are vouchere personalizate. Va alege telefonul pe baza pretului (calculat pe baza reducerii de pret, daca este un produs redus, dar si prin aplicarea unei eventuale reduceri personale). Folosind map-ul de reduceri al lui Daniel, salvati in fisierul de output id-ul telefonului cu pretul cel mai mic (pret final, dupa aplicarea reducerilor). Atentie! Daniel nu vrea produse resigilate!
+    f. Salvati in fisierul de output toti utilizatorii premium care au cupoane de reducere pentru telefoane si imprimante.
 
 
 
