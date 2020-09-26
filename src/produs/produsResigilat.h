@@ -9,7 +9,9 @@ private:
 public:
     ProdusResigilat();
     ProdusResigilat(const string&, int, const string&, const string&, float, int, int, const string&, int, int);
-    
+    ProdusResigilat(const ProdusResigilat&);
+
+
     void afisare();
     string getProdusType();
 

@@ -22,7 +22,8 @@ Server *Server::instanta = 0;
 
 int main(int argc, char** argv) 
 {
-
+  json result;
+  TestHelper p;
   // rezolvareCerinte rez;
 
   // rez.Cerinta1();
@@ -36,7 +37,8 @@ int main(int argc, char** argv)
   // vector<Produs*> vec;
   
   // vec.push_back(new ProdusAlimentar(str, 1, str, 2.22f, str, 9));
-
+  try{
+    
     if (argc != 4)
     {
       throw "Error: Executable requires precisely 4 arguments!";

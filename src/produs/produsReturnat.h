@@ -8,6 +8,9 @@ protected:
 public:
     ProdusReturnat();
     ProdusReturnat(const string&, int, const string&, const string&, float, int, const string&, int);
+    ProdusReturnat(const ProdusReturnat &);
+
+
     void afisare();
     string getProdusType();
 

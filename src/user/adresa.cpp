@@ -17,11 +17,11 @@ Adresa::Adresa(const Adresa& adresa) {
   this->bloc = adresa.bloc;
   this->judet = adresa.judet;
   this->numar = adresa.numar;
-  this->oras = adresa.oras;
   this->strada = adresa.strada;
+  this->localitate = adresa.localitate;
 }
 
-Adresa::Adresa(const string& jud, const string& Oras, const string& str, int nr, const string& bl, int ap)
+Adresa::Adresa(const string& jud, const string& loc, const string& str, int nr, const string& bl, int ap)
 {
   judet = jud;
   localitate = loc;
@@ -29,6 +29,18 @@ Adresa::Adresa(const string& jud, const string& Oras, const string& str, int nr,
   numar = nr;
   bloc = bl;
   apartament = ap;
+}
+
+Adresa& Adresa::operator=(const Adresa& adr)
+{
+  this->judet = adr.judet;
+  this->localitate = adr.localitate;
+  this->strada = adr.strada;
+  this->numar = adr.numar;
+  this->apartament = adr.apartament;
+  this->bloc = adr.bloc;
+
+  return *this;
 }
 
 void Adresa::setStrada(const string& str)
@@ -93,7 +105,7 @@ string& Adresa::getLocalitate()
 
 bool Adresa::operator==(const Adresa& adresa) {
   if (this->judet != adresa.judet) return false;
-  if (this->oras != adresa.oras) return false;
+  if (this->localitate != adresa.localitate) return false;
   if (this->strada != adresa.strada) return false;
   if (this->numar != adresa.numar) return false;
   if (this->bloc != adresa.bloc) return false;

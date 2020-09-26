@@ -10,6 +10,10 @@ protected:
 public:
     ProdusAlimentar();
     ProdusAlimentar(const string&, int, const string&, float, const string&, int);
+    ProdusAlimentar(const ProdusAlimentar&);
+    
+    const ProdusAlimentar& operator = (const ProdusAlimentar&);
+    
     void afisare();
     string getProdusType();
 
@@ -25,7 +29,6 @@ public:
     bool operator < (const ProdusAlimentar&)const;
     bool operator > (const ProdusAlimentar&)const;
 
-    const ProdusAlimentar& operator = (const ProdusAlimentar&);
 
     json toJSON();
 

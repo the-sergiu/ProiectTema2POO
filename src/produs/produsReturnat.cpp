@@ -10,6 +10,10 @@ ProdusReturnat::ProdusReturnat(const string& categorie, int id, const string& pr
 	this->motiv = motiv;
 }
 
+ProdusReturnat::ProdusReturnat(const ProdusReturnat &prodRet) : ProdusNealimentar(prodRet)
+{
+  this->motiv = prodRet.motiv;
+}
 
 void ProdusReturnat::afisare() {
 	cout << "Produs Returnat" << endl;

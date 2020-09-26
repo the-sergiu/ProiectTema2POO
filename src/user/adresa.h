@@ -20,7 +20,7 @@ class Adresa
   Adresa();
   Adresa(const Adresa&);
   Adresa(const string&, const string&, const string&, int, const string&, int);
-  
+  Adresa& operator=(const Adresa&);
 
 
   void setJudet(const string&);

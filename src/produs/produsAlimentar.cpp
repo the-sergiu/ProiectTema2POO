@@ -11,6 +11,11 @@ ProdusAlimentar::ProdusAlimentar(const string &categorie,  int id, const string&
 	this->taraOrigine = taraOrigine;
 }
 
+ProdusAlimentar::ProdusAlimentar(const ProdusAlimentar& pa) : Produs(pa) {
+	this->leiPerKg = pa.leiPerKg;
+	this->taraOrigine = pa.taraOrigine;
+}
+
 void ProdusAlimentar::afisare(){
   cout << "Produs alimentar" << endl;
   cout << "Nume produs: " << this->nume << endl;

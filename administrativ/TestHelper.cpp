@@ -147,7 +147,7 @@ json TestHelper::TestIerarhieClasaUser() {
 
     // Test Set Adresa
     adr->setJudet(judet);
-    adr->setOras(oras);
+    adr->setLocalitate(oras);
     adr->setStrada(strada);
     adr->setNumar(numar);
     adr->setBloc(bloc);
@@ -157,7 +157,7 @@ json TestHelper::TestIerarhieClasaUser() {
     if (adr->getJudet() != judet) {
         return failJson;
     }
-    if (adr->getOras() != oras) {
+    if (adr->getLocalitate() != oras) {
       return failJson;
     }
     if (adr->getStrada() != strada) {
@@ -177,7 +177,7 @@ json TestHelper::TestIerarhieClasaUser() {
     unordered_map<int, int> reduceri_test;
     reduceri_test[1] = 5; reduceri_test[3] = 10;
     UserPremium *up = new UserPremium();
-    UserPremium *up2 = new UserPremium(check, check, check, 20, check, 200, check, 20, check, 30, 200, check, check, check, reduceri_test);
+    UserPremium *up2 = new UserPremium(check, check, check, 20, check, 200, check, check, check, 20, check, 30, 200, check, check, check, 20, reduceri_test);
 
     if (up2 == NULL)
     {
@@ -225,7 +225,7 @@ json TestHelper::TestIerarhieClasaUser() {
     if (up->getDateLivrare() != *adr2) {
       return failJson;
     }
-    if (up->getReduceri() != reduceri_test) {
+    if (up->getMapReduceri() != reduceri_test) {
       return failJson;
     }
     if (up->getCostAbonamentPremium() != cap) {
@@ -237,7 +237,7 @@ json TestHelper::TestIerarhieClasaUser() {
 
     // Test Constructor UserNonPremium
     UserNonPremium *unp = new UserNonPremium();
-    UserNonPremium *unp2 = new UserNonPremium(check, check, check, 40, check, 60, check, 20, check, 50, 200, check, check, check, 3.40);
+    UserNonPremium *unp2 = new UserNonPremium(check, check, check, 40, check, 60, check, check, check, 20, check, 50, 200, check, check, check, 3.40);
 
     if (unp2 == NULL)
     {

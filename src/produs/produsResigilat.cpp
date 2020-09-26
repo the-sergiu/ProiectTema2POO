@@ -13,6 +13,11 @@ ProdusResigilat::ProdusResigilat(const string& categorie, int id, const string& 
 	this->procentUzura = procentUzura;
 }
 
+ProdusResigilat::ProdusResigilat(const ProdusResigilat& pr) : ProdusNealimentar(pr), ProdusRedus(pr), ProdusReturnat(pr)
+{
+	this->procentUzura = pr.procentUzura;
+}
+
 void ProdusResigilat::afisare() {
 	cout << "Produs Resigilat" << endl;
 	cout << "Nume Produs: " << this->nume << endl;
