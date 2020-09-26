@@ -8,7 +8,7 @@ using namespace std;
 
 class Adresa
 {
-  private:
+private:
   string judet;
   string localitate;
   string strada;
@@ -16,32 +16,37 @@ class Adresa
   string bloc;
   int apartament;
 
-  public:
+public:
+  // Constructori
   Adresa();
-  Adresa(const Adresa&);
-  Adresa(const string&, const string&, const string&, int, const string&, int);
-  Adresa& operator=(const Adresa&);
+  Adresa(const Adresa &);
+  Adresa(const string &, const string &, const string &, int, const string &, int);
 
+  // Operator =
+  const Adresa &operator=(const Adresa &);
 
-  void setJudet(const string&);
-  void setLocalitate(const string&);
-  void setStrada(const string&);
+  // Set
+  void setJudet(const string &);
+  void setLocalitate(const string &);
+  void setStrada(const string &);
   void setNumar(int);
-  void setBloc(const string&);
+  void setBloc(const string &);
   void setApartament(int);
 
-  string& getJudet();
-  string& getLocalitate();
-  string& getStrada();
+  // Get
+  string &getJudet();
+  string &getLocalitate();
+  string &getStrada();
   int getNumar();
-  string& getBloc();
+  string &getBloc();
   int getApartament();
 
+  // Operatori
   bool operator==(const Adresa &);
   bool operator!=(const Adresa &);
+  friend ostream &operator<<(ostream &, const Adresa &);
 
-  friend ostream& operator << (ostream&, const Adresa&);
-
+  // Administrativ - NU MODIFICATI
   json toJSON();
 
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(Adresa, judet, localitate, strada, numar, bloc, apartament)

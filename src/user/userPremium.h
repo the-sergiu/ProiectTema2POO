@@ -1,4 +1,4 @@
-  #pragma once
+#pragma once
 #include "user.h"
 #include <string>
 
@@ -6,24 +6,34 @@ using namespace std;
 
 class UserPremium : public User
 {
-  protected:
-    unordered_map<int, int> reduceri;// idProdus-procentReducere
-    int costAbonamentPremium;
-  
-  public:
-    UserPremium();
+protected:
+  unordered_map<int, int> reduceri; // idProdus-procentReducere
+  int costAbonamentPremium;
 
-    UserPremium(const string&, const string&, const string&, int, const string&, int, const string&, const string&, const string&, int, const string&, int, int, const string&, const string&, const string&, int, const unordered_map<int,int>&);
+public:
+  // Constructori
+  UserPremium();
+  UserPremium(const string &, const string &, const string &, int, const string &, int, const string &, const string &, const string &, int, const string &, int, int, const string &, const string &, const string &, int, const unordered_map<int, int> &);
+  UserPremium(const UserPremium &);
 
-    string getUserType();
-    void vizualizareUser();
-    float getCostTransport();
-    unordered_map<int,int>& getMapReduceri();
-    void setReduceri(unordered_map<int,int>);
-    void setCostAbonamentPremium(int cap);
-    int getCostAbonamentPremium();
-    
-    json toJSON();
+  // Operator =
+  const UserPremium &operator=(const UserPremium &);
 
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(UserPremium, dateFacturare, dateLivrare, nume, prenume, email, UserId, costAbonamentPremium, reduceri)
+  // Set
+  void setReduceri(unordered_map<int, int>);
+  void setCostAbonamentPremium(int cap);
+
+  // Get
+  float getCostTransport();
+  unordered_map<int, int> &getMapReduceri();
+  int getCostAbonamentPremium();
+  string getUserType();
+
+  // Metode Auxiliare
+  void vizualizareUser();
+
+  // Administrative - NU MODIFICATI
+  json toJSON();
+
+  NLOHMANN_DEFINE_TYPE_INTRUSIVE(UserPremium, dateFacturare, dateLivrare, nume, prenume, email, UserId, costAbonamentPremium, reduceri)
 };

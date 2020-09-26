@@ -1,18 +1,19 @@
 #include "produs.h"
 using namespace std;
 
-Produs::~Produs(){}
-
+Produs::~Produs() {}
 
 bool Produs::checkCantitate(int cantitateCeruta)
 {
-  cout<<endl<<"Cantitatea produsului este "<<this->cantitate<<endl;
+  cout << endl
+       << "Cantitatea produsului este " << this->cantitate << endl;
   if (this->cantitate >= cantitateCeruta)
     return true;
-  else return false;
+  else
+    return false;
 }
 
-Produs::Produs(const string& categorie, int id, const string& nume, int cantitate)
+Produs::Produs(const string &categorie, int id, const string &nume, int cantitate)
 {
   this->categorie = categorie;
   this->id = id;
@@ -45,8 +46,8 @@ void Produs::cresteCantitate(int cantitateCeruta)
 {
   this->cantitate += cantitateCeruta;
 }
-  
-void Produs::setCategorie(const string& categorie)
+
+void Produs::setCategorie(const string &categorie)
 {
   this->categorie = categorie;
 }
@@ -61,12 +62,12 @@ void Produs::setCantitate(int cantitate)
   this->cantitate = cantitate;
 }
 
-void Produs::setNume(const string& nume)
+void Produs::setNume(const string &nume)
 {
   this->nume = nume;
 }
 
-string& Produs::getCategorie()
+string &Produs::getCategorie()
 {
   return this->categorie;
 }
@@ -81,12 +82,13 @@ int Produs::getId()
   return this->id;
 }
 
-string& Produs::getNume()
+string &Produs::getNume()
 {
   return this->nume;
 }
 
-const Produs& Produs::operator=(const Produs& a){
+const Produs &Produs::operator=(const Produs &a)
+{
   this->nume = a.nume;
   this->categorie = a.categorie;
   this->id = a.id;
@@ -95,6 +97,7 @@ const Produs& Produs::operator=(const Produs& a){
   return *this;
 }
 
-json Produs::toJSON(){
+json Produs::toJSON()
+{
   return json(*this);
 }

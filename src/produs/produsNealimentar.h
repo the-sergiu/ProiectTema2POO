@@ -5,32 +5,37 @@ class ProdusNealimentar : public Produs
 {
 protected:
   string producator;
-	int garantieAni;
-	float pret;
+  int garantieAni;
+  float pret;
+
 public:
-	
-    ProdusNealimentar();
-    ProdusNealimentar(const string&, int, const string&, const string&, float, int, int);
-    ProdusNealimentar(const ProdusNealimentar& pn);
+  // Constructori
+  ProdusNealimentar();
+  ProdusNealimentar(const string &, int, const string &, const string &, float, int, int);
+  ProdusNealimentar(const ProdusNealimentar &pn);
 
-    void afisare();
-    string getProdusType();
+  // Operator =
+  const ProdusNealimentar &operator=(const ProdusNealimentar &);
 
-    void setGarantieAni(int);
-    void setPret(float);
-    void setProducator(const string&);
-    
-    int getGarantieAni();
-    float getPret();
-    string& getProducator();
+  // Set
+  void setGarantieAni(int);
+  void setPret(float);
+  void setProducator(const string &);
 
-    bool operator == (const ProdusNealimentar&) const;
+  // Get
+  int getGarantieAni();
+  float getPret();
+  string &getProducator();
 
-    const ProdusNealimentar& operator = (const ProdusNealimentar&);
+  // Metode Auxiliare
+  void afisare();
+  string getProdusType();
 
-    json toJSON();
+  // Operator ==
+  bool operator==(const ProdusNealimentar &) const;
 
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusNealimentar, nume, cantitate, categorie, id, producator, garantieAni, pret)
+  // Administrative - NU MODIFICATI
+  json toJSON();
 
+  NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusNealimentar, nume, cantitate, categorie, id, producator, garantieAni, pret)
 };
-
