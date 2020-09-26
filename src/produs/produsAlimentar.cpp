@@ -11,6 +11,11 @@ ProdusAlimentar::ProdusAlimentar(const string &categorie,  int id, const string&
 	this->taraOrigine = taraOrigine;
 }
 
+ProdusAlimentar::ProdusAlimentar(const ProdusAlimentar& pa) : Produs(pa) {
+	this->leiPerKg = pa.leiPerKg;
+	this->taraOrigine = pa.taraOrigine;
+}
+
 void ProdusAlimentar::afisare(){
   cout << "Produs alimentar" << endl;
   cout << "Nume produs: " << this->nume << endl;
@@ -49,6 +54,20 @@ bool ProdusAlimentar::operator < (const ProdusAlimentar& obj) const {
 
 bool ProdusAlimentar::operator > (const ProdusAlimentar& obj)const{
 	return (this->leiPerKg > obj.leiPerKg) ? true : false;
+}
+
+const ProdusAlimentar& ProdusAlimentar::operator = (const ProdusAlimentar& a){
+  this->nume = a.nume;
+  this->categorie = a.categorie;
+  this->id = a.id;
+  this->cantitate = a.cantitate;
+  this->leiPerKg = a.leiPerKg; 
+  this->taraOrigine = a.taraOrigine;
+  return *this;
+}
+
+string ProdusAlimentar::getProdusType(){
+  return "alimentar";
 }
 
 json ProdusAlimentar::toJSON(){

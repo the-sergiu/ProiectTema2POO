@@ -12,6 +12,7 @@
 #include "../user/userPremium.h"
 #include "../user/userNonPremium.h"
 #include "../cosproduse/cosProduse.h"
+#include "../objectFactory/objectFactory.h"
 
 using namespace std;
 
@@ -48,7 +49,7 @@ class Server
     void populareUseri(const string&);
 
     void setMapProdusId_Produs();
-    void setMapuser_CosProduse();
+    void setMapUser_CosProduse();
 
 
     list<Produs*>& getListaProduse();
@@ -59,25 +60,5 @@ class Server
     void requestModifyProdus(int, int, int);
 
 
-    
-    // query(db, a, b, c)
+
 };
-
-/*
-
-
-
-Fisier:
-Produs 1, 2 etc
-Citim produs cu produs intr-un pointer temp
-
-Produs *pointer_temp = new ProdusAlimentar/Nealimentar(ID, ....)
-
-map[pointer_temp->getID()] = pointer_temp
-string nume
-sting blabla
-////
-
-
-
-*/

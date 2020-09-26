@@ -1,5 +1,6 @@
- #pragma once
+#pragma once
 #include "produsNealimentar.h"
+
 class ProdusReturnat : virtual public ProdusNealimentar
 {
 protected:
@@ -7,7 +8,11 @@ protected:
 public:
     ProdusReturnat();
     ProdusReturnat(const string&, int, const string&, const string&, float, int, const string&, int);
+    ProdusReturnat(const ProdusReturnat &);
+
+
     void afisare();
+    string getProdusType();
 
 
     //SET-ERI
@@ -15,6 +20,8 @@ public:
     
     //GET-ERI
     void setMotiv(string&);
+
+    const ProdusReturnat& operator = (const ProdusReturnat&);
 
     json toJSON();
 

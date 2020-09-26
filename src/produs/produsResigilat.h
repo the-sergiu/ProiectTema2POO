@@ -1,16 +1,20 @@
 #pragma once
 #include "produsRedus.h"
 #include "produsReturnat.h"
+
 class ProdusResigilat : public ProdusRedus, public ProdusReturnat
 {
-private:
 private:
     int procentUzura;
 public:
     ProdusResigilat();
     ProdusResigilat(const string&, int, const string&, const string&, float, int, int, const string&, int, int);
-    
+    ProdusResigilat(const ProdusResigilat&);
+
+
     void afisare();
+    string getProdusType();
+
 
     //SET-ERI
     void setProcentUzura(int);
@@ -20,6 +24,8 @@ public:
 
     json toJSON();
 
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusResigilat, nume, cantitate, categorie, id, producator, garantieAni, pret, motiv, procentReducere)
+    const ProdusResigilat& operator = (const ProdusResigilat&);
+
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusResigilat, nume, cantitate, categorie, id, producator, garantieAni, pret, motiv, procentReducere, procentUzura)
 };
 

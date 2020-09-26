@@ -6,13 +6,21 @@ ProdusNealimentar::ProdusNealimentar() {
 	this->pret = -1;
 }
 
-ProdusNealimentar::ProdusNealimentar(const string& categorie, int id, const string& producator, const string& nume, float pret, int garantieAni, int cantitate) : Produs(categorie, id, nume, cantitate){
+ProdusNealimentar::ProdusNealimentar(const string& categorie, int id, const string& producator, const string& nume, float pret, int garantieAni, int cantitate) : Produs(categorie, id, nume, cantitate) 
+{
   this->producator = producator;
 	this->garantieAni = garantieAni;
 	this->pret = pret;
 }
 
-void ProdusNealimentar::afisare(){
+ProdusNealimentar::ProdusNealimentar(const ProdusNealimentar &pn) : Produs(pn)
+{
+	this->producator = pn.producator;
+	this->pret = pn.pret;
+	this->garantieAni = pn.garantieAni;
+}
+
+void ProdusNealimentar::afisare() {
   cout << "Produs Nealimentar" << endl;
   cout << "Nume Produs: " << this->nume << endl;
   cout << "Producator: " << this->producator << endl;
@@ -20,7 +28,7 @@ void ProdusNealimentar::afisare(){
 	cout << "ID: " << this->id << endl; 
   cout << "Cantitate: " << this->cantitate << endl;
 	cout << "Garantie: " << this->garantieAni << " ani" << endl;
-	cout << "Pret: " << this->pret << endl;
+	cout << "Pret: " << this->pret << endl << endl;
 }
 
 // SET-eri
@@ -51,6 +59,21 @@ string& ProdusNealimentar::getProducator(){
 
 bool ProdusNealimentar::operator == (const ProdusNealimentar& obj)const {
 	return (this->pret == obj.pret) ? true : false;
+}
+
+const ProdusNealimentar& ProdusNealimentar::operator = (const ProdusNealimentar& a){
+  this->nume = a.nume;
+  this->producator = a.producator;
+  this->categorie = a.categorie;
+  this->id = a.id;
+  this->cantitate = a.cantitate;
+  this->garantieAni = a.garantieAni;
+  this->pret = a.pret; 
+  return *this;
+}
+
+string ProdusNealimentar::getProdusType(){
+  return "nealimentar";
 }
 
 json ProdusNealimentar::toJSON(){

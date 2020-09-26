@@ -11,8 +11,10 @@ public:
 	
     ProdusNealimentar();
     ProdusNealimentar(const string&, int, const string&, const string&, float, int, int);
+    ProdusNealimentar(const ProdusNealimentar& pn);
 
     void afisare();
+    string getProdusType();
 
     void setGarantieAni(int);
     void setPret(float);
@@ -23,6 +25,8 @@ public:
     string& getProducator();
 
     bool operator == (const ProdusNealimentar&) const;
+
+    const ProdusNealimentar& operator = (const ProdusNealimentar&);
 
     json toJSON();
 

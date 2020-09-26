@@ -10,9 +10,20 @@ ProdusRedus::ProdusRedus(const string& categorie, int id, const string& producat
 	this->procentReducere = procentReducere;
 }
 
+ProdusRedus::ProdusRedus(const ProdusRedus& produsRedus) : ProdusNealimentar(produsRedus)
+{
+	this->procentReducere = produsRedus.procentReducere;
+}
+
 void ProdusRedus::afisare()  {
-	ProdusNealimentar::afisare();
-  cout << "Produs Redus" << endl;
+	cout << "Produs Redus" << endl;
+  cout << "Nume Produs: " << this->nume << endl;
+  cout << "Producator: " << this->producator << endl;
+	cout << "Categorie: " << this->categorie << endl;
+	cout << "ID: " << this->id << endl; 
+  cout << "Cantitate: " << this->cantitate << endl;
+	cout << "Garantie: " << this->garantieAni << " ani" << endl;
+	cout << "Pret: " << this->pret << endl;
 	cout << "Procent reducere : " << this->procentReducere << endl << endl;
 }
 
@@ -25,8 +36,25 @@ float ProdusRedus::getProcentReducere() {
 	return this->procentReducere;
 }
 
+const ProdusRedus& ProdusRedus::operator = (const ProdusRedus& a){
+  this->nume = a.nume;
+  this->producator = a.producator;
+  this->categorie = a.categorie;
+  this->id = a.id;
+  this->cantitate = a.cantitate;
+  this->garantieAni = a.garantieAni;
+  this->pret = a.pret;
+  this->procentReducere = a.procentReducere;
+
+  return *this;
+}
+
 void ProdusRedus::setProcentReducere(int procentReducere) {
 	this->procentReducere = procentReducere;
+}
+
+string ProdusRedus::getProdusType(){
+  return "redus";
 }
 
 json ProdusRedus::toJSON(){

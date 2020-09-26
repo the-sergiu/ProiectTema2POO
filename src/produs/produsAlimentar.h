@@ -10,7 +10,12 @@ protected:
 public:
     ProdusAlimentar();
     ProdusAlimentar(const string&, int, const string&, float, const string&, int);
+    ProdusAlimentar(const ProdusAlimentar&);
+    
+    const ProdusAlimentar& operator = (const ProdusAlimentar&);
+    
     void afisare();
+    string getProdusType();
 
     void setLeiPerKg(float);
     void setTaraDeOrigine(const string&);
@@ -23,6 +28,7 @@ public:
     bool operator == (const ProdusAlimentar&)const;
     bool operator < (const ProdusAlimentar&)const;
     bool operator > (const ProdusAlimentar&)const;
+
 
     json toJSON();
 

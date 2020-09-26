@@ -8,8 +8,6 @@
 #define PREMIUM     "premium"
 #define NONPREMIUM  "nonPremium"
 
-const char* produsTypes[] = {"alimentar", "nealimentar", "redus", "returnat", "resigilat"};
-const char* userTypes[] = {"premium", "nonPremium"};
 
 Produs* ObjectFactory::createProdus(string type, json::iterator it) {
 
@@ -20,54 +18,56 @@ Produs* ObjectFactory::createProdus(string type, json::iterator it) {
         return newProdus;
     }
 
-    if (type == NEALIMENTAR) {
+    else if (type == NEALIMENTAR) {
 
         ProdusNealimentar *newProdus = new ProdusNealimentar();
         *newProdus = it->get<ProdusNealimentar>();
         return newProdus;
     }
 
-    if (type == REDUS) {
+    else if (type == REDUS) {
 
         ProdusRedus *newProdus = new ProdusRedus();
         *newProdus = it->get<ProdusRedus>();
         return newProdus;
     }
 
-    if (type == RETURNAT) {
+    else if (type == RETURNAT) {
 
         ProdusReturnat *newProdus = new ProdusReturnat();
         *newProdus = it->get<ProdusReturnat>();
         return newProdus;
     }
 
-    if (type == RESIGILAT) {
+    else if (type == RESIGILAT) {
             
         ProdusResigilat *newProdus = new ProdusResigilat();
         *newProdus = it->get<ProdusResigilat>();
         return newProdus;
     }
+
+    return NULL;
 }  
 
-vector<Produs*> ObjectFactory::getProdusVector(json j){
+list<Produs*> ObjectFactory::getProdusList(json j){
     
-    vector<Produs*> vec;
+    list<Produs*> lst;
     
     for (json::iterator it = j.begin(); it != j.end(); ++it) {
 
         Produs *p = createProdus((*it)[TYPE_KEY], it);
-        vec.push_back(p);
+        lst.push_back(p);
     }
-    return vec;
+    return lst;
 
 } 
 
-json ObjectFactory::getJsonProdus(vector<Produs*>& vec){
+json ObjectFactory::getJsonProdus(list<Produs*>& lst){
 
     json outj;
 
-    for (int i = 0; i < vec.size(); i++) {
-        outj.push_back(vec[i]->toJSON());
+    for (auto it = lst.begin(); it != lst.end(); ++it){
+        outj.push_back((*it)->toJSON());
     }
 
     return outj;
@@ -82,30 +82,32 @@ User* ObjectFactory::createUser(string type, json::iterator it){
         return newUser;
     }
 
-    if (type == NONPREMIUM) {
+    else if (type == NONPREMIUM) {
 
         UserNonPremium *newUser = new UserNonPremium();
         *newUser = it->get<UserNonPremium>();
         return newUser;
     }
+
+    return NULL;
 }
 
-vector<User*> ObjectFactory::getUsersVector(json j){
+list<User*> ObjectFactory::getUserList(json j){
 
-    vector<User*> vec;
+    list<User*> lst;
     for (json::iterator it = j.begin(); it != j.end(); ++it) {
 
         User *p = createUser((*it)[TYPE_KEY], it);
-        vec.push_back(p);
+        lst.push_back(p);
     }
-    return vec;
+    return lst;
 }
 
-json ObjectFactory::getJsonUser(vector<User*>& vec){
+json ObjectFactory::getJsonUser(list<User*>& lst){
     json outj;
 
-    for (int i = 0; i < vec.size(); i++) {
-        outj.push_back(vec[i]->toJSON());
+    for (auto it = lst.begin(); it != lst.end(); ++it){
+        outj.push_back((*it)->toJSON());
     }
 
     return outj;

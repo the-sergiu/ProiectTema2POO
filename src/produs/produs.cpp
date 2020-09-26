@@ -20,6 +20,14 @@ Produs::Produs(const string& categorie, int id, const string& nume, int cantitat
   this->cantitate = cantitate;
 }
 
+Produs::Produs(const Produs &p)
+{
+  this->categorie = p.categorie;
+  this->id = p.id;
+  this->nume = p.nume;
+  this->cantitate = p.cantitate;
+}
+
 Produs::Produs()
 {
   this->categorie = placeHolder;
@@ -76,6 +84,15 @@ int Produs::getId()
 string& Produs::getNume()
 {
   return this->nume;
+}
+
+const Produs& Produs::operator=(const Produs& a){
+  this->nume = a.nume;
+  this->categorie = a.categorie;
+  this->id = a.id;
+  this->cantitate = a.cantitate;
+
+  return *this;
 }
 
 json Produs::toJSON(){
