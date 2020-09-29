@@ -3,6 +3,31 @@
 const json failJson = json::parse("{\"result\": \"fail\"}");
 const json successJson = json::parse("{\"result\": \"success\"}");
 
+TestHelper::TestHelper(const string& inFile)
+{
+  ifstream inStream(inFile);
+
+  inStream >> input;
+
+  inStream.close();
+
+  server = Server::InitializareServer();
+}
+
+void TestHelper::Init()
+{
+  server->populareProduse(input);
+  server->populareUseri(input);
+}
+
+TestHelper::~TestHelper()
+{
+  if (server != nullptr)
+  {
+    server = nullptr;
+  } 
+}
+
 json TestHelper::TestIerarhieClasaProdus() {
       string str = "check";
 
@@ -329,4 +354,17 @@ json TestHelper::TestLRUCacheSimple()
   }
 
   return successJson;
+}
+
+json TestHelper::TestCerinta1()
+{
+  Init();
+  json output;
+
+  rezolvatorul.Cerinta1();
+
+  output["produse"] = JSONSerializer::FromProdusMap(server->getMap_Id_Produs());
+  output["useri"] = JSONSerializer::FromUserMap(server->getMap_User_CosProdus());
+
+  return output;
 }
