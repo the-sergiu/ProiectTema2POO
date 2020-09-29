@@ -2,90 +2,74 @@
 
 using namespace std;
 
-rezolvareCerinte::rezolvareCerinte(){
-  s = NULL;
-  //os.open("src/files/output/output.json", std::ios_base::app);
-  os.open("src/files/output/output.json");
+RezolvareCerinte::RezolvareCerinte() {
+  server = Server::InitializareServer();
 }
 
-rezolvareCerinte::~rezolvareCerinte(){
-  s = NULL;
-  os.close();
+RezolvareCerinte::~RezolvareCerinte(){
+  if (server != nullptr) 
+  {
+    server = nullptr;
+  }
 }
 
-void rezolvareCerinte::Cerinta1(){
+void RezolvareCerinte::Cerinta1(){
   cout<<"Se rezolva cerinta 1"<<endl;
 
-  s = Server::InitializareServer();
-
   //Testare citire produse din json
-  s->populareProduse("src/files/input/input_produse.json");
-  s->setMapProdusId_Produs();
+  server->setMapProdusId_Produs();
 
   //Testare citire useri din json
-  s->populareUseri("src/files/input/input_useri.json");
-  s->setMapUser_CosProduse();
-
-  // json jtest1 = ObjectFactory::getJsonUser(s->getListaUseri());
-  
-  // ofstream os1("src/files/output/output_useri.json");
-  // os1 << jtest1; 
-
-  // json jtest2 = ObjectFactory::getJsonProdus(s->getListaProduse());
-  // os << jtest2; 
+  server->setMapUser_CosProduse();
 }
 
-void rezolvareCerinte::Cerinta2a(){
+void RezolvareCerinte::Cerinta2a(){
   cout<<"Se rezolva cerinta 2a"<<endl;
   list<Produs*> rezolvare;
 
-  for (auto it = s->getListaProduse().begin(); it != s->getListaProduse().end(); ++it)
+  for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
   {
     if((*it)->getProdusType() == "redus" && (*it)->getCategorie() == "espressor")
       rezolvare.push_back((*it));
   }
 
   json jrezolvare = ObjectFactory::getJsonProdus(rezolvare);
-  
-  os << jrezolvare; 
 
   rezolvare.clear();
 }
 
-void rezolvareCerinte::Cerinta2b(){
+void RezolvareCerinte::Cerinta2b(){
   cout<<"Se rezolva cerinta 2b"<<endl;
   list<User*> rezolvare;
 
-    for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
+    for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
     if((*it)->getUserType() == "nonpremium" && (*it)->getCostTransport() < 11.5)
       rezolvare.push_back((*it));
   }
 
   json jrezolvare = ObjectFactory::getJsonUser(rezolvare);
-  
-  os << jrezolvare; 
 
   rezolvare.clear();
 
 }
 
-void rezolvareCerinte::Cerinta2c(){}
-void rezolvareCerinte::Cerinta2d(){}
+void RezolvareCerinte::Cerinta2c(){}
+void RezolvareCerinte::Cerinta2d(){}
 
-void rezolvareCerinte::Cerinta2e(){
+void RezolvareCerinte::Cerinta2e(){
   cout<<"Se rezolva cerinta 2e"<<endl;
 
   list<User*> rezolvare;
   map<string,int> useri_per_judet;
 
-  for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
+  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
     Adresa dateLivrare = (*it)->getDateLivrare();
     useri_per_judet[dateLivrare.getJudet()] = 0;
   }
 
-  for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
+  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
     Adresa dateLivrare = (*it)->getDateLivrare();
     useri_per_judet[dateLivrare.getJudet()] += 1;
@@ -113,7 +97,7 @@ void rezolvareCerinte::Cerinta2e(){
     }
   }
 
-  for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
+  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
     Adresa dateLivrare = (*it)->getDateLivrare();
     Adresa dateFacturare = (*it)->getDateFacturare();
@@ -123,24 +107,23 @@ void rezolvareCerinte::Cerinta2e(){
   }
 
   json jrezolvare = ObjectFactory::getJsonUser(rezolvare);
-  os << jrezolvare; 
   rezolvare.clear();
 
 }
 
-void rezolvareCerinte::Cerinta2f(){
+void RezolvareCerinte::Cerinta2f(){
   cout<<"Se rezolva cerinta 2f"<<endl;
 
   vector<int> id_uri;
   list<User*> rezolvare;
 
-  for (auto it = s->getListaProduse().begin(); it != s->getListaProduse().end(); ++it)
+  for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
   {
     if((*it)->getCategorie() == "telefon" || (*it)->getCategorie() == "imprimanta")
       id_uri.push_back((*it)->getId());
   }
 
-  for (auto it = s->getListaUseri().begin(); it != s->getListaUseri().end(); ++it)
+  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
     auto up = dynamic_cast<UserPremium*>((*it));
     if(up != nullptr)
@@ -156,7 +139,6 @@ void rezolvareCerinte::Cerinta2f(){
   }
 
   json jrezolvare = ObjectFactory::getJsonUser(rezolvare);
-  os << jrezolvare; 
   rezolvare.clear();
 
 }

@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,13 +13,12 @@
 #include "../objectFactory/objectFactory.h"
 
 
-class rezolvareCerinte{
+class RezolvareCerinte{
   private:
-    Server *s;
-    ofstream os;
+    Server *server;
   public:
-    rezolvareCerinte();
-    ~rezolvareCerinte();
+    RezolvareCerinte();
+    ~RezolvareCerinte();
     void Cerinta1();
     void Cerinta2a();
     void Cerinta2b();
