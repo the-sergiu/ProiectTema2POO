@@ -45,8 +45,11 @@ class Server
     static Server* InitializareServer();
     ~Server();
 
-    void populareProduse(const string&);
-    void populareUseri(const string&);
+    unordered_map<int, Produs*> getMap_Id_Produs();
+    unordered_map<int, CosProduse*> getMap_User_CosProdus();
+
+    void populareProduse(const json&);
+    void populareUseri(const json&);
 
     void setMapProdusId_Produs();
     void setMapUser_CosProduse();

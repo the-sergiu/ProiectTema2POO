@@ -2,26 +2,40 @@
 
 using namespace std;
 
+// Constructori + Destructori + Init
+Server::Server()
+{}
 
+Server* Server::InitializareServer()
+{
+  if(!instanta)
+  {
+    instanta = new Server;
+  }
+  
+  return instanta;
+}
+
+Server::~Server()
+{
+  if (instanta != NULL)
+    instanta = NULL;
+  if (!produsId_Produs.empty())
+    produsId_Produs.clear();
+  if (!user_CosProduse.empty())
+    user_CosProduse.clear();
+}
+
+// SET
 void Server::setMapProdusId_Produs()
 {
   for (auto it = prod.begin(); it != prod.end(); ++it)
   {
     produsId_Produs[(*it)->getId()] = *it;
   }
-
-  //Testare initializare corecta map
-  // for(auto const& x : this->produsId_Produs){
-  // cout<<x.first<<" - ";
-  // x.second->afisare();
-  // cout<<endl;
-  // }
 }
 
-list<Produs*>& Server::getListaProduse()
-{
-  return this->prod;
-}
+
 
 void Server::setMapUser_CosProduse()
 {
@@ -37,63 +51,39 @@ void Server::setMapUser_CosProduse()
   // }
 }
 
+
+// GET
+list<Produs*>& Server::getListaProduse()
+{
+  return this->prod;
+}
 list<User*>& Server::getListaUseri()
 {
   return this->usr;
 }
 
-
-Server::Server()
-{}
-
-Server::~Server()
+unordered_map<int, Produs*> Server::getMap_Id_Produs()
 {
-  if (instanta != NULL)
-    instanta = NULL;
-  if (!produsId_Produs.empty())
-    produsId_Produs.clear();
-  if (!user_CosProduse.empty())
-    user_CosProduse.clear();
-
+  return this->produsId_Produs;
 }
 
-Server* Server::InitializareServer()
+unordered_map<int, CosProduse*> Server::getMap_User_CosProdus()
 {
-  if(!instanta)
-  {
-    instanta = new Server;
-  }
-  return instanta;
+  return this->user_CosProduse;
 }
 
-void Server::populareProduse(const string& fisier)
-{
-  ifstream date(fisier);
-  if (!date)
-  {
-    cout<<"Eroare deschidere fisier produse"<<endl;
-    return;
-  }
 
-  json jin;
-  date >> jin;
-  prod = ObjectFactory::getProdusList(jin);
+void Server::populareProduse(const json& input)
+{
+  prod = ObjectFactory::getProdusList(input["produse"]);
 }
 
-void Server::populareUseri(const string& fisier)
+void Server::populareUseri(const json& input)
 {
-  ifstream date(fisier);
-  if (!date)
-  {
-    cout<<"Eroare deschidere fisier useri"<<endl;
-    return;
-  }
-
-  json jin;
-  date >> jin;
-  usr = ObjectFactory::getUserList(jin);
+  usr = ObjectFactory::getUserList(input["useri"]);
 }
 
+// REQUESTS
 void Server::requestAddProdus(int userID, int produsID, int cantitate)
 {
   //Atentie verificare daca nu exista user sau produs cu id corect
