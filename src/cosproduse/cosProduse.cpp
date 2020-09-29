@@ -51,4 +51,10 @@ void CosProduse::afisare()
     for(auto const& x : this->produse)
       cout<<x.first<<" "<<x.second<<endl;
   }
+
+}
+
+json CosProduse::toJSON()
+{
+  return json(*this);
 }
