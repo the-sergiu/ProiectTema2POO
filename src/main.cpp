@@ -11,7 +11,6 @@
 #include "user/userNonPremium.h"
 #include "lrucache/lrucache.h"
 #include "objectFactory/objectFactory.h"
-
 #include "../administrativ/TestHelper.cpp"
 
 using namespace std;
@@ -23,20 +22,8 @@ Server *Server::instanta = 0;
 int main(int argc, char** argv) 
 {
   json result;
-  TestHelper p;
-  // rezolvareCerinte rez;
+  TestHelper p(argv[1]);
 
-  // rez.Cerinta1();
-  //rez.Cerinta2a();
-  //rez.Cerinta2b();
-  //rez.Cerinta2d();
-  //rez.Cerinta2e();
-  // rez.Cerinta2f();
- 
-  // string str = "test";
-  // vector<Produs*> vec;
-  
-  // vec.push_back(new ProdusAlimentar(str, 1, str, 2.22f, str, 9));
   try{
     
     if (argc != 4)
@@ -44,7 +31,6 @@ int main(int argc, char** argv)
       throw "Error: Executable requires precisely 4 arguments!";
     }
 
-    ifstream inStream(argv[1]);
     ofstream oStream(argv[2]);
     int testIndex = atoi(argv[3]);
 
@@ -63,6 +49,9 @@ int main(int argc, char** argv)
       case 4:
         result = p.TestLRUCacheSimple();
         break;
+      case 5:
+        result = p.TestCerinta1();
+        break;
       default:
         break;
     }
@@ -75,4 +64,6 @@ int main(int argc, char** argv)
   {
     cout<<ex;
   }
+
+  return 0;
 } 
