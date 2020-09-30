@@ -45,7 +45,7 @@ public:
   string &getNume();
   string &getPrenume();
   string &getEmail();
-  int getIdUser();
+  int getIdUser() const;
   Adresa &getDateFacturare();
   Adresa &getDateLivrare();
 
