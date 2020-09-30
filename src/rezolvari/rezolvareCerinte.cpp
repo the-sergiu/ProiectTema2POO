@@ -105,7 +105,7 @@ list<User*> RezolvareCerinte::Cerinta2e(){
     if(dateLivrare.getJudet() == jud_max && dateLivrare.getApartament() == 0 && dateFacturare.getApartament() == 0)
       rezolvare.push_back((*it));
   }
-  // Sortare ??
+  // Sortare Lista
   rezolvare.sort([]( const User* const &a, const User* const &b ) { return a->getIdUser() < b->getIdUser(); });
 
   return rezolvare;
@@ -118,24 +118,29 @@ list<User*> RezolvareCerinte::Cerinta2f()
   vector<int> idsProduse;
   list<User*> rezolvare;
 
+  // Populam lista de id-uri care corespund produselor din categoriile 'imprimanta' si 'telefon'
   for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
   {
     if((*it)->getCategorie() == "telefon" || (*it)->getCategorie() == "imprimanta")
       idsProduse.push_back((*it)->getId());
   }
 
+  // Parcugem lista de Useri, din care ne intereseaza doar Userii Premium
   for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
     auto userPremium = dynamic_cast<UserPremium*>((*it));
     
     if (userPremium != nullptr)
-    {
+    { // Parcurgem map-ul de reduceri si verificam daca vreunul din id-uri se afla in lista idsProduse 
+      // in care am retinut toate id-urile produselor reduse din acele categorii
       for (auto const& reducere : userPremium->getMapReduceri())
       {
         int idProdus = reducere.first;
-        auto p = find(idsProduse.begin(), idsProduse.end(), idProdus);
+        // Daca gasim un id care coincide (se afla in map si in lista idsProduse (id-urile produselor reduse))
+        auto poz = find(idsProduse.begin(), idsProduse.end(), idProdus);
         
-        if (p != idsProduse.end()) 
+        // Bagam userul in lista finala, a carui map de reduceri corespunde cerintei de mai sus
+        if (poz != idsProduse.end()) 
         { 
           rezolvare.push_back((*it));
         } 
