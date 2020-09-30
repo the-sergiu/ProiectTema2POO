@@ -368,3 +368,61 @@ json TestHelper::TestCerinta1()
 
   return output;
 }
+
+json TestHelper::TestCerinta2a()
+{
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta2a();
+
+  output = ObjectFactory::getJsonProdus(result);
+
+  return output;  
+}
+
+json TestHelper::TestCerinta2b()
+{
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta2b();
+
+  output = ObjectFactory::getJsonUser(result);
+
+  return output;  
+}
+
+json TestHelper::TestCerinta2c()
+{
+  return failJson;
+}
+
+json TestHelper::TestCerinta2d()
+{
+  return failJson;
+}
+
+json TestHelper::TestCerinta2e()
+{
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta2e();
+
+  output = ObjectFactory::getJsonUser(result);
+
+  return output;
+}
+
+json TestHelper::TestCerinta2f()
+{
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta2f();
+
+  output = ObjectFactory::getJsonUser(result);
+
+  return output;
+}

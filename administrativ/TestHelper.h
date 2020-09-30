@@ -25,4 +25,10 @@ class TestHelper
     json TestClasaCosProduse();     // Test 3
     json TestLRUCacheSimple();      // Test 4
     json TestCerinta1();
+    json TestCerinta2a();
+    json TestCerinta2b();
+    json TestCerinta2c();           // TODO
+    json TestCerinta2d();           // TODO
+    json TestCerinta2e();
+    json TestCerinta2f();
 };

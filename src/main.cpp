@@ -39,7 +39,6 @@ int main(int argc, char** argv)
       case 1:
         result = p.TestIerarhieClasaProdus();
         break;
-
       case 2:
         result = p.TestIerarhieClasaUser();
         break;
@@ -51,6 +50,24 @@ int main(int argc, char** argv)
         break;
       case 5:
         result = p.TestCerinta1();
+        break;
+      case 6:
+        result = p.TestCerinta2a();
+        break;
+      case 7:
+        result = p.TestCerinta2b();
+        break;
+      case 8:
+        result = p.TestCerinta2c();
+        break;
+      case 9:
+        result = p.TestCerinta2d();
+        break;
+      case 10:
+        result = p.TestCerinta2e();
+        break;
+      case 11:
+        result = p.TestCerinta2f();
         break;
       default:
         break;

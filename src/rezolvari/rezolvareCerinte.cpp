@@ -23,7 +23,7 @@ void RezolvareCerinte::Cerinta1(){
   server->setMapUser_CosProduse();
 }
 
-void RezolvareCerinte::Cerinta2a(){
+list<Produs*> RezolvareCerinte::Cerinta2a(){
   cout<<"Se rezolva cerinta 2a"<<endl;
   list<Produs*> rezolvare;
 
@@ -33,48 +33,47 @@ void RezolvareCerinte::Cerinta2a(){
       rezolvare.push_back((*it));
   }
 
-  json jrezolvare = ObjectFactory::getJsonProdus(rezolvare);
-
-  rezolvare.clear();
+  return rezolvare;
 }
 
-void RezolvareCerinte::Cerinta2b(){
+list<User*> RezolvareCerinte::Cerinta2b(){
   cout<<"Se rezolva cerinta 2b"<<endl;
   list<User*> rezolvare;
 
-    for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
+  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
     if((*it)->getUserType() == "nonpremium" && (*it)->getCostTransport() < 11.5)
       rezolvare.push_back((*it));
   }
 
-  json jrezolvare = ObjectFactory::getJsonUser(rezolvare);
-
-  rezolvare.clear();
-
+  return rezolvare;
 }
 
 void RezolvareCerinte::Cerinta2c(){}
 void RezolvareCerinte::Cerinta2d(){}
 
-void RezolvareCerinte::Cerinta2e(){
+list<User*> RezolvareCerinte::Cerinta2e(){
   cout<<"Se rezolva cerinta 2e"<<endl;
 
   list<User*> rezolvare;
-  map<string,int> useri_per_judet;
+  // Map de frecventa
+  map<string, int> useri_per_judet;
 
+  // Construim map-ul de frecventa, Judet:NumarUseri
   for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
     Adresa dateLivrare = (*it)->getDateLivrare();
+    string judet = dateLivrare.getJudet();
+    
     useri_per_judet[dateLivrare.getJudet()] = 0;
-  }
 
-  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
-  {
-    Adresa dateLivrare = (*it)->getDateLivrare();
-    useri_per_judet[dateLivrare.getJudet()] += 1;
-  }
+    if (useri_per_judet.find(judet) == useri_per_judet.end())
+    {
+      useri_per_judet[judet] = 0;
+    }
 
+    useri_per_judet[judet]++; 
+  }
   //Afisare date din map
   //int total = 0;
   // for(auto const& x : useri_per_judet){
@@ -97,6 +96,7 @@ void RezolvareCerinte::Cerinta2e(){
     }
   }
 
+  // Cream lista cu Utilizatori care au adresele la casa (adica nu la bloc)
   for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
     Adresa dateLivrare = (*it)->getDateLivrare();
@@ -105,13 +105,13 @@ void RezolvareCerinte::Cerinta2e(){
     if(dateLivrare.getJudet() == jud_max && dateLivrare.getApartament() == 0 && dateFacturare.getApartament() == 0)
       rezolvare.push_back((*it));
   }
+  // Sortare ??
+  rezolvare.sort([]( const User* const &a, const User* const &b ) { return a->getIdUser() < b->getIdUser(); });
 
-  json jrezolvare = ObjectFactory::getJsonUser(rezolvare);
-  rezolvare.clear();
-
+  return rezolvare;
 }
 
-void RezolvareCerinte::Cerinta2f(){
+list<User*> RezolvareCerinte::Cerinta2f(){
   cout<<"Se rezolva cerinta 2f"<<endl;
 
   vector<int> id_uri;
@@ -129,16 +129,14 @@ void RezolvareCerinte::Cerinta2f(){
     if(up != nullptr)
     {
       for(auto const& x : up->getMapReduceri()){
-        auto p = find(id_uri.begin(),id_uri.end(),x.first);
+        auto p = find(id_uri.begin(),id_uri.end(), x.first);
         if (p != id_uri.end()) 
         { 
-            rezolvare.push_back((*it));
+          rezolvare.push_back((*it));
         } 
       }
     }
   }
 
-  json jrezolvare = ObjectFactory::getJsonUser(rezolvare);
-  rezolvare.clear();
-
+  return rezolvare;
 }
