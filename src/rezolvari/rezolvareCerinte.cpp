@@ -111,26 +111,31 @@ list<User*> RezolvareCerinte::Cerinta2e(){
   return rezolvare;
 }
 
-list<User*> RezolvareCerinte::Cerinta2f(){
+list<User*> RezolvareCerinte::Cerinta2f()
+{
   cout<<"Se rezolva cerinta 2f"<<endl;
 
-  vector<int> id_uri;
+  vector<int> idsProduse;
   list<User*> rezolvare;
 
   for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
   {
     if((*it)->getCategorie() == "telefon" || (*it)->getCategorie() == "imprimanta")
-      id_uri.push_back((*it)->getId());
+      idsProduse.push_back((*it)->getId());
   }
 
   for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
   {
-    auto up = dynamic_cast<UserPremium*>((*it));
-    if(up != nullptr)
+    auto userPremium = dynamic_cast<UserPremium*>((*it));
+    
+    if (userPremium != nullptr)
     {
-      for(auto const& x : up->getMapReduceri()){
-        auto p = find(id_uri.begin(),id_uri.end(), x.first);
-        if (p != id_uri.end()) 
+      for (auto const& reducere : userPremium->getMapReduceri())
+      {
+        int idProdus = reducere.first;
+        auto p = find(idsProduse.begin(), idsProduse.end(), idProdus);
+        
+        if (p != idsProduse.end()) 
         { 
           rezolvare.push_back((*it));
         } 
