@@ -22,7 +22,22 @@ Server *Server::instanta = 0;
 int main(int argc, char** argv) 
 {
   json result;
+
   TestHelper p(argv[1]);
+
+
+  TestHelper p;
+  rezolvareCerinte rez;
+
+   rez.Cerinta1();
+   rez.Cerinta2d();
+ // rez.Cerinta2a();
+ // rez.Cerinta2b();
+  //rez.Cerinta2d();
+  //rez.Cerinta2e();
+  // rez.Cerinta2f();
+ 
+  // string str = "test"
 
   try{
     
@@ -82,5 +97,7 @@ int main(int argc, char** argv)
     cout<<ex;
   }
 
+
   return 0;
+
 } 
