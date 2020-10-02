@@ -11,7 +11,6 @@
 #include "user/userNonPremium.h"
 #include "lrucache/lrucache.h"
 #include "objectFactory/objectFactory.h"
-
 #include "../administrativ/TestHelper.cpp"
 
 using namespace std;
@@ -20,9 +19,13 @@ using namespace std;
 // Instanta Singleton
 Server *Server::instanta = 0;
 
-int main(/*int argc, char** argv*/) 
+int main(int argc, char** argv) 
 {
   json result;
+
+  TestHelper p(argv[1]);
+
+
   TestHelper p;
   rezolvareCerinte rez;
 
@@ -34,11 +37,8 @@ int main(/*int argc, char** argv*/)
   //rez.Cerinta2e();
   // rez.Cerinta2f();
  
-  // string str = "test";
-  // vector<Produs*> vec;
-  
-  // vec.push_back(new ProdusAlimentar(str, 1, str, 2.22f, str, 9));
-  /*
+  // string str = "test"
+
   try{
     
     if (argc != 4)
@@ -46,7 +46,6 @@ int main(/*int argc, char** argv*/)
       throw "Error: Executable requires precisely 4 arguments!";
     }
 
-    ifstream inStream(argv[1]);
     ofstream oStream(argv[2]);
     int testIndex = atoi(argv[3]);
 
@@ -55,7 +54,6 @@ int main(/*int argc, char** argv*/)
       case 1:
         result = p.TestIerarhieClasaProdus();
         break;
-
       case 2:
         result = p.TestIerarhieClasaUser();
         break;
@@ -64,6 +62,27 @@ int main(/*int argc, char** argv*/)
         break;
       case 4:
         result = p.TestLRUCacheSimple();
+        break;
+      case 5:
+        result = p.TestCerinta1();
+        break;
+      case 6:
+        result = p.TestCerinta2a();
+        break;
+      case 7:
+        result = p.TestCerinta2b();
+        break;
+      case 8:
+        result = p.TestCerinta2c();
+        break;
+      case 9:
+        result = p.TestCerinta2d();
+        break;
+      case 10:
+        result = p.TestCerinta2e();
+        break;
+      case 11:
+        result = p.TestCerinta2f();
         break;
       default:
         break;
@@ -77,5 +96,8 @@ int main(/*int argc, char** argv*/)
   {
     cout<<ex;
   }
-  */
+
+
+  return 0;
+
 } 
