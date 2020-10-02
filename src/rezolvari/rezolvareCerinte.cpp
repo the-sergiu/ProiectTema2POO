@@ -70,8 +70,53 @@ void rezolvareCerinte::Cerinta2b(){
 
 }
 
-void rezolvareCerinte::Cerinta2c(){}
-void rezolvareCerinte::Cerinta2d(){}
+void rezolvareCerinte::Cerinta2c(){
+  
+  list<Produs*> rezolvare;
+
+  for (auto it = s->getListaProduse().begin(); it != s->getListaProduse().end(); it++){
+    if(((*it)->getProdusType() == "redus" || (*it)->getProdusType() == "resigilat")){
+      string toFind = "cutie";
+      ProdusReturnat *pr = dynamic_cast<ProdusReturnat*>(*it);
+
+      if (pr == nullptr) continue;
+
+      if(pr->getMotiv().find(toFind) != string::npos){
+        rezolvare.push_back((*it));
+      }
+    }
+  }
+
+  rezolvare.sort(Utility::compareProdusNealimentar);
+  
+  json jrezolvare = ObjectFactory::getJsonProdus(rezolvare);
+  
+  cout << jrezolvare.dump(3);
+
+  os << jrezolvare;
+  rezolvare.clear();
+}
+
+void rezolvareCerinte::Cerinta2d()
+{
+  list<Produs*> rezolvare;
+
+  for (auto it = s->getListaProduse().begin(); it != s->getListaProduse().end(); ++it)
+  {
+    if((*it)->getProdusType() == "alimentar")
+      rezolvare.push_back((*it));
+  }
+
+  rezolvare.sort(Utility::compareProdusAlimentar);
+  
+  json jrezolvare = ObjectFactory::getJsonProdus(rezolvare);
+
+  cout << jrezolvare.dump(3) << endl;
+
+  cout << jrezolvare.dump(3);
+  os << jrezolvare;
+  rezolvare.clear();
+}
 
 void rezolvareCerinte::Cerinta2e(){
   cout<<"Se rezolva cerinta 2e"<<endl;
@@ -160,3 +205,5 @@ void rezolvareCerinte::Cerinta2f(){
   rezolvare.clear();
 
 }
+
+

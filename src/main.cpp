@@ -20,15 +20,16 @@ using namespace std;
 // Instanta Singleton
 Server *Server::instanta = 0;
 
-int main(int argc, char** argv) 
+int main(/*int argc, char** argv*/) 
 {
   json result;
   TestHelper p;
-  // rezolvareCerinte rez;
+  rezolvareCerinte rez;
 
-  // rez.Cerinta1();
-  //rez.Cerinta2a();
-  //rez.Cerinta2b();
+   rez.Cerinta1();
+   rez.Cerinta2d();
+ // rez.Cerinta2a();
+ // rez.Cerinta2b();
   //rez.Cerinta2d();
   //rez.Cerinta2e();
   // rez.Cerinta2f();
@@ -37,6 +38,7 @@ int main(int argc, char** argv)
   // vector<Produs*> vec;
   
   // vec.push_back(new ProdusAlimentar(str, 1, str, 2.22f, str, 9));
+  /*
   try{
     
     if (argc != 4)
@@ -75,4 +77,5 @@ int main(int argc, char** argv)
   {
     cout<<ex;
   }
+  */
 } 
