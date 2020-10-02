@@ -2,8 +2,11 @@
 #include <iostream>
 #include <string>
 #include <unordered_map>
+#include "../src/json.hpp"
 
 using namespace std;
+using json = nlohmann::json;
+
 
 class CosProduse
 {
@@ -21,4 +24,7 @@ class CosProduse
     void deleteProdus(int);
     unordered_map<int,int>& getCos();
     void afisare();
+    json toJSON();
+    
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(CosProduse, produse, metodaPlata)
 };

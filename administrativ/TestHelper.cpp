@@ -3,6 +3,31 @@
 const json failJson = json::parse("{\"result\": \"fail\"}");
 const json successJson = json::parse("{\"result\": \"success\"}");
 
+TestHelper::TestHelper(const string& inFile)
+{
+  ifstream inStream(inFile);
+
+  inStream >> input;
+
+  inStream.close();
+
+  server = Server::InitializareServer();
+}
+
+void TestHelper::Init()
+{
+  server->populareProduse(input);
+  server->populareUseri(input);
+}
+
+TestHelper::~TestHelper()
+{
+  if (server != nullptr)
+  {
+    server = nullptr;
+  } 
+}
+
 json TestHelper::TestIerarhieClasaProdus() {
       string str = "check";
 
@@ -329,4 +354,75 @@ json TestHelper::TestLRUCacheSimple()
   }
 
   return successJson;
+}
+
+json TestHelper::TestCerinta1()
+{
+  Init();
+  json output;
+
+  rezolvatorul.Cerinta1();
+
+  output["produse"] = JSONSerializer::FromProdusMap(server->getMap_Id_Produs());
+  output["useri"] = JSONSerializer::FromUserMap(server->getMap_User_CosProdus());
+
+  return output;
+}
+
+json TestHelper::TestCerinta2a()
+{
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta2a();
+
+  output = ObjectFactory::getJsonProdus(result);
+
+  return output;  
+}
+
+json TestHelper::TestCerinta2b()
+{
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta2b();
+
+  output = ObjectFactory::getJsonUser(result);
+
+  return output;  
+}
+
+json TestHelper::TestCerinta2c()
+{
+  return failJson;
+}
+
+json TestHelper::TestCerinta2d()
+{
+  return failJson;
+}
+
+json TestHelper::TestCerinta2e()
+{
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta2e();
+
+  output = ObjectFactory::getJsonUser(result);
+
+  return output;
+}
+
+json TestHelper::TestCerinta2f()
+{
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta2f();
+
+  output = ObjectFactory::getJsonUser(result);
+
+  return output;
 }

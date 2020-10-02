@@ -73,7 +73,7 @@ string &User::getEmail()
 {
   return this->email;
 }
-int User::getIdUser()
+int User::getIdUser() const
 {
   return this->UserId;
 }
