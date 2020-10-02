@@ -79,7 +79,7 @@ int main(int argc, char** argv)
     }
 
     oStream<<result;
-
+    
     return 0;
   }
   catch (const char *ex)
