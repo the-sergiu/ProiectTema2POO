@@ -356,12 +356,12 @@ json TestHelper::TestLRUCacheSimple()
   return successJson;
 }
 
-json TestHelper::TestCerinta1()
+json TestHelper::TestCerinta2()
 {
   Init();
   json output;
 
-  rezolvatorul.Cerinta1();
+  rezolvatorul.Cerinta2();
 
   output["produse"] = JSONSerializer::FromProdusMap(server->getMap_Id_Produs());
   output["useri"] = JSONSerializer::FromUserMap(server->getMap_User_CosProdus());
@@ -369,58 +369,58 @@ json TestHelper::TestCerinta1()
   return output;
 }
 
-json TestHelper::TestCerinta2a()
+json TestHelper::TestCerinta3a()
 {
   Init();
   json output;
 
-  auto result = rezolvatorul.Cerinta2a();
+  auto result = rezolvatorul.Cerinta3a();
 
   output = ObjectFactory::getJsonProdus(result);
 
   return output;  
 }
 
-json TestHelper::TestCerinta2b()
+json TestHelper::TestCerinta3b()
 {
   Init();
   json output;
 
-  auto result = rezolvatorul.Cerinta2b();
+  auto result = rezolvatorul.Cerinta3b();
 
   output = ObjectFactory::getJsonUser(result);
 
   return output;  
 }
 
-json TestHelper::TestCerinta2c()
+json TestHelper::TestCerinta3c()
 {
   return failJson;
 }
 
-json TestHelper::TestCerinta2d()
+json TestHelper::TestCerinta3d()
 {
   return failJson;
 }
 
-json TestHelper::TestCerinta2e()
+json TestHelper::TestCerinta3e()
 {
   Init();
   json output;
 
-  auto result = rezolvatorul.Cerinta2e();
+  auto result = rezolvatorul.Cerinta3e();
 
   output = ObjectFactory::getJsonUser(result);
 
   return output;
 }
 
-json TestHelper::TestCerinta2f()
+json TestHelper::TestCerinta3f()
 {
   Init();
   json output;
 
-  auto result = rezolvatorul.Cerinta2f();
+  auto result = rezolvatorul.Cerinta3f();
 
   output = ObjectFactory::getJsonUser(result);
 

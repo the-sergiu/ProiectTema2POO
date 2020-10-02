@@ -20,11 +20,11 @@ class RezolvareCerinte{
   public:
     RezolvareCerinte();
     ~RezolvareCerinte();
-    void Cerinta1();
-    list<Produs*> Cerinta2a();
-    list<User*> Cerinta2b();
-    void Cerinta2c();
-    void Cerinta2d();
-    list<User*> Cerinta2e();
-    list<User*> Cerinta2f();
+    void Cerinta2();
+    list<Produs*> Cerinta3a();
+    list<User*> Cerinta3b();
+    list<Produs*> Cerinta3c();
+    list<Produs*> Cerinta3d();
+    list<User*> Cerinta3e();
+    list<User*> Cerinta3f();
 };

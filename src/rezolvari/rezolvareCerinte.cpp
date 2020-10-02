@@ -13,7 +13,7 @@ RezolvareCerinte::~RezolvareCerinte(){
   }
 }
 
-void RezolvareCerinte::Cerinta1(){
+void RezolvareCerinte::Cerinta2(){
   cout<<"Se rezolva cerinta 1"<<endl;
 
   //Testare citire produse din json
@@ -23,7 +23,7 @@ void RezolvareCerinte::Cerinta1(){
   server->setMapUser_CosProduse();
 }
 
-list<Produs*> RezolvareCerinte::Cerinta2a(){
+list<Produs*> RezolvareCerinte::Cerinta3a(){
   cout<<"Se rezolva cerinta 2a"<<endl;
   list<Produs*> rezolvare;
 
@@ -36,7 +36,7 @@ list<Produs*> RezolvareCerinte::Cerinta2a(){
   return rezolvare;
 }
 
-list<User*> RezolvareCerinte::Cerinta2b(){
+list<User*> RezolvareCerinte::Cerinta3b(){
   cout<<"Se rezolva cerinta 2b"<<endl;
   list<User*> rezolvare;
 
@@ -49,11 +49,11 @@ list<User*> RezolvareCerinte::Cerinta2b(){
   return rezolvare;
 }
 
-void rezolvareCerinte::Cerinta2c(){
+list<Produs*> RezolvareCerinte::Cerinta3c(){
   
   list<Produs*> rezolvare;
 
-  for (auto it = s->getListaProduse().begin(); it != s->getListaProduse().end(); it++){
+  for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); it++){
     if(((*it)->getProdusType() == "redus" || (*it)->getProdusType() == "resigilat")){
       string toFind = "cutie";
       ProdusReturnat *pr = dynamic_cast<ProdusReturnat*>(*it);
@@ -68,37 +68,34 @@ void rezolvareCerinte::Cerinta2c(){
 
   rezolvare.sort(Utility::compareProdusNealimentar);
   
-  json jrezolvare = ObjectFactory::getJsonProdus(rezolvare);
-  
-  cout << jrezolvare.dump(3);
-
-  os << jrezolvare;
-  rezolvare.clear();
+  return rezolvare;
 }
 
-void rezolvareCerinte::Cerinta2d()
+list<Produs*> RezolvareCerinte::Cerinta3d()
 {
   list<Produs*> rezolvare;
 
-  for (auto it = s->getListaProduse().begin(); it != s->getListaProduse().end(); ++it)
+  for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
   {
     if((*it)->getProdusType() == "alimentar")
       rezolvare.push_back((*it));
   }
 
   rezolvare.sort(Utility::compareProdusAlimentar);
+
+  return rezolvare;
   
-  json jrezolvare = ObjectFactory::getJsonProdus(rezolvare);
+  // json jrezolvare = ObjectFactory::getJsonProdus(rezolvare);
 
-  cout << jrezolvare.dump(3) << endl;
+  // cout << jrezolvare.dump(3) << endl;
 
-  cout << jrezolvare.dump(3);
-  os << jrezolvare;
-  rezolvare.clear();
+  // cout << jrezolvare.dump(3);
+  // os << jrezolvare;
+  // rezolvare.clear();
 }
 
 
-list<User*> RezolvareCerinte::Cerinta2e(){
+list<User*> RezolvareCerinte::Cerinta3e(){
   cout<<"Se rezolva cerinta 2e"<<endl;
 
   list<User*> rezolvare;
@@ -157,7 +154,7 @@ list<User*> RezolvareCerinte::Cerinta2e(){
   return rezolvare;
 }
 
-list<User*> RezolvareCerinte::Cerinta2f()
+list<User*> RezolvareCerinte::Cerinta3f()
 {
   cout<<"Se rezolva cerinta 2f"<<endl;
 
