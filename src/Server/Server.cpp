@@ -43,12 +43,6 @@ void Server::set__UserID__ProductsCart__()
   {
       __UserID__ProductsCart__[(*it)->getUserID()] = new ShoppingCart;
   }
-  //Testare initializare corecta map
-  // for(auto const& x : this->__UserID__ProductsCart__){
-  // cout<<x.first<<" - ";
-  // x.second->display();
-  // cout<<endl;
-  // }
 }
 
 
