@@ -11,7 +11,7 @@
 #include "../Product/FoodProduct.h"
 #include "../User/PremiumUser.h"
 #include "../User/BasicUser.h"
-#include "../cosproduse/cosProduse.h"
+#include "ShoppingCart/ShoppingCart.h"
 #include "../objectFactory/objectFactory.h"
 
 using namespace std;
@@ -30,7 +30,7 @@ class Server
     unordered_map<int, Product*> __ProductID__ProductObj__;
 
     // map UserID : ProductsCart
-    unordered_map<int, CosProduse*> __UserID__ProductsCart__;
+    unordered_map<int, ShoppingCart*> __UserID__ProductsCart__;
 
 
     // Singleton
@@ -40,7 +40,7 @@ class Server
     ~Server();
 
     unordered_map<int, Product*> get__ProductID__ProductObj__();
-    unordered_map<int, CosProduse*> get__UserID__ProductsCart__();
+    unordered_map<int, ShoppingCart*> get__UserID__ProductsCart__();
 
     void populateProducts(const json&);
     void populateUsers(const json&);

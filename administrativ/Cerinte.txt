@@ -8,22 +8,22 @@ Acesta este un exercitiu pentru a va antrena in conceperea unei ierarhii de clas
 -- Tema propriu-zisa
 ( Sunt date fisierele .h, ce contin tipurile datelor si declararea functiilor necesare (pe care le vor implementa in .cpp) )
 
--- Implementati metodele descrise/necesare ierarhiei de produse. (Checker-ul verifica clasele)
+-- Implementati metodele descrise/necesare ierarhiei de shoppingCart. (Checker-ul verifica clasele)
 Pentru implentarea corecta a claselor, de nota 5 (50/100 p)
 * Pentru a testa clasele (de unele singure), commentati #include-ul claselor pe care nu intentionati sa le utilizati.
 
-Initializati serverul. Listele de useri si produse sunt initializate folosind functii deja create, pentru a evita citirea din fisiere. Dupa acest pas, creati map-urile stocate pe server.
+Initializati serverul. Listele de useri si shoppingCart sunt initializate folosind functii deja create, pentru a evita citirea din fisiere. Dupa acest pas, creati map-urile stocate pe server.
 
 -- CERINTE
 2. 2 tipuri de cautari/interogari/cerinte pentru manipularea datelor de pe server (folosind map-uri si listele de obiecte)
     
-    a. George are nevoie de un espressor nou. Fiind inainte de salariu, George cauta un produs redus. Astfel, cautati in lista de produse espressoarele reduse si returnati lista cu aceste produse (VALID - GetCategorie?)
+    a. George are nevoie de un espressor nou. Fiind inainte de salariu, George cauta un produs redus. Astfel, cautati in lista de shoppingCart espressoarele reduse si returnati lista cu aceste shoppingCart (VALID - GetCategorie?)
 
     b. Returnati o lista cu utilizatorii nonpremium care au un cost de transport < 11.5 lei. (VALID)
 
     c. Gasiti toate produsele returnate si resigilate pe motivul "x". Sortati-le dupa price si salvati lista neomogena in fisierul de output.
 
-    d. Sortare produse alimentare dupa lastName, tara, price
+    d. Sortare shoppingCart alimentare dupa lastName, tara, price
 
     e. Returnati o lista cu userii care au atat adresa de livrare, cat si cea de facturare la casa (adica nu la block) si locuiesc in judetul cu cei mai multi utilizatori. Sortati dupa UserID (VALID - problema sortare)
 

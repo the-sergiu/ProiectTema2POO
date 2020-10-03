@@ -284,22 +284,22 @@ json TestHelper::TestClasaCosProduse()
 {
     // Test Constructori Cos Produse
     string check = "check";
-    CosProduse *cp = new CosProduse();
-    CosProduse *cp2 = new CosProduse(check);
+    ShoppingCart *cp = new ShoppingCart();
+    ShoppingCart *cp2 = new ShoppingCart(check);
 
     if (cp2 == NULL)
     {
       return failJson;
     }
 
-    // Test Set + Metode CosProduse
+    // Test Set + Metode ShoppingCart
     string metodaPlata = "Card";
-    
-    cp->setMetodaPlata(metodaPlata);
-    cp->addProdus(5, 3);
 
-    // Test Get + Metode CosProduse
-    if (cp->getCantitate(5) != 3) 
+    cp->setPayMethod(metodaPlata);
+    cp->addProduct(5, 3);
+
+    // Test Get + Metode ShoppingCart
+    if (cp->getQuantity(5) != 3)
     {
       return failJson;
     }
@@ -308,15 +308,15 @@ json TestHelper::TestClasaCosProduse()
     unordered_map<int, int> TestCos;
     TestCos[5] = 3;
     
-    if (cp->getCos() != TestCos) 
+    if (cp->getShoppingCart() != TestCos)
     {
       return failJson;
     }
 
-    cp->deleteProdus(5);
+    cp->deleteProduct(5);
     TestCos.clear();
 
-    if (cp->getCos() != TestCos) 
+    if (cp->getShoppingCart() != TestCos)
     {
       return failJson;
     }
@@ -363,7 +363,7 @@ json TestHelper::TestCerinta2()
 
   rezolvatorul.Cerinta2();
 
-  output["produse"] = JSONSerializer::fromProductMap(server->get__ProductID__ProductObj__());
+  output["shoppingCart"] = JSONSerializer::fromProductMap(server->get__ProductID__ProductObj__());
   output["useri"] = JSONSerializer::FromUserMap(server->get__UserID__ProductsCart__());
 
   return output;

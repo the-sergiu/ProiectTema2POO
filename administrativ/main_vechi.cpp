@@ -48,7 +48,7 @@
 ///* TEST INITIALIZARE SERVER */
 //  Server *serv;
 //  serv = Server::ServerInit();
-//  serv->populateProducts("Server/produse.txt");
+//  serv->populateProducts("Server/shoppingCart.txt");
 //  serv->set__ProductID__ProductObj__();
 //  serv->populateUsers("Server/users.txt");
 //  serv->setMapuser_CosProduse();

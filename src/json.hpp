@@ -15178,7 +15178,7 @@ inline void grisu2(char* buf, int& len, int& decimal_exponent,
 
     const diyfp c_minus_k(cached.f, cached.e); // = c ~= 10^-k
 
-    // The exponent of the products is = v.e + c_minus_k.e + q and is in the range [alpha,gamma]
+    // The exponent of the shoppingCart is = v.e + c_minus_k.e + q and is in the range [alpha,gamma]
     const diyfp w       = diyfp::mul(v,       c_minus_k);
     const diyfp w_minus = diyfp::mul(m_minus, c_minus_k);
     const diyfp w_plus  = diyfp::mul(m_plus,  c_minus_k);

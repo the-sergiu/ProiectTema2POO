@@ -7,7 +7,7 @@
 #include "../src/Product/FoodProduct.h"
 #include "../src/User/PremiumUser.h"
 #include "../src/User/BasicUser.h"
-#include "../src/cosproduse/cosProduse.h"
+#include "ShoppingCart/ShoppingCart.h"
 
 using namespace std;
 using json = nlohmann::json;
@@ -28,7 +28,7 @@ class JSONSerializer
             return result;
         }
 
-        static json FromUserMap(const unordered_map<int, CosProduse*>& cartsOfProducts)
+        static json FromUserMap(const unordered_map<int, ShoppingCart*>& cartsOfProducts)
         {
             json result;
 

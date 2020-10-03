@@ -16,7 +16,7 @@ RezolvareCerinte::~RezolvareCerinte(){
 void RezolvareCerinte::Cerinta2(){
   cout<<"Se rezolva cerinta 1"<<endl;
 
-  //Testare citire produse din json
+  //Testare citire shoppingCart din json
     server->set__ProductID__ProductObj__();
 
   //Testare citire useri din json
