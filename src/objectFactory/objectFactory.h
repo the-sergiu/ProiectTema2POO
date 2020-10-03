@@ -2,10 +2,10 @@
 #include <iostream>
 #include <list>
 #include "../json.hpp"
-#include "../produs/produsAlimentar.h"
-#include "../produs/produsResigilat.h"
-#include "../user/userNonPremium.h"
-#include "../user/userPremium.h"
+#include "../Product/FoodProduct.h"
+#include "../Product/ResealedProduct.h"
+#include "../User/BasicUser.h"
+#include "../User/PremiumUser.h"
 #include <fstream>
 
 using namespace std;
@@ -17,11 +17,11 @@ class ObjectFactory{
 
 public:
 
-    static Produs* createProdus(string, json::iterator);
+    static Product* createProdus(string, json::iterator);
 
-    static list<Produs*> getProdusList(json j);
+    static list<Product*> getProdusList(json j);
      
-    static json getJsonProdus(list<Produs*>&);
+    static json getJsonProdus(list<Product*>&);
 
     static User* createUser(string, json::iterator);
 

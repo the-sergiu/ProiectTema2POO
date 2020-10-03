@@ -2388,7 +2388,7 @@ file.
 
 Exceptions have ids 1xx.
 
-name / id                      | example message | description
+lastName / id                      | example message | description
 ------------------------------ | --------------- | -------------------------
 json.exception.parse_error.101 | parse error at 2: unexpected end of input; expected string literal | This error indicates a syntax error while deserializing a JSON text. The error message describes that an unexpected token (character) was encountered, and the member @a byte indicates the error position.
 json.exception.parse_error.102 | parse error at 14: missing or wrong low surrogate | JSON uses the `\uxxxx` format to describe Unicode characters. Code points above above 0xFFFF are split into two `\uxxxx` entries ("surrogate pairs"). This error indicates that the surrogate pair is incomplete or contains an invalid code point.
@@ -2478,7 +2478,7 @@ the expected semantics.
 
 Exceptions have ids 2xx.
 
-name / id                           | example message | description
+lastName / id                           | example message | description
 ----------------------------------- | --------------- | -------------------------
 json.exception.invalid_iterator.201 | iterators are not compatible | The iterators passed to constructor @ref basic_json(InputIT first, InputIT last) are not compatible, meaning they do not belong to the same container. Therefore, the range (@a first, @a last) is invalid.
 json.exception.invalid_iterator.202 | iterator does not fit current value | In an erase or insert function, the passed iterator @a pos does not belong to the JSON value for which the function was called. It hence does not define a valid position for the deletion/insertion.
@@ -2530,7 +2530,7 @@ executed on a JSON value whose type does not match the expected semantics.
 
 Exceptions have ids 3xx.
 
-name / id                     | example message | description
+lastName / id                     | example message | description
 ----------------------------- | --------------- | -------------------------
 json.exception.type_error.301 | cannot create object from initializer list | To create an object from an initializer list, the initializer list must consist only of a list of pairs whose first element is a string. When this constraint is violated, an array is created instead.
 json.exception.type_error.302 | type must be object, but is array | During implicit or explicit value conversion, the JSON type must be compatible to the target type. For instance, a JSON string can only be converted into string types, but not into numbers or boolean types.
@@ -2584,7 +2584,7 @@ indices or nonexisting object keys.
 
 Exceptions have ids 4xx.
 
-name / id                       | example message | description
+lastName / id                       | example message | description
 ------------------------------- | --------------- | -------------------------
 json.exception.out_of_range.401 | array index 3 is out of range | The provided array index @a i is larger than @a size-1.
 json.exception.out_of_range.402 | array index '-' (3) is out of range | The special array index `-` in a JSON Pointer never describes a valid element of the array, but the index past the end. That is, it can only be used to add elements at this position, but not to read it.
@@ -2630,7 +2630,7 @@ other exception types.
 
 Exceptions have ids 5xx.
 
-name / id                      | example message | description
+lastName / id                      | example message | description
 ------------------------------ | --------------- | -------------------------
 json.exception.other_error.501 | unsuccessful: {"op":"test","path":"/baz", "value":"bar"} | A JSON Patch operation 'test' failed. The unsuccessful operation is also printed.
 
@@ -3055,7 +3055,7 @@ struct has_from_json < BasicJsonType, T,
 };
 
 // This trait checks if JSONSerializer<T>::from_json(json const&) exists
-// this overload is used for non-default-constructible user-defined-types
+// this overload is used for non-default-constructible User-defined-types
 template<typename BasicJsonType, typename T, typename = void>
 struct has_non_default_from_json : std::false_type {};
 
@@ -3377,7 +3377,7 @@ value with the default value for a given type
 enum class value_t : std::uint8_t
 {
     null,             ///< null value
-    object,           ///< object (unordered set of name/value pairs)
+    object,           ///< object (unordered set of lastName/value pairs)
     array,            ///< array (ordered collection of values)
     string,           ///< string value
     boolean,          ///< boolean value
@@ -4420,7 +4420,7 @@ namespace nlohmann
 @brief an internal type for a backed binary type
 
 This type extends the template parameter @a BinaryType provided to `basic_json`
-with a subtype used by BSON and MessagePack. This type exists so that the user
+with a subtype used by BSON and MessagePack. This type exists so that the User
 does not have to specify a type themselves with a specific naming scheme in
 order to override the binary type.
 
@@ -5920,14 +5920,14 @@ class lexer_base
         begin_object,     ///< the character for object begin `{`
         end_array,        ///< the character for array end `]`
         end_object,       ///< the character for object end `}`
-        name_separator,   ///< the name separator `:`
+        name_separator,   ///< the lastName separator `:`
         value_separator,  ///< the value separator `,`
         parse_error,      ///< indicating a parse error
         end_of_input,     ///< indicating the end of the input buffer
         literal_or_value  ///< a literal or the begin of a value (only for diagnostics)
     };
 
-    /// return name of values of type token_type (only used for errors)
+    /// return lastName of values of type token_type (only used for errors)
     JSON_HEDLEY_RETURNS_NON_NULL
     JSON_HEDLEY_CONST
     static const char* token_type_name(const token_type t) noexcept
@@ -10822,8 +10822,8 @@ class iter_impl
   public:
 
     /// The std::iterator class template (used as a base class to provide typedefs) is deprecated in C++17.
-    /// The C++ Standard has never required user-defined iterators to derive from std::iterator.
-    /// A user-defined iterator should provide publicly accessible typedefs named
+    /// The C++ Standard has never required User-defined iterators to derive from std::iterator.
+    /// A User-defined iterator should provide publicly accessible typedefs named
     /// iterator_category, value_type, difference_type, pointer, and reference.
     /// Note that value_type is required to be non-const, even for constant iterators.
     using iterator_category = std::bidirectional_iterator_tag;
@@ -13624,7 +13624,7 @@ class binary_writer
 
     /*!
     @return The size of a BSON document entry header, including the id marker
-            and the entry name size (and its null-terminator).
+            and the entry lastName size (and its null-terminator).
     */
     static std::size_t calc_bson_entry_header_size(const string_t& name)
     {
@@ -13639,7 +13639,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes the given @a element_type and @a name to the output adapter
+    @brief Writes the given @a element_type and @a lastName to the output adapter
     */
     void write_bson_entry_header(const string_t& name,
                                  const std::uint8_t element_type)
@@ -13651,7 +13651,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes a BSON element with key @a name and boolean value @a value
+    @brief Writes a BSON element with key @a lastName and boolean value @a value
     */
     void write_bson_boolean(const string_t& name,
                             const bool value)
@@ -13661,7 +13661,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes a BSON element with key @a name and double value @a value
+    @brief Writes a BSON element with key @a lastName and double value @a value
     */
     void write_bson_double(const string_t& name,
                            const double value)
@@ -13679,7 +13679,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes a BSON element with key @a name and string value @a value
+    @brief Writes a BSON element with key @a lastName and string value @a value
     */
     void write_bson_string(const string_t& name,
                            const string_t& value)
@@ -13693,7 +13693,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes a BSON element with key @a name and null value
+    @brief Writes a BSON element with key @a lastName and null value
     */
     void write_bson_null(const string_t& name)
     {
@@ -13711,7 +13711,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes a BSON element with key @a name and integer @a value
+    @brief Writes a BSON element with key @a lastName and integer @a value
     */
     void write_bson_integer(const string_t& name,
                             const std::int64_t value)
@@ -13739,7 +13739,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes a BSON element with key @a name and unsigned @a value
+    @brief Writes a BSON element with key @a lastName and unsigned @a value
     */
     void write_bson_unsigned(const string_t& name,
                              const std::uint64_t value)
@@ -13761,7 +13761,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes a BSON element with key @a name and object @a value
+    @brief Writes a BSON element with key @a lastName and object @a value
     */
     void write_bson_object_entry(const string_t& name,
                                  const typename BasicJsonType::object_t& value)
@@ -13794,7 +13794,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes a BSON element with key @a name and array @a value
+    @brief Writes a BSON element with key @a lastName and array @a value
     */
     void write_bson_array(const string_t& name,
                           const typename BasicJsonType::array_t& value)
@@ -13813,7 +13813,7 @@ class binary_writer
     }
 
     /*!
-    @brief Writes a BSON element with key @a name and binary value @a value
+    @brief Writes a BSON element with key @a lastName and binary value @a value
     */
     void write_bson_binary(const string_t& name,
                            const binary_t& value)
@@ -13827,8 +13827,8 @@ class binary_writer
     }
 
     /*!
-    @brief Calculates the size necessary to serialize the JSON value @a j with its @a name
-    @return The calculated size for the BSON document entry for @a j with the given @a name.
+    @brief Calculates the size necessary to serialize the JSON value @a j with its @a lastName
+    @return The calculated size for the BSON document entry for @a j with the given @a lastName.
     */
     static std::size_t calc_bson_element_size(const string_t& name,
             const BasicJsonType& j)
@@ -13873,8 +13873,8 @@ class binary_writer
 
     /*!
     @brief Serializes the JSON value @a j to BSON and associates it with the
-           key @a name.
-    @param name The name to associate with the JSON entity @a j within the
+           key @a lastName.
+    @param name The lastName to associate with the JSON entity @a j within the
                 current BSON document
     @return The size of the BSON entry
     */
@@ -15178,7 +15178,7 @@ inline void grisu2(char* buf, int& len, int& decimal_exponent,
 
     const diyfp c_minus_k(cached.f, cached.e); // = c ~= 10^-k
 
-    // The exponent of the products is = v.e + c_minus_k.e + q and is in the range [alpha,gamma]
+    // The exponent of the shoppingCart is = v.e + c_minus_k.e + q and is in the range [alpha,gamma]
     const diyfp w       = diyfp::mul(v,       c_minus_k);
     const diyfp w_minus = diyfp::mul(m_minus, c_minus_k);
     const diyfp w_plus  = diyfp::mul(m_plus,  c_minus_k);
@@ -16732,7 +16732,7 @@ class basic_json
     ////////////////
 
     /// @name exceptions
-    /// Classes to implement user-defined exceptions.
+    /// Classes to implement User-defined exceptions.
     /// @{
 
     /// @copydoc detail::exception
@@ -16812,7 +16812,7 @@ class basic_json
     ----------- | ---------------
     `compiler`  | Information on the used compiler. It is an object with the following keys: `c++` (the used C++ standard), `family` (the compiler family; possible values are `clang`, `icc`, `gcc`, `ilecpp`, `msvc`, `pgcpp`, `sunpro`, and `unknown`), and `version` (the compiler version).
     `copyright` | The copyright line for the library as string.
-    `name`      | The name of the library as string.
+    `lastName`      | The lastName of the library as string.
     `platform`  | The used platform as string. Possible values are `win32`, `linux`, `apple`, `unix`, and `unknown`.
     `url`       | The URL of the project as string.
     `version`   | The version of the library. It is an object with the following keys: `major`, `minor`, and `patch` as defined by [Semantic Versioning](http://semver.org), and `string` (the version string).
@@ -16833,7 +16833,7 @@ class basic_json
         basic_json result;
 
         result["copyright"] = "(C) 2013-2020 Niels Lohmann";
-        result["name"] = "JSON for Modern C++";
+        result["lastName"] = "JSON for Modern C++";
         result["url"] = "https://github.com/nlohmann/json";
         result["version"]["string"] =
             std::to_string(NLOHMANN_JSON_VERSION_MAJOR) + "." +
@@ -16905,8 +16905,8 @@ class basic_json
     @brief a type for an object
 
     [RFC 7159](http://rfc7159.net/rfc7159) describes JSON objects as follows:
-    > An object is an unordered collection of zero or more name/value pairs,
-    > where a name is a string and a value is a string, number, boolean, null,
+    > An object is an unordered collection of zero or more lastName/value pairs,
+    > where a lastName is a string and a value is a string, number, boolean, null,
     > object, or array.
 
     To store objects in C++, a type is defined by the template parameters
@@ -16942,16 +16942,16 @@ class basic_json
 
     - When all names are unique, objects will be interoperable in the sense
       that all software implementations receiving that object will agree on
-      the name-value mappings.
+      the lastName-value mappings.
     - When the names within an object are not unique, it is unspecified which
       one of the values for a given key will be chosen. For instance,
       `{"key": 2, "key": 1}` could be equal to either `{"key": 1}` or
       `{"key": 2}`.
-    - Internally, name/value pairs are stored in lexicographical order of the
+    - Internally, lastName/value pairs are stored in lexicographical order of the
       names. Objects will also be serialized (see @ref dump) in this order.
       For instance, `{"b": 1, "a": 2}` and `{"a": 2, "b": 1}` will be stored
       and serialized as `{"a": 2, "b": 1}`.
-    - When comparing objects, the order of the name/value pairs is irrelevant.
+    - When comparing objects, the order of the lastName/value pairs is irrelevant.
       This makes objects interoperable in the sense that they will not be
       affected by these differences. For instance, `{"b": 1, "a": 2}` and
       `{"a": 2, "b": 1}` will be treated as equal.
@@ -16976,9 +16976,9 @@ class basic_json
 
     @since version 1.0.0
 
-    @note The order name/value pairs are added to the object is *not*
+    @note The order lastName/value pairs are added to the object is *not*
     preserved by the library. Therefore, iterating an object may return
-    name/value pairs in a different order than they were originally stored. In
+    lastName/value pairs in a different order than they were originally stored. In
     fact, keys will be traversed in alphabetical order as `std::map` with
     `std::less` is used by default. Please note this behavior conforms to [RFC
     7159](http://rfc7159.net/rfc7159), because any order implements the
@@ -17338,7 +17338,7 @@ class basic_json
     Additionally, as an implementation detail, the subtype of the binary data is
     carried around as a `std::uint8_t`, which is compatible with both of the
     binary data formats that use binary subtyping, (though the specific
-    numbering is incompatible with each other, and it is up to the user to
+    numbering is incompatible with each other, and it is up to the User to
     translate between them).
 
     [CBOR's RFC 7049](https://tools.ietf.org/html/rfc7049) describes this type
@@ -21263,7 +21263,7 @@ class basic_json
 
     @complexity Constant.
 
-    @note The name of this function is not yet final and may change in the
+    @note The lastName of this function is not yet final and may change in the
     future.
 
     @deprecated This stream operator is deprecated and will be removed in
@@ -23281,7 +23281,7 @@ class basic_json
     @note A UTF-8 byte order mark is silently ignored.
 
     @liveexample{The example below demonstrates the `sax_parse()` function
-    reading from string and processing the events with a user-defined SAX
+    reading from string and processing the events with a User-defined SAX
     event consumer.,sax_parse}
 
     @since version 3.2.0
@@ -23380,7 +23380,7 @@ class basic_json
     /*!
     @brief return the type as string
 
-    Returns the type name as string to be used in error messages - usually to
+    Returns the type lastName as string to be used in error messages - usually to
     indicate that a function was called on a wrong JSON type.
 
     @return a string representation of a the @a m_type member:
@@ -25028,7 +25028,7 @@ class basic_json
                 // first pass: traverse this object's elements
                 for (auto it = source.cbegin(); it != source.cend(); ++it)
                 {
-                    // escape the key name to be used in a JSON patch
+                    // escape the key lastName to be used in a JSON patch
                     const auto key = json_pointer::escape(it.key());
 
                     if (target.find(it.key()) != target.end())
@@ -25160,9 +25160,9 @@ class basic_json
 };
 
 /*!
-@brief user-defined to_string function for JSON values
+@brief User-defined to_string function for JSON values
 
-This function implements a user-defined to_string  for JSON objects.
+This function implements a User-defined to_string  for JSON objects.
 
 @param[in] j  a JSON object
 @return a std::string object
@@ -25237,9 +25237,9 @@ inline void swap<nlohmann::json>(nlohmann::json& j1, nlohmann::json& j2) noexcep
 } // namespace std
 
 /*!
-@brief user-defined string literal for JSON values
+@brief User-defined string literal for JSON values
 
-This operator implements a user-defined string literal for JSON objects. It
+This operator implements a User-defined string literal for JSON objects. It
 can be used by adding `"_json"` to a string literal and returns a JSON object
 if no parse error occurred.
 
@@ -25256,9 +25256,9 @@ inline nlohmann::json operator "" _json(const char* s, std::size_t n)
 }
 
 /*!
-@brief user-defined string literal for JSON pointer
+@brief User-defined string literal for JSON pointer
 
-This operator implements a user-defined string literal for JSON Pointers. It
+This operator implements a User-defined string literal for JSON Pointers. It
 can be used by adding `"_json_pointer"` to a string literal and returns a JSON pointer
 object if no parse error occurred.
 
