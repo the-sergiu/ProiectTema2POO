@@ -52,9 +52,8 @@ class Server
     list<Product*>& getProductsList();
     list<User*>& getUsersList();
 
-    void requestAddProduct(int, int, int);
-    void requestDeleteProduct(int, int);
-    void requestModifyProduct(int, int, int);
+    bool requestAddProduct(int, int, int);
+    bool requestDeleteProduct(int, int);
 
 
 
