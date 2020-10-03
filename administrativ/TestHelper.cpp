@@ -395,12 +395,26 @@ json TestHelper::TestCerinta3b()
 
 json TestHelper::TestCerinta3c()
 {
-  return failJson;
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta3c();
+
+  output = ObjectFactory::getJsonProdus(result);
+
+  return output;
 }
 
 json TestHelper::TestCerinta3d()
 {
-  return failJson;
+  Init();
+  json output;
+
+  auto result = rezolvatorul.Cerinta3d();
+
+  output = ObjectFactory::getJsonProdus(result);
+
+  return output;
 }
 
 json TestHelper::TestCerinta3e()
