@@ -5,7 +5,7 @@
 //
 //#include "Product/produsResigilat.h"
 //#include "Product/produsAlimentar.h"
-//#include "server/server.h"
+//#include "Server/Server.h"
 //#include "user/userPremium.h"
 //#include "user/userNonPremium.h"
 //#include "lrucache/lrucache.h"
@@ -48,9 +48,9 @@
 ///* TEST INITIALIZARE SERVER */
 //  Server *serv;
 //  serv = Server::ServerInit();
-//  serv->populateProducts("server/produse.txt");
+//  serv->populateProducts("Server/produse.txt");
 //  serv->set__ProductID__ProductObj__();
-//  serv->populateUsers("server/users.txt");
+//  serv->populateUsers("Server/users.txt");
 //  serv->setMapuser_CosProduse();
 //
 ///*TESTARE ADAUGARE PRODUS IN COS PENTRU USER SI PRODUS DE TEST*/

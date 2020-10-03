@@ -6,7 +6,7 @@
 #include "rezolvari/rezolvareCerinte.h"
 #include "Product/ResealedProduct.h"
 #include "Product/FoodProduct.h"
-#include "server/server.h"
+#include "Server/Server.h"
 #include "user/userPremium.h"
 #include "user/userNonPremium.h"
 #include "lrucache/lrucache.h"
