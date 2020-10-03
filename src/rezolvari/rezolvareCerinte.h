@@ -5,8 +5,8 @@
 #include <list>
 
 #include "../utilitiy/utility.h"
-#include "../produs/ResealedProduct.h"
-#include "../produs/FoodProduct.h"
+#include "../Product/ResealedProduct.h"
+#include "../Product/FoodProduct.h"
 #include "../server/server.h"
 #include "../user/userPremium.h"
 #include "../user/userNonPremium.h"

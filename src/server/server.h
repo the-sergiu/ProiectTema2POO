@@ -7,8 +7,8 @@
 #include <iostream>
 #include <fstream>
 
-#include "../produs/ResealedProduct.h"
-#include "../produs/FoodProduct.h"
+#include "../Product/ResealedProduct.h"
+#include "../Product/FoodProduct.h"
 #include "../user/userPremium.h"
 #include "../user/userNonPremium.h"
 #include "../cosproduse/cosProduse.h"
@@ -28,7 +28,7 @@ class Server
     list<User*> usr;
     list<Product*> prod;
 
-    // map id - produs
+    // map id - Product
     unordered_map<int, Product*> produsId_Produs;
     // use case: produsId_Produs[id]->display();
 

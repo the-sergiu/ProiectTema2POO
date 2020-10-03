@@ -86,7 +86,7 @@ void Server::populareUseri(const json& input)
 // REQUESTS
 void Server::requestAddProdus(int userID, int produsID, int cantitate)
 {
-  //Atentie verificare daca nu exista user sau produs cu id corect
+  //Atentie verificare daca nu exista user sau Product cu id corect
   //Daca produsul cerut are cantitatea necesara
   if(produsId_Produs[produsID]->checkQuantity(cantitate)) {
   //Ii scadem cantitatea
@@ -105,7 +105,7 @@ void Server::requestAddProdus(int userID, int produsID, int cantitate)
 
 void Server::requestDeleteProdus(int userID, int produsID)
 {
-  //Crestem cantitatea de produs cu cea pe care user-ul o are in cos
+  //Crestem cantitatea de Product cu cea pe care user-ul o are in cos
     produsId_Produs[produsID]->increaseQuantity(user_CosProduse[userID]->getCantitate(produsID));
   //Stergem produsul din cosul de cumparaturi
   user_CosProduse[userID]->deleteProdus(produsID);

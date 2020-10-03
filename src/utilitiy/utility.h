@@ -3,8 +3,8 @@
 #include <string>
 #include <list>
 #include <vector>
-#include "../produs/NonFoodProduct.h"
-#include "../produs/FoodProduct.h"
+#include "../Product/NonFoodProduct.h"
+#include "../Product/FoodProduct.h"
 
 class Utility{
 

@@ -21,7 +21,7 @@ FoodProduct::FoodProduct(const FoodProduct &pa) : Product(pa)
 void FoodProduct::display()
 {
 	cout << "Product alimentar" << endl;
-	cout << "Nume produs: " << this->name << endl;
+	cout << "Nume Product: " << this->name << endl;
 	cout << "Categorie : " << this->category << endl;
 	cout << "ID : " << this->id << endl;
 	cout << "Cantitate (stoc): " << this->quantity << endl;

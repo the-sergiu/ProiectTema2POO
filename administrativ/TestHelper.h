@@ -2,8 +2,8 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include "../src/produs/ResealedProduct.h"
-#include "../src/produs/FoodProduct.h"
+#include "../src/Product/ResealedProduct.h"
+#include "../src/Product/FoodProduct.h"
 #include "../src/lrucache/lrucache.h"
 #include "../src/json.hpp"
 #include "../src/rezolvari/rezolvareCerinte.h"

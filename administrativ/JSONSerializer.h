@@ -3,8 +3,8 @@
 #include <unordered_map>
 #include <string>
 #include "../src/json.hpp"
-#include "../src/produs/ResealedProduct.h"
-#include "../src/produs/FoodProduct.h"
+#include "../src/Product/ResealedProduct.h"
+#include "../src/Product/FoodProduct.h"
 #include "../src/user/userPremium.h"
 #include "../src/user/userNonPremium.h"
 #include "../src/cosproduse/cosProduse.h"
@@ -16,11 +16,11 @@ using json = nlohmann::json;
 class JSONSerializer 
 {
     public:
-        static json FromProdusMap(const unordered_map<int, Product*> produse)
+        static json fromProductMap(const unordered_map<int, Product*> products)
         {
             json result;
 
-            for (auto& it: produse)
+            for (auto& it: products)
             {
                 result[to_string(it.first)] = it.second->toJSON();
             }
@@ -28,11 +28,11 @@ class JSONSerializer
             return result;
         }
 
-        static json FromUserMap(const unordered_map<int, CosProduse*>& cosuriProduse)
+        static json FromUserMap(const unordered_map<int, CosProduse*>& cartsOfProducts)
         {
             json result;
 
-            for (auto& it : cosuriProduse)
+            for (auto& it : cartsOfProducts)
             {
                 result[to_string(it.first)] = it.second->toJSON();
             }

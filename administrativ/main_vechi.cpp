@@ -3,8 +3,8 @@
 //#include <vector>
 //#include <list>
 //
-//#include "produs/produsResigilat.h"
-//#include "produs/produsAlimentar.h"
+//#include "Product/produsResigilat.h"
+//#include "Product/produsAlimentar.h"
 //#include "server/server.h"
 //#include "user/userPremium.h"
 //#include "user/userNonPremium.h"

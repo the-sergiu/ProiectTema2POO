@@ -2,8 +2,8 @@
 #include <iostream>
 #include <list>
 #include "../json.hpp"
-#include "../produs/FoodProduct.h"
-#include "../produs/ResealedProduct.h"
+#include "../Product/FoodProduct.h"
+#include "../Product/ResealedProduct.h"
 #include "../user/userNonPremium.h"
 #include "../user/userPremium.h"
 #include <fstream>

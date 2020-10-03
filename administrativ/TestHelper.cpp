@@ -363,7 +363,7 @@ json TestHelper::TestCerinta2()
 
   rezolvatorul.Cerinta2();
 
-  output["produse"] = JSONSerializer::FromProdusMap(server->getMap_Id_Produs());
+  output["produse"] = JSONSerializer::fromProductMap(server->getMap_Id_Produs());
   output["useri"] = JSONSerializer::FromUserMap(server->getMap_User_CosProdus());
 
   return output;
