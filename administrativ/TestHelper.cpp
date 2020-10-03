@@ -11,13 +11,13 @@ TestHelper::TestHelper(const string& inFile)
 
   inStream.close();
 
-  server = Server::InitializareServer();
+  server = Server::ServerInit();
 }
 
 void TestHelper::Init()
 {
-  server->populareProduse(input);
-  server->populareUseri(input);
+    server->populateProducts(input);
+    server->populateUsers(input);
 }
 
 TestHelper::~TestHelper()
@@ -31,124 +31,124 @@ TestHelper::~TestHelper()
 json TestHelper::TestIerarhieClasaProdus() {
       string str = "check";
 
-      // Test Constructori ProdusAlimentar
-      ProdusAlimentar *pa = new ProdusAlimentar();
-      ProdusAlimentar *pa2 = new ProdusAlimentar(str, 78, str, 7.89, str, 200);
+      // Test Constructori FoodProduct
+      FoodProduct *pa = new FoodProduct();
+      FoodProduct *pa2 = new FoodProduct(str, 78, str, 7.89, str, 200);
 
       if (pa2 == NULL)
       {
         return failJson;
       }
       
-      // Test Set ProdusAlimentar
+      // Test Set FoodProduct
       float val = 9.27;
       string taraOrigine = "Spania";
       
       pa->setLeiPerKg(val);
-      pa->setTaraDeOrigine(taraOrigine);
+    pa->setCountryOfOrigin(taraOrigine);
       
-      // Test Get ProdusAlimentar
+      // Test Get FoodProduct
       if (pa->getLeiPerKg() != val) {
         return failJson;
       }
-      if (pa->getTaraDeOrigine() != taraOrigine) {
+      if (pa->getCountryOfOrigin() != taraOrigine) {
         return failJson;
       }
 
-      // OPERATORI ProdusAlimentar ???
+      // OPERATORI FoodProduct ???
 
-      // Test Construcori ProdusNealimentar
-      ProdusNealimentar *pn = new ProdusNealimentar();
-      ProdusNealimentar *pn2 = new ProdusNealimentar(str, 20, str, str, 4.78, 30, 40);
+      // Test Construcori NonFoodProduct
+      NonFoodProduct *pn = new NonFoodProduct();
+      NonFoodProduct *pn2 = new NonFoodProduct(str, 20, str, str, 4.78, 30, 40);
 
       if (pn2 == NULL)
       {
         return failJson;
       }
 
-      // Test Set ProdusNealimentar
+      // Test Set NonFoodProduct
       int garantie = 5;
       float pret = 5.79;
       string producator = "Adibas";
-      
-      pn->setGarantieAni(garantie);
+
+    pn->setYearsOfWarranty(garantie);
       pn->setPret(pret);
       pn->setProducator(producator);
       
-      // Test Get ProdusNealimentar
-      if (garantie != pn->getGarantieAni()) {
+      // Test Get NonFoodProduct
+      if (garantie != pn->getYearsOfWarranty()) {
         return failJson;
       }
 
-      if (pret != pn->getPret()) {
+      if (pret != pn->getPrice()) {
         return failJson;
       }
 
-      if (producator != pn->getProducator()) {
+      if (producator != pn->getProducer()) {
         return failJson;
       }
 
-      // Test Constructori ProdusRedus
-      ProdusRedus *pr = new ProdusRedus();
-      ProdusRedus *pr_ref = new ProdusRedus(str, 69, str, str, 4.20, 2, 60, 100);
+      // Test Constructori DiscountedProduct
+      DiscountedProduct *pr = new DiscountedProduct();
+      DiscountedProduct *pr_ref = new DiscountedProduct(str, 69, str, str, 4.20, 2, 60, 100);
 
       if (pr_ref == NULL)
       {
-        return failJson;
+        return NULL;
       }
 
       int procentReducere = 60;
       
-      // Test Set ProdusRedus
+      // Test Set DiscountedProduct
       pr->setPret(pret);
-      pr->setProcentReducere(procentReducere);
+    pr->setDiscountPercentage(procentReducere);
 
-      // Test Get ProdusRedus
-      if (pr->getPret() != pret) {
+      // Test Get DiscountedProduct
+      if (pr->getPrice() != pret) {
         return failJson;
       }
 
-      if (pr->getProcentReducere() != procentReducere) {
+      if (pr->getDiscountPercentage() != procentReducere) {
         return failJson;
       }
 
-      if (pr->pretDupaReducere() != pret * (100 - procentReducere)) {
+      if (pr->priceAfterDiscount() != pret * (100 - procentReducere)) {
         return failJson;
       }
       
-      // Test Constructori ProdusReturnat
-      ProdusReturnat *prt = new ProdusReturnat();
-      ProdusReturnat *prt_ref = new ProdusReturnat(str, 69, str, str, 4.20, 5, str, 51);
+      // Test Constructori ReturnedProduct
+      ReturnedProduct *prt = new ReturnedProduct();
+      ReturnedProduct *prt_ref = new ReturnedProduct(str, 69, str, str, 4.20, 5, str, 51);
 
       if (prt_ref == NULL)
       {
-        return failJson;
+        return NULL;
       }
 
       string motiv = "aiurea";
-      // Test Set ProdusReturnat
-      prt->setMotiv(motiv);
+      // Test Set ReturnedProduct
+    prt->setReason(motiv);
 
-      // Test Get ProdusReturnat
-      if (prt->getMotiv() != motiv) {
+      // Test Get ReturnedProduct
+      if (prt->getReason() != motiv) {
         return failJson;
       }
       
-      // Test Constructori ProdusResigilat
-      ProdusResigilat *pr_res = new ProdusResigilat();
-      ProdusResigilat *pr_res2 = new ProdusResigilat(str, 5, str, str, 6.89, 25, 28, str, 29, 30);
+      // Test Constructori ResealedProduct
+      ResealedProduct *pr_res = new ResealedProduct();
+      ResealedProduct *pr_res2 = new ResealedProduct(str, 5, str, str, 6.89, 25, 28, str, 29, 30);
 
       if (pr_res2 == NULL)
       {
         return failJson;
       }
 
-      // Test Set ProdusResigilat
+      // Test Set ResealedProduct
       int procent = 6;
-      pr_res->setProcentUzura(procent);
+    pr_res->setWearPercentage(procent);
 
-      // Test Get ProdusResigilat
-      if (procent != pr_res->getProcentUzura()) {
+      // Test Get ResealedProduct
+      if (procent != pr_res->getWearPercentage()) {
         return failJson;
       }
        
@@ -157,7 +157,7 @@ json TestHelper::TestIerarhieClasaProdus() {
 
 json TestHelper::TestIerarhieClasaUser() {
   
-    // Variabile ajutatoare Adresa
+    // Variabile ajutatoare Address
     string check = "check";
     string judet = "Constanta";
     string oras = "SatulDeVacanta";
@@ -166,43 +166,43 @@ json TestHelper::TestIerarhieClasaUser() {
     string bloc = "Cel Mai Tare Bloc";
     int apartament = 1000; 
     
-    // Test Constructor Adresa
-    Adresa *adr = new Adresa();
-    Adresa *adr2 = new Adresa(check, check, check, 70, check, 20);
+    // Test Constructor Address
+    Address *adr = new Address();
+    Address *adr2 = new Address(check, check, check, 70, check, 20);
 
-    // Test Set Adresa
-    adr->setJudet(judet);
-    adr->setLocalitate(oras);
+    // Test Set Address
+    adr->setCounty(judet);
+    adr->setLocality(oras);
     adr->setStrada(strada);
     adr->setNumar(numar);
-    adr->setBloc(bloc);
-    adr->setApartament(apartament);
+    adr->setBlock(bloc);
+    adr->setApartment(apartament);
 
-    // Test Get Adresa
-    if (adr->getJudet() != judet) {
+    // Test Get Address
+    if (adr->getCounty() != judet) {
         return failJson;
     }
-    if (adr->getLocalitate() != oras) {
+    if (adr->getLocality() != oras) {
       return failJson;
     }
-    if (adr->getStrada() != strada) {
+    if (adr->getStreet() != strada) {
       return failJson;
     }
-    if (adr->getBloc() != bloc) {
+    if (adr->getBlock() != bloc) {
       return failJson;
     }
-    if (adr->getApartament() != apartament) {
+    if (adr->getApartment() != apartament) {
       return failJson;
     }
 
     // OPERATOR << ????
 
 
-    // Test Constructori UserPremium
+    // Test Constructori PremiumUser
     unordered_map<int, int> reduceri_test;
     reduceri_test[1] = 5; reduceri_test[3] = 10;
-    UserPremium *up = new UserPremium();
-    UserPremium *up2 = new UserPremium(check, check, check, 20, check, 200, check, check, check, 20, check, 30, 200, check, check, check, 20, reduceri_test);
+    PremiumUser *up = new PremiumUser();
+    PremiumUser *up2 = new PremiumUser(check, check, check, 20, check, 200, check, check, check, 20, check, 30, 200, check, check, check, 20, reduceri_test);
 
     if (up2 == NULL)
     {
@@ -216,22 +216,22 @@ json TestHelper::TestIerarhieClasaUser() {
     int idUser = 1000;
     int cap = 10;
 
-    // Test Set UserPremium (implicit si User)
-    up->setNume(nume);
-    up->setPrenume(prenume);
+    // Test Set PremiumUser (implicit si User)
+    up->setLastName(nume);
+    up->setFirstName(prenume);
     up->setEmail(email);
-    up->setIdUser(idUser);
-    up->setDateFacturare(*adr);
-    up->setDateLivrare(*adr2);
-    up->setReduceri(reduceri_test);
-    up->setCostAbonamentPremium(cap);
+    up->setUserID(idUser);
+    up->setBillingData(*adr);
+    up->setDeliveryData(*adr2);
+    up->setDiscounts(reduceri_test);
+    up->setPremiumSubscriptionCost(cap);
 
-    // Test Get UserPremium
-    if (up->getNume() != nume) {
+    // Test Get PremiumUser
+    if (up->getLastName() != nume) {
       return failJson;
     }
 
-    if (up->getPrenume() != prenume) {
+    if (up->getFirstName() != prenume) {
       return failJson;
     }
 
@@ -239,30 +239,30 @@ json TestHelper::TestIerarhieClasaUser() {
       return failJson;
     }
 
-    if (up->getIdUser() != idUser) {
+    if (up->getUserID() != idUser) {
         return failJson;
     }
 
-    if (up->getDateFacturare() != *adr) {
+    if (up->getBillingData() != *adr) {
       return failJson;
     }
 
-    if (up->getDateLivrare() != *adr2) {
+    if (up->getDeliveryData() != *adr2) {
       return failJson;
     }
-    if (up->getMapReduceri() != reduceri_test) {
+    if (up->getDiscounts() != reduceri_test) {
       return failJson;
     }
-    if (up->getCostAbonamentPremium() != cap) {
+    if (up->getPremiumSubscriptionCost() != cap) {
       return failJson;
     }
 
-    // Variabile ajutatoare UserNonPremium
+    // Variabile ajutatoare BasicUser
     int costTransport = 20;
 
-    // Test Constructor UserNonPremium
-    UserNonPremium *unp = new UserNonPremium();
-    UserNonPremium *unp2 = new UserNonPremium(check, check, check, 40, check, 60, check, check, check, 20, check, 50, 200, check, check, check, 3.40);
+    // Test Constructor BasicUser
+    BasicUser *unp = new BasicUser();
+    BasicUser *unp2 = new BasicUser(check, check, check, 40, check, 60, check, check, check, 20, check, 50, 200, check, check, check, 3.40);
 
     if (unp2 == NULL)
     {
@@ -270,10 +270,10 @@ json TestHelper::TestIerarhieClasaUser() {
     }
 
     // Test Set UserNonpremium
-    unp->setCostTransport(costTransport);
+    unp->setTransportCost(costTransport);
 
     // Test Get UserNonpremium
-    if (unp->getCostTransport() != costTransport) {
+    if (unp->getTransportCost() != costTransport) {
       return failJson;
     }
 
@@ -284,22 +284,22 @@ json TestHelper::TestClasaCosProduse()
 {
     // Test Constructori Cos Produse
     string check = "check";
-    CosProduse *cp = new CosProduse();
-    CosProduse *cp2 = new CosProduse(check);
+    ShoppingCart *cp = new ShoppingCart();
+    ShoppingCart *cp2 = new ShoppingCart(check);
 
     if (cp2 == NULL)
     {
       return failJson;
     }
 
-    // Test Set + Metode CosProduse
+    // Test Set + Metode ShoppingCart
     string metodaPlata = "Card";
-    
-    cp->setMetodaPlata(metodaPlata);
-    cp->addProdus(5, 3);
 
-    // Test Get + Metode CosProduse
-    if (cp->getCantitate(5) != 3) 
+    cp->setPayMethod(metodaPlata);
+    cp->addProduct(5, 3);
+
+    // Test Get + Metode ShoppingCart
+    if (cp->getQuantity(5) != 3)
     {
       return failJson;
     }
@@ -308,15 +308,15 @@ json TestHelper::TestClasaCosProduse()
     unordered_map<int, int> TestCos;
     TestCos[5] = 3;
     
-    if (cp->getCos() != TestCos) 
+    if (cp->getShoppingCart() != TestCos)
     {
       return failJson;
     }
 
-    cp->deleteProdus(5);
+    cp->deleteProduct(5);
     TestCos.clear();
 
-    if (cp->getCos() != TestCos) 
+    if (cp->getShoppingCart() != TestCos)
     {
       return failJson;
     }
@@ -363,8 +363,8 @@ json TestHelper::TestCerinta2()
 
   rezolvatorul.Cerinta2();
 
-  output["produse"] = JSONSerializer::FromProdusMap(server->getMap_Id_Produs());
-  output["useri"] = JSONSerializer::FromUserMap(server->getMap_User_CosProdus());
+  output["shoppingCart"] = JSONSerializer::fromProductMap(server->get__ProductID__ProductObj__());
+  output["useri"] = JSONSerializer::FromUserMap(server->get__UserID__ProductsCart__());
 
   return output;
 }
@@ -395,26 +395,12 @@ json TestHelper::TestCerinta3b()
 
 json TestHelper::TestCerinta3c()
 {
-  Init();
-  json output;
-
-  auto result = rezolvatorul.Cerinta3c();
-
-  output = ObjectFactory::getJsonProdus(result);
-
-  return output;
+  return failJson;
 }
 
 json TestHelper::TestCerinta3d()
 {
-  Init();
-  json output;
-
-  auto result = rezolvatorul.Cerinta3d();
-
-  output = ObjectFactory::getJsonProdus(result);
-
-  return output;
+  return failJson;
 }
 
 json TestHelper::TestCerinta3e()

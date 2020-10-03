@@ -3,21 +3,21 @@
 #include <vector>
 #include <list>
 
-#include "rezolvari/rezolvareCerinte.h"
-#include "produs/produsResigilat.h"
-#include "produs/produsAlimentar.h"
-#include "server/server.h"
-#include "user/userPremium.h"
-#include "user/userNonPremium.h"
-#include "lrucache/lrucache.h"
+#include "__Solution__/rezolvareCerinte.h"
+#include "Product/ResealedProduct.h"
+#include "Product/FoodProduct.h"
+#include "Server/Server.h"
+#include "User/PremiumUser.h"
+#include "User/BasicUser.h"
+#include "LRUCache/LRUCache.h"
 #include "objectFactory/objectFactory.h"
 #include "../administrativ/TestHelper.cpp"
 
 using namespace std;
 
 
-// Instanta Singleton
-Server *Server::instanta = 0;
+// Singleton Instance
+Server *Server::instance = 0;
 
 int main(int argc, char** argv) 
 {
@@ -79,7 +79,7 @@ int main(int argc, char** argv)
     }
 
     oStream<<result;
-    
+
     return 0;
   }
   catch (const char *ex)

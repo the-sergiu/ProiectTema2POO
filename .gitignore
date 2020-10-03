@@ -1,4 +1,9 @@
 .vscode
 bin/*
 build/*
-src/files/output/*
+cmake-build-debug/*
+CMakeLists.txt
+.idea/*
+TemaPOO
+*.d
+*.o
