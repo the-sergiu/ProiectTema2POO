@@ -4,3 +4,6 @@ build/*
 cmake-build-debug/*
 CMakeLists.txt
 .idea/*
+TemaPOO
+*.d
+*.o
