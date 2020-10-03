@@ -16,51 +16,45 @@
 
 using namespace std;
 
-
-// template server ??
 class Server
 {
   private:
     
-    static Server *instanta;
+    static Server *instance;
 
-    int capacitateUsers;
+    int usersCapacity;
     list<User*> usr;
     list<Product*> prod;
 
-    // map id - Product
-    unordered_map<int, Product*> produsId_Produs;
-    // use case: produsId_Produs[id]->display();
+    // map ProductID : Products
+    unordered_map<int, Product*> __ProductID__ProductObj__;
 
-    // map user - cosProduse
-    unordered_map<int, CosProduse*> user_CosProduse;
-    //use case: user_cosproduse[iduser].addProdus(idprodus, quantity)
-    
-    // LRUCache lru;
-    // LRUCache bazat pe timp (queue/lista sortata dupa timestamp)
+    // map UserID : ProductsCart
+    unordered_map<int, CosProduse*> __UserID__ProductsCart__;
+
 
     // Singleton
     Server();
   public:
-    static Server* InitializareServer();
+    static Server* ServerInit();
     ~Server();
 
-    unordered_map<int, Product*> getMap_Id_Produs();
-    unordered_map<int, CosProduse*> getMap_User_CosProdus();
+    unordered_map<int, Product*> get__ProductID__ProductObj__();
+    unordered_map<int, CosProduse*> get__UserID__ProductsCart__();
 
-    void populareProduse(const json&);
-    void populareUseri(const json&);
+    void populateProducts(const json&);
+    void populateUsers(const json&);
 
-    void setMapProdusId_Produs();
-    void setMapUser_CosProduse();
+    void set__ProductID__ProductObj__();
+    void set__UserID__ProductsCart__();
 
 
-    list<Product*>& getListaProduse();
-    list<User*>& getListaUseri();
+    list<Product*>& getProductsList();
+    list<User*>& getUsersList();
 
-    void requestAddProdus(int, int, int);
-    void requestDeleteProdus(int, int);
-    void requestModifyProdus(int, int, int);
+    void requestAddProduct(int, int, int);
+    void requestDeleteProduct(int, int);
+    void requestModifyProduct(int, int, int);
 
 
 

@@ -11,13 +11,13 @@ TestHelper::TestHelper(const string& inFile)
 
   inStream.close();
 
-  server = Server::InitializareServer();
+  server = Server::ServerInit();
 }
 
 void TestHelper::Init()
 {
-  server->populareProduse(input);
-  server->populareUseri(input);
+    server->populateProducts(input);
+    server->populateUsers(input);
 }
 
 TestHelper::~TestHelper()
@@ -363,8 +363,8 @@ json TestHelper::TestCerinta2()
 
   rezolvatorul.Cerinta2();
 
-  output["produse"] = JSONSerializer::fromProductMap(server->getMap_Id_Produs());
-  output["useri"] = JSONSerializer::FromUserMap(server->getMap_User_CosProdus());
+  output["produse"] = JSONSerializer::fromProductMap(server->get__ProductID__ProductObj__());
+  output["useri"] = JSONSerializer::FromUserMap(server->get__UserID__ProductsCart__());
 
   return output;
 }

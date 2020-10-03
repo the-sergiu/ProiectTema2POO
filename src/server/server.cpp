@@ -6,45 +6,45 @@ using namespace std;
 Server::Server()
 {}
 
-Server* Server::InitializareServer()
+Server* Server::ServerInit()
 {
-  if(!instanta)
+  if(!instance)
   {
-    instanta = new Server;
+      instance = new Server;
   }
   
-  return instanta;
+  return instance;
 }
 
 Server::~Server()
 {
-  if (instanta != NULL)
-    instanta = NULL;
-  if (!produsId_Produs.empty())
-    produsId_Produs.clear();
-  if (!user_CosProduse.empty())
-    user_CosProduse.clear();
+  if (instance != NULL)
+      instance = NULL;
+  if (!__ProductID__ProductObj__.empty())
+    __ProductID__ProductObj__.clear();
+  if (!__UserID__ProductsCart__.empty())
+    __UserID__ProductsCart__.clear();
 }
 
 // SET
-void Server::setMapProdusId_Produs()
+void Server::set__ProductID__ProductObj__()
 {
   for (auto it = prod.begin(); it != prod.end(); ++it)
   {
-    produsId_Produs[(*it)->getId()] = *it;
+      __ProductID__ProductObj__[(*it)->getId()] = *it;
   }
 }
 
 
 
-void Server::setMapUser_CosProduse()
+void Server::set__UserID__ProductsCart__()
 {
   for (auto it = usr.begin(); it != usr.end(); ++it)
   {
-    user_CosProduse[(*it)->getIdUser()] = new CosProduse;
+      __UserID__ProductsCart__[(*it)->getIdUser()] = new CosProduse;
   }
   //Testare initializare corecta map
-  // for(auto const& x : this->user_CosProduse){
+  // for(auto const& x : this->__UserID__ProductsCart__){
   // cout<<x.first<<" - ";
   // x.second->display();
   // cout<<endl;
@@ -53,86 +53,86 @@ void Server::setMapUser_CosProduse()
 
 
 // GET
-list<Product*>& Server::getListaProduse()
+list<Product*>& Server::getProductsList()
 {
   return this->prod;
 }
-list<User*>& Server::getListaUseri()
+list<User*>& Server::getUsersList()
 {
   return this->usr;
 }
 
-unordered_map<int, Product*> Server::getMap_Id_Produs()
+unordered_map<int, Product*> Server::get__ProductID__ProductObj__()
 {
-  return this->produsId_Produs;
+  return this->__ProductID__ProductObj__;
 }
 
-unordered_map<int, CosProduse*> Server::getMap_User_CosProdus()
+unordered_map<int, CosProduse*> Server::get__UserID__ProductsCart__()
 {
-  return this->user_CosProduse;
+  return this->__UserID__ProductsCart__;
 }
 
 
-void Server::populareProduse(const json& input)
+void Server::populateProducts(const json& input)
 {
   prod = ObjectFactory::getProdusList(input["produse"]);
 }
 
-void Server::populareUseri(const json& input)
+void Server::populateUsers(const json& input)
 {
   usr = ObjectFactory::getUserList(input["useri"]);
 }
 
 // REQUESTS
-void Server::requestAddProdus(int userID, int produsID, int cantitate)
+void Server::requestAddProduct(int userID, int produsID, int cantitate)
 {
   //Atentie verificare daca nu exista user sau Product cu id corect
   //Daca produsul cerut are cantitatea necesara
-  if(produsId_Produs[produsID]->checkQuantity(cantitate)) {
+  if(__ProductID__ProductObj__[produsID]->checkQuantity(cantitate)) {
   //Ii scadem cantitatea
-      produsId_Produs[produsID]->decreaseQuantity(cantitate);
+      __ProductID__ProductObj__[produsID]->decreaseQuantity(cantitate);
   //Adaugam produsul si cantitatea ceruta in cosul de produse al user-ului
-    user_CosProduse[userID]->addProdus(produsID, cantitate);
+    __UserID__ProductsCart__[userID]->addProdus(produsID, cantitate);
   }
   //Altfel nu aveam cantitatea necesara
   else cout<<endl<<"Produsul " << produsID << " nu are cantitatea necesara"<<endl;
 
   //Afisare cos de produse pentru user
   cout<<"Lista de produse pentru user "<<userID<<" este: "<<endl;
-  user_CosProduse[userID]->afisare();
+  __UserID__ProductsCart__[userID]->afisare();
   
 }
 
-void Server::requestDeleteProdus(int userID, int produsID)
+void Server::requestDeleteProduct(int userID, int produsID)
 {
   //Crestem cantitatea de Product cu cea pe care user-ul o are in cos
-    produsId_Produs[produsID]->increaseQuantity(user_CosProduse[userID]->getCantitate(produsID));
+    __ProductID__ProductObj__[produsID]->increaseQuantity(__UserID__ProductsCart__[userID]->getCantitate(produsID));
   //Stergem produsul din cosul de cumparaturi
-  user_CosProduse[userID]->deleteProdus(produsID);
+  __UserID__ProductsCart__[userID]->deleteProdus(produsID);
 }
 
-void Server::requestModifyProdus(int userID, int produsID, int cantitateNoua)
+void Server::requestModifyProduct(int userID, int produsID, int cantitateNoua)
 {
-  int diferenta = user_CosProduse[userID]->getCantitate(produsID) - cantitateNoua;
+  int diferenta = __UserID__ProductsCart__[userID]->getCantitate(produsID) - cantitateNoua;
 
   //Daca cantitatea ceruta este mai mica decat este acum in cos
   if(diferenta > 0)
   {
     //Creste cantitatea disponibila a produslui
-      produsId_Produs[produsID]->increaseQuantity(diferenta);
+      __ProductID__ProductObj__[produsID]->increaseQuantity(diferenta);
     //Modificam cantitatea din cos cu cea noua
-    user_CosProduse[userID]->addProdus(produsID, cantitateNoua);
+    __UserID__ProductsCart__[userID]->addProdus(produsID, cantitateNoua);
   }
 
   //Daca cantitatea ceruta este mai mare decat este acum in cos
   else if(diferenta < 0)
   {
     //Verifica daca e disponibila difereta de quantity
-    if(produsId_Produs[produsID]->checkQuantity(-diferenta)) {
+    if(__ProductID__ProductObj__[produsID]->checkQuantity(-diferenta)) {
     //Ii scadem cantitatea
-        produsId_Produs[produsID]->decreaseQuantity(-diferenta);
+        __ProductID__ProductObj__[produsID]->decreaseQuantity(-diferenta);
     //Modificam cantitatea din cos cu cea noua
-      user_CosProduse[userID]->addProdus(produsID, cantitateNoua);
+      __UserID__ProductsCart__[userID]->addProdus(produsID, cantitateNoua);
     }
   }
 

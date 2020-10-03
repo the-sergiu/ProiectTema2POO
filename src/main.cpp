@@ -17,7 +17,7 @@ using namespace std;
 
 
 // Instanta Singleton
-Server *Server::instanta = 0;
+Server *Server::instance = 0;
 
 int main(int argc, char** argv) 
 {

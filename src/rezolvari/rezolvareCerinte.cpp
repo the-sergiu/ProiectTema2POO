@@ -3,7 +3,7 @@
 using namespace std;
 
 RezolvareCerinte::RezolvareCerinte() {
-  server = Server::InitializareServer();
+  server = Server::ServerInit();
 }
 
 RezolvareCerinte::~RezolvareCerinte(){
@@ -17,17 +17,17 @@ void RezolvareCerinte::Cerinta2(){
   cout<<"Se rezolva cerinta 1"<<endl;
 
   //Testare citire produse din json
-  server->setMapProdusId_Produs();
+    server->set__ProductID__ProductObj__();
 
   //Testare citire useri din json
-  server->setMapUser_CosProduse();
+    server->set__UserID__ProductsCart__();
 }
 
 list<Product*> RezolvareCerinte::Cerinta3a(){
   cout<<"Se rezolva cerinta 2a"<<endl;
   list<Product*> rezolvare;
 
-  for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
+  for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); ++it)
   {
     if((*it)->getProductType() == "redus" && (*it)->getCategory() == "espressor")
       rezolvare.push_back((*it));
@@ -40,7 +40,7 @@ list<User*> RezolvareCerinte::Cerinta3b(){
   cout<<"Se rezolva cerinta 2b"<<endl;
   list<User*> rezolvare;
 
-  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
+  for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
     if((*it)->getUserType() == "nonpremium" && (*it)->getCostTransport() < 11.5)
       rezolvare.push_back((*it));
@@ -53,7 +53,7 @@ list<Product*> RezolvareCerinte::Cerinta3c(){
   
   list<Product*> rezolvare;
 
-  for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); it++){
+  for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); it++){
     if(((*it)->getProductType() == "redus" || (*it)->getProductType() == "resigilat")){
       string toFind = "cutie";
       ReturnedProduct *pr = dynamic_cast<ReturnedProduct*>(*it);
@@ -75,7 +75,7 @@ list<Product*> RezolvareCerinte::Cerinta3d()
 {
   list<Product*> rezolvare;
 
-  for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
+  for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); ++it)
   {
     if((*it)->getProductType() == "alimentar")
       rezolvare.push_back((*it));
@@ -103,7 +103,7 @@ list<User*> RezolvareCerinte::Cerinta3e(){
   map<string, int> useri_per_judet;
 
   // Construim map-ul de frecventa, Judet:NumarUseri
-  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
+  for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
     Adresa dateLivrare = (*it)->getDateLivrare();
     string judet = dateLivrare.getJudet();
@@ -140,7 +140,7 @@ list<User*> RezolvareCerinte::Cerinta3e(){
   }
 
   // Cream lista cu Utilizatori care au adresele la casa (adica nu la bloc)
-  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
+  for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
     Adresa dateLivrare = (*it)->getDateLivrare();
     Adresa dateFacturare = (*it)->getDateFacturare();
@@ -162,14 +162,14 @@ list<User*> RezolvareCerinte::Cerinta3f()
   list<User*> rezolvare;
 
   // Populam lista de id-uri care corespund produselor din categoriile 'imprimanta' si 'telefon'
-  for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
+  for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); ++it)
   {
     if((*it)->getCategory() == "telefon" || (*it)->getCategory() == "imprimanta")
       idsProduse.push_back((*it)->getId());
   }
 
   // Parcugem lista de Useri, din care ne intereseaza doar Userii Premium
-  for (auto it = server->getListaUseri().begin(); it != server->getListaUseri().end(); ++it)
+  for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
     auto userPremium = dynamic_cast<UserPremium*>((*it));
     

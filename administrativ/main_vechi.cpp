@@ -16,7 +16,7 @@
 //string returnClassType(string s);
 //
 //// Instanta Singleton
-//Server *Server::instanta = 0;
+//Server *Server::instance = 0;
 //
 //int main()
 //{
@@ -47,17 +47,17 @@
 //  // (*it)->display();
 ///* TEST INITIALIZARE SERVER */
 //  Server *serv;
-//  serv = Server::InitializareServer();
-//  serv->populareProduse("server/produse.txt");
-//  serv->setMapProdusId_Produs();
-//  serv->populareUseri("server/users.txt");
+//  serv = Server::ServerInit();
+//  serv->populateProducts("server/produse.txt");
+//  serv->set__ProductID__ProductObj__();
+//  serv->populateUsers("server/users.txt");
 //  serv->setMapuser_CosProduse();
 //
 ///*TESTARE ADAUGARE PRODUS IN COS PENTRU USER SI PRODUS DE TEST*/
-//  // serv->requestAddProdus(251, 2, 10);
+//  // serv->requestAddProduct(251, 2, 10);
 //
 //
-//  // list<Product*> lst = serv->getListaProduse();
+//  // list<Product*> lst = serv->getProductsList();
 //  // for (auto it = lst.begin(); it != lst.end(); it++){
 //  //   (*it)->display();
 //  //   cout<<endl;
