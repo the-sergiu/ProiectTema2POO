@@ -3,21 +3,21 @@
 #include <vector>
 #include <list>
 
-#include "rezolvari/rezolvareCerinte.h"
-#include "produs/produsResigilat.h"
-#include "produs/produsAlimentar.h"
-#include "server/server.h"
-#include "user/userPremium.h"
-#include "user/userNonPremium.h"
-#include "lrucache/lrucache.h"
+#include "__Solution__/rezolvareCerinte.h"
+#include "Product/ResealedProduct.h"
+#include "Product/FoodProduct.h"
+#include "Server/Server.h"
+#include "User/PremiumUser.h"
+#include "User/BasicUser.h"
+#include "LRUCache/LRUCache.h"
 #include "objectFactory/objectFactory.h"
 #include "../administrativ/TestHelper.cpp"
 
 using namespace std;
 
 
-// Instanta Singleton
-Server *Server::instanta = 0;
+// Singleton Instance
+Server *Server::instance = 0;
 
 int main(int argc, char** argv) 
 {
@@ -26,18 +26,8 @@ int main(int argc, char** argv)
   TestHelper p(argv[1]);
 
 
-  TestHelper p;
-  rezolvareCerinte rez;
-
-   rez.Cerinta1();
-   rez.Cerinta2d();
- // rez.Cerinta2a();
- // rez.Cerinta2b();
-  //rez.Cerinta2d();
-  //rez.Cerinta2e();
-  // rez.Cerinta2f();
- 
-  // string str = "test"
+  // TestHelper p;
+  RezolvareCerinte rez;
 
   try{
     
@@ -64,25 +54,25 @@ int main(int argc, char** argv)
         result = p.TestLRUCacheSimple();
         break;
       case 5:
-        result = p.TestCerinta1();
+        result = p.TestCerinta2();
         break;
       case 6:
-        result = p.TestCerinta2a();
+        result = p.TestCerinta3a();
         break;
       case 7:
-        result = p.TestCerinta2b();
+        result = p.TestCerinta3b();
         break;
       case 8:
-        result = p.TestCerinta2c();
+        result = p.TestCerinta3c();
         break;
       case 9:
-        result = p.TestCerinta2d();
+        result = p.TestCerinta3d();
         break;
       case 10:
-        result = p.TestCerinta2e();
+        result = p.TestCerinta3e();
         break;
       case 11:
-        result = p.TestCerinta2f();
+        result = p.TestCerinta3f();
         break;
       default:
         break;

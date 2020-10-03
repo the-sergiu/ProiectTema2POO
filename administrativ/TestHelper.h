@@ -2,11 +2,11 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include "../src/produs/produsResigilat.h"
-#include "../src/produs/produsAlimentar.h"
-#include "../src/lrucache/lrucache.h"
+#include "../src/Product/ResealedProduct.h"
+#include "../src/Product/FoodProduct.h"
+#include "../src/LRUCache/LRUCache.h"
 #include "../src/json.hpp"
-#include "../src/rezolvari/rezolvareCerinte.h"
+#include "../src/__Solution__/rezolvareCerinte.h"
 #include "JSONSerializer.h"
 
 using json = nlohmann::json;
@@ -24,11 +24,11 @@ class TestHelper
     json TestIerarhieClasaUser();   // Test 2
     json TestClasaCosProduse();     // Test 3
     json TestLRUCacheSimple();      // Test 4
-    json TestCerinta1();
-    json TestCerinta2a();
-    json TestCerinta2b();
-    json TestCerinta2c();           // TODO
-    json TestCerinta2d();           // TODO
-    json TestCerinta2e();
-    json TestCerinta2f();
+    json TestCerinta2();
+    json TestCerinta3a();
+    json TestCerinta3b();
+    json TestCerinta3c();          
+    json TestCerinta3d();           
+    json TestCerinta3e();
+    json TestCerinta3f();
 };

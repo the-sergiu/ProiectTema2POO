@@ -3,13 +3,13 @@
 #include <string>
 #include <list>
 #include <vector>
-#include "../produs/produsNealimentar.h"
-#include "../produs/produsAlimentar.h"
+#include "../Product/NonFoodProduct.h"
+#include "../Product/FoodProduct.h"
 
 class Utility{
 
 public:
-    static bool compareProdusNealimentar(Produs*, Produs*);
+    static bool compareProdusNealimentar(Product*, Product*);
 
-    static bool compareProdusAlimentar(Produs*, Produs*);
+    static bool compareProdusAlimentar(Product*, Product*);
 };

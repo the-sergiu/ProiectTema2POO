@@ -1,4 +1,4 @@
-# The name of the executable to be created
+# The lastName of the executable to be created
 BIN_NAME := TemaPOO
 # Compiler used
 CXX ?= g++
@@ -80,12 +80,12 @@ install: export BIN_PATH := bin/release
 
 # Find all source files in the source directory, sorted by most
 # recently modified
-ifeq ($(UNAME_S),Darwin)
-	SOURCES = $(shell find $(SRC_PATH) -name '*.$(SRC_EXT)' | sort -k 1nr | cut -f2-)
-else
-	SOURCES = $(shell find $(SRC_PATH) -name '*.$(SRC_EXT)' -printf '%T@\t%p\n' \
-						| sort -k 1nr | cut -f2-)
-endif
+# ifeq ($(UNAME_S),Darwin)
+# 	SOURCES = $(shell find $(SRC_PATH) name'*.$(SRC_EXT)' | sort -k 1nr | cut -f2-)
+# else
+# 	SOURCES = $(shell find $(SRC_PATH) '*.$(SRC_EXT)' -printf '%T@\t%p\n' \
+# 						| sort -k 1nr | cut -f2-)
+# endif
 
 # fallback in case the above fails
 rwildcard = $(foreach d, $(wildcard $1*), $(call rwildcard,$d/,$2) \

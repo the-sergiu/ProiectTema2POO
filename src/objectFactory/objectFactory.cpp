@@ -9,60 +9,60 @@
 #define NONPREMIUM  "nonPremium"
 
 
-Produs* ObjectFactory::createProdus(string type, json::iterator it) {
+Product* ObjectFactory::createProdus(string type, json::iterator it) {
 
     if (type == ALIMENTAR) {
 
-        ProdusAlimentar *newProdus = new ProdusAlimentar();   
-        *newProdus = it->get<ProdusAlimentar>();
+        FoodProduct *newProdus = new FoodProduct();
+        *newProdus = it->get<FoodProduct>();
         return newProdus;
     }
 
     else if (type == NEALIMENTAR) {
 
-        ProdusNealimentar *newProdus = new ProdusNealimentar();
-        *newProdus = it->get<ProdusNealimentar>();
+        NonFoodProduct *newProdus = new NonFoodProduct();
+        *newProdus = it->get<NonFoodProduct>();
         return newProdus;
     }
 
     else if (type == REDUS) {
 
-        ProdusRedus *newProdus = new ProdusRedus();
-        *newProdus = it->get<ProdusRedus>();
+        DiscountedProduct *newProdus = new DiscountedProduct();
+        *newProdus = it->get<DiscountedProduct>();
         return newProdus;
     }
 
     else if (type == RETURNAT) {
 
-        ProdusReturnat *newProdus = new ProdusReturnat();
-        *newProdus = it->get<ProdusReturnat>();
+        ReturnedProduct *newProdus = new ReturnedProduct();
+        *newProdus = it->get<ReturnedProduct>();
         return newProdus;
     }
 
     else if (type == RESIGILAT) {
             
-        ProdusResigilat *newProdus = new ProdusResigilat();
-        *newProdus = it->get<ProdusResigilat>();
+        ResealedProduct *newProdus = new ResealedProduct();
+        *newProdus = it->get<ResealedProduct>();
         return newProdus;
     }
 
     return NULL;
 }  
 
-list<Produs*> ObjectFactory::getProdusList(json j){
+list<Product*> ObjectFactory::getProdusList(json j){
     
-    list<Produs*> lst;
+    list<Product*> lst;
     
     for (json::iterator it = j.begin(); it != j.end(); ++it) {
 
-        Produs *p = createProdus((*it)[TYPE_KEY], it);
+        Product *p = createProdus((*it)[TYPE_KEY], it);
         lst.push_back(p);
     }
     return lst;
 
 } 
 
-json ObjectFactory::getJsonProdus(list<Produs*>& lst){
+json ObjectFactory::getJsonProdus(list<Product*>& lst){
 
     json outj;
 
@@ -77,15 +77,15 @@ User* ObjectFactory::createUser(string type, json::iterator it){
 
     if (type == PREMIUM) {
 
-        UserPremium *newUser = new UserPremium();   
-        *newUser = it->get<UserPremium>();
+        PremiumUser *newUser = new PremiumUser();
+        *newUser = it->get<PremiumUser>();
         return newUser;
     }
 
     else if (type == NONPREMIUM) {
 
-        UserNonPremium *newUser = new UserNonPremium();
-        *newUser = it->get<UserNonPremium>();
+        BasicUser *newUser = new BasicUser();
+        *newUser = it->get<BasicUser>();
         return newUser;
     }
 
