@@ -6,15 +6,15 @@ DiscountedProduct::DiscountedProduct() : NonFoodProduct()
 	this->discountPercentage = -1;
 }
 
-DiscountedProduct::DiscountedProduct(const string &categorie, int id, const string &producator, const string &nume, float pret, int garantieAni, int procentReducere, int cantitate)
-	: NonFoodProduct(categorie, id, producator, nume, pret, garantieAni, cantitate)
+DiscountedProduct::DiscountedProduct(const string &category, int id, const string &producer, const string &name, float price, int yearsOfWarranty, int discountPercentage, int quantity)
+	: NonFoodProduct(category, id, producer, name, price, yearsOfWarranty, quantity)
 {
-	this->discountPercentage = procentReducere;
+	this->discountPercentage = discountPercentage;
 }
 
-DiscountedProduct::DiscountedProduct(const DiscountedProduct &produsRedus) : NonFoodProduct(produsRedus)
+DiscountedProduct::DiscountedProduct(const DiscountedProduct &discountedProduct) : NonFoodProduct(discountedProduct)
 {
-	this->discountPercentage = produsRedus.discountPercentage;
+	this->discountPercentage = discountedProduct.discountPercentage;
 }
 
 void DiscountedProduct::display()
@@ -55,9 +55,9 @@ const DiscountedProduct &DiscountedProduct::operator=(const DiscountedProduct &a
 	return *this;
 }
 
-void DiscountedProduct::setDiscountPercentage(int procentReducere)
+void DiscountedProduct::setDiscountPercentage(int discountPercentage)
 {
-	this->discountPercentage = procentReducere;
+	this->discountPercentage = discountPercentage;
 }
 
 string DiscountedProduct::getProductType()

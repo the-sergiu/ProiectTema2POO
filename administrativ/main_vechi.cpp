@@ -26,8 +26,8 @@
 //  // lista[0] = new FoodProduct(str, str, 2, 5.55, 110, str);
 //  // lista[1] = new NonFoodProduct(str, str, str, 210, 5, 2, 2131.32143);
 //  // lista[2] = new DiscountedProduct(str, str, str, 432, 5, 10, 4324234234, 10);
-//  // lista[3] = new ProdusReturnat(str, str, str, str, 432, 5, 2, 432423);
-//  // lista[4] = new ProdusResigilat(str, str, str, str, 789, 3, 5, 4234, 10, 22);
+//  // lista[3] = new ReturnedProduct(str, str, str, str, 432, 5, 2, 432423);
+//  // lista[4] = new ResealedProduct(str, str, str, str, 789, 3, 5, 4234, 10, 22);
 //
 //  // for (int i = 0 ; i < 5; i++)
 //  // {
@@ -38,10 +38,10 @@
 //
 //
 //  // cout << endl;
-//  // ProdusReturnat p(str, str, str, 432, 5, 2, 432423);
+//  // ReturnedProduct p(str, str, str, 432, 5, 2, 432423);
 //  // cout << returnClassType(typeid(*(lista[1])).name()) << endl;
-//  // ProdusResigilat* pa = dynamic_cast<ProdusResigilat*>(lista[4]);
-//  // cout<<pa->getProcentUzura() << endl;
+//  // ResealedProduct* pa = dynamic_cast<ResealedProduct*>(lista[4]);
+//  // cout<<pa->getWearPercentage() << endl;
 //
 //  // auto it = lista2.begin();
 //  // (*it)->display();

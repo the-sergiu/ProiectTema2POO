@@ -7,7 +7,7 @@
 #include <iostream>
 #include <fstream>
 
-#include "../produs/produsResigilat.h"
+#include "../produs/ResealedProduct.h"
 #include "../produs/FoodProduct.h"
 #include "../user/userPremium.h"
 #include "../user/userNonPremium.h"

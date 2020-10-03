@@ -56,11 +56,11 @@ list<Product*> RezolvareCerinte::Cerinta3c(){
   for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); it++){
     if(((*it)->getProductType() == "redus" || (*it)->getProductType() == "resigilat")){
       string toFind = "cutie";
-      ProdusReturnat *pr = dynamic_cast<ProdusReturnat*>(*it);
+      ReturnedProduct *pr = dynamic_cast<ReturnedProduct*>(*it);
 
       if (pr == nullptr) continue;
 
-      if(pr->getMotiv().find(toFind) != string::npos){
+      if(pr->getReason().find(toFind) != string::npos){
         rezolvare.push_back((*it));
       }
     }

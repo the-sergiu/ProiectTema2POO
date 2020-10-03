@@ -3,7 +3,7 @@
 #include <unordered_map>
 #include <string>
 #include "../src/json.hpp"
-#include "../src/produs/produsResigilat.h"
+#include "../src/produs/ResealedProduct.h"
 #include "../src/produs/FoodProduct.h"
 #include "../src/user/userPremium.h"
 #include "../src/user/userNonPremium.h"

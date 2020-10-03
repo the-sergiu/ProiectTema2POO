@@ -34,15 +34,15 @@ Product* ObjectFactory::createProdus(string type, json::iterator it) {
 
     else if (type == RETURNAT) {
 
-        ProdusReturnat *newProdus = new ProdusReturnat();
-        *newProdus = it->get<ProdusReturnat>();
+        ReturnedProduct *newProdus = new ReturnedProduct();
+        *newProdus = it->get<ReturnedProduct>();
         return newProdus;
     }
 
     else if (type == RESIGILAT) {
             
-        ProdusResigilat *newProdus = new ProdusResigilat();
-        *newProdus = it->get<ProdusResigilat>();
+        ResealedProduct *newProdus = new ResealedProduct();
+        *newProdus = it->get<ResealedProduct>();
         return newProdus;
     }
 

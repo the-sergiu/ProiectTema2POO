@@ -116,9 +116,9 @@ json TestHelper::TestIerarhieClasaProdus() {
         return failJson;
       }
       
-      // Test Constructori ProdusReturnat
-      ProdusReturnat *prt = new ProdusReturnat();
-      ProdusReturnat *prt_ref = new ProdusReturnat(str, 69, str, str, 4.20, 5, str, 51);
+      // Test Constructori ReturnedProduct
+      ReturnedProduct *prt = new ReturnedProduct();
+      ReturnedProduct *prt_ref = new ReturnedProduct(str, 69, str, str, 4.20, 5, str, 51);
 
       if (prt_ref == NULL)
       {
@@ -126,29 +126,29 @@ json TestHelper::TestIerarhieClasaProdus() {
       }
 
       string motiv = "aiurea";
-      // Test Set ProdusReturnat
-      prt->setMotiv(motiv);
+      // Test Set ReturnedProduct
+    prt->setReason(motiv);
 
-      // Test Get ProdusReturnat
-      if (prt->getMotiv() != motiv) {
+      // Test Get ReturnedProduct
+      if (prt->getReason() != motiv) {
         return failJson;
       }
       
-      // Test Constructori ProdusResigilat
-      ProdusResigilat *pr_res = new ProdusResigilat();
-      ProdusResigilat *pr_res2 = new ProdusResigilat(str, 5, str, str, 6.89, 25, 28, str, 29, 30);
+      // Test Constructori ResealedProduct
+      ResealedProduct *pr_res = new ResealedProduct();
+      ResealedProduct *pr_res2 = new ResealedProduct(str, 5, str, str, 6.89, 25, 28, str, 29, 30);
 
       if (pr_res2 == NULL)
       {
         return failJson;
       }
 
-      // Test Set ProdusResigilat
+      // Test Set ResealedProduct
       int procent = 6;
-      pr_res->setProcentUzura(procent);
+    pr_res->setWearPercentage(procent);
 
-      // Test Get ProdusResigilat
-      if (procent != pr_res->getProcentUzura()) {
+      // Test Get ResealedProduct
+      if (procent != pr_res->getWearPercentage()) {
         return failJson;
       }
        

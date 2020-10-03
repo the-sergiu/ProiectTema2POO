@@ -3,7 +3,7 @@
 #include <unordered_map>
 
 #include "adresa.h"
-#include "../produs/produsResigilat.h"
+#include "../produs/ResealedProduct.h"
 #include "../produs/FoodProduct.h"
 
 using namespace std;

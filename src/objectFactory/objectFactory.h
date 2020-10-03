@@ -3,7 +3,7 @@
 #include <list>
 #include "../json.hpp"
 #include "../produs/FoodProduct.h"
-#include "../produs/produsResigilat.h"
+#include "../produs/ResealedProduct.h"
 #include "../user/userNonPremium.h"
 #include "../user/userPremium.h"
 #include <fstream>

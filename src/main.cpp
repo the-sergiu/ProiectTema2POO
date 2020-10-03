@@ -4,7 +4,7 @@
 #include <list>
 
 #include "rezolvari/rezolvareCerinte.h"
-#include "produs/produsResigilat.h"
+#include "produs/ResealedProduct.h"
 #include "produs/FoodProduct.h"
 #include "server/server.h"
 #include "user/userPremium.h"
