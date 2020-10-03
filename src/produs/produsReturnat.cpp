@@ -6,35 +6,35 @@ ProdusReturnat::ProdusReturnat() {
 
 
 ProdusReturnat::ProdusReturnat(const string& categorie, int id, const string& producator, const string& nume, float pret, int garantieAni, const string& motiv, int cantitate)
-	:ProdusNealimentar(categorie, id, producator, nume, pret, garantieAni, cantitate) {
+	: NonFoodProduct(categorie, id, producator, nume, pret, garantieAni, cantitate) {
 	this->motiv = motiv;
 }
 
-ProdusReturnat::ProdusReturnat(const ProdusReturnat &prodRet) : ProdusNealimentar(prodRet)
+ProdusReturnat::ProdusReturnat(const ProdusReturnat &prodRet) : NonFoodProduct(prodRet)
 {
   this->motiv = prodRet.motiv;
 }
 
-void ProdusReturnat::afisare() {
-	cout << "Produs Returnat" << endl;
-  cout << "Nume Produs: " << this->nume << endl;
-  cout << "Producator: " << this->producator << endl;
-	cout << "Categorie: " << this->categorie << endl;
+void ProdusReturnat::display() {
+	cout << "Product Returnat" << endl;
+  cout << "Nume Product: " << this->name << endl;
+  cout << "Producator: " << this->producer << endl;
+	cout << "Categorie: " << this->category << endl;
 	cout << "ID: " << this->id << endl; 
-  cout << "Cantitate: " << this->cantitate << endl;
-	cout << "Garantie: " << this->garantieAni << " ani" << endl;
-	cout << "Pret: " << this->pret << endl;
+  cout << "Cantitate: " << this->quantity << endl;
+	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
+	cout << "Pret: " << this->price << endl;
 	cout << "Motiv : " << this->motiv << endl << endl;
 }
 
 const ProdusReturnat& ProdusReturnat::operator = (const ProdusReturnat& a){
-  this->nume = a.nume;
-  this->producator = a.producator;
-  this->categorie = a.categorie;
+  this->name = a.name;
+  this->producer = a.producer;
+  this->category = a.category;
   this->id = a.id;
-  this->cantitate = a.cantitate;
-  this->garantieAni = a.garantieAni;
-  this->pret = a.pret;
+  this->quantity = a.quantity;
+  this->yearsOfWarranty = a.yearsOfWarranty;
+  this->price = a.price;
   this->motiv = a.motiv;
   
   return *this;
@@ -48,7 +48,7 @@ void ProdusReturnat::setMotiv(string &motiv){
 	this->motiv = motiv;
 }
 
-string ProdusReturnat::getProdusType(){
+string ProdusReturnat::getProductType(){
   return "returnat";
 }
 

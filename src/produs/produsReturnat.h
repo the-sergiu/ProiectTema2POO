@@ -1,7 +1,7 @@
 #pragma once
-#include "produsNealimentar.h"
+#include "NonFoodProduct.h"
 
-class ProdusReturnat : virtual public ProdusNealimentar
+class ProdusReturnat : virtual public NonFoodProduct
 {
 protected:
     string motiv;
@@ -22,11 +22,11 @@ public:
     void setMotiv(string &);
 
     // Metode Auxiliare
-    void afisare();
-    string getProdusType();
+    void display();
+    string getProductType();
 
     // Administrativ - NU MODIFICATI
     json toJSON();
 
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusReturnat, nume, cantitate, categorie, id, producator, garantieAni, pret, motiv)
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusReturnat, name, quantity, category, id, producer, yearsOfWarranty, price, motiv)
 };

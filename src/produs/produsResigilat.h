@@ -1,8 +1,8 @@
 #pragma once
-#include "produsRedus.h"
+#include "DiscountedProduct.h"
 #include "produsReturnat.h"
 
-class ProdusResigilat : public ProdusRedus, public ProdusReturnat
+class ProdusResigilat : public DiscountedProduct, public ProdusReturnat
 {
 private:
     int procentUzura;
@@ -12,8 +12,8 @@ public:
     ProdusResigilat(const ProdusResigilat&);
 
 
-    void afisare();
-    string getProdusType();
+    void display();
+    string getProductType();
 
 
     //SET-ERI
@@ -26,6 +26,6 @@ public:
 
     const ProdusResigilat& operator = (const ProdusResigilat&);
 
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusResigilat, nume, cantitate, categorie, id, producator, garantieAni, pret, motiv, procentReducere, procentUzura)
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(ProdusResigilat, name, quantity, category, id, producer, yearsOfWarranty, price, motiv, discountPercentage, procentUzura)
 };
 

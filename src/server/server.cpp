@@ -46,14 +46,14 @@ void Server::setMapUser_CosProduse()
   //Testare initializare corecta map
   // for(auto const& x : this->user_CosProduse){
   // cout<<x.first<<" - ";
-  // x.second->afisare();
+  // x.second->display();
   // cout<<endl;
   // }
 }
 
 
 // GET
-list<Produs*>& Server::getListaProduse()
+list<Product*>& Server::getListaProduse()
 {
   return this->prod;
 }
@@ -62,7 +62,7 @@ list<User*>& Server::getListaUseri()
   return this->usr;
 }
 
-unordered_map<int, Produs*> Server::getMap_Id_Produs()
+unordered_map<int, Product*> Server::getMap_Id_Produs()
 {
   return this->produsId_Produs;
 }
@@ -88,9 +88,9 @@ void Server::requestAddProdus(int userID, int produsID, int cantitate)
 {
   //Atentie verificare daca nu exista user sau produs cu id corect
   //Daca produsul cerut are cantitatea necesara
-  if(produsId_Produs[produsID]->checkCantitate(cantitate)) {
+  if(produsId_Produs[produsID]->checkQuantity(cantitate)) {
   //Ii scadem cantitatea
-    produsId_Produs[produsID]->scadeCantitate(cantitate);
+      produsId_Produs[produsID]->decreaseQuantity(cantitate);
   //Adaugam produsul si cantitatea ceruta in cosul de produse al user-ului
     user_CosProduse[userID]->addProdus(produsID, cantitate);
   }
@@ -106,7 +106,7 @@ void Server::requestAddProdus(int userID, int produsID, int cantitate)
 void Server::requestDeleteProdus(int userID, int produsID)
 {
   //Crestem cantitatea de produs cu cea pe care user-ul o are in cos
-  produsId_Produs[produsID]->cresteCantitate(user_CosProduse[userID]->getCantitate(produsID));
+    produsId_Produs[produsID]->increaseQuantity(user_CosProduse[userID]->getCantitate(produsID));
   //Stergem produsul din cosul de cumparaturi
   user_CosProduse[userID]->deleteProdus(produsID);
 }
@@ -119,7 +119,7 @@ void Server::requestModifyProdus(int userID, int produsID, int cantitateNoua)
   if(diferenta > 0)
   {
     //Creste cantitatea disponibila a produslui
-    produsId_Produs[produsID]->cresteCantitate(diferenta);
+      produsId_Produs[produsID]->increaseQuantity(diferenta);
     //Modificam cantitatea din cos cu cea noua
     user_CosProduse[userID]->addProdus(produsID, cantitateNoua);
   }
@@ -127,10 +127,10 @@ void Server::requestModifyProdus(int userID, int produsID, int cantitateNoua)
   //Daca cantitatea ceruta este mai mare decat este acum in cos
   else if(diferenta < 0)
   {
-    //Verifica daca e disponibila difereta de cantitate 
-    if(produsId_Produs[produsID]->checkCantitate(-diferenta)) {
+    //Verifica daca e disponibila difereta de quantity
+    if(produsId_Produs[produsID]->checkQuantity(-diferenta)) {
     //Ii scadem cantitatea
-      produsId_Produs[produsID]->scadeCantitate(-diferenta);
+        produsId_Produs[produsID]->decreaseQuantity(-diferenta);
     //Modificam cantitatea din cos cu cea noua
       user_CosProduse[userID]->addProdus(produsID, cantitateNoua);
     }

@@ -8,7 +8,7 @@
 #include <fstream>
 
 #include "../produs/produsResigilat.h"
-#include "../produs/produsAlimentar.h"
+#include "../produs/FoodProduct.h"
 #include "../user/userPremium.h"
 #include "../user/userNonPremium.h"
 #include "../cosproduse/cosProduse.h"
@@ -26,15 +26,15 @@ class Server
 
     int capacitateUsers;
     list<User*> usr;
-    list<Produs*> prod;
+    list<Product*> prod;
 
     // map id - produs
-    unordered_map<int, Produs*> produsId_Produs;
-    // use case: produsId_Produs[id]->afisare();
+    unordered_map<int, Product*> produsId_Produs;
+    // use case: produsId_Produs[id]->display();
 
     // map user - cosProduse
     unordered_map<int, CosProduse*> user_CosProduse;
-    //use case: user_cosproduse[iduser].addProdus(idprodus, cantitate)
+    //use case: user_cosproduse[iduser].addProdus(idprodus, quantity)
     
     // LRUCache lru;
     // LRUCache bazat pe timp (queue/lista sortata dupa timestamp)
@@ -45,7 +45,7 @@ class Server
     static Server* InitializareServer();
     ~Server();
 
-    unordered_map<int, Produs*> getMap_Id_Produs();
+    unordered_map<int, Product*> getMap_Id_Produs();
     unordered_map<int, CosProduse*> getMap_User_CosProdus();
 
     void populareProduse(const json&);
@@ -55,7 +55,7 @@ class Server
     void setMapUser_CosProduse();
 
 
-    list<Produs*>& getListaProduse();
+    list<Product*>& getListaProduse();
     list<User*>& getListaUseri();
 
     void requestAddProdus(int, int, int);

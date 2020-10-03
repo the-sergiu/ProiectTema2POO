@@ -7,7 +7,7 @@ using namespace std;
 class UserPremium : public User
 {
 protected:
-  unordered_map<int, int> reduceri; // idProdus-procentReducere
+  unordered_map<int, int> reduceri; // idProdus-discountPercentage
   int costAbonamentPremium;
 
 public:

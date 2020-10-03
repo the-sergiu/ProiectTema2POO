@@ -31,66 +31,66 @@ TestHelper::~TestHelper()
 json TestHelper::TestIerarhieClasaProdus() {
       string str = "check";
 
-      // Test Constructori ProdusAlimentar
-      ProdusAlimentar *pa = new ProdusAlimentar();
-      ProdusAlimentar *pa2 = new ProdusAlimentar(str, 78, str, 7.89, str, 200);
+      // Test Constructori FoodProduct
+      FoodProduct *pa = new FoodProduct();
+      FoodProduct *pa2 = new FoodProduct(str, 78, str, 7.89, str, 200);
 
       if (pa2 == NULL)
       {
         return failJson;
       }
       
-      // Test Set ProdusAlimentar
+      // Test Set FoodProduct
       float val = 9.27;
       string taraOrigine = "Spania";
       
       pa->setLeiPerKg(val);
-      pa->setTaraDeOrigine(taraOrigine);
+    pa->setCountryOfOrigin(taraOrigine);
       
-      // Test Get ProdusAlimentar
+      // Test Get FoodProduct
       if (pa->getLeiPerKg() != val) {
         return failJson;
       }
-      if (pa->getTaraDeOrigine() != taraOrigine) {
+      if (pa->getCountryOfOrigin() != taraOrigine) {
         return failJson;
       }
 
-      // OPERATORI ProdusAlimentar ???
+      // OPERATORI FoodProduct ???
 
-      // Test Construcori ProdusNealimentar
-      ProdusNealimentar *pn = new ProdusNealimentar();
-      ProdusNealimentar *pn2 = new ProdusNealimentar(str, 20, str, str, 4.78, 30, 40);
+      // Test Construcori NonFoodProduct
+      NonFoodProduct *pn = new NonFoodProduct();
+      NonFoodProduct *pn2 = new NonFoodProduct(str, 20, str, str, 4.78, 30, 40);
 
       if (pn2 == NULL)
       {
         return failJson;
       }
 
-      // Test Set ProdusNealimentar
+      // Test Set NonFoodProduct
       int garantie = 5;
       float pret = 5.79;
       string producator = "Adibas";
-      
-      pn->setGarantieAni(garantie);
+
+    pn->setYearsOfWarranty(garantie);
       pn->setPret(pret);
       pn->setProducator(producator);
       
-      // Test Get ProdusNealimentar
-      if (garantie != pn->getGarantieAni()) {
+      // Test Get NonFoodProduct
+      if (garantie != pn->getYearsOfWarranty()) {
         return failJson;
       }
 
-      if (pret != pn->getPret()) {
+      if (pret != pn->getPrice()) {
         return failJson;
       }
 
-      if (producator != pn->getProducator()) {
+      if (producator != pn->getProducer()) {
         return failJson;
       }
 
-      // Test Constructori ProdusRedus
-      ProdusRedus *pr = new ProdusRedus();
-      ProdusRedus *pr_ref = new ProdusRedus(str, 69, str, str, 4.20, 2, 60, 100);
+      // Test Constructori DiscountedProduct
+      DiscountedProduct *pr = new DiscountedProduct();
+      DiscountedProduct *pr_ref = new DiscountedProduct(str, 69, str, str, 4.20, 2, 60, 100);
 
       if (pr_ref == NULL)
       {
@@ -99,20 +99,20 @@ json TestHelper::TestIerarhieClasaProdus() {
 
       int procentReducere = 60;
       
-      // Test Set ProdusRedus
+      // Test Set DiscountedProduct
       pr->setPret(pret);
-      pr->setProcentReducere(procentReducere);
+    pr->setDiscountPercentage(procentReducere);
 
-      // Test Get ProdusRedus
-      if (pr->getPret() != pret) {
+      // Test Get DiscountedProduct
+      if (pr->getPrice() != pret) {
         return failJson;
       }
 
-      if (pr->getProcentReducere() != procentReducere) {
+      if (pr->getDiscountPercentage() != procentReducere) {
         return failJson;
       }
 
-      if (pr->pretDupaReducere() != pret * (100 - procentReducere)) {
+      if (pr->priceAfterDiscount() != pret * (100 - procentReducere)) {
         return failJson;
       }
       

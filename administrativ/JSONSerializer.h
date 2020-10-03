@@ -4,7 +4,7 @@
 #include <string>
 #include "../src/json.hpp"
 #include "../src/produs/produsResigilat.h"
-#include "../src/produs/produsAlimentar.h"
+#include "../src/produs/FoodProduct.h"
 #include "../src/user/userPremium.h"
 #include "../src/user/userNonPremium.h"
 #include "../src/cosproduse/cosProduse.h"
@@ -16,7 +16,7 @@ using json = nlohmann::json;
 class JSONSerializer 
 {
     public:
-        static json FromProdusMap(const unordered_map<int, Produs*> produse) 
+        static json FromProdusMap(const unordered_map<int, Product*> produse)
         {
             json result;
 

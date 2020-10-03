@@ -21,13 +21,13 @@ Changelog:
 
 08.08 S: Completat cap-coada clasa LRU Cache, unde accentul se pune pe metoda 'processRequests' ce reprezinta una din cerintele principale legate de LRU Cache. Primul pas este initializarea un obiect de tip LRUCache cu o capcitate data (in constructor). Metoda processRequests primeste un vector de int-uri (care abstractizeaza PID-uri de un anume tip), pe care il va procesa. Dupa ce se termina parcurgerea intregului vector, returneaza LRUCache in stadiul final procesarii.
 
-13.08 A: Adaugat camp "producator" produse nealimentare si eliminat camp "Data Expirare" produse alimentare
+13.08 A: Adaugat camp "producer" produse nealimentare si eliminat camp "Data Expirare" produse alimentare
 
-14.08 A: Creat script Matlab pentru generare random de produse. Creat functie pe server ce primeste ca parametru calea unui fisier si populeaza lista cu produse a serverului. Creat functie de populeaza map-ul produsId-Produs.
+14.08 A: Creat script Matlab pentru generare random de produse. Creat functie pe server ce primeste ca parametru calea unui fisier si populeaza lista cu produse a serverului. Creat functie de populeaza map-ul produsId-Product.
 
 15.08 A: Eliminat camp "data nasterii" din user si camp "costAbonamentPremium" din user premium. Adaugat campuri "judet" si "oras" in adresa.
-Interfata nu are atribute, deci din start User si Produs erau clase abstracte. Implementat constructori pentru User, ca sa pot initializa cele 2 obiecte agregate Adresa. 
+Interfata nu are atribute, deci din start User si Product erau clase abstracte. Implementat constructori pentru User, ca sa pot initializa cele 2 obiecte agregate Adresa.
 
-16.08 A: Creat script Matlab pentru Useri. Implementat citire useri din fisier si creare map UserCosProduse. Functionare testata. Implementat constructori pentru Produs si modificat constructori Produs alimentar si nealimentar pentru a utiliza constructorii din Produs.
+16.08 A: Creat script Matlab pentru Useri. Implementat citire useri din fisier si creare map UserCosProduse. Functionare testata. Implementat constructori pentru Product si modificat constructori Product alimentar si nealimentar pentru a utiliza constructorii din Product.
 
 Parser JSON : https://github.com/nlohmann/json

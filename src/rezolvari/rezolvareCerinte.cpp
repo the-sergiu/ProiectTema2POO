@@ -23,13 +23,13 @@ void RezolvareCerinte::Cerinta2(){
   server->setMapUser_CosProduse();
 }
 
-list<Produs*> RezolvareCerinte::Cerinta3a(){
+list<Product*> RezolvareCerinte::Cerinta3a(){
   cout<<"Se rezolva cerinta 2a"<<endl;
-  list<Produs*> rezolvare;
+  list<Product*> rezolvare;
 
   for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
   {
-    if((*it)->getProdusType() == "redus" && (*it)->getCategorie() == "espressor")
+    if((*it)->getProductType() == "redus" && (*it)->getCategory() == "espressor")
       rezolvare.push_back((*it));
   }
 
@@ -49,12 +49,12 @@ list<User*> RezolvareCerinte::Cerinta3b(){
   return rezolvare;
 }
 
-list<Produs*> RezolvareCerinte::Cerinta3c(){
+list<Product*> RezolvareCerinte::Cerinta3c(){
   
-  list<Produs*> rezolvare;
+  list<Product*> rezolvare;
 
   for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); it++){
-    if(((*it)->getProdusType() == "redus" || (*it)->getProdusType() == "resigilat")){
+    if(((*it)->getProductType() == "redus" || (*it)->getProductType() == "resigilat")){
       string toFind = "cutie";
       ProdusReturnat *pr = dynamic_cast<ProdusReturnat*>(*it);
 
@@ -71,13 +71,13 @@ list<Produs*> RezolvareCerinte::Cerinta3c(){
   return rezolvare;
 }
 
-list<Produs*> RezolvareCerinte::Cerinta3d()
+list<Product*> RezolvareCerinte::Cerinta3d()
 {
-  list<Produs*> rezolvare;
+  list<Product*> rezolvare;
 
   for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
   {
-    if((*it)->getProdusType() == "alimentar")
+    if((*it)->getProductType() == "alimentar")
       rezolvare.push_back((*it));
   }
 
@@ -164,7 +164,7 @@ list<User*> RezolvareCerinte::Cerinta3f()
   // Populam lista de id-uri care corespund produselor din categoriile 'imprimanta' si 'telefon'
   for (auto it = server->getListaProduse().begin(); it != server->getListaProduse().end(); ++it)
   {
-    if((*it)->getCategorie() == "telefon" || (*it)->getCategorie() == "imprimanta")
+    if((*it)->getCategory() == "telefon" || (*it)->getCategory() == "imprimanta")
       idsProduse.push_back((*it)->getId());
   }
 

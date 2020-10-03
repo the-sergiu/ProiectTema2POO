@@ -4,7 +4,7 @@
 
 #include "adresa.h"
 #include "../produs/produsResigilat.h"
-#include "../produs/produsAlimentar.h"
+#include "../produs/FoodProduct.h"
 
 using namespace std;
 

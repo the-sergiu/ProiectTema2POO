@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include "../src/produs/produsResigilat.h"
-#include "../src/produs/produsAlimentar.h"
+#include "../src/produs/FoodProduct.h"
 #include "../src/lrucache/lrucache.h"
 #include "../src/json.hpp"
 #include "../src/rezolvari/rezolvareCerinte.h"

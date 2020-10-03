@@ -6,7 +6,7 @@
 
 #include "../utilitiy/utility.h"
 #include "../produs/produsResigilat.h"
-#include "../produs/produsAlimentar.h"
+#include "../produs/FoodProduct.h"
 #include "../server/server.h"
 #include "../user/userPremium.h"
 #include "../user/userNonPremium.h"
@@ -21,10 +21,10 @@ class RezolvareCerinte{
     RezolvareCerinte();
     ~RezolvareCerinte();
     void Cerinta2();
-    list<Produs*> Cerinta3a();
+    list<Product*> Cerinta3a();
     list<User*> Cerinta3b();
-    list<Produs*> Cerinta3c();
-    list<Produs*> Cerinta3d();
+    list<Product*> Cerinta3c();
+    list<Product*> Cerinta3d();
     list<User*> Cerinta3e();
     list<User*> Cerinta3f();
 };
