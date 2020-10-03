@@ -2,10 +2,10 @@
 
 #------------------------------------------------------------------------------
 # 
-#   CHECKER Tema 1 SDA-AB, 2019-2020
-#	    Turneul International de Tenis
+#   CHECKER Tema 2 POO, 2020-2021
+#	    Ceva tema idk
 #
-#   Author: Eduard-Claudiu Ciurezu
+#   Author: Niste prosti
 #
 #------------------------------------------------------------------------------
 
@@ -17,13 +17,13 @@ FILE_TEST_DATE_1="data/test%d/date.in"
 FILE_TEST_INDEX="%d"
 FILE_TEST_REF="ref/ref%d.out"
 FILE_TEST_OUT="out/out%d.out"
-NUM_TESTS=10
+NUM_TESTS=11
 
 # Format: "x=a,y=b,z=c..."
 # x, y, z are test indexes
 # Each test with an index less or equal to x gets a points.
 # Each test with an index less or equal to y gets b points.
-POINTS_TEST="3=10,6=5,9=15,12=10,15=5"
+POINTS_TEST="2=10,6=5,9=15,12=10,15=5"
 
 # Total score
 SCORE_TESTS=0
@@ -115,7 +115,7 @@ rm -rf out/
 mkdir out
 
 # Build 
-make clean
+# make clean
 make
 
 # Run normal tests

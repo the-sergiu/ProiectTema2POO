@@ -14,7 +14,7 @@ RezolvareCerinte::~RezolvareCerinte(){
 }
 
 void RezolvareCerinte::Cerinta2(){
-  cout<<"Se rezolva cerinta 1"<<endl;
+  cout<<"Se rezolva cerinta 2"<<endl;
 
   //Testare citire shoppingCart din json
     server->set__ProductID__ProductObj__();
@@ -24,7 +24,7 @@ void RezolvareCerinte::Cerinta2(){
 }
 
 list<Product*> RezolvareCerinte::Cerinta3a(){
-  cout<<"Se rezolva cerinta 2a"<<endl;
+  cout<<"Se rezolva cerinta 3a"<<endl;
   list<Product*> rezolvare;
 
   for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); ++it)
@@ -37,7 +37,7 @@ list<Product*> RezolvareCerinte::Cerinta3a(){
 }
 
 list<User*> RezolvareCerinte::Cerinta3b(){
-  cout<<"Se rezolva cerinta 2b"<<endl;
+  cout<<"Se rezolva cerinta 3b"<<endl;
   list<User*> rezolvare;
 
   for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
@@ -50,7 +50,7 @@ list<User*> RezolvareCerinte::Cerinta3b(){
 }
 
 list<Product*> RezolvareCerinte::Cerinta3c(){
-  
+  cout<<"Se rezolva cerinta 3c"<<endl;
   list<Product*> rezolvare;
 
   for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); it++){
@@ -73,6 +73,7 @@ list<Product*> RezolvareCerinte::Cerinta3c(){
 
 list<Product*> RezolvareCerinte::Cerinta3d()
 {
+  cout<<"Se rezolva cerinta 3d"<<endl;
   list<Product*> rezolvare;
 
   for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); ++it)
@@ -96,7 +97,7 @@ list<Product*> RezolvareCerinte::Cerinta3d()
 
 
 list<User*> RezolvareCerinte::Cerinta3e(){
-  cout<<"Se rezolva cerinta 2e"<<endl;
+  cout<<"Se rezolva cerinta 3e"<<endl;
 
   list<User*> rezolvare;
   // Map de frecventa
@@ -156,7 +157,7 @@ list<User*> RezolvareCerinte::Cerinta3e(){
 
 list<User*> RezolvareCerinte::Cerinta3f()
 {
-  cout<<"Se rezolva cerinta 2f"<<endl;
+  cout<<"Se rezolva cerinta 3f"<<endl;
 
   vector<int> idsProduse;
   list<User*> rezolvare;
