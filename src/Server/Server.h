@@ -9,8 +9,8 @@
 
 #include "../Product/ResealedProduct.h"
 #include "../Product/FoodProduct.h"
-#include "../user/userPremium.h"
-#include "../user/userNonPremium.h"
+#include "../User/PremiumUser.h"
+#include "../User/BasicUser.h"
 #include "../cosproduse/cosProduse.h"
 #include "../objectFactory/objectFactory.h"
 

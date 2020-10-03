@@ -5,8 +5,8 @@
 #include "../src/json.hpp"
 #include "../src/Product/ResealedProduct.h"
 #include "../src/Product/FoodProduct.h"
-#include "../src/user/userPremium.h"
-#include "../src/user/userNonPremium.h"
+#include "../src/User/PremiumUser.h"
+#include "../src/User/BasicUser.h"
 #include "../src/cosproduse/cosProduse.h"
 
 using namespace std;

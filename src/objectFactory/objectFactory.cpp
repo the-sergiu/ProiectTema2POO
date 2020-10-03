@@ -77,15 +77,15 @@ User* ObjectFactory::createUser(string type, json::iterator it){
 
     if (type == PREMIUM) {
 
-        UserPremium *newUser = new UserPremium();   
-        *newUser = it->get<UserPremium>();
+        PremiumUser *newUser = new PremiumUser();
+        *newUser = it->get<PremiumUser>();
         return newUser;
     }
 
     else if (type == NONPREMIUM) {
 
-        UserNonPremium *newUser = new UserNonPremium();
-        *newUser = it->get<UserNonPremium>();
+        BasicUser *newUser = new BasicUser();
+        *newUser = it->get<BasicUser>();
         return newUser;
     }
 

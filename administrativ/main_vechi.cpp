@@ -6,8 +6,8 @@
 //#include "Product/produsResigilat.h"
 //#include "Product/produsAlimentar.h"
 //#include "Server/Server.h"
-//#include "user/userPremium.h"
-//#include "user/userNonPremium.h"
+//#include "User/userPremium.h"
+//#include "User/userNonPremium.h"
 //#include "LRUCache/LRUCache.h"
 //
 //using namespace std;
@@ -39,7 +39,7 @@
 //
 //  // cout << endl;
 //  // ReturnedProduct p(str, str, str, 432, 5, 2, 432423);
-//  // cout << returnClassType(typeid(*(lista[1])).name()) << endl;
+//  // cout << returnClassType(typeid(*(lista[1])).lastName()) << endl;
 //  // ResealedProduct* pa = dynamic_cast<ResealedProduct*>(lista[4]);
 //  // cout<<pa->getWearPercentage() << endl;
 //
@@ -76,17 +76,17 @@
 //  // }
 //
 ///* Test USER LIST */
-//  // Adresa adr(str, 2, str, 9);
+//  // Address adr(str, 2, str, 9);
 //  // list<User*> userList;
-//  // unordered_map<int, int> reduceri;
-//  // reduceri[0] = 5;
+//  // unordered_map<int, int> discounts;
+//  // discounts[0] = 5;
 //
-//  // userList.push_back(new UserPremium(reduceri, str, str, str, 1, str, adr, adr, 69));
+//  // userList.push_back(new PremiumUser(discounts, str, str, str, 1, str, adr, adr, 69));
 //
-//  // userList.push_back(new UserNonPremium(str, str, str, 1, str, adr, adr, 15));
+//  // userList.push_back(new BasicUser(str, str, str, 1, str, adr, adr, 15));
 //
 //  // for (auto it = userList.begin(); it != userList.end(); it++){
-//  //   (*it)->vizualizareUser();
+//  //   (*it)->displayUser();
 //  //   cout<<endl;
 //  // }
 //

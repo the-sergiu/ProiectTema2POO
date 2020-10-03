@@ -41,7 +41,7 @@ void Server::set__UserID__ProductsCart__()
 {
   for (auto it = usr.begin(); it != usr.end(); ++it)
   {
-      __UserID__ProductsCart__[(*it)->getIdUser()] = new CosProduse;
+      __UserID__ProductsCart__[(*it)->getUserID()] = new CosProduse;
   }
   //Testare initializare corecta map
   // for(auto const& x : this->__UserID__ProductsCart__){
@@ -86,26 +86,26 @@ void Server::populateUsers(const json& input)
 // REQUESTS
 void Server::requestAddProduct(int userID, int produsID, int cantitate)
 {
-  //Atentie verificare daca nu exista user sau Product cu id corect
+  //Atentie verificare daca nu exista User sau Product cu id corect
   //Daca produsul cerut are cantitatea necesara
   if(__ProductID__ProductObj__[produsID]->checkQuantity(cantitate)) {
   //Ii scadem cantitatea
       __ProductID__ProductObj__[produsID]->decreaseQuantity(cantitate);
-  //Adaugam produsul si cantitatea ceruta in cosul de produse al user-ului
+  //Adaugam produsul si cantitatea ceruta in cosul de produse al User-ului
     __UserID__ProductsCart__[userID]->addProdus(produsID, cantitate);
   }
   //Altfel nu aveam cantitatea necesara
   else cout<<endl<<"Produsul " << produsID << " nu are cantitatea necesara"<<endl;
 
-  //Afisare cos de produse pentru user
-  cout<<"Lista de produse pentru user "<<userID<<" este: "<<endl;
+  //Afisare cos de produse pentru User
+  cout<<"Lista de produse pentru User "<<userID<<" este: "<<endl;
   __UserID__ProductsCart__[userID]->afisare();
   
 }
 
 void Server::requestDeleteProduct(int userID, int produsID)
 {
-  //Crestem cantitatea de Product cu cea pe care user-ul o are in cos
+  //Crestem cantitatea de Product cu cea pe care User-ul o are in cos
     __ProductID__ProductObj__[produsID]->increaseQuantity(__UserID__ProductsCart__[userID]->getCantitate(produsID));
   //Stergem produsul din cosul de cumparaturi
   __UserID__ProductsCart__[userID]->deleteProdus(produsID);

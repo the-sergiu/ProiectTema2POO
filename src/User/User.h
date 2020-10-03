@@ -2,7 +2,7 @@
 #include <string>
 #include <unordered_map>
 
-#include "adresa.h"
+#include "Address.h"
 #include "../Product/ResealedProduct.h"
 #include "../Product/FoodProduct.h"
 
@@ -11,18 +11,18 @@ using namespace std;
 class User
 {
 protected:
-  Adresa dateFacturare;
-  Adresa dateLivrare;
-  string nume;
-  string prenume;
+  Address billingData;
+  Address deliveryData;
+  string lastName;
+  string firstName;
   string email;
-  int UserId;
+  int UserID;
 
 public:
   // Virtuale
   virtual string getUserType() = 0;
-  virtual float getCostTransport() = 0;
-  virtual void vizualizareUser() = 0;
+  virtual float getTransportCost() = 0;
+  virtual void displayUser() = 0;
   virtual ~User() = 0;
 
   // Constructori
@@ -34,22 +34,22 @@ public:
   const User &operator=(const User &);
 
   // Set
-  void setNume(const string &);
-  void setPrenume(const string &);
+  void setLastName(const string &lastName);
+  void setFirstName(const string &firstName);
   void setEmail(const string &);
-  void setIdUser(int);
-  void setDateFacturare(const Adresa &);
-  void setDateLivrare(const Adresa &);
+  void setUserID(int);
+  void setBillingData(const Address &billingData);
+  void setDeliveryData(const Address &deliveryData);
 
   // Get
-  string &getNume();
-  string &getPrenume();
+  string &getLastName();
+  string &getFirstName();
   string &getEmail();
-  int getIdUser() const;
-  Adresa &getDateFacturare();
-  Adresa &getDateLivrare();
+  int getUserID() const;
+  Address &getBillingData();
+  Address &getDeliveryData();
 
   // Administrativ - NU MODIFICATI
   virtual json toJSON();
-  NLOHMANN_DEFINE_TYPE_INTRUSIVE(User, dateFacturare, dateLivrare, nume, prenume, email, UserId)
+  NLOHMANN_DEFINE_TYPE_INTRUSIVE(User, billingData, deliveryData, lastName, firstName, email, UserID)
 };

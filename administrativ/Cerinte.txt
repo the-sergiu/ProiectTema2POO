@@ -23,9 +23,9 @@ Initializati serverul. Listele de useri si produse sunt initializate folosind fu
 
     c. Gasiti toate produsele returnate si resigilate pe motivul "x". Sortati-le dupa price si salvati lista neomogena in fisierul de output.
 
-    d. Sortare produse alimentare dupa name, tara, price
+    d. Sortare produse alimentare dupa lastName, tara, price
 
-    e. Returnati o lista cu userii care au atat adresa de livrare, cat si cea de facturare la casa (adica nu la bloc) si locuiesc in judetul cu cei mai multi utilizatori. Sortati dupa UserID (VALID - problema sortare)
+    e. Returnati o lista cu userii care au atat adresa de livrare, cat si cea de facturare la casa (adica nu la block) si locuiesc in judetul cu cei mai multi utilizatori. Sortati dupa UserID (VALID - problema sortare)
 
     f. Returnati o lista cu toti utilizatorii premium care au cupoane de reducere pentru telefoane sau imprimante. (VALID - GetCategorie?)
 

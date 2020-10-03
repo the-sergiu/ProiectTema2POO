@@ -25,8 +25,8 @@ Changelog:
 
 14.08 A: Creat script Matlab pentru generare random de produse. Creat functie pe server ce primeste ca parametru calea unui fisier si populeaza lista cu produse a serverului. Creat functie de populeaza map-ul produsId-Product.
 
-15.08 A: Eliminat camp "data nasterii" din user si camp "costAbonamentPremium" din user premium. Adaugat campuri "judet" si "oras" in adresa.
-Interfata nu are atribute, deci din start User si Product erau clase abstracte. Implementat constructori pentru User, ca sa pot initializa cele 2 obiecte agregate Adresa.
+15.08 A: Eliminat camp "data nasterii" din user si camp "premiumSubscriptionCost" din user premium. Adaugat campuri "county" si "oras" in adresa.
+Interfata nu are atribute, deci din start User si Product erau clase abstracte. Implementat constructori pentru User, ca sa pot initializa cele 2 obiecte agregate Address.
 
 16.08 A: Creat script Matlab pentru Useri. Implementat citire useri din fisier si creare map UserCosProduse. Functionare testata. Implementat constructori pentru Product si modificat constructori Product alimentar si nealimentar pentru a utiliza constructorii din Product.
 

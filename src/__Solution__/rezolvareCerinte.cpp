@@ -42,7 +42,7 @@ list<User*> RezolvareCerinte::Cerinta3b(){
 
   for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
-    if((*it)->getUserType() == "nonpremium" && (*it)->getCostTransport() < 11.5)
+    if((*it)->getUserType() == "nonpremium" && (*it)->getTransportCost() < 11.5)
       rezolvare.push_back((*it));
   }
 
@@ -105,10 +105,10 @@ list<User*> RezolvareCerinte::Cerinta3e(){
   // Construim map-ul de frecventa, Judet:NumarUseri
   for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
-    Adresa dateLivrare = (*it)->getDateLivrare();
-    string judet = dateLivrare.getJudet();
+    Address dateLivrare = (*it)->getDeliveryData();
+    string judet = dateLivrare.getCounty();
     
-    useri_per_judet[dateLivrare.getJudet()] = 0;
+    useri_per_judet[dateLivrare.getCounty()] = 0;
 
     if (useri_per_judet.find(judet) == useri_per_judet.end())
     {
@@ -126,7 +126,7 @@ list<User*> RezolvareCerinte::Cerinta3e(){
   // }
   // cout<<total;
 
-  //Cautare judet cu nr maxim de useri
+  //Cautare county cu nr maxim de useri
   auto it = useri_per_judet.begin();
   string jud_max = it->first;
   int nr_max = it->second;
@@ -139,17 +139,17 @@ list<User*> RezolvareCerinte::Cerinta3e(){
     }
   }
 
-  // Cream lista cu Utilizatori care au adresele la casa (adica nu la bloc)
+  // Cream lista cu Utilizatori care au adresele la casa (adica nu la block)
   for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
-    Adresa dateLivrare = (*it)->getDateLivrare();
-    Adresa dateFacturare = (*it)->getDateFacturare();
+    Address dateLivrare = (*it)->getDeliveryData();
+    Address dateFacturare = (*it)->getBillingData();
 
-    if(dateLivrare.getJudet() == jud_max && dateLivrare.getApartament() == 0 && dateFacturare.getApartament() == 0)
+    if(dateLivrare.getCounty() == jud_max && dateLivrare.getApartment() == 0 && dateFacturare.getApartment() == 0)
       rezolvare.push_back((*it));
   }
   // Sortare Lista
-  rezolvare.sort([]( const User* const &a, const User* const &b ) { return a->getIdUser() < b->getIdUser(); });
+  rezolvare.sort([]( const User* const &a, const User* const &b ) { return a->getUserID() < b->getUserID(); });
 
   return rezolvare;
 }
@@ -171,18 +171,18 @@ list<User*> RezolvareCerinte::Cerinta3f()
   // Parcugem lista de Useri, din care ne intereseaza doar Userii Premium
   for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
-    auto userPremium = dynamic_cast<UserPremium*>((*it));
+    auto userPremium = dynamic_cast<PremiumUser*>((*it));
     
     if (userPremium != nullptr)
-    { // Parcurgem map-ul de reduceri si verificam daca vreunul din id-uri se afla in lista idsProduse 
+    { // Parcurgem map-ul de discounts si verificam daca vreunul din id-uri se afla in lista idsProduse
       // in care am retinut toate id-urile produselor reduse din acele categorii
-      for (auto const& reducere : userPremium->getMapReduceri())
+      for (auto const& reducere : userPremium->getDiscounts())
       {
         int idProdus = reducere.first;
         // Daca gasim un id care coincide (se afla in map si in lista idsProduse (id-urile produselor reduse))
         auto poz = find(idsProduse.begin(), idsProduse.end(), idProdus);
         
-        // Bagam userul in lista finala, a carui map de reduceri corespunde cerintei de mai sus
+        // Bagam userul in lista finala, a carui map de discounts corespunde cerintei de mai sus
         if (poz != idsProduse.end()) 
         { 
           rezolvare.push_back((*it));

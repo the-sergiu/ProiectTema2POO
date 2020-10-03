@@ -4,8 +4,8 @@
 #include "../json.hpp"
 #include "../Product/FoodProduct.h"
 #include "../Product/ResealedProduct.h"
-#include "../user/userNonPremium.h"
-#include "../user/userPremium.h"
+#include "../User/BasicUser.h"
+#include "../User/PremiumUser.h"
 #include <fstream>
 
 using namespace std;
