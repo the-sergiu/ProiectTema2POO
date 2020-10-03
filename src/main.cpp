@@ -3,20 +3,20 @@
 #include <vector>
 #include <list>
 
-#include "rezolvari/rezolvareCerinte.h"
+#include "__Solution__/rezolvareCerinte.h"
 #include "Product/ResealedProduct.h"
 #include "Product/FoodProduct.h"
 #include "Server/Server.h"
 #include "user/userPremium.h"
 #include "user/userNonPremium.h"
-#include "lrucache/lrucache.h"
+#include "LRUCache/LRUCache.h"
 #include "objectFactory/objectFactory.h"
 #include "../administrativ/TestHelper.cpp"
 
 using namespace std;
 
 
-// Instanta Singleton
+// Singleton Instance
 Server *Server::instance = 0;
 
 int main(int argc, char** argv) 

@@ -10,7 +10,7 @@
 #include "../Server/Server.h"
 #include "../user/userPremium.h"
 #include "../user/userNonPremium.h"
-#include "../lrucache/lrucache.h"
+#include "../LRUCache/LRUCache.h"
 #include "../objectFactory/objectFactory.h"
 
 
