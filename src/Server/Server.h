@@ -39,8 +39,8 @@ class Server
     static Server* ServerInit();
     ~Server();
 
-    unordered_map<int, Product*> get__ProductID__ProductObj__();
-    unordered_map<int, ShoppingCart*> get__UserID__ProductsCart__();
+    unordered_map<int, Product*>& get__ProductID__ProductObj__();
+    unordered_map<int, ShoppingCart*>& get__UserID__ProductsCart__();
 
     void populateProducts(const json&);
     void populateUsers(const json&);
