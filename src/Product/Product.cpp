@@ -5,8 +5,6 @@ Product::~Product() {}
 
 bool Product::checkQuantity(int requestedQuantity)
 {
-  cout << endl
-       << "Cantitatea produsului este " << this->quantity << endl;
   if (this->quantity >= requestedQuantity)
     return true;
   else

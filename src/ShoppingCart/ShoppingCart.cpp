@@ -25,6 +25,16 @@ void ShoppingCart::addProduct(int id, int quantity)
     shoppingCart[id] = quantity;
 }
 
+void ShoppingCart::RaiseQuantity(int id, int quantity)
+{
+  shoppingCart[id] += quantity;
+}
+
+void ShoppingCart::LowerQuantity(int id, int quantity)
+{
+  shoppingCart[id] -= quantity;
+}
+
 int ShoppingCart::getQuantity(int productID)
 {
   return this->shoppingCart[productID];

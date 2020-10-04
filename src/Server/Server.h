@@ -53,7 +53,7 @@ class Server
     list<User*>& getUsersList();
 
     bool requestAddProduct(int, int, int);
-    bool requestDeleteProduct(int, int);
+    bool requestDeleteProduct(int, int, int);
 
 
 
