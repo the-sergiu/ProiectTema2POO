@@ -1,0 +1,17 @@
+[
+	{
+		"productID": 2,
+		"userID": 6,
+		"operation": "do1"
+	},
+	{
+		"productID": 3,
+		"userID": 5,
+		"operation": "do2"
+	},
+	{
+		"productID": 4,
+		"userID": 69,
+		"operation": "do3"
+	}
+]
