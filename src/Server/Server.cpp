@@ -56,12 +56,12 @@ list<User*>& Server::getUsersList()
   return this->usr;
 }
 
-unordered_map<int, Product*> Server::get__ProductID__ProductObj__()
+map<int, Product*> Server::get__ProductID__ProductObj__()
 {
   return this->__ProductID__ProductObj__;
 }
 
-unordered_map<int, ShoppingCart*> Server::get__UserID__ProductsCart__()
+map<int, ShoppingCart*> Server::get__UserID__ProductsCart__()
 {
   return this->__UserID__ProductsCart__;
 }

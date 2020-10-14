@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <unordered_map>
+#include <map>
 #include <string>
 #include "../src/json.hpp"
 #include "../src/Product/ResealedProduct.h"
@@ -16,7 +16,7 @@ using json = nlohmann::json;
 class JSONSerializer 
 {
     public:
-        static json fromProductMap(const unordered_map<int, Product*> products)
+        static json fromProductMap(const map<int, Product*> products)
         {
             json result;
 
@@ -28,7 +28,7 @@ class JSONSerializer
             return result;
         }
 
-        static json FromUserMap(const unordered_map<int, ShoppingCart*>& cartsOfProducts)
+        static json FromUserMap(const map<int, ShoppingCart*>& cartsOfProducts)
         {
             json result;
 

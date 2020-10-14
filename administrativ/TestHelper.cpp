@@ -199,7 +199,7 @@ json TestHelper::TestIerarhieClasaUser() {
 
 
     // Test Constructori PremiumUser
-    unordered_map<int, int> reduceri_test;
+    map<int, int> reduceri_test;
     reduceri_test[1] = 5; reduceri_test[3] = 10;
     PremiumUser *up = new PremiumUser();
     PremiumUser *up2 = new PremiumUser(check, check, check, 20, check, 200, check, check, check, 20, check, 30, 200, check, check, check, 20, reduceri_test);
@@ -305,7 +305,7 @@ json TestHelper::TestClasaCosProduse()
     }
 
     // Map ajutator pentru verificarea operatiilor
-    unordered_map<int, int> TestCos;
+    map<int, int> TestCos;
     TestCos[5] = 3;
     
     if (cp->getShoppingCart() != TestCos)

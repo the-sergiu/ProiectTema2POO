@@ -64,7 +64,7 @@
 //  // }
 //
 ///* TEST MAP PRODUSE  */
-//  //unordered_map<int, Product*> mp;
+//  //map<int, Product*> mp;
 // // mp[0] = new FoodProduct(str, 110, 5.55, str, str);
 // // mp[0]->display();
 //
@@ -78,7 +78,7 @@
 ///* Test USER LIST */
 //  // Address adr(str, 2, str, 9);
 //  // list<User*> userList;
-//  // unordered_map<int, int> discounts;
+//  // map<int, int> discounts;
 //  // discounts[0] = 5;
 //
 //  // userList.push_back(new PremiumUser(discounts, str, str, str, 1, str, adr, adr, 69));

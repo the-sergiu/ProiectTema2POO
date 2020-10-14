@@ -35,7 +35,7 @@ void ShoppingCart::deleteProduct(int productID)
   this->shoppingCart.erase(productID);
 }
 
-unordered_map<int, int>& ShoppingCart::getShoppingCart() {
+map<int, int>& ShoppingCart::getShoppingCart() {
   return this->shoppingCart;
 }
 
