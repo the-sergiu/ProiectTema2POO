@@ -194,3 +194,17 @@ list<User*> RezolvareCerinte::Cerinta3f()
 
   return rezolvare;
 }
+
+
+void RezolvareCerinte::Cerinta4(){
+  int cap = 5;
+  lru = new LRUCache(cap);
+}
+
+void RezolvareCerinte::Cerinta5(){
+  //Citire operatii din fisier
+
+  // vector<int> ans(5,0);
+  // if(server->requestAddProduct(UserID, ProductID, quantity))
+  //   lru->processRequests(ProductID);
+}

@@ -46,6 +46,35 @@ LRUCache::LRUCache(int capacity)
 
  }
 
+  vector<int> LRUCache::processRequests(int requestsNo)
+ {
+    vector<int> ans;
+      // cautam request-ul in lru
+      auto it2 = find(ans.begin(), ans.end(), requestsNo);
+      // daca exista deja, doar il punem in fata
+      if (it2 != ans.end())
+      {
+        int temp = *it2;
+        ans.erase(it2);
+        ans.insert(ans.begin(), temp);
+      } // daca nu exista in lru, verificam size-ul
+      else
+      { // daca inca nu e full LRU, adaugam la inceput ID-ul
+        if (size < capacity)
+        {
+          ans.insert(ans.begin(), requestsNo);
+          size++;
+        } // daca e full, scoatem ultimul element si introducem noul elem. la inceput
+        else if (size == capacity)
+        {
+          ans.pop_back();
+          ans.insert(ans.begin(), requestsNo);
+        }
+      }
+    setLRU(ans);
+    return ans;
+ }
+
  // get-eri
   int LRUCache::getCapacity() {
     return this->capacity;
