@@ -94,7 +94,7 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
     return false;
 
   //Returnam cosul de produse al user-ului
-  unordered_map<int,int> cart = __UserID__ProductsCart__[userID]->getShoppingCart();
+  map<int,int> cart = __UserID__ProductsCart__[userID]->getShoppingCart();
 
   //Cautam produsul in el
   auto it_request = cart.find(productID);
@@ -152,7 +152,7 @@ bool Server::requestDeleteProduct(int userID, int productID, int quantity)
     return false;
 
   //Returnam cosul de produse al user-ului
-  unordered_map<int,int> cart = __UserID__ProductsCart__[userID]->getShoppingCart();
+  map<int,int> cart = __UserID__ProductsCart__[userID]->getShoppingCart();
 
   //Cautam produsul in el
   auto it_request = cart.find(productID);

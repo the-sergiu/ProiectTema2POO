@@ -11,7 +11,9 @@
 #include "User/BasicUser.h"
 #include "LRUCache/LRUCache.h"
 #include "objectFactory/objectFactory.h"
-#include "../administrativ/TestHelper.cpp"
+#include "./utils/TestHelper.h"
+#include "./utils/FinalQuestionsHelper.h"
+
 
 using namespace std;
 
@@ -51,28 +53,28 @@ int main(int argc, char** argv)
         result = p.TestClasaCosProduse();
         break;
       case 4:
-        result = p.TestLRUCacheSimple();
-        break;
-      case 5:
         result = p.TestCerinta2();
         break;
-      case 6:
+      case 5:
         result = p.TestCerinta3a();
         break;
-      case 7:
+      case 6:
         result = p.TestCerinta3b();
         break;
-      case 8:
+      case 7:
         result = p.TestCerinta3c();
         break;
-      case 9:
+      case 8:
         result = p.TestCerinta3d();
         break;
-      case 10:
+      case 9:
         result = p.TestCerinta3e();
         break;
-      case 11:
+      case 10:
         result = p.TestCerinta3f();
+        break;
+      case 11:
+        result = p.TestCerinta4();
         break;
       default:
         break;

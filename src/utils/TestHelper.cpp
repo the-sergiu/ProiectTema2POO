@@ -16,8 +16,8 @@ TestHelper::TestHelper(const string& inFile)
 
 void TestHelper::Init()
 {
-    server->populateProducts(input);
-    server->populateUsers(input);
+  server->populateProducts(input);
+  server->populateUsers(input);
 }
 
 TestHelper::~TestHelper()
@@ -324,38 +324,6 @@ json TestHelper::TestClasaCosProduse()
     return successJson; 
 }
 
-json TestHelper::TestLRUCacheSimple()
-{
-  vector<int> lruTest = {1, 2, 3, 2, 5, 3, 4, 5, 8, 9};
-  LRUCache obj(4);
-  // check processRequests
-  vector<int> ans = obj.processRequests(lruTest);
-  vector<int> test = {9,8,5,4};
-  
-  if (ans != test) {
-    return failJson;
-  }
-
-  // check set-get LRU
-  test = {0,1,2,3};
-  obj.setLRU(test);
-  vector<int> aux = obj.getLRU();
-  
-  if (test != aux) {
-    return failJson;
-  }
-
-  // check set-get cap
-  obj.setCapacity(20);
-  int cap = obj.getCapacity();
-  
-  if (cap != 20 && obj.getLRUCapacity() != 20) {
-    return failJson;
-  }
-
-  return successJson;
-}
-
 json TestHelper::TestCerinta2()
 {
   Init();
@@ -439,4 +407,36 @@ json TestHelper::TestCerinta3f()
   output = ObjectFactory::getJsonUser(result);
 
   return output;
+}
+
+json TestHelper::TestCerinta4()
+{
+  vector<int> lruTest = {1, 2, 3, 2, 5, 3, 4, 5, 8, 9};
+  LRUCache obj(4);
+  // check processRequests
+  vector<int> ans = obj.processRequests(lruTest);
+  vector<int> test = {9,8,5,4};
+  
+  if (ans != test) {
+    return failJson;
+  }
+
+  // check set-get LRU
+  test = {0,1,2,3};
+  obj.setLRU(test);
+  vector<int> aux = obj.getLRU();
+  
+  if (test != aux) {
+    return failJson;
+  }
+
+  // check set-get cap
+  obj.setCapacity(20);
+  int cap = obj.getCapacity();
+  
+  if (cap != 20 && obj.getLRUCapacity() != 20) {
+    return failJson;
+  }
+
+  return successJson;
 }
