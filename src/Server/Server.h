@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <list>
-#include <unordered_map>
+#include <map>
 #include <iterator>
 #include <algorithm>
 #include <iostream>
@@ -27,10 +27,10 @@ class Server
     list<Product*> prod;
 
     // map ProductID : Products
-    unordered_map<int, Product*> __ProductID__ProductObj__;
+    map<int, Product*> __ProductID__ProductObj__;
 
     // map UserID : ProductsCart
-    unordered_map<int, ShoppingCart*> __UserID__ProductsCart__;
+    map<int, ShoppingCart*> __UserID__ProductsCart__;
 
 
     // Singleton
@@ -39,8 +39,8 @@ class Server
     static Server* ServerInit();
     ~Server();
 
-    unordered_map<int, Product*>& get__ProductID__ProductObj__();
-    unordered_map<int, ShoppingCart*>& get__UserID__ProductsCart__();
+    map<int, Product*> get__ProductID__ProductObj__();
+    map<int, ShoppingCart*> get__UserID__ProductsCart__();
 
     void populateProducts(const json&);
     void populateUsers(const json&);

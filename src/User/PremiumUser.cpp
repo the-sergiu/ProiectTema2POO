@@ -6,7 +6,7 @@ PremiumUser::PremiumUser() {}
 
 PremiumUser::PremiumUser(const string &judetf, const string &localitatef, const string &stradaf, int nr_stradaf, const string &blocf, int apartamentf,
                          const string &judetl, const string &localitatel, const string &stradal, int nr_stradal, const string &blocl, int apartamentl,
-                         int id, const string &nume, const string &prenume, const string &email, int premiumSubscriptionCost, const unordered_map<int, int> &discounts)
+                         int id, const string &nume, const string &prenume, const string &email, int premiumSubscriptionCost, const map<int, int> &discounts)
             : User(judetf, localitatef, stradaf, nr_stradaf, blocf, apartamentf, judetl, localitatel, stradal, nr_stradal, blocl, apartamentl, id, nume, prenume, email)
 {
   this->premiumSubscriptionCost = premiumSubscriptionCost;
@@ -56,12 +56,12 @@ float PremiumUser::getTransportCost()
   return 0;
 }
 
-unordered_map<int, int> &PremiumUser::getDiscounts()
+map<int, int> &PremiumUser::getDiscounts()
 {
   return discounts;
 }
 
-void PremiumUser::setDiscounts(unordered_map<int, int> red)
+void PremiumUser::setDiscounts(map<int, int> red)
 {
   this->discounts = red;
 }

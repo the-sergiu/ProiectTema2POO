@@ -7,25 +7,25 @@ using namespace std;
 class PremiumUser : public User
 {
 protected:
-  unordered_map<int, int> discounts; // idProdus-discountPercentage
+  map<int, int> discounts; // idProdus-discountPercentage
   int premiumSubscriptionCost;
 
 public:
   // Constructori
   PremiumUser();
-  PremiumUser(const string &, const string &, const string &, int, const string &, int, const string &, const string &, const string &, int, const string &, int, int, const string &, const string &, const string &, int, const unordered_map<int, int> &);
+  PremiumUser(const string &, const string &, const string &, int, const string &, int, const string &, const string &, const string &, int, const string &, int, int, const string &, const string &, const string &, int, const map<int, int> &);
   PremiumUser(const PremiumUser &);
 
   // Operator =
   const PremiumUser &operator=(const PremiumUser &);
 
   // Set
-  void setDiscounts(unordered_map<int, int> red);
+  void setDiscounts(map<int, int> red);
   void setPremiumSubscriptionCost(int cap);
 
   // Get
   float getTransportCost();
-  unordered_map<int, int> &getDiscounts();
+  map<int, int> &getDiscounts();
   int getPremiumSubscriptionCost();
   string getUserType();
 

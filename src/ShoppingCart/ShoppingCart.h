@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <unordered_map>
+#include <map>
 #include "../src/json.hpp"
 
 using namespace std;
@@ -11,7 +11,7 @@ using json = nlohmann::json;
 class ShoppingCart
 {
   private:
-    unordered_map<int, int> shoppingCart;
+    map<int, int> shoppingCart;
     string payMethod;
 
   public:
@@ -24,7 +24,7 @@ class ShoppingCart
     void RaiseQuantity(int, int);
     void LowerQuantity(int, int);
     void deleteProduct(int);
-    unordered_map<int,int>& getShoppingCart();
+    map<int,int>& getShoppingCart();
     void displayShoppingCart();
     json toJSON();
     
