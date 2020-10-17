@@ -41,7 +41,7 @@ void Server::set__UserID__ProductsCart__()
 {
   for (auto it = usr.begin(); it != usr.end(); ++it)
   {
-      __UserID__ProductsCart__[(*it)->getUserID()] = new ShoppingCart;
+      __UserID__ProductsCart__[(*it)->getUserID()] = new ShoppingCart();
   }
 }
 
