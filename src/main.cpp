@@ -3,16 +3,16 @@
 #include <vector>
 #include <list>
 
-#include "__Solution__/rezolvareCerinte.h"
-#include "Product/ResealedProduct.h"
-#include "Product/FoodProduct.h"
-#include "Server/Server.h"
-#include "User/PremiumUser.h"
-#include "User/BasicUser.h"
-#include "LRUCache/LRUCache.h"
-#include "objectFactory/objectFactory.h"
-#include "./utils/TestHelper.h"
-#include "./utils/FinalQuestionsHelper.h"
+#include "Solution/rezolvareCerinte.h"
+#include "Solution/Product/ResealedProduct.h"
+#include "Solution/Product/FoodProduct.h"
+#include "Solution/Server/Server.h"
+#include "Solution/User/PremiumUser.h"
+#include "Solution/User/BasicUser.h"
+#include "Solution/LRUCache/LRUCache.h"
+#include "utils/objectFactory/objectFactory.h"
+#include "utils/TestHelper.h"
+#include "utils/FinalQuestionsHelper.h"
 
 
 using namespace std;

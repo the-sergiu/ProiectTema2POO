@@ -4,14 +4,14 @@
 #include <vector>
 #include <list>
 
-#include "../utilitiy/utility.h"
-#include "../Product/ResealedProduct.h"
-#include "../Product/FoodProduct.h"
-#include "../Server/Server.h"
-#include "../User/PremiumUser.h"
-#include "../User/BasicUser.h"
-#include "../LRUCache/LRUCache.h"
-#include "../objectFactory/objectFactory.h"
+#include "../utils/utility.h"
+#include "Product/ResealedProduct.h"
+#include "Product/FoodProduct.h"
+#include "Server/Server.h"
+#include "User/PremiumUser.h"
+#include "User/BasicUser.h"
+#include "LRUCache/LRUCache.h"
+#include "../utils/objectFactory/objectFactory.h"
 
 
 class RezolvareCerinte{

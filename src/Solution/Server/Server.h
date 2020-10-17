@@ -11,8 +11,8 @@
 #include "../Product/FoodProduct.h"
 #include "../User/PremiumUser.h"
 #include "../User/BasicUser.h"
-#include "ShoppingCart/ShoppingCart.h"
-#include "../objectFactory/objectFactory.h"
+#include "../ShoppingCart/ShoppingCart.h"
+#include "../../utils/objectFactory/objectFactory.h"
 
 using namespace std;
 

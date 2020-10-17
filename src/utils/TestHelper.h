@@ -2,11 +2,11 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include "../src/Product/ResealedProduct.h"
-#include "../src/Product/FoodProduct.h"
-#include "../src/LRUCache/LRUCache.h"
-#include "../src/json.hpp"
-#include "../src/__Solution__/rezolvareCerinte.h"
+#include "../Solution/Product/ResealedProduct.h"
+#include "../Solution/Product/FoodProduct.h"
+#include "../Solution/LRUCache/LRUCache.h"
+#include "../json.hpp"
+#include "../Solution/rezolvareCerinte.h"
 #include "JSONSerializer.h"
 
 using json = nlohmann::json;

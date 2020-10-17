@@ -1,11 +1,11 @@
 #pragma once
 #include <iostream>
 #include <list>
-#include "../json.hpp"
-#include "../Product/FoodProduct.h"
-#include "../Product/ResealedProduct.h"
-#include "../User/BasicUser.h"
-#include "../User/PremiumUser.h"
+#include "json.hpp"
+#include "../../Solution/Product/FoodProduct.h"
+#include "../../Solution/Product/ResealedProduct.h"
+#include "../../Solution/User/BasicUser.h"
+#include "../../Solution/User/PremiumUser.h"
 #include <fstream>
 
 using namespace std;

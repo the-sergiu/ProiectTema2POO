@@ -2,12 +2,12 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include "../src/json.hpp"
-#include "../src/Product/ResealedProduct.h"
-#include "../src/Product/FoodProduct.h"
-#include "../src/User/PremiumUser.h"
-#include "../src/User/BasicUser.h"
-#include "ShoppingCart/ShoppingCart.h"
+#include "../json.hpp"
+#include "../Solution/Product/ResealedProduct.h"
+#include "../Solution/Product/FoodProduct.h"
+#include "../Solution/User/PremiumUser.h"
+#include "../Solution/User/BasicUser.h"
+#include "../Solution/ShoppingCart/ShoppingCart.h"
 
 using namespace std;
 using json = nlohmann::json;
