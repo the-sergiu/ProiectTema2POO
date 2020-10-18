@@ -18,6 +18,8 @@ void TestHelper::Init()
 {
   server->populateProducts(input);
   server->populateUsers(input);
+  server->set__ProductID__ProductObj__();
+  server->set__UserID__ProductsCart__();
 }
 
 TestHelper::~TestHelper()
@@ -439,4 +441,45 @@ json TestHelper::TestCerinta4()
   }
 
   return successJson;
+}
+
+json TestHelper::TestCerinta5()
+{
+  Init();
+  ifstream in("testIN.json");
+  json jin;
+  in >> jin;
+  LRUCache lru(1);
+  vector<int> buff;
+  json output;
+  vector<Query> vec = getQuery(jin["queries"]);
+
+  for (auto i = vec.begin(); i != vec.end();  i++)
+  {
+     if ((*i).operation == "ADD")
+     {
+      bool doUpdate = server->requestAddProduct((*i).userID, (*i).productID, (*i).quantity);
+      if (doUpdate)
+      {
+        buff.push_back((*i).productID);
+        /*
+        vector<int> aaa;
+        
+        aaa.push_back((*i).productID);
+        lru.processRequests(aaa);
+       */ 
+      }
+     }
+     else
+     {
+       server->requestDeleteProduct((*i).userID, (*i).productID, (*i).quantity);
+     }
+  }
+  map<int, ShoppingCart*> res = server->get__UserID__ProductsCart__();
+  output.push_back(JSONSerializer::FromUserMap(res));
+  //scrsi de sergiu PUtangutanu
+  output.push_back(json(lru.processRequests(buff)));
+  cout << output.dump(3);
+
+  return output;
 }

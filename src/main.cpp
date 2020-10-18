@@ -76,6 +76,9 @@ int main(int argc, char** argv)
       case 11:
         result = p.TestCerinta4();
         break;
+      case 12:
+        result = p.TestCerinta5();
+        break;
       default:
         break;
     }

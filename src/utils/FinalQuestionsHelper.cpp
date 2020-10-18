@@ -3,7 +3,7 @@
 LRU_blueprint getLruBlueprint(json &j){
     LRU_blueprint rez{
         j["capacity"].get<int>(),
-        j["allLruOoperations"].get<vector<int>>()
+        j["allLRUOperations"].get<vector<int>>()
     };
     return rez;
 }
@@ -19,7 +19,8 @@ vector<Query> getQuery(json &j){
         Query q{
             (*it)["productID"].get<int>(),
             (*it)["userID"].get<int>(),
-            (*it)["operation"]
+            (*it)["operation"].get<string>(),
+            (*it)["quantity"].get<int>()
         };
         rez.push_back(q);
     }
@@ -31,6 +32,7 @@ json queryToJson(Query &query){
     j["productID"] = query.productID;
     j["userID"] = query.userID;
     j["operation"] = query.operation;
+    j["quantity"] = query.quantity;
     return j;
 }
 

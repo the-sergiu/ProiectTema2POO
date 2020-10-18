@@ -87,11 +87,11 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
   //Verificare daca nu exista User sau Product cu id corect
   auto it_user = __UserID__ProductsCart__.find(userID);
   if (it_user == __UserID__ProductsCart__.end())
-    return false;
+    {cout<<"Intra pe balarii useri";return false;}
 
   auto it_prod = __ProductID__ProductObj__.find(productID);
   if (it_prod == __ProductID__ProductObj__.end())
-    return false;
+    {cout<<"Intra pe balarii produse";return false;}
 
   //Returnam cosul de produse al user-ului
   map<int,int> cart = __UserID__ProductsCart__[userID]->getShoppingCart();
