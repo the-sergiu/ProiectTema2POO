@@ -82,16 +82,18 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
 {
   //Daca cantitatea este <= 0
   if (quantity <= 0)
-    return false;
+    {cout<<"Cantitate negativa"<<endl;
+      return false;
+    }
 
   //Verificare daca nu exista User sau Product cu id corect
   auto it_user = __UserID__ProductsCart__.find(userID);
   if (it_user == __UserID__ProductsCart__.end())
-    {cout<<"Intra pe balarii useri";return false;}
+    {cout<<"User negasit";return false;}
 
   auto it_prod = __ProductID__ProductObj__.find(productID);
   if (it_prod == __ProductID__ProductObj__.end())
-    {cout<<"Intra pe balarii produse";return false;}
+    {cout<<"Produs negasit";return false;}
 
   //Returnam cosul de produse al user-ului
   map<int,int> cart = __UserID__ProductsCart__[userID]->getShoppingCart();

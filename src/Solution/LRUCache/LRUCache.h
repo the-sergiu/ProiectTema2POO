@@ -15,7 +15,6 @@ private:
 public:
   LRUCache(int);
   vector<int> processRequests(vector<int>);
-  vector<int> processRequests(int);
   // get-eri
   int getCapacity();
   int getSize();
