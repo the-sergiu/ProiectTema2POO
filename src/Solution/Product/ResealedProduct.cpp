@@ -4,20 +4,20 @@ using namespace std;
 
 ResealedProduct::ResealedProduct()
 {
-	this->wearPercentage = -1;
+	throw("undefined");
 }
 
 ResealedProduct::ResealedProduct(const string &category, int id, const string &producer, const string &name, float price, int yearsOfWarranty, int discountPercentage, const string &reason, int wearPercentage, int quantity)
-	: NonFoodProduct(category, id, producer, name, price, yearsOfWarranty, quantity)
+	: NonFoodProduct(category, id, producer, name, price, yearsOfWarranty, quantity),
+		DiscountedProduct(category, id, producer, name, price, yearsOfWarranty, discountPercentage, quantity),
+		ReturnedProduct(category, id, producer, name, price, yearsOfWarranty, reason, quantity)
 {
-	DiscountedProduct(category, id, producer, name, price, yearsOfWarranty, discountPercentage, quantity),
-		ReturnedProduct(category, id, producer, name, price, yearsOfWarranty, reason, quantity),
-		this->wearPercentage = wearPercentage;
+	throw("undefined");
 }
 
 ResealedProduct::ResealedProduct(const ResealedProduct &pr) : NonFoodProduct(pr), DiscountedProduct(pr), ReturnedProduct(pr)
 {
-	this->wearPercentage = pr.wearPercentage;
+	throw("undefined");
 }
 
 void ResealedProduct::display()
@@ -38,33 +38,22 @@ void ResealedProduct::display()
 
 void ResealedProduct::setWearPercentage(int wearPercentage)
 {
-	this->wearPercentage = wearPercentage;
+	throw("undefined");
 }
 
 float ResealedProduct::getWearPercentage()
 {
-	return this->wearPercentage;
+	throw("undefined");
 }
 
 const ResealedProduct &ResealedProduct::operator=(const ResealedProduct &a)
 {
-	this->name = a.name;
-	this->producer = a.producer;
-	this->category = a.category;
-	this->id = a.id;
-	this->quantity = a.quantity;
-	this->yearsOfWarranty = a.yearsOfWarranty;
-	this->price = a.price;
-	this->discountPercentage = a.discountPercentage;
-	this->reason = a.reason;
-	this->wearPercentage = a.wearPercentage;
-
-	return *this;
+	throw("undefined");
 }
 
 string ResealedProduct::getProductType()
 {
-	return "resigilat";
+	throw("undefined");
 }
 
 json ResealedProduct::toJSON()

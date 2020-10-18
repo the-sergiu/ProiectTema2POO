@@ -36,7 +36,7 @@ class Server
     // Singleton
     Server();
   public:
-    static Server* ServerInit();
+    static Server* GetInstance();
     ~Server();
 
     map<int, Product*> get__ProductID__ProductObj__();

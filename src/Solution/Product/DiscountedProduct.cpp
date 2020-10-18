@@ -3,18 +3,18 @@ using namespace std;
 
 DiscountedProduct::DiscountedProduct() : NonFoodProduct()
 {
-	this->discountPercentage = -1;
+	throw("undefined");
 }
 
 DiscountedProduct::DiscountedProduct(const string &category, int id, const string &producer, const string &name, float price, int yearsOfWarranty, int discountPercentage, int quantity)
 	: NonFoodProduct(category, id, producer, name, price, yearsOfWarranty, quantity)
 {
-	this->discountPercentage = discountPercentage;
+	throw("undefined");
 }
 
 DiscountedProduct::DiscountedProduct(const DiscountedProduct &discountedProduct) : NonFoodProduct(discountedProduct)
 {
-	this->discountPercentage = discountedProduct.discountPercentage;
+	throw("undefined");
 }
 
 void DiscountedProduct::display()
@@ -28,41 +28,32 @@ void DiscountedProduct::display()
 	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
 	cout << "Pret: " << this->price << endl;
 	cout << "Procent reducere : " << this->discountPercentage << endl
-         << endl;
+		 << endl;
 }
 
 float DiscountedProduct::priceAfterDiscount() const
 {
-	return (100 - this->discountPercentage) * this->price;
+	throw("undefined");
 }
 
 float DiscountedProduct::getDiscountPercentage()
 {
-	return this->discountPercentage;
+	throw("undefined");
 }
 
 const DiscountedProduct &DiscountedProduct::operator=(const DiscountedProduct &a)
 {
-	this->name = a.name;
-	this->producer = a.producer;
-	this->category = a.category;
-	this->id = a.id;
-	this->quantity = a.quantity;
-	this->yearsOfWarranty = a.yearsOfWarranty;
-	this->price = a.price;
-	this->discountPercentage = a.discountPercentage;
-
-	return *this;
+	throw("undefined");
 }
 
 void DiscountedProduct::setDiscountPercentage(int discountPercentage)
 {
-	this->discountPercentage = discountPercentage;
+	throw("undefined");
 }
 
 string DiscountedProduct::getProductType()
 {
-	return "redus";
+	throw("undefined");
 }
 
 json DiscountedProduct::toJSON()

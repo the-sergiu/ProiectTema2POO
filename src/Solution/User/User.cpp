@@ -1,95 +1,86 @@
 #include "User.h"
 using namespace std;
 
-User::~User() {}
+User::~User()
+{
+	throw("undefined");
+}
 
-User::User() {}
+User::User()
+{
+	throw("undefined");
+}
 
 User::User(const string &judetf, const string &localitatef, const string &stradaf, int nr_stradaf, const string &blocf, int apartamentf, const string &judetl, const string &localitatel, const string &stradal, int nr_stradal, const string &blocl, int apartamentl, int UserId, const string &lastName, const string &prenume, const string &email)
-        :   billingData(judetf, localitatef, stradaf, nr_stradaf, blocf, apartamentf),
-            deliveryData(judetl, localitatel, stradal, nr_stradal, blocl, apartamentl)
+	: billingData(judetf, localitatef, stradaf, nr_stradaf, blocf, apartamentf),
+	  deliveryData(judetl, localitatel, stradal, nr_stradal, blocl, apartamentl)
 {
-  this->UserID = UserId;
-  this->lastName = lastName;
-  this->firstName = prenume;
-  this->email = email;
+	throw("undefined");
 }
 
 User::User(const User &u)
 {
-  this->billingData = u.billingData;
-  this->deliveryData = u.deliveryData;
-  this->lastName = u.lastName;
-  this->firstName = u.firstName;
-  this->email = u.email;
-  this->UserID = u.UserID;
+	throw("undefined");
 }
 
 const User &User::operator=(const User &u)
 {
-  this->billingData = u.billingData;
-  this->deliveryData = u.deliveryData;
-  this->lastName = u.lastName;
-  this->firstName = u.firstName;
-  this->email = u.email;
-  this->UserID = u.UserID;
-
-  return *this;
+	throw("undefined");
 }
 
 // Set-eri
 void User::setLastName(const string &lastName)
 {
-  this->lastName = lastName;
+	throw("undefined");
 }
 void User::setFirstName(const string &firstName)
 {
-  this->firstName = firstName;
+	throw("undefined");
 }
 void User::setEmail(const string &email)
 {
-  this->email = email;
+	throw("undefined");
 }
 void User::setUserID(int userID)
 {
-  this->UserID = userID;
+	throw("undefined");
 }
 void User::setBillingData(const Address &billingData)
 {
-  this->billingData = billingData;
+	throw("undefined");
 }
 void User::setDeliveryData(const Address &deliveryData)
 {
-  this->deliveryData = deliveryData;
+	throw("undefined");
 }
 // Get-eri
 string &User::getLastName()
 {
-  return this->lastName;
+	throw("undefined");
 }
 string &User::getFirstName()
 {
-  return this->firstName;
+	throw("undefined");
 }
 string &User::getEmail()
 {
-  return this->email;
+	throw("undefined");
 }
 int User::getUserID() const
 {
-  return this->UserID;
+	throw("undefined");
 }
 
 Address &User::getBillingData()
 {
-  return this->billingData;
+	throw("undefined");
 }
 Address &User::getDeliveryData()
 {
-  return this->deliveryData;
+	throw("undefined");
 }
 
 json User::toJSON()
 {
-  return json(*this);
+	return json(*this);
 }

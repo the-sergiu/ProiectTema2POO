@@ -4,133 +4,99 @@ using namespace std;
 
 Address::Address()
 {
-    street = "";
-    number = 0;
-    block = "";
-    apartment = 0;
+	throw("undefined");
 }
 
 Address::Address(const Address &address)
 {
-  this->apartment = address.apartment;
-  this->block = address.block;
-  this->county = address.county;
-  this->number = address.number;
-  this->street = address.street;
-  this->locality = address.locality;
+	throw("undefined");
 }
 
 Address::Address(const string &jud, const string &loc, const string &str, int nr, const string &bl, int ap)
 {
-    county = jud;
-    locality = loc;
-    street = str;
-    number = nr;
-    block = bl;
-    apartment = ap;
+	throw("undefined");
 }
 
 const Address &Address::operator=(const Address &adr)
 {
-  this->county = adr.county;
-  this->locality = adr.locality;
-  this->street = adr.street;
-  this->number = adr.number;
-  this->apartment = adr.apartment;
-  this->block = adr.block;
-
-  return *this;
+	throw("undefined");
 }
 
 void Address::setStrada(const string &str)
 {
-    street = str;
+	throw("undefined");
 }
 
 void Address::setNumar(int nr)
 {
-    number = nr;
+	throw("undefined");
 }
 
 void Address::setBlock(const string &bl)
 {
-    block = bl;
+	throw("undefined");
 }
 
 void Address::setApartment(int ap)
 {
-    apartment = ap;
+	throw("undefined");
 }
 
 void Address::setCounty(const string &jud)
 {
-    county = jud;
+	throw("undefined");
 }
 
 void Address::setLocality(const string &loc)
 {
-    locality = loc;
+	throw("undefined");
 }
 
 string &Address::getStreet()
 {
-  return this->street;
+	throw("undefined");
 }
 
 int Address::getNumber()
 {
-  return this->number;
+	throw("undefined");
 }
 string &Address::getBlock()
 {
-  return this->block;
+	throw("undefined");
 }
 
 int Address::getApartment()
 {
-  return this->apartment;
+	throw("undefined");
 }
 
 string &Address::getCounty()
 {
-  return county;
+	throw("undefined");
 }
 
 string &Address::getLocality()
 {
-  return locality;
+	throw("undefined");
 }
 
 bool Address::operator==(const Address &address)
 {
-  if (this->county != address.county)
-    return false;
-  if (this->locality != address.locality)
-    return false;
-  if (this->street != address.street)
-    return false;
-  if (this->number != address.number)
-    return false;
-  if (this->block != address.block)
-    return false;
-  if (this->apartment != address.apartment)
-    return false;
-
-  return true;
+	throw("undefined");
 }
 
 bool Address::operator!=(const Address &address)
 {
-  return !(*this == address);
+	throw("undefined");
 }
 
 ostream &operator<<(ostream &os, const Address &a)
 {
-  os << "Judet: " << a.county << ", Localitate: " << a.locality << ", Strada: " << a.street << ", nr. " << a.number << ", bl. " << a.block << ", ap. " << a.apartment << endl;
-  return os;
+	throw("undefined");
 }
 
 json Address::toJSON()
 {
-  return json(*this);
+	return json(*this);
 }

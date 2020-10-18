@@ -2,20 +2,17 @@
 
 FoodProduct::FoodProduct()
 {
-	this->leiPerKg = -1;
-	this->countryOfOrigin = placeHolder;
+	throw("undefined");
 }
 
 FoodProduct::FoodProduct(const string &categorie, int id, const string &nume, float leiPerKg, const string &taraOrigine, int cantitate) : Product(categorie, id, nume, cantitate)
 {
-	this->leiPerKg = leiPerKg;
-	this->countryOfOrigin = taraOrigine;
+	throw("undefined");
 }
 
 FoodProduct::FoodProduct(const FoodProduct &pa) : Product(pa)
 {
-	this->leiPerKg = pa.leiPerKg;
-	this->countryOfOrigin = pa.countryOfOrigin;
+	throw("undefined");
 }
 
 void FoodProduct::display()
@@ -27,60 +24,54 @@ void FoodProduct::display()
 	cout << "Cantitate (stoc): " << this->quantity << endl;
 	cout << "Lei per KG : " << this->leiPerKg << endl;
 	cout << "Tara de Origine : " << this->countryOfOrigin << endl
-         << endl;
+		 << endl;
 }
 // SET-eri
 void FoodProduct::setLeiPerKg(float leiPerKg)
 {
-	this->leiPerKg = leiPerKg;
+	throw("undefined");
 }
 
 void FoodProduct::setCountryOfOrigin(const string &countryOfOrigin)
 {
-	this->countryOfOrigin = countryOfOrigin;
+	throw("undefined");
 }
 
 // GET-eri
 float FoodProduct::getLeiPerKg()
 {
-	return this->leiPerKg;
+	throw("undefined");
 }
 
 string &FoodProduct::getCountryOfOrigin()
 {
-	return this->countryOfOrigin;
+	throw("undefined");
 }
 
 // OPERATORI
 bool FoodProduct::operator==(const FoodProduct &obj) const
 {
-	return (this->leiPerKg == obj.leiPerKg) ? true : false;
+	throw("undefined");
 }
 
 bool FoodProduct::operator<(const FoodProduct &obj) const
 {
-	return (this->leiPerKg < obj.leiPerKg) ? true : false;
+	throw("undefined");
 }
 
 bool FoodProduct::operator>(const FoodProduct &obj) const
 {
-	return (this->leiPerKg > obj.leiPerKg) ? true : false;
+	throw("undefined");
 }
 
 const FoodProduct &FoodProduct::operator=(const FoodProduct &a)
 {
-	this->name = a.name;
-	this->category = a.category;
-	this->id = a.id;
-	this->quantity = a.quantity;
-	this->leiPerKg = a.leiPerKg;
-	this->countryOfOrigin = a.countryOfOrigin;
-	return *this;
+	throw("undefined");
 }
 
 string FoodProduct::getProductType()
 {
-	return "alimentar";
+	throw("undefined");
 }
 
 json FoodProduct::toJSON()

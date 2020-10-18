@@ -2,69 +2,60 @@
 
 ShoppingCart::ShoppingCart()
 {
-  this->payMethod = "-";
+	this->payMethod = "-";
 }
 
-ShoppingCart::ShoppingCart(const string& payMethod)
+ShoppingCart::ShoppingCart(const string &payMethod)
 {
-  this->payMethod = payMethod;
+	throw("undefined");
 }
 
-string& ShoppingCart::getPayMethod()
+string &ShoppingCart::getPayMethod()
 {
-  return this->payMethod;
+	throw("undefined");
 }
 
-void ShoppingCart::setPayMethod(const string& payMethod)
+void ShoppingCart::setPayMethod(const string &payMethod)
 {
-  this->payMethod = payMethod;
+	throw("undefined");
 }
 
 void ShoppingCart::addProduct(int id, int quantity)
 {
-    shoppingCart[id] = quantity;
+	throw("undefined");
 }
 
 void ShoppingCart::RaiseQuantity(int id, int quantity)
 {
-  shoppingCart[id] += quantity;
+	throw("undefined");
 }
 
 void ShoppingCart::LowerQuantity(int id, int quantity)
 {
-  shoppingCart[id] -= quantity;
+	throw("undefined");
 }
 
 int ShoppingCart::getQuantity(int productID)
 {
-  return this->shoppingCart[productID];
+	throw("undefined");
 }
 
 void ShoppingCart::deleteProduct(int productID)
 {
-  this->shoppingCart.erase(productID);
+	throw("undefined");
 }
 
-map<int, int>& ShoppingCart::getShoppingCart() {
-  return this->shoppingCart;
+map<int, int> &ShoppingCart::getShoppingCart()
+{
+	throw("undefined");
 }
 
 void ShoppingCart::displayShoppingCart()
 {
-  if (this->shoppingCart.empty()) {
-    cout << "Cosul de shoppingCart este gol";
-  }
-  else
-  {
-    cout<<"ProdusID:    ///   Cantitate:"<<endl;
-
-    for(auto const& x : this->shoppingCart)
-      cout<<x.first<<" "<<x.second<<endl;
-  }
-
+	throw("undefined");
 }
 
 json ShoppingCart::toJSON()
 {
-  return json(*this);
+	return json(*this);
 }
