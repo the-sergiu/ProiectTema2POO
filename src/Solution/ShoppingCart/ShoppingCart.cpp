@@ -54,3 +54,8 @@ void ShoppingCart::displayShoppingCart()
 {
 	throw("undefined");
 }
+
+json ShoppingCart::toJSON()
+{
+  return json(*this);
+}
