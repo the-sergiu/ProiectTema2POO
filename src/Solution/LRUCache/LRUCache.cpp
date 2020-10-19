@@ -13,11 +13,6 @@ vector<int> LRUCache::processRequests(vector<int> requestsNo)
 	throw("undefined");
 }
 
-vector<int> LRUCache::processRequests(int requestsNo)
-{
-	throw("undefined");
-}
-
 // get-eri
 int LRUCache::getCapacity()
 {

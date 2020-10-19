@@ -25,12 +25,12 @@ void ShoppingCart::addProduct(int id, int quantity)
 	throw("undefined");
 }
 
-void ShoppingCart::RaiseQuantity(int id, int quantity)
+void ShoppingCart::raiseQuantity(int id, int quantity)
 {
 	throw("undefined");
 }
 
-void ShoppingCart::LowerQuantity(int id, int quantity)
+void ShoppingCart::lowerQuantity(int id, int quantity)
 {
 	throw("undefined");
 }
@@ -53,9 +53,4 @@ map<int, int> &ShoppingCart::getShoppingCart()
 void ShoppingCart::displayShoppingCart()
 {
 	throw("undefined");
-}
-
-json ShoppingCart::toJSON()
-{
-	return json(*this);
 }

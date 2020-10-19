@@ -15,12 +15,7 @@ RezolvareCerinte::~RezolvareCerinte()
 	}
 }
 
-void RezolvareCerinte::Cerinta2()
-{
-	throw("undefined");
-}
-
-list<Product *> RezolvareCerinte::Cerinta3a()
+list<Product*> RezolvareCerinte::Cerinta3a()
 {
 	throw("undefined");
 }
@@ -46,11 +41,6 @@ list<User *> RezolvareCerinte::Cerinta3e()
 }
 
 list<User *> RezolvareCerinte::Cerinta3f()
-{
-	throw("undefined");
-}
-
-void RezolvareCerinte::Cerinta5()
 {
 	throw("undefined");
 }

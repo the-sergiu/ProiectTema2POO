@@ -21,7 +21,6 @@ class RezolvareCerinte{
   public:
     RezolvareCerinte();
     ~RezolvareCerinte();
-    void Cerinta2();
     list<Product*> Cerinta3a();
     list<User*> Cerinta3b();
     list<Product*> Cerinta3c();

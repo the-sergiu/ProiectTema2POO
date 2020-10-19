@@ -8,6 +8,7 @@
 #include "../json.hpp"
 #include "../Solution/rezolvareCerinte.h"
 #include "JSONSerializer.h"
+#include "FinalQuestionsHelper.h"
 
 using json = nlohmann::json;
 
@@ -31,4 +32,5 @@ class TestHelper
     json TestCerinta3e();
     json TestCerinta3f();
     json TestCerinta4();      // Test 4
+    json TestCerinta5();
 };

@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "../json.hpp"
+#include "../src/json.hpp"
 
 using namespace std;
 using json = nlohmann::json;
@@ -10,14 +10,13 @@ using json = nlohmann::json;
 
 typedef struct lrubluprint{
     int capacity;
-    vector<int> allLRUOperations;
+    vector<int> allLruOoperations;
 }LRU_blueprint;
 
 typedef struct query{
     int productID;
     int userID;
     string operation;
-    int quantity;
 }Query;
 
 LRU_blueprint getLruBlueprint(json&);

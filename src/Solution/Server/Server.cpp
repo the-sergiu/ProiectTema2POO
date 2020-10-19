@@ -78,6 +78,5 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
 
 bool Server::requestDeleteProduct(int userID, int productID, int quantity)
 {
-
 	throw("undefined");
 }
