@@ -119,7 +119,7 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
     //Ii scadem cantitatea
         __ProductID__ProductObj__[productID]->decreaseQuantity(quantity);
     //Adaugam produsul si cantitatea ceruta in cosul de shoppingCart al User-ului
-        __UserID__ProductsCart__[userID]->RaiseQuantity(productID, quantity);
+        __UserID__ProductsCart__[userID]->raiseQuantity(productID, quantity);
         return true;
     }
     //Altfel nu aveam cantitatea necesara
@@ -164,7 +164,7 @@ bool Server::requestDeleteProduct(int userID, int productID, int quantity)
     //Altfel, stergem cat dorim
     else{
       __ProductID__ProductObj__[productID]->increaseQuantity(quantity);
-      __UserID__ProductsCart__[userID]->LowerQuantity(productID, quantity);
+      __UserID__ProductsCart__[userID]->lowerQuantity(productID, quantity);
     }
 
     return true;

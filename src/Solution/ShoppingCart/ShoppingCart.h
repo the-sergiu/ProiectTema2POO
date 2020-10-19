@@ -21,8 +21,8 @@ class ShoppingCart
     void setPayMethod(const string &payMethod);
     int getQuantity(int);
     void addProduct(int, int);
-    void RaiseQuantity(int, int);
-    void LowerQuantity(int, int);
+    void raiseQuantity(int, int);
+    void lowerQuantity(int, int);
     void deleteProduct(int);
     map<int,int>& getShoppingCart();
     void displayShoppingCart();

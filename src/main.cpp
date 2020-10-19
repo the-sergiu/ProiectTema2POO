@@ -24,15 +24,10 @@ Server *Server::instance = 0;
 int main(int argc, char** argv) 
 {
   json result;
-
   TestHelper p(argv[1]);
-
-
-  // TestHelper p;
   RezolvareCerinte rez;
 
-  try{
-    
+  try {
     if (argc != 4)
     {
       throw "Error: Executable requires precisely 4 arguments!";
