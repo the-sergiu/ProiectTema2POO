@@ -82,18 +82,16 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
 {
   //Daca cantitatea este <= 0
   if (quantity <= 0)
-    {cout<<"Cantitate negativa"<<endl;
       return false;
-    }
 
   //Verificare daca nu exista User sau Product cu id corect
   auto it_user = __UserID__ProductsCart__.find(userID);
   if (it_user == __UserID__ProductsCart__.end())
-    {cout<<"User negasit";return false;}
+      return false;
 
   auto it_prod = __ProductID__ProductObj__.find(productID);
   if (it_prod == __ProductID__ProductObj__.end())
-    {cout<<"Produs negasit";return false;}
+      return false;
 
   //Returnam cosul de produse al user-ului
   map<int,int> cart = __UserID__ProductsCart__[userID]->getShoppingCart();
@@ -103,8 +101,6 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
 
   //Daca nu e, se adauga
   if (it_request == cart.end()){
-  
-    cout<<endl<<"Se adauga cantitatea";
     //Daca produsul cerut are cantitatea necesara
     if(__ProductID__ProductObj__[productID]->checkQuantity(quantity)) {
     //Ii scadem cantitatea
@@ -114,15 +110,11 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
         return true;
     }
     //Altfel nu aveam cantitatea necesara
-    else{
-      cout<<endl<<"Produsul " << productID << " nu are cantitatea necesara"<<endl;
-      return false;
-    }
+    else return false;
   }
 
   //Daca e, se modifica cantitatea care e deja in cos
   else{
-    cout<<endl<<"Se modifica cantitatea";
     if(__ProductID__ProductObj__[productID]->checkQuantity(quantity)) {
     //Ii scadem cantitatea
         __ProductID__ProductObj__[productID]->decreaseQuantity(quantity);
@@ -131,10 +123,7 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
         return true;
     }
     //Altfel nu aveam cantitatea necesara
-    else{
-      cout<<endl<<"Produsul " << productID << " nu are cantitatea necesara"<<endl;
-      return false;
-    }
+    else return false;
   }
 }
 
@@ -166,7 +155,6 @@ bool Server::requestDeleteProduct(int userID, int productID, int quantity)
   else{
     //Daca cantitatea pe care vrem sa o stergem >= cu cea din cos
     if (quantity >= __UserID__ProductsCart__[userID]->getQuantity(productID)){
-      cout<<endl<<"Se sterge tot produsul din cos"<<endl;
     //Crestem cantitatea de Product cu cea pe care User-ul o are in cos
     __ProductID__ProductObj__[productID]->increaseQuantity(__UserID__ProductsCart__[userID]->getQuantity(productID));
     //Stergem produsul din cosul de cumparaturi
@@ -175,7 +163,6 @@ bool Server::requestDeleteProduct(int userID, int productID, int quantity)
 
     //Altfel, stergem cat dorim
     else{
-      cout<<endl<<"Se sterge o parte din produs"<<endl;
       __ProductID__ProductObj__[productID]->increaseQuantity(quantity);
       __UserID__ProductsCart__[userID]->LowerQuantity(productID, quantity);
     }
