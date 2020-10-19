@@ -18,7 +18,7 @@ class ShoppingCart
     ShoppingCart();
     ShoppingCart(const string&);
     string& getPayMethod();
-    void setPayMethod(const string &payMethod);
+    void setPayMethod(const string &);
     int getQuantity(int);
     void addProduct(int, int);
     void raiseQuantity(int, int);

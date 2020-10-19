@@ -32,5 +32,5 @@ class TestHelper
     json TestCerinta3e();
     json TestCerinta3f();
     json TestCerinta4();      // Test 4
-    json TestCerinta5();
+    json TestCerinta5(const string&);
 };

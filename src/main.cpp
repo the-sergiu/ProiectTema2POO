@@ -72,7 +72,7 @@ int main(int argc, char** argv)
         result = p.TestCerinta4();
         break;
       case 12:
-        result = p.TestCerinta5();
+        result = p.TestCerinta5(argv[1]);
         break;
       default:
         break;

@@ -491,10 +491,10 @@ json TestHelper::TestCerinta4()
 	return successJson;
 }
 
-json TestHelper::TestCerinta5()
+json TestHelper::TestCerinta5(const string &inFile)
 {
 	Init();
-	ifstream in("testIN.json");
+	ifstream in(inFile);
 	json jin;
 	in >> jin;
 	LRUCache lru(5);
