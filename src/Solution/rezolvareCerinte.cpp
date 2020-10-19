@@ -13,16 +13,6 @@ RezolvareCerinte::~RezolvareCerinte(){
   }
 }
 
-void RezolvareCerinte::Cerinta2(){
-  cout<<"Se rezolva cerinta 2"<<endl;
-
-  //Testare citire shoppingCart din json
-    server->set__ProductID__ProductObj__();
-
-  //Testare citire useri din json
-    server->set__UserID__ProductsCart__();
-}
-
 list<Product*> RezolvareCerinte::Cerinta3a(){
   cout<<"Se rezolva cerinta 3a"<<endl;
   list<Product*> rezolvare;

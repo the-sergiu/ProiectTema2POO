@@ -331,8 +331,6 @@ json TestHelper::TestCerinta2()
   Init();
   json output;
 
-  rezolvatorul.Cerinta2();
-
   output["shoppingCart"] = JSONSerializer::fromProductMap(server->get__ProductID__ProductObj__());
   output["useri"] = JSONSerializer::FromUserMap(server->get__UserID__ProductsCart__());
 
