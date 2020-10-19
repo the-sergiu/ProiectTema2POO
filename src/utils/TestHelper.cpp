@@ -305,10 +305,24 @@ json TestHelper::TestClasaCosProduse()
     {
       return failJson;
     }
+    
+    cp->LowerQuantity(5, 2);
+
+    if (cp->getQuantity(5) != 1)
+    {
+      return failJson;
+    }
+
+    cp->RaiseQuantity(5, 4);
+
+    if (cp->getQuantity(5) != 5)
+    {
+      return failJson;
+    }
 
     // Map ajutator pentru verificarea operatiilor
     map<int, int> TestCos;
-    TestCos[5] = 3;
+    TestCos[5] = 5;
     
     if (cp->getShoppingCart() != TestCos)
     {
@@ -322,7 +336,7 @@ json TestHelper::TestClasaCosProduse()
     {
       return failJson;
     }
-
+    
     return successJson; 
 }
 
