@@ -99,7 +99,6 @@ list<User*> RezolvareCerinte::Cerinta3e(){
     Address dateLivrare = (*it)->getDeliveryData();
     string judet = dateLivrare.getCounty();
     
-    useri_per_judet[dateLivrare.getCounty()] = 0;
 
     if (useri_per_judet.find(judet) == useri_per_judet.end())
     {
@@ -109,7 +108,7 @@ list<User*> RezolvareCerinte::Cerinta3e(){
     useri_per_judet[judet]++; 
   }
   //Afisare date din map
-  //int total = 0;
+  // int total = 0;
   // for(auto const& x : useri_per_judet){
   // cout<<x.first<<" - "<<x.second;
   // total += x.second;
