@@ -27,7 +27,4 @@ class RezolvareCerinte{
     list<Product*> Cerinta3d();
     list<User*> Cerinta3e();
     list<User*> Cerinta3f();
-
-    void Cerinta4();
-    void Cerinta5();
 };

@@ -184,7 +184,3 @@ list<User*> RezolvareCerinte::Cerinta3f()
 
   return rezolvare;
 }
-
-void RezolvareCerinte::Cerinta5(){
-  
-}
