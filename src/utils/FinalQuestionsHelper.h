@@ -7,25 +7,39 @@
 using namespace std;
 using json = nlohmann::json;
 
-
-typedef struct lrubluprint{
+typedef struct lrubluprint
+{
     int capacity;
     vector<int> allLRUOperations;
-}LRU_blueprint;
+} LRU_blueprint;
 
-typedef struct query{
+typedef struct query
+{
     int productID;
     int userID;
     string operation;
     int quantity;
-}Query;
+} Query;
 
-LRU_blueprint getLruBlueprint(json&);
+/*
+      * @param paramName - param description
+      * @return what and when
+      */
+LRU_blueprint getLruBlueprint(json &);
+/*
+      * @param paramName - param description
+      * @return what and when
+      */
+json writeLruFinalState(vector<int> &);
+/*
+      * @param paramName - param description
+      * @return what and when
+      */
+vector<Query> getQuery(json &);
+/*
+      * @param paramName - param description
+      * @return what and when
+      */
+json writeFinalState(vector<Query> &, vector<int> &);
 
-json writeLruFinalState(vector<int>&);
-
-vector<Query> getQuery(json&);
-
-json writeFinalState(vector<Query>&, vector<int>&);
-
-json queryToJson(Query&);
+json queryToJson(Query &);

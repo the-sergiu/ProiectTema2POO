@@ -20,10 +20,25 @@ class ShoppingCart
     string& getPayMethod();
     void setPayMethod(const string &);
     int getQuantity(int);
-    void addProduct(int, int);
-    void raiseQuantity(int, int);
-    void lowerQuantity(int, int);
-    void deleteProduct(int);
+    /*
+      * @param id id-ul produsului de adaugat in cos
+      * @param quantity cantiatatea de produs de adaugat in cos
+      */
+    void addProduct(int id, int quantity);
+    /*
+      * @param id id-ul produsului pentru care se creste cantitatea din cos
+      * @param quantity cantiatatea care se adauga
+      */
+    void raiseQuantity(int id, int quantity);
+    /*
+      * @param id id-ul produsului pentru care se scade cantitatea din cos
+      * @param quantity cantitatea care se scade
+      */
+    void lowerQuantity(int id, int quantity);
+    /*
+      * @param productID id-ul produsului de scos din cos
+      */
+    void deleteProduct(int productID);
     map<int,int>& getShoppingCart();
     void displayShoppingCart();
     json toJSON();

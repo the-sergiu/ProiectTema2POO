@@ -8,21 +8,30 @@ class LRUCache
 {
 
 private:
-  unsigned int capacity;
-  unsigned int size;
-  vector<int> lru;
+	unsigned int capacity;
+	unsigned int size;
+	vector<int> lru;
 
 public:
-  LRUCache(int);
-  vector<int> processRequests(vector<int>);
-  // get-eri
-  int getCapacity();
-  int getSize();
-  vector<int> getLRU();
-  int getLRUCapacity();
+	LRUCache(int);
 
-  //set-eri
-  void setCapacity(int);
-  void setLRU(vector<int>);
+	/*
+      * @param requestsNo vectorul ce contine id-urile ce corespund requesturilor
+      * @return stadiul final al cache-ului
+      */
+	vector<int> processRequests(vector<int> requestsNo);
 
+	/*
+      * @return capacitatea cache-ului
+      */
+	int getCapacity();
+	int getSize();
+	/*
+      * @return vectorul din spatele cache-ului
+      */
+	vector<int> getLRU();
+	int getLRUCapacity();
+
+	void setCapacity(int);
+	void setLRU(vector<int>);
 };

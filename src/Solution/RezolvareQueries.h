@@ -13,18 +13,23 @@
 #include "LRUCache/LRUCache.h"
 #include "../utils/objectFactory/objectFactory.h"
 
+/*
+      * Clasa ce contine metodele in care vor fi scrise rezolvarile
+      * aferente cerintelor cu query-uri
+      */
+class RezolvareQueries
+{
+private:
+	Server *server;
+	LRUCache *lru;
 
-class RezolvareQueries{
-  private:
-    Server *server;
-    LRUCache *lru;
-  public:
-    RezolvareQueries();
-    ~RezolvareQueries();
-    list<Product*> Cerinta3a();
-    list<User*> Cerinta3b();
-    list<Product*> Cerinta3c();
-    list<Product*> Cerinta3d();
-    list<User*> Cerinta3e();
-    list<User*> Cerinta3f();
+public:
+	RezolvareQueries();
+	~RezolvareQueries();
+	list<Product *> Cerinta3a();
+	list<User *> Cerinta3b();
+	list<Product *> Cerinta3c();
+	list<Product *> Cerinta3d();
+	list<User *> Cerinta3e();
+	list<User *> Cerinta3f();
 };
