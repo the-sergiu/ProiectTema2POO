@@ -1,19 +1,19 @@
-#include "rezolvareCerinte.h"
+#include "RezolvareQueries.h"
 
 using namespace std;
 
-RezolvareCerinte::RezolvareCerinte() {
+RezolvareQueries::RezolvareQueries() {
   server = Server::ServerInit();
 }
 
-RezolvareCerinte::~RezolvareCerinte(){
+RezolvareQueries::~RezolvareQueries(){
   if (server != nullptr) 
   {
     server = nullptr;
   }
 }
 
-list<Product*> RezolvareCerinte::Cerinta3a(){
+list<Product*> RezolvareQueries::Cerinta3a(){
   cout<<"Se rezolva cerinta 3a"<<endl;
   list<Product*> rezolvare;
 
@@ -26,7 +26,7 @@ list<Product*> RezolvareCerinte::Cerinta3a(){
   return rezolvare;
 }
 
-list<User*> RezolvareCerinte::Cerinta3b(){
+list<User*> RezolvareQueries::Cerinta3b(){
   cout<<"Se rezolva cerinta 3b"<<endl;
   list<User*> rezolvare;
 
@@ -39,7 +39,7 @@ list<User*> RezolvareCerinte::Cerinta3b(){
   return rezolvare;
 }
 
-list<Product*> RezolvareCerinte::Cerinta3c(){
+list<Product*> RezolvareQueries::Cerinta3c(){
   cout<<"Se rezolva cerinta 3c"<<endl;
   list<Product*> rezolvare;
 
@@ -61,7 +61,7 @@ list<Product*> RezolvareCerinte::Cerinta3c(){
   return rezolvare;
 }
 
-list<Product*> RezolvareCerinte::Cerinta3d()
+list<Product*> RezolvareQueries::Cerinta3d()
 {
   cout<<"Se rezolva cerinta 3d"<<endl;
   list<Product*> rezolvare;
@@ -86,7 +86,7 @@ list<Product*> RezolvareCerinte::Cerinta3d()
 }
 
 
-list<User*> RezolvareCerinte::Cerinta3e(){
+list<User*> RezolvareQueries::Cerinta3e(){
   cout<<"Se rezolva cerinta 3e"<<endl;
 
   list<User*> rezolvare;
@@ -144,7 +144,7 @@ list<User*> RezolvareCerinte::Cerinta3e(){
   return rezolvare;
 }
 
-list<User*> RezolvareCerinte::Cerinta3f()
+list<User*> RezolvareQueries::Cerinta3f()
 {
   cout<<"Se rezolva cerinta 3f"<<endl;
 
