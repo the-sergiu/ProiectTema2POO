@@ -20,22 +20,10 @@ Server::~Server()
 {
   if (instance != NULL)
       instance = NULL;
-  if (!__ProductID__ProductObj__.empty())
-    __ProductID__ProductObj__.clear();
+
   if (!__UserID__ProductsCart__.empty())
     __UserID__ProductsCart__.clear();
 }
-
-// SET
-void Server::set__ProductID__ProductObj__()
-{
-  for (auto it = prod.begin(); it != prod.end(); ++it)
-  {
-      __ProductID__ProductObj__[(*it)->getId()] = *it;
-  }
-}
-
-
 
 void Server::set__UserID__ProductsCart__()
 {
@@ -45,7 +33,6 @@ void Server::set__UserID__ProductsCart__()
   }
 }
 
-
 // GET
 list<Product*>& Server::getProductsList()
 {
@@ -54,11 +41,6 @@ list<Product*>& Server::getProductsList()
 list<User*>& Server::getUsersList()
 {
   return this->usr;
-}
-
-map<int, Product*> Server::get__ProductID__ProductObj__()
-{
-  return this->__ProductID__ProductObj__;
 }
 
 map<int, ShoppingCart*> Server::get__UserID__ProductsCart__()
@@ -89,9 +71,15 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
   if (it_user == __UserID__ProductsCart__.end())
       return false;
 
-  auto it_prod = __ProductID__ProductObj__.find(productID);
-  if (it_prod == __ProductID__ProductObj__.end())
-      return false;
+  auto it_prod = std::find_if(prod.begin(), prod.end(), [productID](Product *const &p) {
+    return (p->getId() == productID);
+  });
+
+  if (it_prod == prod.end()) {
+    return false;
+  }
+
+  auto product = *it_prod;
 
   //Returnam cosul de produse al user-ului
   map<int,int> cart = __UserID__ProductsCart__[userID]->getShoppingCart();
@@ -102,9 +90,9 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
   //Daca nu e, se adauga
   if (it_request == cart.end()){
     //Daca produsul cerut are cantitatea necesara
-    if(__ProductID__ProductObj__[productID]->checkQuantity(quantity)) {
+    if(product->checkQuantity(quantity)) {
     //Ii scadem cantitatea
-        __ProductID__ProductObj__[productID]->decreaseQuantity(quantity);
+        product->decreaseQuantity(quantity);
     //Adaugam produsul si cantitatea ceruta in cosul de shoppingCart al User-ului
         __UserID__ProductsCart__[userID]->addProduct(productID, quantity);
         return true;
@@ -115,9 +103,9 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
 
   //Daca e, se modifica cantitatea care e deja in cos
   else{
-    if(__ProductID__ProductObj__[productID]->checkQuantity(quantity)) {
+    if(product->checkQuantity(quantity)) {
     //Ii scadem cantitatea
-        __ProductID__ProductObj__[productID]->decreaseQuantity(quantity);
+        product->decreaseQuantity(quantity);
     //Adaugam produsul si cantitatea ceruta in cosul de shoppingCart al User-ului
         __UserID__ProductsCart__[userID]->raiseQuantity(productID, quantity);
         return true;
@@ -138,9 +126,16 @@ bool Server::requestDeleteProduct(int userID, int productID, int quantity)
   if (it_user == __UserID__ProductsCart__.end())
     return false;
 
-  auto it_prod = __ProductID__ProductObj__.find(productID);
-  if (it_prod == __ProductID__ProductObj__.end())
+  auto it_prod = std::find_if(prod.begin(), prod.end(), [productID](Product *const &p) {
+    return (p->getId() == productID);
+  });
+
+  if (it_prod == prod.end())
+  {
     return false;
+  }
+
+  auto product = *it_prod;
 
   //Returnam cosul de produse al user-ului
   map<int,int> cart = __UserID__ProductsCart__[userID]->getShoppingCart();
@@ -156,14 +151,14 @@ bool Server::requestDeleteProduct(int userID, int productID, int quantity)
     //Daca cantitatea pe care vrem sa o stergem >= cu cea din cos
     if (quantity >= __UserID__ProductsCart__[userID]->getQuantity(productID)){
     //Crestem cantitatea de Product cu cea pe care User-ul o are in cos
-    __ProductID__ProductObj__[productID]->increaseQuantity(__UserID__ProductsCart__[userID]->getQuantity(productID));
+    product->increaseQuantity(__UserID__ProductsCart__[userID]->getQuantity(productID));
     //Stergem produsul din cosul de cumparaturi
     __UserID__ProductsCart__[userID]->deleteProduct(productID);
     }
 
     //Altfel, stergem cat dorim
     else{
-      __ProductID__ProductObj__[productID]->increaseQuantity(quantity);
+      product->increaseQuantity(quantity);
       __UserID__ProductsCart__[userID]->lowerQuantity(productID, quantity);
     }
 

@@ -18,7 +18,6 @@ void TestHelper::Init()
 {
 	server->populateProducts(input);
 	server->populateUsers(input);
-	server->set__ProductID__ProductObj__();
 	server->set__UserID__ProductsCart__();
 }
 
@@ -378,7 +377,7 @@ json TestHelper::TestCerinta2()
 	Init();
 	json output;
 
-	output["shoppingCart"] = JSONSerializer::fromProductMap(server->get__ProductID__ProductObj__());
+	output["productList"] = ObjectFactory::getJsonProdus(server->getProductsList());
 	output["useri"] = JSONSerializer::FromUserMap(server->get__UserID__ProductsCart__());
 
 	return output;
