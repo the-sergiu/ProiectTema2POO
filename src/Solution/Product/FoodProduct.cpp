@@ -51,22 +51,6 @@ string &FoodProduct::getCountryOfOrigin()
 	return this->countryOfOrigin;
 }
 
-// OPERATORI
-bool FoodProduct::operator==(const FoodProduct &obj) const
-{
-	return (this->leiPerKg == obj.leiPerKg) ? true : false;
-}
-
-bool FoodProduct::operator<(const FoodProduct &obj) const
-{
-	return (this->leiPerKg < obj.leiPerKg) ? true : false;
-}
-
-bool FoodProduct::operator>(const FoodProduct &obj) const
-{
-	return (this->leiPerKg > obj.leiPerKg) ? true : false;
-}
-
 const FoodProduct &FoodProduct::operator=(const FoodProduct &a)
 {
 	this->name = a.name;
