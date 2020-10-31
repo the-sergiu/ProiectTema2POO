@@ -14,13 +14,13 @@
 #include "../utils/objectFactory/objectFactory.h"
 
 
-class RezolvareCerinte{
+class RezolvareQueries{
   private:
     Server *server;
     LRUCache *lru;
   public:
-    RezolvareCerinte();
-    ~RezolvareCerinte();
+    RezolvareQueries();
+    ~RezolvareQueries();
     list<Product*> Cerinta3a();
     list<User*> Cerinta3b();
     list<Product*> Cerinta3c();
