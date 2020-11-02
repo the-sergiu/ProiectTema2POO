@@ -8,8 +8,4 @@
 
 class Utility{
 
-public:
-    static bool compareProdusNealimentar(Product*, Product*);
-
-    static bool compareProdusAlimentar(Product*, Product*);
 };
