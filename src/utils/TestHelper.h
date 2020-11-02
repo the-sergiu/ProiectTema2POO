@@ -10,6 +10,8 @@
 #include "JSONSerializer.h"
 #include "FinalQuestionsHelper.h"
 
+// Administrativ - NU MODIFICATI NIMIC
+
 using json = nlohmann::json;
 
 class TestHelper 

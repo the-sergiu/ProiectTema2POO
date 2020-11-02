@@ -39,8 +39,14 @@ class ShoppingCart
       * @param productID id-ul produsului de scos din cos
       */
     void deleteProduct(int productID);
+    /*
+      * @return referinta catre shoppingCart
+      */
     map<int,int>& getShoppingCart();
+    
     void displayShoppingCart();
+
+    // Administrativ - NU MODIFICATI
     json toJSON();
     
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(ShoppingCart, shoppingCart, payMethod)

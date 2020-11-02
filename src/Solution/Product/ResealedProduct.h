@@ -22,9 +22,10 @@ public:
     //GET-ERI
     float getWearPercentage();
 
-    json toJSON();
-
     const ResealedProduct& operator = (const ResealedProduct&);
+    
+    // Administrative - NU MODIFICATI
+    json toJSON();
 
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(ResealedProduct, name, quantity, category, id, producer, yearsOfWarranty, price, reason, discountPercentage, wearPercentage)
 };

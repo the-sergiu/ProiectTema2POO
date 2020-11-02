@@ -27,10 +27,10 @@ public:
 
   // Set
   void setCounty(const string &);
-  void setLocality(const string &loc);
+  void setLocality(const string &);
   void setStrada(const string &);
   void setNumar(int);
-  void setBlock(const string &bl);
+  void setBlock(const string &);
   void setApartment(int);
 
   // Get

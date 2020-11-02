@@ -25,13 +25,24 @@ public:
       * @return capacitatea cache-ului
       */
 	int getCapacity();
+	/*
+      * @return dimensiunea cache-ului
+      */
 	int getSize();
 	/*
       * @return vectorul din spatele cache-ului
       */
 	vector<int> getLRU();
+	/*
+      * @return capacitatea vectorului din spatele cache-ului
+      */
 	int getLRUCapacity();
-
-	void setCapacity(int);
-	void setLRU(vector<int>);
+	/*
+      * @param seteaza capacitatea cache-ului
+      */
+	void setCapacity(int capacity);
+	/*
+      * @param aux seteaza cache-ul folosind un vector de int
+      */
+	void setLRU(vector<int> aux);
 };

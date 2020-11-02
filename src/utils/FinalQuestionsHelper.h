@@ -7,12 +7,9 @@
 using namespace std;
 using json = nlohmann::json;
 
-typedef struct lrubluprint
-{
-    int capacity;
-    vector<int> allLRUOperations;
-} LRU_blueprint;
-
+/*
+  *structura ajutatoare ce va fi folosita pentru ultima cerinta
+*/
 typedef struct query
 {
     int productID;
@@ -22,24 +19,7 @@ typedef struct query
 } Query;
 
 /*
-      * @param paramName - param description
-      * @return what and when
-      */
-LRU_blueprint getLruBlueprint(json &);
-/*
-      * @param paramName - param description
-      * @return what and when
-      */
-json writeLruFinalState(vector<int> &);
-/*
-      * @param paramName - param description
-      * @return what and when
-      */
-vector<Query> getQuery(json &);
-/*
-      * @param paramName - param description
-      * @return what and when
-      */
-json writeFinalState(vector<Query> &, vector<int> &);
-
-json queryToJson(Query &);
+ * @param j obiectul json din care se vor citi query-urile
+ * @return vector de query-uri
+ */
+vector<Query> getQuery(json &j);
