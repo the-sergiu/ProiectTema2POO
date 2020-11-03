@@ -48,22 +48,6 @@ string &FoodProduct::getCountryOfOrigin()
 	throw("undefined");
 }
 
-// OPERATORI
-bool FoodProduct::operator==(const FoodProduct &obj) const
-{
-	throw("undefined");
-}
-
-bool FoodProduct::operator<(const FoodProduct &obj) const
-{
-	throw("undefined");
-}
-
-bool FoodProduct::operator>(const FoodProduct &obj) const
-{
-	throw("undefined");
-}
-
 const FoodProduct &FoodProduct::operator=(const FoodProduct &a)
 {
 	throw("undefined");

@@ -28,11 +28,6 @@ public:
     // Metode Auxiliare
     void display();
 
-    // Operatori
-    bool operator==(const FoodProduct &) const;
-    bool operator<(const FoodProduct &) const;
-    bool operator>(const FoodProduct &) const;
-
     // Administrative - NU MODIFICATI
     string getProductType();
     json toJSON();
