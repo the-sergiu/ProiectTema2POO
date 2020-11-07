@@ -15,18 +15,22 @@ public:
     // Operator =
     const ReturnedProduct &operator=(const ReturnedProduct &);
 
-    // Get
+    /*
+     * @return campul reason (motiv)
+     */
     string &getReason();
-
-    // Set
+    /*
+     * @param seteaza campul reason (motivul returnarii)
+     */
     void setReason(string &);
-
-    // Metode Auxiliare
-    void display();
+    /*
+     * @return tipul produsului (nu este camp)
+     */
     string getProductType();
-
-    // Administrativ - NU MODIFICATI
+    /*
+     *     ADMINISTRATIV - NU MODIFICATI
+     */
     json toJSON();
-
+    void display();
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(ReturnedProduct, name, quantity, category, id, producer, yearsOfWarranty, price, reason)
 };

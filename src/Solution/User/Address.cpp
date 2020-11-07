@@ -27,7 +27,7 @@ void Address::setStrada(const string &str)
 	throw("undefined");
 }
 
-void Address::setNumar(int nr)
+void Address::setNumber(int nr)
 {
 	throw("undefined");
 }

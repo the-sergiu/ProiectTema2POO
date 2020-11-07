@@ -16,33 +16,33 @@ public:
 	LRUCache(int);
 
 	/*
-      * @param requestsNo vectorul ce contine id-urile ce corespund requesturilor
-      * @return stadiul final al cache-ului
-      */
+     * @param requestsNo vectorul ce contine id-urile ce corespund requesturilor
+     * @return stadiul final al cache-ului
+     */
 	vector<int> processRequests(vector<int> requestsNo);
 
 	/*
-      * @return capacitatea cache-ului
-      */
+     * @return capacitatea cache-ului
+     */
 	int getCapacity();
 	/*
-      * @return dimensiunea cache-ului
-      */
+     * @return dimensiunea cache-ului
+     */
 	int getSize();
 	/*
-      * @return vectorul din spatele cache-ului
-      */
+     * @return vectorul din spatele cache-ului
+     */
 	vector<int> getLRU();
 	/*
-      * @return capacitatea vectorului din spatele cache-ului
-      */
+     * @return capacitatea vectorului din spatele cache-ului
+     */
 	int getLRUCapacity();
 	/*
-      * @param seteaza capacitatea cache-ului
-      */
+     * @param seteaza capacitatea cache-ului
+     */
 	void setCapacity(int capacity);
 	/*
-      * @param aux seteaza cache-ul folosind un vector de int
-      */
+     * @param aux seteaza cache-ul folosind un vector de int
+     */
 	void setLRU(vector<int> aux);
 };

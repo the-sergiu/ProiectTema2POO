@@ -14,9 +14,9 @@
 #include "../utils/objectFactory/objectFactory.h"
 
 /*
-      * Clasa ce contine metodele in care vor fi scrise rezolvarile
-      * aferente cerintelor cu query-uri
-      */
+ * Clasa ce contine metodele in care vor fi scrise rezolvarile
+ * aferente cerintelor cu query-uri (Cerinta 3)
+ */
 class RezolvareQueries
 {
 private:

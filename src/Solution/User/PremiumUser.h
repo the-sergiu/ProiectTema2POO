@@ -19,21 +19,35 @@ public:
   // Operator =
   const PremiumUser &operator=(const PremiumUser &);
 
-  // Set
-  void setDiscounts(map<int, int> red);
-  void setPremiumSubscriptionCost(int cap);
-
-  // Get
+  /*
+   * @param seteaza campul Discounts (reduceri) cu 
+   */
+  void setDiscounts(map<int, int>);
+  /*
+   * @param seteaza campul PremiumSubscriptionCost
+   */
+  void setPremiumSubscriptionCost(int);
+  /*
+   * @return campul TransportCost (cost transport)
+   */
   float getTransportCost();
+  /*
+   * @return campul Discounts (reduceri)
+   */
   map<int, int> &getDiscounts();
+  /*
+   * @return campul PremiumSubscriptionCost (cost abonament premium)
+   */
   int getPremiumSubscriptionCost();
+  /*
+   * @return UserType (tipul userului - nu este camp)
+   */
   string getUserType();
-
-  // Metode Auxiliare
+  /*
+   *     ADMINISTRATIV - NU MODIFICATI
+   */
+  json
+  toJSON();
   void displayUser();
-
-  // Administrative - NU MODIFICATI
-  json toJSON();
-
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(PremiumUser, billingData, deliveryData, lastName, firstName, email, UserID, premiumSubscriptionCost, discounts)
 };

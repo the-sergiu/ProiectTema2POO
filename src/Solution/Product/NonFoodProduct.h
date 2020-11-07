@@ -16,26 +16,42 @@ public:
 
   // Operator =
   const NonFoodProduct &operator=(const NonFoodProduct &);
-
-  // Set
+  /*
+   * @param seteaza campul yearsOfWarranty
+   */
   void setYearsOfWarranty(int);
-  void setPret(float);
-  void setProducator(const string &);
-
-  // Get
+  /*
+   * @param seteaza campul price (pret)
+   */
+  void setPrice(float);
+  /*
+   * @param seteaza campul producer (producator)
+   */
+  void setProducer(const string &);
+  /*
+   * @return warranty (garantie)
+   */
   int getYearsOfWarranty();
+  /*
+   * @return campul price (pret)
+   */
   float getPrice();
+  /*
+   * @return campul producer (producator)
+   */
   string &getProducer();
-
-  // Metode Auxiliare
-  void display();
+  /*
+   * @return tipul produsului (nu este un camp)
+   */
   string getProductType();
 
   // Operator ==
   bool operator==(const NonFoodProduct &) const;
 
-  // Administrative - NU MODIFICATI
+  /*
+  *     ADMINISTRATIV - NU MODIFICATI
+  */
   json toJSON();
-
+  void display();
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(NonFoodProduct, name, quantity, category, id, producer, yearsOfWarranty, price)
 };

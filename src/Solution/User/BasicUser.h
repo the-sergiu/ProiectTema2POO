@@ -15,18 +15,22 @@ public:
   // Operator =
   BasicUser &operator=(const BasicUser &);
 
-  // Set
+  /*
+   * @param seteaza TransportCost (costul transportului)
+   */
   void setTransportCost(int);
-
-  // Get
+  /*
+   * @return campul Transport Cost (costul transportului)
+   */
   float getTransportCost();
+  /*
+   * @return UserType (string aferent tipului clasei - nu este un camp)
+   */
   string getUserType();
-
-  // Metode Auxiliare
-  void displayUser();
-
-  // Administrativ - NU MODIFICATI
+  /*
+   *     ADMINISTRATIV - NU MODIFICATI
+   */
   json toJSON();
-
+  void displayUser();
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(BasicUser, billingData, deliveryData, lastName, firstName, email, UserID, costTransport)
 };

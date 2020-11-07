@@ -1,3 +1,6 @@
+/*
+  *     ADMINISTRATIV - NU MODIFICATI
+  */
 #include <iostream>
 #include <string>
 #include <vector>
@@ -16,7 +19,8 @@
 
 using namespace std;
 
-// Singleton Instance
+
+ /* Instanta Singleton */
 Server *Server::instance = 0;
 
 int main(int argc, char **argv)

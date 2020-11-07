@@ -30,25 +30,54 @@ public:
     // Operator =
     const Product &operator=(const Product &);
 
-    // Set
+    /*
+     * @param seteaza campul Category (categorie) 
+     */
     void setCategory(const string &category);
+    /*
+     * @param seteaza campul id 
+     */
     void setId(int);
+    /*
+     * @param seteaza campul Quantity (cantitate)
+     */
     void setQuantity(int);
+    /*
+     * @param seteaza campul Name (nume)
+     */
     void setName(const string &);
-
-    // Get
+    /*
+     * @return campul Category (categorie)
+     */
     string &getCategory();
+    /*
+     * @return campul quantity (cantitate)
+     */
     int getQuantity();
+    /*
+     * @return campul id
+     */
     int getId();
+    /*
+     * @return campul Name (nume)
+     */
     string &getName();
-
-    // Metode Auxiliare
+    /*
+     * @return 
+     * @param
+     */
     bool checkQuantity(int);
+    /*
+     * @param 
+     */
     void decreaseQuantity(int);
+    /*
+    * @param
+    */
     void increaseQuantity(int);
-
-    // Administrative - NU MODIFICATI
+    /*
+     *     ADMINISTRATIV - NU MODIFICATI
+     */
     virtual json toJSON();
-
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(Product, name, quantity, category, id)
 };

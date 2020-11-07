@@ -19,13 +19,19 @@ protected:
   int UserID;
 
 public:
-  // Virtuale
+   /*
+    * @return tipul userului (nu este camp)
+    */
   virtual string getUserType() = 0;
+   /*
+    * @return campul TransportCost (costul transportului)
+    */
   virtual float getTransportCost() = 0;
-  virtual void displayUser() = 0;
+   /*
+    * destructor User
+    */
   virtual ~User() = 0;
 
-  // Constructori
   User();
   User(const string &, const string &, const string &, int, const string &, int, const string &, const string &, const string &, int, const string &, int, int, const string &, const string &, const string &);
   User(const User &);
@@ -33,23 +39,60 @@ public:
   // Operator =
   const User &operator=(const User &);
 
-  // Set
-  void setLastName(const string &lastName);
-  void setFirstName(const string &firstName);
+   /*
+    * @param seteaza campul lastName (nume de familie)
+    */
+  void setLastName(const string &);
+  /*
+   * @param seteaza campul firstName (prenume)
+   */
+  void setFirstName(const string &);
+  /*
+   * @param seteaza campul email
+   */
   void setEmail(const string &);
+  /*
+   * @param seteaza campul id
+   */
   void setUserID(int);
+  /*
+   * @param seteaza campul billingData (adresa de facturare)
+   */
   void setBillingData(const Address &billingData);
+  /*
+   * @param seteaza campul deliveryData (adresa de livrare)
+   */
   void setDeliveryData(const Address &deliveryData);
-
-  // Get
+ 
+  /*
+   * @return campul lastName (nume de familie)
+   */
   string &getLastName();
+   /*
+    * @return campul firstName (prenume)
+    */
   string &getFirstName();
+   /*
+    * @return campul email
+    */
   string &getEmail();
+   /*
+    * @return campul UserID
+    */
   int getUserID() const;
+   /*
+    * @return campul billingData (adresa de facturare)
+    */
   Address &getBillingData();
+   /*
+    * @return campul deliveryData (adresa de livrare)
+    */
   Address &getDeliveryData();
 
-  // Administrativ - NU MODIFICATI
+  /*
+   *     ADMINISTRATIV - NU MODIFICATI
+   */
+  virtual void displayUser() = 0;
   virtual json toJSON();
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(User, billingData, deliveryData, lastName, firstName, email, UserID)
 };

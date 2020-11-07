@@ -34,12 +34,12 @@ void NonFoodProduct::setYearsOfWarranty(int garantieAni)
 	throw("undefined");
 }
 
-void NonFoodProduct::setPret(float price)
+void NonFoodProduct::setPrice(float price)
 {
 	throw("undefined");
 }
 
-void NonFoodProduct::setProducator(const string &producer)
+void NonFoodProduct::setProducer(const string &producer)
 {
 	throw("undefined");
 }
