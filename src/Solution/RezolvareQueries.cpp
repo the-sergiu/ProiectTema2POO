@@ -14,9 +14,10 @@ RezolvareQueries::~RezolvareQueries(){
 }
 
 list<Product*> RezolvareQueries::Cerinta3a(){
-  cout<<"Se rezolva cerinta 3a"<<endl;
+
   list<Product*> rezolvare;
 
+  //Se cauta produsele espressoarele reduse
   for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); ++it)
   {
     if((*it)->getProductType() == "redus" && (*it)->getCategory() == "espressor")
@@ -27,9 +28,10 @@ list<Product*> RezolvareQueries::Cerinta3a(){
 }
 
 list<User*> RezolvareQueries::Cerinta3b(){
-  cout<<"Se rezolva cerinta 3b"<<endl;
+
   list<User*> rezolvare;
 
+  //Se cauta utilizatorii nonpremium cu un cost de transport < 11.5
   for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
     if((*it)->getUserType() == "nonpremium" && (*it)->getTransportCost() < 11.5)
@@ -40,12 +42,13 @@ list<User*> RezolvareQueries::Cerinta3b(){
 }
 
 list<Product*> RezolvareQueries::Cerinta3c(){
-  cout<<"Se rezolva cerinta 3c"<<endl;
+
   list<Product*> rezolvare;
 
+  //Se cauta produsele returnate sau resigilate, pe motivul "lipsa_accesorii"
   for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); it++){
     if(((*it)->getProductType() == "redus" || (*it)->getProductType() == "resigilat")){
-      string toFind = "cutie";
+      string toFind = "lipsa";
       ReturnedProduct *pr = dynamic_cast<ReturnedProduct*>(*it);
 
       if (pr == nullptr) continue;
@@ -61,11 +64,11 @@ list<Product*> RezolvareQueries::Cerinta3c(){
   return rezolvare;
 }
 
-list<Product*> RezolvareQueries::Cerinta3d()
-{
-  cout<<"Se rezolva cerinta 3d"<<endl;
+list<Product*> RezolvareQueries::Cerinta3d(){
+
   list<Product*> rezolvare;
 
+  //Se doreste sortarea tuturor produselor alimentare din magazin, dupa nume, tara si pret
   for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); ++it)
   {
     if((*it)->getProductType() == "alimentar")
@@ -76,22 +79,13 @@ list<Product*> RezolvareQueries::Cerinta3d()
 
   return rezolvare;
   
-  // json jrezolvare = ObjectFactory::getJsonProdus(rezolvare);
-
-  // cout << jrezolvare.dump(3) << endl;
-
-  // cout << jrezolvare.dump(3);
-  // os << jrezolvare;
-  // rezolvare.clear();
 }
 
 
 list<User*> RezolvareQueries::Cerinta3e(){
-  cout<<"Se rezolva cerinta 3e"<<endl;
 
   list<User*> rezolvare;
-  // Map de frecventa
-  map<string, int> useri_per_judet;
+  map<string, int> useri_per_judet; // Map de frecventa
 
   // Construim map-ul de frecventa, Judet:NumarUseri
   for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
@@ -100,23 +94,17 @@ list<User*> RezolvareQueries::Cerinta3e(){
     string judet = dateLivrare.getCounty();
     
 
+    //Daca nu avem judetul in map, il punem
     if (useri_per_judet.find(judet) == useri_per_judet.end())
     {
       useri_per_judet[judet] = 0;
     }
 
+    //Incrementam numarul de utilizatori din judet cu 1
     useri_per_judet[judet]++; 
   }
-  //Afisare date din map
-  // int total = 0;
-  // for(auto const& x : useri_per_judet){
-  // cout<<x.first<<" - "<<x.second;
-  // total += x.second;
-  // cout<<endl;
-  // }
-  // cout<<total;
 
-  //Cautare county cu nr maxim de useri
+  //Cautare judet cu nr maxim de useri
   auto it = useri_per_judet.begin();
   string jud_max = it->first;
   int nr_max = it->second;
@@ -129,13 +117,14 @@ list<User*> RezolvareQueries::Cerinta3e(){
     }
   }
 
-  // Cream lista cu Utilizatori care au adresele la casa (adica nu la block)
+  // Cream lista cu Utilizatori care au adresele la casa (adica nu la blocc)
   for (auto it = server->getUsersList().begin(); it != server->getUsersList().end(); ++it)
   {
     Address dateLivrare = (*it)->getDeliveryData();
     Address dateFacturare = (*it)->getBillingData();
 
     if(dateLivrare.getCounty() == jud_max && dateLivrare.getApartment() == 0 && dateFacturare.getApartment() == 0)
+      //Punem in lista utilizatorii care respecta conditiile
       rezolvare.push_back((*it));
   }
   // Sortare Lista
