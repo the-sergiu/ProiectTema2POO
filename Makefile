@@ -1,5 +1,5 @@
 # The lastName of the executable to be created
-BIN_NAME := TemaPOO
+BIN_NAME := eStore
 # Compiler used
 CXX ?= g++
 # Extension of source files used in the project
