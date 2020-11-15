@@ -48,7 +48,7 @@ list<Product*> RezolvareQueries::Cerinta3c(){
   //Se cauta produsele returnate sau resigilate, pe motivul "lipsa_accesorii"
   for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); it++){
     if(((*it)->getProductType() == "redus" || (*it)->getProductType() == "resigilat")){
-      string toFind = "lipsa";
+      string toFind = "lipsa_accesorii";
       ReturnedProduct *pr = dynamic_cast<ReturnedProduct*>(*it);
 
       if (pr == nullptr) continue;
