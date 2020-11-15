@@ -3,7 +3,7 @@
 #include <vector>
 #include <list>
 
-#include "Solution/RezolvareQueries.h"
+#include "Solution/QuerySolver.h"
 #include "Solution/Product/ResealedProduct.h"
 #include "Solution/Product/FoodProduct.h"
 #include "Solution/Server/Server.h"
@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 {
   json result;
   TestHelper p(argv[1]);
-  RezolvareQueries rez;
+  QuerySolver rez;
 
   try {
     if (argc != 4)

@@ -6,7 +6,7 @@
 #include "../Solution/Product/FoodProduct.h"
 #include "../Solution/LRUCache/LRUCache.h"
 #include "../json.hpp"
-#include "../Solution/RezolvareQueries.h"
+#include "../Solution/QuerySolver.h"
 #include "JSONSerializer.h"
 #include "FinalQuestionsHelper.h"
 
@@ -15,7 +15,7 @@ using json = nlohmann::json;
 class TestHelper 
 {
   Server *server;
-  RezolvareQueries rezolvatorul;
+  QuerySolver rezolvatorul;
   json input;
   public:
     TestHelper(const string&);

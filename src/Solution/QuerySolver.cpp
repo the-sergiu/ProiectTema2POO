@@ -1,19 +1,19 @@
-#include "RezolvareQueries.h"
+#include "QuerySolver.h"
 
 using namespace std;
 
-RezolvareQueries::RezolvareQueries() {
+QuerySolver::QuerySolver() {
   server = Server::ServerInit();
 }
 
-RezolvareQueries::~RezolvareQueries(){
+QuerySolver::~QuerySolver(){
   if (server != nullptr) 
   {
     server = nullptr;
   }
 }
 
-list<Product*> RezolvareQueries::Cerinta3a(){
+list<Product*> QuerySolver::Cerinta3a(){
 
   list<Product*> rezolvare;
 
@@ -27,7 +27,7 @@ list<Product*> RezolvareQueries::Cerinta3a(){
   return rezolvare;
 }
 
-list<User*> RezolvareQueries::Cerinta3b(){
+list<User*> QuerySolver::Cerinta3b(){
 
   list<User*> rezolvare;
 
@@ -41,7 +41,7 @@ list<User*> RezolvareQueries::Cerinta3b(){
   return rezolvare;
 }
 
-list<Product*> RezolvareQueries::Cerinta3c(){
+list<Product*> QuerySolver::Cerinta3c(){
 
   list<Product*> rezolvare;
 
@@ -64,7 +64,7 @@ list<Product*> RezolvareQueries::Cerinta3c(){
   return rezolvare;
 }
 
-list<Product*> RezolvareQueries::Cerinta3d(){
+list<Product*> QuerySolver::Cerinta3d(){
 
   list<Product*> rezolvare;
 
@@ -82,7 +82,7 @@ list<Product*> RezolvareQueries::Cerinta3d(){
 }
 
 
-list<User*> RezolvareQueries::Cerinta3e(){
+list<User*> QuerySolver::Cerinta3e(){
 
   list<User*> rezolvare;
   map<string, int> useri_per_judet; // Map de frecventa
@@ -133,7 +133,7 @@ list<User*> RezolvareQueries::Cerinta3e(){
   return rezolvare;
 }
 
-list<User*> RezolvareQueries::Cerinta3f()
+list<User*> QuerySolver::Cerinta3f()
 {
   cout<<"Se rezolva cerinta 3f"<<endl;
 
