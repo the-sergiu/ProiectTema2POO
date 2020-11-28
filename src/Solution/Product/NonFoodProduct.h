@@ -10,8 +10,17 @@ protected:
 
 public:
   // Constructori
+  /*
+  * Constructor fara parametri
+  */
   NonFoodProduct();
+  /*
+  * Constructor cu parametri
+  */
   NonFoodProduct(const string &, int, const string &, const string &, float, int, int);
+  /*
+  * Constructor de copiere
+  */
   NonFoodProduct(const NonFoodProduct &pn);
 
   // Operator =

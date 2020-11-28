@@ -12,8 +12,17 @@ protected:
 
 public:
   // Constructori
+  /*
+  * Constructor fara parametri
+  */
   PremiumUser();
+  /*
+  * Constructor cu parametri
+  */
   PremiumUser(const string &, const string &, const string &, int, const string &, int, const string &, const string &, const string &, int, const string &, int, int, const string &, const string &, const string &, int, const map<int, int> &);
+  /*
+  * Constructor de copiere
+  */
   PremiumUser(const PremiumUser &);
 
   // Operator =

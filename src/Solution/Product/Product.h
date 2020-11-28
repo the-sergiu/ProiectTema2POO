@@ -23,8 +23,17 @@ public:
     virtual string getProductType() = 0;
 
     // Constructori
+    /*
+     * Constructor fara parametri
+     */
     Product();
+    /*
+     * Constructor cu parametri
+     */
     Product(const string &, int, const string &, int);
+    /*
+     * Constructor de copiere
+     */
     Product(const Product &p);
 
     // Operator =

@@ -8,8 +8,17 @@ protected:
 
 public:
   // Constructori
+  /*
+  * Constructor fara parametri
+  */
   BasicUser();
+  /*
+  * Constructor cu parametri
+  */
   BasicUser(const string &, const string &, const string &, int, const string &, int, const string &, const string &, const string &, int, const string &, int, int, const string &, const string &, const string &, float);
+  /*
+  * Constructor de copiere
+  */
   BasicUser(const BasicUser &);
 
   // Operator =

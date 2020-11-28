@@ -7,8 +7,18 @@ class ResealedProduct : public DiscountedProduct, public ReturnedProduct
 private:
     int wearPercentage;
 public:
+    // Constructori
+    /*
+    * Constructor fara parametri
+    */
     ResealedProduct();
+    /*
+    * Constructor cu parametri
+    */
     ResealedProduct(const string&, int, const string&, const string&, float, int, int, const string&, int, int);
+    /*
+    * Constructor de copiere
+    */
     ResealedProduct(const ResealedProduct&);
 
     /*
