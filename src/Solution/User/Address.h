@@ -17,7 +17,6 @@ private:
   int apartment;
 
 public:
-  // Constructori
   /*
   * Constructor fara parametri
   */
@@ -31,7 +30,9 @@ public:
   */
   Address(const string &, const string &, const string &, int, const string &, int);
 
-  // Operator =
+  /*
+  * Operator =
+  */
   const Address &operator=(const Address &);
 
   /*
@@ -83,9 +84,17 @@ public:
    */
   int getApartment();
 
-  // Operatori
+  /*
+  * Operator ==
+  */
   bool operator==(const Address &);
+  /*
+  * Operator !=
+  */
   bool operator!=(const Address &);
+  /*
+  * Operator <<
+  */
   friend ostream &operator<<(ostream &, const Address &);
   /*
     * ADMINISTRATIV - NU MODIFICATI

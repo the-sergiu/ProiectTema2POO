@@ -29,7 +29,7 @@ TestHelper::~TestHelper()
 	}
 }
 
-json TestHelper::TestIerarhieClasaProdus()
+json TestHelper::TestProductClass()
 {
 	string str = "check";
 
@@ -167,7 +167,7 @@ json TestHelper::TestIerarhieClasaProdus()
 	return successJson;
 }
 
-json TestHelper::TestIerarhieClasaUser()
+json TestHelper::TestUserClass()
 {
 
 	// Variabile ajutatoare Address
@@ -307,7 +307,7 @@ json TestHelper::TestIerarhieClasaUser()
 	return successJson;
 }
 
-json TestHelper::TestClasaCosProduse()
+json TestHelper::TestCartClass()
 {
 	// Test Constructori Cos Produse
 	string check = "check";
@@ -372,90 +372,90 @@ json TestHelper::TestClasaCosProduse()
 	return successJson;
 }
 
-json TestHelper::TestCerinta2()
+json TestHelper::Test_2()
 {
 	Init();
 	json output;
 
-	output["productList"] = ObjectFactory::getJsonProdus(server->getProductsList());
+	output["productList"] = ObjectFactory::getProductJson(server->getProductsList());
 	output["useri"] = JSONSerializer::FromUserMap(server->get__UserID__ProductsCart__());
 
 	return output;
 }
 
-json TestHelper::TestCerinta3a()
+json TestHelper::Test_3a()
 {
 	Init();
 	json output;
 
-	auto result = rezolvatorul.Cerinta3a();
+	auto result = rezolvatorul.Query_3a();
 
-	output = ObjectFactory::getJsonProdus(result);
+	output = ObjectFactory::getProductJson(result);
 
 	return output;
 }
 
-json TestHelper::TestCerinta3b()
+json TestHelper::Test_3b()
 {
 	Init();
 	json output;
 
-	auto result = rezolvatorul.Cerinta3b();
+	auto result = rezolvatorul.Query_3b();
 
-	output = ObjectFactory::getJsonUser(result);
+	output = ObjectFactory::getUserJson(result);
 
 	return output;
 }
 
-json TestHelper::TestCerinta3c()
+json TestHelper::Test_3c()
 {
 	Init();
 	json output;
 
-	auto result = rezolvatorul.Cerinta3c();
+	auto result = rezolvatorul.Query_3c();
 
-	output = ObjectFactory::getJsonProdus(result);
+	output = ObjectFactory::getProductJson(result);
 
 	return output;
 }
 
-json TestHelper::TestCerinta3d()
+json TestHelper::Test_3d()
 {
 	Init();
 	json output;
 
-	auto result = rezolvatorul.Cerinta3d();
+	auto result = rezolvatorul.Query_3d();
 
-	output = ObjectFactory::getJsonProdus(result);
+	output = ObjectFactory::getProductJson(result);
 
 	return output;
 }
 
-json TestHelper::TestCerinta3e()
+json TestHelper::Test_3e()
 {
 	Init();
 	json output;
 
-	auto result = rezolvatorul.Cerinta3e();
+	auto result = rezolvatorul.Query_3e();
 
-	output = ObjectFactory::getJsonUser(result);
+	output = ObjectFactory::getUserJson(result);
 
 	return output;
 }
 
-json TestHelper::TestCerinta3f()
+json TestHelper::Test_3f()
 {
 	Init();
 	json output;
 
-	auto result = rezolvatorul.Cerinta3f();
+	auto result = rezolvatorul.Query_3f();
 
-	output = ObjectFactory::getJsonUser(result);
+	output = ObjectFactory::getUserJson(result);
 
 	return output;
 }
 
-json TestHelper::TestCerinta4()
+json TestHelper::Test_4()
 {
 	vector<int> lruTest = {1, 2, 3, 2, 5, 3, 4, 5, 8, 9};
 	LRUCache obj(4);
@@ -490,7 +490,7 @@ json TestHelper::TestCerinta4()
 	return successJson;
 }
 
-json TestHelper::TestCerinta5(const string &inFile)
+json TestHelper::Test_5(const string &inFile)
 {
 	Init();
 	ifstream in(inFile);

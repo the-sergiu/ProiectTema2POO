@@ -1,12 +1,9 @@
-/*
-  *     ADMINISTRATIV - NU MODIFICATI
-  */
 #include <iostream>
 #include <string>
 #include <vector>
 #include <list>
 
-#include "Solution/RezolvareQueries.h"
+#include "Solution/QuerySolver.h"
 #include "Solution/Product/ResealedProduct.h"
 #include "Solution/Product/FoodProduct.h"
 #include "Solution/Server/Server.h"
@@ -17,17 +14,17 @@
 #include "utils/TestHelper.h"
 #include "utils/FinalQuestionsHelper.h"
 
+
 using namespace std;
 
 
- /* Instanta Singleton */
 Server *Server::instance = 0;
 
-int main(int argc, char **argv)
+int main(int argc, char** argv) 
 {
   json result;
   TestHelper p(argv[1]);
-  RezolvareQueries rez;
+  QuerySolver rez;
 
   try {
     if (argc != 4)
@@ -41,40 +38,40 @@ int main(int argc, char **argv)
     switch (testIndex) 
     {
       case 1:
-        result = p.TestIerarhieClasaProdus();
+        result = p.TestProductClass();
         break;
       case 2:
-        result = p.TestIerarhieClasaUser();
+        result = p.TestUserClass();
         break;
       case 3:
-        result = p.TestClasaCosProduse();
+        result = p.TestCartClass();
         break;
       case 4:
-        result = p.TestCerinta2();
+        result = p.Test_2();
         break;
       case 5:
-        result = p.TestCerinta3a();
+        result = p.Test_3a();
         break;
       case 6:
-        result = p.TestCerinta3b();
+        result = p.Test_3b();
         break;
       case 7:
-        result = p.TestCerinta3c();
+        result = p.Test_3c();
         break;
       case 8:
-        result = p.TestCerinta3d();
+        result = p.Test_3d();
         break;
       case 9:
-        result = p.TestCerinta3e();
+        result = p.Test_3e();
         break;
       case 10:
-        result = p.TestCerinta3f();
+        result = p.Test_3f();
         break;
       case 11:
-        result = p.TestCerinta4();
+        result = p.Test_4();
         break;
       case 12:
-        result = p.TestCerinta5(argv[1]);
+        result = p.Test_5(argv[1]);
         break;
       default:
         break;

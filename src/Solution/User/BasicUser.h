@@ -7,7 +7,6 @@ protected:
   float costTransport;
 
 public:
-  // Constructori
   /*
   * Constructor fara parametri
   */
@@ -21,7 +20,9 @@ public:
   */
   BasicUser(const BasicUser &);
 
-  // Operator =
+  /*
+  * Operator =
+  */
   BasicUser &operator=(const BasicUser &);
 
   /*

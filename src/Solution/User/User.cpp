@@ -28,7 +28,6 @@ const User &User::operator=(const User &u)
 	throw("undefined");
 }
 
-// Set-eri
 void User::setLastName(const string &lastName)
 {
 	throw("undefined");
@@ -53,7 +52,7 @@ void User::setDeliveryData(const Address &deliveryData)
 {
 	throw("undefined");
 }
-// Get-eri
+
 string &User::getLastName()
 {
 	throw("undefined");

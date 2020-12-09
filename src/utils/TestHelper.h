@@ -1,4 +1,6 @@
-// Administrativ - NU MODIFICATI NIMIC
+/*
+* Administrativ - NU MODIFICATI NIMIC
+*/
 
 #pragma once
 #include <string>
@@ -8,7 +10,7 @@
 #include "../Solution/Product/FoodProduct.h"
 #include "../Solution/LRUCache/LRUCache.h"
 #include "../json.hpp"
-#include "../Solution/RezolvareQueries.h"
+#include "../Solution/QuerySolver.h"
 #include "JSONSerializer.h"
 #include "FinalQuestionsHelper.h"
 
@@ -17,22 +19,22 @@ using json = nlohmann::json;
 class TestHelper 
 {
   Server *server;
-  RezolvareQueries rezolvatorul;
+  QuerySolver rezolvatorul;
   json input;
   public:
     TestHelper(const string&);
     ~TestHelper();
     void Init();
-    json TestIerarhieClasaProdus(); 
-    json TestIerarhieClasaUser();   
-    json TestClasaCosProduse();     
-    json TestCerinta2();
-    json TestCerinta3a();
-    json TestCerinta3b();
-    json TestCerinta3c();          
-    json TestCerinta3d();           
-    json TestCerinta3e();
-    json TestCerinta3f();
-    json TestCerinta4();      
-    json TestCerinta5(const string&);
+    json TestProductClass(); 
+    json TestUserClass();   
+    json TestCartClass();     
+    json Test_2();
+    json Test_3a();
+    json Test_3b();
+    json Test_3c();          
+    json Test_3d();           
+    json Test_3e();
+    json Test_3f();
+    json Test_4();      
+    json Test_5(const string&);
 };

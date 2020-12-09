@@ -2,7 +2,6 @@
 
 using namespace std;
 
-// Constructori + Destructori + Init
 Server::Server()
 {
 }
@@ -48,7 +47,7 @@ map<int, ShoppingCart *> Server::get__UserID__ProductsCart__()
 
 void Server::populateProducts(const json &input)
 {
-	prod = ObjectFactory::getProdusList(input["shoppingCart"]);
+	prod = ObjectFactory::getProductList(input["shoppingCart"]);
 }
 
 void Server::populateUsers(const json &input)

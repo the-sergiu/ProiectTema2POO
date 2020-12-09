@@ -32,7 +32,6 @@ public:
     */
   virtual ~User() = 0;
 
-  // Constructori
   /*
   * Constructor fara parametri
   */
@@ -46,7 +45,10 @@ public:
   */
   User(const User &);
 
-  // Operator =
+
+  /*
+  * Operator =
+  */
   const User &operator=(const User &);
 
   /*

@@ -7,7 +7,6 @@ protected:
     string reason;
 
 public:
-    // Constructori
     /*
     * Constructor fara parametri
     */
@@ -21,7 +20,9 @@ public:
     */
     ReturnedProduct(const ReturnedProduct &);
 
-    // Operator =
+    /*
+    * Operator =
+    */
     const ReturnedProduct &operator=(const ReturnedProduct &);
 
     /*

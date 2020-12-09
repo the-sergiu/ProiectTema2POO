@@ -26,7 +26,7 @@ void FoodProduct::display()
 	cout << "Tara de Origine : " << this->countryOfOrigin << endl
 		 << endl;
 }
-// SET-eri
+
 void FoodProduct::setLeiPerKg(float leiPerKg)
 {
 	throw("undefined");
@@ -37,7 +37,6 @@ void FoodProduct::setCountryOfOrigin(const string &countryOfOrigin)
 	throw("undefined");
 }
 
-// GET-eri
 float FoodProduct::getLeiPerKg()
 {
 	throw("undefined");

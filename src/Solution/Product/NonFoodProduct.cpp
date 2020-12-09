@@ -28,7 +28,6 @@ void NonFoodProduct::display()
 		 << endl;
 }
 
-// SET-eri
 void NonFoodProduct::setYearsOfWarranty(int garantieAni)
 {
 	throw("undefined");
@@ -44,7 +43,6 @@ void NonFoodProduct::setProducer(const string &producer)
 	throw("undefined");
 }
 
-//GET-eri
 int NonFoodProduct::getYearsOfWarranty()
 {
 	throw("undefined");
