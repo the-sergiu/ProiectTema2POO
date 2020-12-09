@@ -7,33 +7,56 @@ using namespace std;
 class PremiumUser : public User
 {
 protected:
-  map<int, int> discounts; // idProdus-discountPercentage
+  map<int, int> discounts;
   int premiumSubscriptionCost;
 
 public:
-  // Constructori
+  /*
+  * Constructor fara parametri
+  */
   PremiumUser();
+  /*
+  * Constructor cu parametri
+  */
   PremiumUser(const string &, const string &, const string &, int, const string &, int, const string &, const string &, const string &, int, const string &, int, int, const string &, const string &, const string &, int, const map<int, int> &);
+  /*
+  * Constructor de copiere
+  */
   PremiumUser(const PremiumUser &);
 
-  // Operator =
+  /*
+  * Operator =
+  */
   const PremiumUser &operator=(const PremiumUser &);
 
-  // Set
-  void setDiscounts(map<int, int> red);
-  void setPremiumSubscriptionCost(int cap);
-
-  // Get
+  /*
+   * @param seteaza campul Discounts (reduceri) cu 
+   */
+  void setDiscounts(map<int, int>);
+  /*
+   * @param seteaza campul PremiumSubscriptionCost
+   */
+  void setPremiumSubscriptionCost(int);
+  /*
+   * @return campul TransportCost (cost transport)
+   */
   float getTransportCost();
+  /*
+   * @return campul Discounts (reduceri)
+   */
   map<int, int> &getDiscounts();
+  /*
+   * @return campul PremiumSubscriptionCost (cost abonament premium)
+   */
   int getPremiumSubscriptionCost();
+  /*
+   * @return UserType (tipul userului - nu este camp)
+   */
   string getUserType();
-
-  // Metode Auxiliare
-  void displayUser();
-
-  // Administrative - NU MODIFICATI
+  /*
+   *     ADMINISTRATIV - NU MODIFICATI
+   */
   json toJSON();
-
+  void displayUser();
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(PremiumUser, billingData, deliveryData, lastName, firstName, email, UserID, premiumSubscriptionCost, discounts)
 };

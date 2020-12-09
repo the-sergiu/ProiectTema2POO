@@ -7,26 +7,42 @@ protected:
     int discountPercentage;
 
 public:
-    // Constructori
+    /*
+     * Constructor fara parametri
+     */
     DiscountedProduct();
+    /*
+     * Constructor cu parametri
+     */
     DiscountedProduct(const string &, int, const string &, const string &, float, int, int, int);
+    /*
+     * Constructor de copiere
+     */
     DiscountedProduct(const DiscountedProduct &);
-
-    // Operator =
+    /*
+     * Operator =
+     */
     const DiscountedProduct &operator=(const DiscountedProduct &);
-
-    // Set
+    /*
+     * @param seteaza procentajul de reducere
+     */
     void setDiscountPercentage(int);
-    // Get
+    /*
+     * @return campul discountPercentage
+     */
     float getDiscountPercentage();
-
-    // Metode Auxiliare
-    void display();
-    float priceAfterDiscount() const;
-
-    // Administrative - NU MODIFICATI
+    /*
+     * @return tipul produsului (nu este camp)
+     */
     string getProductType();
+    /*
+     * @return pretul dupa reducerea aplicata
+     */
+    float priceAfterDiscount() const;
+    /*
+     *     ADMINISTRATIV - NU MODIFICATI
+     */
+    void display();
     json toJSON();
-
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(DiscountedProduct, name, quantity, category, id, producer, yearsOfWarranty, price, discountPercentage)
 };

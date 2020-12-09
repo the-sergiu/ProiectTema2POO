@@ -9,7 +9,7 @@
 #define NONPREMIUM  "nonPremium"
 
 
-Product* ObjectFactory::createProdus(string type, json::iterator it) {
+Product* ObjectFactory::createProduct(string type, json::iterator it) {
 
     if (type == ALIMENTAR) {
 
@@ -49,20 +49,20 @@ Product* ObjectFactory::createProdus(string type, json::iterator it) {
     return NULL;
 }  
 
-list<Product*> ObjectFactory::getProdusList(json j){
+list<Product*> ObjectFactory::getProductList(json j){
     
     list<Product*> lst;
     
     for (json::iterator it = j.begin(); it != j.end(); ++it) {
 
-        Product *p = createProdus((*it)[TYPE_KEY], it);
+        Product *p = createProduct((*it)[TYPE_KEY], it);
         lst.push_back(p);
     }
     return lst;
 
 } 
 
-json ObjectFactory::getJsonProdus(list<Product*>& lst){
+json ObjectFactory::getProductJson(list<Product*>& lst){
 
     json outj;
 
@@ -103,7 +103,7 @@ list<User*> ObjectFactory::getUserList(json j){
     return lst;
 }
 
-json ObjectFactory::getJsonUser(list<User*>& lst){
+json ObjectFactory::getUserJson(list<User*>& lst){
     json outj;
 
     for (auto it = lst.begin(); it != lst.end(); ++it){

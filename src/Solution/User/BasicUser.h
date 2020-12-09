@@ -7,26 +7,40 @@ protected:
   float costTransport;
 
 public:
-  // Constructori
+  /*
+  * Constructor fara parametri
+  */
   BasicUser();
+  /*
+  * Constructor cu parametri
+  */
   BasicUser(const string &, const string &, const string &, int, const string &, int, const string &, const string &, const string &, int, const string &, int, int, const string &, const string &, const string &, float);
+  /*
+  * Constructor de copiere
+  */
   BasicUser(const BasicUser &);
 
-  // Operator =
+  /*
+  * Operator =
+  */
   BasicUser &operator=(const BasicUser &);
 
-  // Set
+  /*
+   * @param seteaza TransportCost (costul transportului)
+   */
   void setTransportCost(int);
-
-  // Get
+  /*
+   * @return campul Transport Cost (costul transportului)
+   */
   float getTransportCost();
+  /*
+   * @return UserType (string aferent tipului clasei - nu este un camp)
+   */
   string getUserType();
-
-  // Metode Auxiliare
-  void displayUser();
-
-  // Administrativ - NU MODIFICATI
+  /*
+   *     ADMINISTRATIV - NU MODIFICATI
+   */
   json toJSON();
-
+  void displayUser();
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(BasicUser, billingData, deliveryData, lastName, firstName, email, UserID, costTransport)
 };

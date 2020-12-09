@@ -36,11 +36,11 @@ void NonFoodProduct::setYearsOfWarranty(int garantieAni) {
 	this->yearsOfWarranty = garantieAni;
 }
 
-void NonFoodProduct::setPret(float price) {
+void NonFoodProduct::setPrice(float price) {
 	this->price = price;
 }
 
-void NonFoodProduct::setProducator(const string & producer){
+void NonFoodProduct::setProducer(const string & producer){
   this->producer = producer;
 }
 

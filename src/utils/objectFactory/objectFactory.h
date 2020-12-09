@@ -8,24 +8,27 @@
 #include "../../Solution/User/PremiumUser.h"
 #include <fstream>
 
+
+// Administrativ - NU MODIFICATI NIMIC
+
 using namespace std;
 using json = nlohmann::json;
 
 #define TYPE_KEY "type"
 
-class ObjectFactory{
+class ObjectFactory
+{
 
 public:
+	static Product *createProduct(string, json::iterator);
 
-    static Product* createProdus(string, json::iterator);
+	static list<Product *> getProductList(json j);
 
-    static list<Product*> getProdusList(json j);
-     
-    static json getJsonProdus(list<Product*>&);
+	static json getProductJson(list<Product *> &);
 
-    static User* createUser(string, json::iterator);
+	static User *createUser(string, json::iterator);
 
-    static list<User*> getUserList(json j);
+	static list<User *> getUserList(json j);
 
-    static json getJsonUser(list<User*>&);
+	static json getUserJson(list<User *> &);
 };

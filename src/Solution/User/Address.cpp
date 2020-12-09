@@ -47,7 +47,7 @@ void Address::setStrada(const string &str)
     street = str;
 }
 
-void Address::setNumar(int nr)
+void Address::setNumber(int nr)
 {
     number = nr;
 }

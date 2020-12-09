@@ -1,3 +1,5 @@
+// Administrativ - NU MODIFICATI NIMIC
+
 #pragma once
 #include <string>
 #include <iostream>
@@ -21,16 +23,16 @@ class TestHelper
     TestHelper(const string&);
     ~TestHelper();
     void Init();
-    json TestIerarhieClasaProdus(); // Test 1
-    json TestIerarhieClasaUser();   // Test 2
-    json TestClasaCosProduse();     // Test 3
-    json TestCerinta2();
-    json TestCerinta3a();
-    json TestCerinta3b();
-    json TestCerinta3c();          
-    json TestCerinta3d();           
-    json TestCerinta3e();
-    json TestCerinta3f();
-    json TestCerinta4();      // Test 4
-    json TestCerinta5(const string&);
+    json TestProductClass(); 
+    json TestUserClass();   
+    json TestCartClass();     
+    json Test_2();
+    json Test_3a();
+    json Test_3b();
+    json Test_3c();          
+    json Test_3d();           
+    json Test_3e();
+    json Test_3f();
+    json Test_4();      
+    json Test_5(const string&);
 };
