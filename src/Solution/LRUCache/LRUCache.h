@@ -13,14 +13,15 @@ private:
 	vector<int> lru;
 
 public:
+	/*
+	 * Constructor cu parametrul capacity
+	 */
 	LRUCache(int);
-
 	/*
      * @param requestsNo vectorul ce contine id-urile ce corespund requesturilor
      * @return stadiul final al cache-ului
      */
 	vector<int> processRequests(vector<int> requestsNo);
-
 	/*
      * @return capacitatea cache-ului
      */

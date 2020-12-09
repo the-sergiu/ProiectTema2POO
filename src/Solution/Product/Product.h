@@ -7,7 +7,6 @@ using namespace std;
 using json = nlohmann::json;
 
 #define placeHolder "?"
-
 class Product
 {
 protected:
@@ -17,12 +16,10 @@ protected:
     int id;
 
 public:
-    // Virtuale
-    virtual void display() = 0;
+    /*
+     * Destructor
+     */
     virtual ~Product() = 0;
-    virtual string getProductType() = 0;
-
-    // Constructori
     /*
      * Constructor fara parametri
      */
@@ -35,10 +32,10 @@ public:
      * Constructor de copiere
      */
     Product(const Product &p);
-
-    // Operator =
+    /*
+     * Operator =
+     */
     const Product &operator=(const Product &);
-
     /*
      * @param seteaza campul Category (categorie) 
      */
@@ -72,6 +69,10 @@ public:
      */
     string &getName();
     /*
+     * @return tipul produsului 
+     */
+    virtual string getProductType() = 0;
+    /*
      * @return 
      * @param
      */
@@ -87,6 +88,7 @@ public:
     /*
      *     ADMINISTRATIV - NU MODIFICATI
      */
+    virtual void display() = 0;
     virtual json toJSON();
     NLOHMANN_DEFINE_TYPE_INTRUSIVE(Product, name, quantity, category, id)
 };

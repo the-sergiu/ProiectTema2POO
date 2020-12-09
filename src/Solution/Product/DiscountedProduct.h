@@ -7,7 +7,6 @@ protected:
     int discountPercentage;
 
 public:
-    // Constructori
     /*
      * Constructor fara parametri
      */
@@ -20,10 +19,10 @@ public:
      * Constructor de copiere
      */
     DiscountedProduct(const DiscountedProduct &);
-
-    // Operator =
+    /*
+     * Operator =
+     */
     const DiscountedProduct &operator=(const DiscountedProduct &);
-
     /*
      * @param seteaza procentajul de reducere
      */

@@ -7,7 +7,6 @@ class ResealedProduct : public DiscountedProduct, public ReturnedProduct
 private:
     int wearPercentage;
 public:
-    // Constructori
     /*
     * Constructor fara parametri
     */
@@ -20,7 +19,6 @@ public:
     * Constructor de copiere
     */
     ResealedProduct(const ResealedProduct&);
-
     /*
      * @return tipul produsului (nu este camp)
      */
@@ -33,7 +31,9 @@ public:
      * @return campul wearPercentage (uzura)
      */
     float getWearPercentage();
-
+    /* 
+     * Operator = 
+     */
     const ResealedProduct& operator = (const ResealedProduct&);
     /*
      *     ADMINISTRATIV - NU MODIFICATI

@@ -15,7 +15,13 @@ class ShoppingCart
     string payMethod;
 
   public:
+    /*
+     * Constructor fara parametri
+     */
     ShoppingCart();
+    /*
+     * Constructor cu parametri
+     */
     ShoppingCart(const string&);
     /*
      * @return campul PayMethod (metoda de plata)

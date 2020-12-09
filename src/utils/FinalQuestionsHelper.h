@@ -8,8 +8,8 @@ using namespace std;
 using json = nlohmann::json;
 
 /*
-  *structura ajutatoare ce va fi folosita pentru ultima cerinta
-*/
+ * Structura ajutatoare ce va fi folosita pentru ultima cerinta
+ */
 typedef struct query
 {
     int productID;

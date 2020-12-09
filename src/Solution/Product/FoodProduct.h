@@ -9,7 +9,6 @@ protected:
   string countryOfOrigin;
 
 public:
-  // Constructori
   /*
   * Constructor fara parametri
   */
@@ -22,8 +21,9 @@ public:
   * Constructor de copiere
   */
   FoodProduct(const FoodProduct &);
-
-  // Operator =
+  /*
+   * Operator =
+   */
   const FoodProduct &operator=(const FoodProduct &);
   /*
    * @param seteaza campul leiPerKg

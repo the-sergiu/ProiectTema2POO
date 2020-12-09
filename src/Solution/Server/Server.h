@@ -28,11 +28,18 @@ private:
 	Server();
 
 public:
+	/*
+	 * Instanta Singleton
+	 */ 
 	static Server *GetInstance();
+	/*
+	 * Destructor
+	 */
 	~Server();
-
+	/*
+	 * @return map __UserID__ProductsCart__; Cheie -> UserID, Valoare -> Pointer catre obiect ShoppingCart
+	 */
 	map<int, ShoppingCart *> get__UserID__ProductsCart__();
-
 	/*
      * @param json - obiectul json din care va fi populata lista de produse
      */
@@ -41,12 +48,10 @@ public:
      * @param json - obiectul json din care va fi populata lista de useri
      */
 	void populateUsers(const json &);
-
 	/*
      * Creeaza map-ul usedId - shoppingCart pe baza listei de useri
      */
 	void set__UserID__ProductsCart__();
-
 	/*
      * @return lista de produse
      */
@@ -55,7 +60,6 @@ public:
      * @return lista de useri
      */
 	list<User *> &getUsersList();
-
 	/*
      * @param userID id-ul userului pentru care se adauga produsul
      * @param productID id-ul produsului de adaugat

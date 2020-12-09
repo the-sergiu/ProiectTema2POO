@@ -9,7 +9,6 @@ protected:
   float price;
 
 public:
-  // Constructori
   /*
   * Constructor fara parametri
   */
@@ -22,9 +21,14 @@ public:
   * Constructor de copiere
   */
   NonFoodProduct(const NonFoodProduct &pn);
-
-  // Operator =
+  /*
+   * Operator =
+   */
   const NonFoodProduct &operator=(const NonFoodProduct &);
+  /* 
+   * Operator ==
+   */
+  bool operator==(const NonFoodProduct &) const;
   /*
    * @param seteaza campul yearsOfWarranty
    */
@@ -53,10 +57,6 @@ public:
    * @return tipul produsului (nu este un camp)
    */
   string getProductType();
-
-  // Operator ==
-  bool operator==(const NonFoodProduct &) const;
-
   /*
   *     ADMINISTRATIV - NU MODIFICATI
   */
