@@ -1,3 +1,6 @@
+/*
+* Administrativ - NU MODIFICATI
+*/
 #pragma once
 #include <iostream>
 #include <list>
@@ -8,10 +11,6 @@
 #include "../../Solution/User/PremiumUser.h"
 #include <fstream>
 
-/*
-* Administrativ - NU MODIFICATI NIMIC
-*/
-
 using namespace std;
 using json = nlohmann::json;
 
@@ -20,16 +19,16 @@ using json = nlohmann::json;
 class ObjectFactory
 {
 
-public:
-	static Product *createProduct(string, json::iterator);
+	public:
+		static Product *createProduct(string, json::iterator);
 
-	static list<Product *> getProductList(json j);
+		static list<Product *> getProductList(json j);
 
-	static json getProductJson(list<Product *> &);
+		static json getProductJson(list<Product *> &);
 
-	static User *createUser(string, json::iterator);
+		static User *createUser(string, json::iterator);
 
-	static list<User *> getUserList(json j);
+		static list<User *> getUserList(json j);
 
-	static json getUserJson(list<User *> &);
+		static json getUserJson(list<User *> &);
 };

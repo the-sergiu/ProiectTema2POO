@@ -15,18 +15,6 @@ FoodProduct::FoodProduct(const FoodProduct &pa) : Product(pa)
 	throw("undefined");
 }
 
-void FoodProduct::display()
-{
-	cout << "Product alimentar" << endl;
-	cout << "Nume Product: " << this->name << endl;
-	cout << "Categorie : " << this->category << endl;
-	cout << "ID : " << this->id << endl;
-	cout << "Cantitate (stoc): " << this->quantity << endl;
-	cout << "Lei per KG : " << this->leiPerKg << endl;
-	cout << "Tara de Origine : " << this->countryOfOrigin << endl
-		 << endl;
-}
-
 void FoodProduct::setLeiPerKg(float leiPerKg)
 {
 	throw("undefined");
@@ -60,4 +48,16 @@ string FoodProduct::getProductType()
 json FoodProduct::toJSON()
 {
 	return json(*this);
+}
+
+void FoodProduct::display()
+{
+	cout << "Product alimentar" << endl;
+	cout << "Nume Product: " << this->name << endl;
+	cout << "Categorie : " << this->category << endl;
+	cout << "ID : " << this->id << endl;
+	cout << "Cantitate (stoc): " << this->quantity << endl;
+	cout << "Lei per KG : " << this->leiPerKg << endl;
+	cout << "Tara de Origine : " << this->countryOfOrigin << endl
+		 << endl;
 }

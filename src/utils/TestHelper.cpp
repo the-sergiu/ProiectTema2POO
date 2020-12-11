@@ -1,3 +1,6 @@
+/*
+* Administrativ - NU MODIFICATI
+*/
 #include "TestHelper.h"
 
 const json failJson = json::parse("{\"result\": \"fail\"}");

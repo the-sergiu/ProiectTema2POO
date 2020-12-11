@@ -1,3 +1,6 @@
+/*
+* Administrativ - NU MODIFICATI
+*/
 #pragma once
 #include <string>
 #include <vector>
@@ -6,13 +9,10 @@
 
 using namespace std;
 using json = nlohmann::json;
-
-
 typedef struct lrubluprint{
     int capacity;
     vector<int> allLRUOperations;
 }LRU_blueprint;
-
 typedef struct query{
     int productID;
     int userID;

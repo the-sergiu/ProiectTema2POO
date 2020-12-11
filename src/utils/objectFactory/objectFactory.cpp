@@ -1,3 +1,6 @@
+/*
+* Administrativ - NU MODIFICATI
+*/
 #include "objectFactory.h"
 
 #define ALIMENTAR "alimentar"

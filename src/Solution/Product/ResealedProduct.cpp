@@ -20,22 +20,6 @@ ResealedProduct::ResealedProduct(const ResealedProduct &pr) : NonFoodProduct(pr)
 	throw("undefined");
 }
 
-void ResealedProduct::display()
-{
-	cout << "Product Resigilat" << endl;
-	cout << "Nume Product: " << this->name << endl;
-	cout << "Producator: " << this->producer << endl;
-	cout << "Categorie: " << this->category << endl;
-	cout << "ID: " << this->id << endl;
-	cout << "Cantitate: " << this->quantity << endl;
-	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
-	cout << "Pret: " << this->price << endl;
-	cout << "Procent Reducere: " << this->discountPercentage << endl;
-	cout << "Procent Uzura: " << this->wearPercentage << endl;
-	cout << "Motiv retur: " << this->reason << endl
-         << endl;
-}
-
 void ResealedProduct::setWearPercentage(int wearPercentage)
 {
 	throw("undefined");
@@ -59,4 +43,20 @@ string ResealedProduct::getProductType()
 json ResealedProduct::toJSON()
 {
 	return json(*this);
+}
+
+void ResealedProduct::display()
+{
+	cout << "Product Resigilat" << endl;
+	cout << "Nume Product: " << this->name << endl;
+	cout << "Producator: " << this->producer << endl;
+	cout << "Categorie: " << this->category << endl;
+	cout << "ID: " << this->id << endl;
+	cout << "Cantitate: " << this->quantity << endl;
+	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
+	cout << "Pret: " << this->price << endl;
+	cout << "Procent Reducere: " << this->discountPercentage << endl;
+	cout << "Procent Uzura: " << this->wearPercentage << endl;
+	cout << "Motiv retur: " << this->reason << endl
+         << endl;
 }

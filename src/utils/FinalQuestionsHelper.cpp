@@ -1,3 +1,6 @@
+/*
+* Administrativ - NU MODIFICATI
+*/
 #include "FinalQuestionsHelper.h"
 
 vector<Query> getQuery(json &j){

@@ -15,19 +15,6 @@ NonFoodProduct::NonFoodProduct(const NonFoodProduct &pn) : Product(pn)
 	throw("undefined");
 }
 
-void NonFoodProduct::display()
-{
-	cout << "Product Nealimentar" << endl;
-	cout << "Nume Product: " << this->name << endl;
-	cout << "Producator: " << this->producer << endl;
-	cout << "Categorie: " << this->category << endl;
-	cout << "ID: " << this->id << endl;
-	cout << "Cantitate: " << this->quantity << endl;
-	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
-	cout << "Pret: " << this->price << endl
-		 << endl;
-}
-
 void NonFoodProduct::setYearsOfWarranty(int garantieAni)
 {
 	throw("undefined");
@@ -76,4 +63,17 @@ string NonFoodProduct::getProductType()
 json NonFoodProduct::toJSON()
 {
 	return json(*this);
+}
+
+void NonFoodProduct::display()
+{
+	cout << "Product Nealimentar" << endl;
+	cout << "Nume Product: " << this->name << endl;
+	cout << "Producator: " << this->producer << endl;
+	cout << "Categorie: " << this->category << endl;
+	cout << "ID: " << this->id << endl;
+	cout << "Cantitate: " << this->quantity << endl;
+	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
+	cout << "Pret: " << this->price << endl
+		 << endl;
 }

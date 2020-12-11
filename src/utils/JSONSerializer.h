@@ -1,3 +1,6 @@
+/*
+* Administrativ - NU MODIFICATI
+*/
 #pragma once
 #include <iostream>
 #include <map>
@@ -11,10 +14,6 @@
 
 using namespace std;
 using json = nlohmann::json;
-
-/*
-* Administrativ - NU MODIFICATI NIMIC
-*/
 class JSONSerializer 
 {
     public:

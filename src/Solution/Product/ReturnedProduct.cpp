@@ -16,19 +16,6 @@ ReturnedProduct::ReturnedProduct(const ReturnedProduct &prodRet) : NonFoodProduc
 	throw("undefined");
 }
 
-void ReturnedProduct::display()
-{
-	cout << "Product Returnat" << endl;
-	cout << "Nume Product: " << this->name << endl;
-	cout << "Producator: " << this->producer << endl;
-	cout << "Categorie: " << this->category << endl;
-	cout << "ID: " << this->id << endl;
-	cout << "Cantitate: " << this->quantity << endl;
-	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
-	cout << "Pret: " << this->price << endl;
-	cout << "Motiv : " << this->reason << endl
-		 << endl;
-}
 
 const ReturnedProduct &ReturnedProduct::operator=(const ReturnedProduct &a)
 {
@@ -53,4 +40,18 @@ string ReturnedProduct::getProductType()
 json ReturnedProduct::toJSON()
 {
 	return json(*this);
+}
+
+void ReturnedProduct::display()
+{
+	cout << "Product Returnat" << endl;
+	cout << "Nume Product: " << this->name << endl;
+	cout << "Producator: " << this->producer << endl;
+	cout << "Categorie: " << this->category << endl;
+	cout << "ID: " << this->id << endl;
+	cout << "Cantitate: " << this->quantity << endl;
+	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
+	cout << "Pret: " << this->price << endl;
+	cout << "Motiv : " << this->reason << endl
+		 << endl;
 }

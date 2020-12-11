@@ -2,10 +2,10 @@
 
 using namespace std;
 
-Server::Server()
-{
-}
+/* NU MODIFICATI */
+Server::Server(){}
 
+/* NU MODIFICATI */
 Server *Server::GetInstance()
 {
 	if (!instance)
@@ -16,6 +16,7 @@ Server *Server::GetInstance()
 	return instance;
 }
 
+/* NU MODIFICATI */
 Server::~Server()
 {
 	if (instance != NULL)
@@ -45,16 +46,6 @@ map<int, ShoppingCart *> Server::get__UserID__ProductsCart__()
 	throw("undefined");
 }
 
-void Server::populateProducts(const json &input)
-{
-	prod = ObjectFactory::getProductList(input["shoppingCart"]);
-}
-
-void Server::populateUsers(const json &input)
-{
-	usr = ObjectFactory::getUserList(input["useri"]);
-}
-
 bool Server::requestAddProduct(int userID, int productID, int quantity)
 {
 	throw("undefined");
@@ -63,4 +54,16 @@ bool Server::requestAddProduct(int userID, int productID, int quantity)
 bool Server::requestDeleteProduct(int userID, int productID, int quantity)
 {
 	throw("undefined");
+}
+
+/* NU MODIFICATI */
+void Server::populateProducts(const json &input)
+{
+	prod = ObjectFactory::getProductList(input["shoppingCart"]);
+}
+
+/* NU MODIFICATI */
+void Server::populateUsers(const json &input)
+{
+	usr = ObjectFactory::getUserList(input["useri"]);
 }

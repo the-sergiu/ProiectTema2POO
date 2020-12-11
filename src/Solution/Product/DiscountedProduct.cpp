@@ -17,20 +17,6 @@ DiscountedProduct::DiscountedProduct(const DiscountedProduct &discountedProduct)
 	throw("undefined");
 }
 
-void DiscountedProduct::display()
-{
-	cout << "Product Redus" << endl;
-	cout << "Nume Product: " << this->name << endl;
-	cout << "Producator: " << this->producer << endl;
-	cout << "Categorie: " << this->category << endl;
-	cout << "ID: " << this->id << endl;
-	cout << "Cantitate: " << this->quantity << endl;
-	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
-	cout << "Pret: " << this->price << endl;
-	cout << "Procent reducere : " << this->discountPercentage << endl
-		 << endl;
-}
-
 float DiscountedProduct::priceAfterDiscount() const
 {
 	throw("undefined");
@@ -59,4 +45,18 @@ string DiscountedProduct::getProductType()
 json DiscountedProduct::toJSON()
 {
 	return json(*this);
+}
+
+void DiscountedProduct::display()
+{
+	cout << "Product Redus" << endl;
+	cout << "Nume Product: " << this->name << endl;
+	cout << "Producator: " << this->producer << endl;
+	cout << "Categorie: " << this->category << endl;
+	cout << "ID: " << this->id << endl;
+	cout << "Cantitate: " << this->quantity << endl;
+	cout << "Garantie: " << this->yearsOfWarranty << " ani" << endl;
+	cout << "Pret: " << this->price << endl;
+	cout << "Procent reducere : " << this->discountPercentage << endl
+		 << endl;
 }

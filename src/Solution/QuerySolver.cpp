@@ -2,11 +2,15 @@
 
 using namespace std;
 
-QuerySolver::QuerySolver() {
+/* NU MODIFICATI */
+QuerySolver::QuerySolver() 
+{
   server = Server::GetInstance();
 }
 
-QuerySolver::~QuerySolver(){
+/* NU MODIFICATI */
+QuerySolver::~QuerySolver()
+{
   if (server != nullptr) 
   {
     server = nullptr;
@@ -28,7 +32,6 @@ list<Product*> QuerySolver::Query_3c(){
 list<Product*> QuerySolver::Query_3d(){
   throw("undefined");
 }
-
 
 list<User*> QuerySolver::Query_3e(){
   throw("undefined");
