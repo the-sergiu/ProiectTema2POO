@@ -45,11 +45,11 @@ list<Product*> QuerySolver::Query_3c(){
 
   list<Product*> rezolvare;
 
-  //Se cauta produsele returnate sau resigilate, pe motivul "lipsa_accesorii"
+  // Se cauta produsele resigilate, pe motivul "lipsa_accesorii"
   for (auto it = server->getProductsList().begin(); it != server->getProductsList().end(); it++){
-    if(((*it)->getProductType() == "redus" || (*it)->getProductType() == "resigilat")){
+    if(((*it)->getProductType() == "resigilat")){
       string toFind = "lipsa_accesorii";
-      ReturnedProduct *pr = dynamic_cast<ReturnedProduct*>(*it);
+      ResealedProduct *pr = dynamic_cast<ResealedProduct*>(*it);
 
       if (pr == nullptr) continue;
 
@@ -58,7 +58,7 @@ list<Product*> QuerySolver::Query_3c(){
       }
     }
   }
-
+  // Sortarea se face crescator, in functie de pret
   rezolvare.sort(Utility::compareProdusNealimentar);
   
   return rezolvare;
