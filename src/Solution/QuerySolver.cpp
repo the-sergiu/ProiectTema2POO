@@ -165,6 +165,7 @@ list<User*> QuerySolver::Query_3f()
         if (poz != idsProduse.end()) 
         { 
           rezolvare.push_back((*it));
+          break;
         } 
       }
     }
