@@ -28,7 +28,7 @@ public:
   /*
    * @param seteaza TransportCost (costul transportului)
    */
-  void setTransportCost(int);
+  void setTransportCost(float);
   /*
    * @return campul Transport Cost (costul transportului)
    */

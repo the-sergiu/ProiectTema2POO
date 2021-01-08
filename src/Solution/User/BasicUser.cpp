@@ -21,7 +21,7 @@ BasicUser &BasicUser::operator=(const BasicUser &unp)
   return *this;
 }
 
-void BasicUser::setTransportCost(int cost)
+void BasicUser::setTransportCost(float cost)
 {
   costTransport = cost;
 }
