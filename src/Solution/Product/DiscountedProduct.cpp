@@ -33,7 +33,7 @@ void DiscountedProduct::display()
 
 float DiscountedProduct::priceAfterDiscount() const
 {
-	return (100 - this->discountPercentage) * this->price;
+	return this->price * (1 - (this->discountPercentage / 100));
 }
 
 float DiscountedProduct::getDiscountPercentage()
