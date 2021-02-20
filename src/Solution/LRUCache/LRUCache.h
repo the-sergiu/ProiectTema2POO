@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <list>
 
 using namespace std;
 
@@ -21,7 +22,7 @@ public:
      * @param requestsNo vectorul ce contine id-urile ce corespund requesturilor
      * @return stadiul final al cache-ului
      */
-	vector<int> processRequests(vector<int> requestsNo);
+	vector<int> processRequests(list<int> requestsNo);
 	/*
      * @return capacitatea cache-ului
      */

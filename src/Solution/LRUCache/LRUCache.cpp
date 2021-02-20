@@ -13,7 +13,7 @@ LRUCache::LRUCache(int capacity)
   lru.resize(capacity);
 }
 
- vector<int> LRUCache::processRequests(vector<int> requestsNo)
+ vector<int> LRUCache::processRequests(list<int> requestsNo)
  {
     vector<int> ans;
     for (auto it = requestsNo.begin(); it != requestsNo.end(); ++it)

@@ -457,7 +457,7 @@ json TestHelper::Test_3f()
 
 json TestHelper::Test_4()
 {
-	vector<int> lruTest = {1, 2, 3, 2, 5, 3, 4, 5, 8, 9};
+	list<int> lruTest = {1, 2, 3, 2, 5, 3, 4, 5, 8, 9};
 	LRUCache obj(4);
 	// check processRequests
 	vector<int> ans = obj.processRequests(lruTest);
@@ -497,7 +497,7 @@ json TestHelper::Test_5(const string &inFile)
 	json jin;
 	in >> jin;
 	LRUCache lru(5);
-	vector<int> buff;
+	list<int> buff;
 	json output;
 	vector<Query> vec = getQuery(jin["queries"]);
 	for (auto i = vec.begin(); i != vec.end(); i++)
