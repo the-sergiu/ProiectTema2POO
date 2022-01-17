@@ -1,6 +1,6 @@
 # eStore Platform
 
-As the name suggests, we wish to create and develop an e-store/e-commerce app with the purpose of selling various products **(Think more like Amazon, and not eBay)**. 
+As the name suggests, we wish to create and develop the back-end an e-store/e-commerce app with the purpose of selling various products **(Think more like Amazon, and not eBay)**. 
 
 The main _entities_ (classes, which could be translated to DB tables in a real-life scenario) are Products, Users and Servers (implictily server-side logic) which store information and and create prototypes.
 It would also be "nice" to cache certain information (like the product cart of a particular user's session). As such, we leverage multiple class hierarchies, structures, API and function calls so as to program the back-end of our theoretical app.
