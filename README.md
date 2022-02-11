@@ -1,9 +1,9 @@
 # eStore Platform
 
-As the name suggests, we wish to create and develop the back-end an e-store/e-commerce app with the purpose of selling various products **(Think more like Amazon, and not eBay)**. 
+As the name implies, we would like to develop the back-end an e-store/e-commerce app with the purpose of selling various products **(Think more like Amazon, not eBay)**. 
 
-The main _entities_ (classes, which could be translated to DB tables in a real-life scenario) are Products, Users and Servers (implictily server-side logic) which store information and and create prototypes.
-It would also be "nice" to cache certain information (like the product cart of a particular user's session). As such, we leverage multiple class hierarchies, structures, API and function calls so as to program the back-end of our theoretical app.
+The main _entities_ (classes, which could be thought of as DB tables in a real-life scenario) are Products, Users and Servers (implictily server-side logic) which store information and and create prototypes.
+It would also be _nice_ to cache certain information (like the product cart of a particular user's session). As such, we leverage multiple class hierarchies, structures, API and function calls so as to program the back-end of our theoretical app.
 
 Used as Assignment for Object-Oriented Programming (C++) at the **Faculty of Automatic Control and Computer Science @ Politehnica University of Bucharest**, 2020-2021. Valued at 15% of the entire grade.
 
